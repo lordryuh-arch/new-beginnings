@@ -10845,10 +10845,11 @@ function IdlePage() {
                       </div>
                     );
                   })()}
-            })()}
-          </Panel>
+                </div>
+              </div>
+            );
+          })()}
         </Panel>
-          {/* COLETA — logo abaixo do mapa, destaque */}
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
             border: "2px solid #f5cf6b",
