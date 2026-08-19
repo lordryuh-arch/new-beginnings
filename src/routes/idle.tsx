@@ -41,6 +41,21 @@ import catPotionsAsset from "@/assets/cat2-potions.png.asset.json";
 import catBooksAsset from "@/assets/cat2-books.png.asset.json";
 import catEggsAsset from "@/assets/cat2-eggs.png.asset.json";
 import catOtherAsset from "@/assets/cat2-other.png.asset.json";
+
+const iconFragmentCrystalUrl = iconFragmentCrystal.url;
+const iconWorldGlobeUrl = iconWorldGlobe.url;
+const iconCrystalBlueUrl = iconCrystalBlue.url;
+const iconCashPackageUrl = iconCashPackage.url;
+const eventBannerImgUrl = eventBannerImg.url;
+const trainerAvatarUrl = trainerAvatarAsset.url;
+const bagBgGlowUrl = bagBgGlowAsset.url;
+const catAllUrl = catAllAsset.url;
+const catBallsUrl = catBallsAsset.url;
+const catPotionsUrl = catPotionsAsset.url;
+const catBooksUrl = catBooksAsset.url;
+const catEggsUrl = catEggsAsset.url;
+const catOtherUrl = catOtherAsset.url;
+
 import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
 import { grantEmeraldFor } from "@/lib/emerald";
