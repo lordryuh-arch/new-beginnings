@@ -23,6 +23,8 @@ import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
 const navWallet = assetUrlFromJson(navWalletAsset);
 import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
 const navMarket = assetUrlFromJson(navMarketAsset);
+import navPokeballAsset from "@/assets/nav-pokeball.png.asset.json";
+const navPokeball = assetUrlFromJson(navPokeballAsset);
 import pokemonTabBgAsset from "@/assets/pokemon-tab-bg.jpg.asset.json";
 const pokemonTabBg = assetUrlFromJson(pokemonTabBgAsset);
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
@@ -465,6 +467,8 @@ const mapCadeiaAbUrl = assetUrlFromJson(mapCadeiaAbAsset);
 const mapCadeiaAb1Url = assetUrlFromJson(mapCadeiaAb1Asset);
 const mapCadeiaF1Url = assetUrlFromJson(mapCadeiaF1Asset);
 const mapMythshinyEventUrl = assetUrlFromJson(mapMythshinyEventAsset);
+import iconMasterballAsset from "@/assets/ball-master.png.asset.json";
+const iconMasterballUrl = assetUrlFromJson(iconMasterballAsset);
 const iceBallIconUrl = assetUrlFromJson(iceBallIconAsset);
 const scrollTeleportUrl = assetUrlFromJson(scrollTeleportAsset);
 // URLs dos 10 novos mapas endgame
@@ -491,9 +495,9 @@ const orbXpMajorUrl = assetUrlFromJson(orbXpMajorAsset);
 const orbXpSupremeUrl = assetUrlFromJson(orbXpSupremeAsset);
 const orbXpTeamUrl = assetUrlFromJson(orbXpTeamAsset);
 // Ícones "de buff" bonitos (HUD do treinador) — orb XP, incenso e orb de time
-const buffOrbXpUrl = (new URL("../assets/buff-orb-xp.png", import.meta.url)).href;
-const buffIncenseHoneyUrl = (new URL("../assets/buff-incense-honey.png", import.meta.url)).href;
-const buffTeamOrbUrl = (new URL("../assets/buff-team-orb.png", import.meta.url)).href;
+const buffOrbXpUrl = assetUrlFromJson(orbXpMajorAsset);
+const buffIncenseHoneyUrl = assetUrlFromJson(orbXpMinorAsset);
+const buffTeamOrbUrl = assetUrlFromJson(orbXpTeamAsset);
 const npcTraderUrl = assetUrlFromJson(npcTraderAsset);
 const redLakeUrl = assetUrlFromJson(redLakeAsset);
 const volcanoUrl = assetUrlFromJson(volcanoAsset);
@@ -1000,6 +1004,7 @@ function buildObstacles(worldW: number, worldH: number, mapId: IdleMapId = "aren
   return list;
 }
 
+type EggId = "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite";
 type Task = { id: string; title: string; reward: number; progress: number; target: number; done: boolean };
 type IdleState = {
   startedAt: number;
@@ -1099,9 +1104,10 @@ const ITEM_IMG: Record<string, string> = {
   premium_box: premiumBoxImg,
   bau_esmeralda: chestEmeraldImg,
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
-  orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
-  incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
+  orb_xp_supreme_24h: assetUrlFromJson(orbXpSupremeAsset),
+  incenso_mel_raro_24h: assetUrlFromJson(orbXpMinorAsset),
   safira_verde: assetUrlFromJson(safiraVerdeAsset),
+  masterball: iconMasterballUrl,
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
   { id: "potion",    name: "Poção",     icon: "🧪", chance: 0.30 },
@@ -1123,7 +1129,7 @@ const ALL_BALLS: ShopBall[] = [
   { id: "pokeball",   name: "Pokébola",   price: 500,    img: ballPokeImg,  captureMult: 1 },
   { id: "greatball",  name: "Great Ball", price: 5000,   img: ballGreatImg, captureMult: 2 },
   { id: "ultraball",  name: "Ultra Ball", price: 15000,  img: ballUltraImg, captureMult: 3.5 },
-  { id: "masterball", name: "Master Ball", price: 999999, img: ballUltraImg, captureMult: 999 },
+  { id: "masterball", name: "Master Ball", price: 999999, img: iconMasterballUrl, captureMult: 999 },
 ];
 
 type ShopBook = { id: "book_atk" | "book_def" | "book_exp" | "book_exp_big" | "book_exp_max" | "book_vip" | "book_vip_30" | "book_vip_60" | "orb_xp_minor" | "orb_xp_major" | "orb_xp_supreme" | "orb_team"; name: string; desc: string; price: number; img: string; currency?: "crystals" | "gold"; priceGold?: number };
@@ -1131,7 +1137,8 @@ const SHOP_BOOKS: ShopBook[] = [
   { id: "book_atk", name: "Livro de Ataque", desc: "+10% de dano permanente por uso", price: 100, img: bookAtkImg },
   { id: "book_def", name: "Livro de Defesa", desc: "-10% de dano recebido por uso",  price: 100, img: bookDefImg },
   { id: "book_exp", name: "Livro de EXP",    desc: "+30% EXP em batalhas por 1 hora",   price: 30, img: bookExpImg },
-
+  { id: "book_exp_big", name: "Livro de EXP Raro", desc: "+20% EXP por 1 hora", price: 300, img: bookExpImg },
+  { id: "book_exp_max", name: "Livro de EXP Lendário", desc: "+30% EXP por 1 hora", price: 900, img: bookExpImg },
   { id: "book_vip_30", name: "Livro VIP 30d ✦✦", desc: "+30% ouro e +30% EXP por 30 DIAS", price: 500, img: bookExpImg },
   { id: "book_vip_60", name: "Livro VIP 60d ✦✦✦", desc: "+40% ouro e +40% EXP por 60 DIAS", price: 1000, img: bookExpImg },
   // ═══ ORB DE XP FRACO — único vendido; os fortes vêm da troca com NPC ═══
@@ -1201,8 +1208,8 @@ function freshIdle(): IdleState {
     seenSpecies: [],
     collection: [],
     craftPoints: 0,
-    items: { premium_box: 1 },
-    bank: { gold: 0, crystals: 30 },
+    items: { premium_box: 1, pokeball: 20 },
+    bank: { gold: 5000, crystals: 50 },
     buffs: { atk: 0, def: 0, expMult: 0, expMultUntil: 0, goldMult: 0, goldMultUntil: 0, honeyUntil: 0, honeyRareUntil: 0, orbMult: 0, orbUntil: 0, orbId: "", teamOrbUntil: 0 },
     globalStats: { attack: 0, speed: 0, synergy: 0, resistance: 0, mastery: 0 },
     autoHeal: { enabled: true, threshold: 0.5 },
@@ -5618,7 +5625,12 @@ function IdlePage() {
 
   // Loja — apenas 1 ovo místico (500 cristais), raridade totalmente aleatória
   // Loja — ovos temporariamente removidos da venda
-  const SHOP_EGGS: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[] = [];
+  const SHOP_EGGS: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[] = [
+    { id: "egg_common", name: "Ovo Comum", price: 1000, currency: "gold", desc: "Um ovo básico que pode chocar espécies comuns.", color: "#c8b8d0" },
+    { id: "egg_rare", name: "Ovo Raro", price: 50, currency: "crystals", desc: "Aumenta a chance de Pokémon raros.", color: "#6bd4ff" },
+    { id: "egg_epic", name: "Ovo Épico", price: 150, currency: "crystals", desc: "Alta chance de Pokémon épicos.", color: "#c084fc" },
+    { id: "egg_mystic", name: "Ovo Místico", price: 500, currency: "crystals", desc: "Ovo lendário com chance de Míticos.", color: "#ff97e1" },
+  ];
 
   const buyEgg = (e: typeof SHOP_EGGS[number]) => {
     setIdle((s) => {
@@ -12618,8 +12630,8 @@ function TabOverlay({
   onBuyTeleportScroll: (qty?: number) => void;
   onBuyBook: (bk: ShopBook, qty?: number) => void;
   onBuyPotion: (qty?: number) => void;
-  onBuyEgg: (e: { id: "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite"; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }) => void;
-  shopEggs: { id: "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite"; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[];
+  onBuyEgg: (e: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }) => void;
+  shopEggs: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[];
 
   onBuyChestAmulet: () => void;
 
@@ -13119,7 +13131,7 @@ function TabOverlay({
 
       {tab === "mochila" && (() => {
         const NAMES: Record<string, string> = {
-          potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
+          potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
           book_atk: "Livro Ataque", book_def: "Livro Defesa", book_exp: "Livro EXP",
           book_exp_big: "Livro EXP Raro", book_exp_max: "Livro EXP Lendário", book_vip: "Livro VIP ✦",
           book_vip_30: "Livro VIP 30d ✦✦", book_vip_60: "Livro VIP 60d ✦✦✦",
@@ -13148,6 +13160,7 @@ function TabOverlay({
           pokeball: "Pokébola padrão. Chance base de captura.",
           greatball: "Great Ball. Melhor chance de captura contra pokémon fortes.",
           ultraball: "Ultra Ball. Alta chance de captura, essencial contra míticos.",
+          masterball: "Master Ball. Captura infalível (100% de chance).",
           book_atk: "Aumenta o Ataque do time em batalha (permanente ao usar).",
           book_def: "Aumenta a Defesa do time em batalha (permanente ao usar).",
           book_exp: "Livro de EXP · +10% EXP por 1 hora.",
@@ -15024,7 +15037,7 @@ function WalletScreen({
   const sellGain = sellAmt * 800;
 
   const ITEM_NAMES: Record<string, string> = {
-    potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
+    potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
     stone_grass: "Stone Verdejante 🌿", stone_fire: "Stone Ígnea 🔥", stone_water: "Stone Aquática 💧",
     stone_electric: "Stone Elétrica ⚡", stone_dark: "Stone Sombria 🌑", stone_dragon: "Stone Dragão 🐉",
     egg_common: "Ovo Comum", egg_rare: "Ovo Raro", egg_epic: "Ovo Épico", egg_mystic: "Ovo Místico",
@@ -15179,7 +15192,7 @@ function MarketScreen({
   npcPrices: Record<string, number>;
 }) {
   const LABELS: Record<string, string> = {
-    pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
+    pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
     chest_amulet: "Amuleto do Baú",
     potion: "Poção",
     stone_grass: "Stone Verdejante 🌿", stone_fire: "Stone Ígnea 🔥",
