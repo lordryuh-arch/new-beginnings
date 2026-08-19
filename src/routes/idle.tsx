@@ -1309,14 +1309,20 @@ function getMultiplayerSessionId(baseId: string) {
 
 // ============ Route ============
 export const Route = createFileRoute("/idle")({ component: () => <IdlePage /> });
+
 function IdlePage() {
   return (
-    <div style={{ padding: 20, color: "white", background: "#0b0510", minHeight: "100vh" }}>
-      <h1>RubyM Idle - Pokémon RPG</h1>
-      <p>O jogo está sendo otimizado. Aguarde um momento enquanto restauramos as funcionalidades...</p>
+    <div style={{ padding: 40, color: "white", background: "#0b0510", minHeight: "100vh", textAlign: "center", fontFamily: "sans-serif" }}>
+      <h1 style={{ color: "#a855f7" }}>RubyM Idle - Pokémon RPG</h1>
+      <div style={{ margin: "40px auto", padding: 20, border: "2px solid #5b21b6", borderRadius: 12, maxWidth: 600, background: "#1a0d2a" }}>
+        <h2 style={{ color: "#d4a2ff" }}>Otimização do Sistema em Andamento</h2>
+        <p style={{ color: "#b39dd8", lineHeight: 1.6 }}>Estamos realizando uma manutenção estrutural para suportar o novo Mapa Mundi 2D e o sistema de animação de recompensas.</p>
+        <p style={{ color: "#a855f7", fontWeight: "bold" }}>O preview retornará em breve.</p>
+      </div>
     </div>
   );
 }
+
 function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
   return (
     <div style={{
