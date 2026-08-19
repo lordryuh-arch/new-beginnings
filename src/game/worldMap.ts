@@ -1,4 +1,16 @@
-import { IdleMapId } from "./routes/idle";
+export type IdleMapId =
+  | "arena" | "terra" | "deserto_purpura" | "terry" | "n2" | "n3" | "pantano_fogo" | "venofogo" | "praia" | "neve" | "deserto" | "caverna" | "fantasma"
+  | "gelius1" | "gelius2"
+  | "vale_rochas" | "vale_planta" | "vale_gelo" | "vale_veneno" | "vale_fogo"
+  | "vulcao_ativo" | "nucleo_primordial"
+  | "abismo_gelo" | "abismo_veneno" | "abismo_raio" | "abismo_sombra" | "abismo_dragao"
+  | "cadeia_ab" | "cadeia_ab1" | "cadeia_f1"
+  | "evento_myth"
+  | "oddish_o1" | "oddish_o2" | "oddish_o3"
+  | "grass_oddish"
+  | "absol_start" | "governante_hall"
+  | "continent3_map1" | "continent3_map2";
+
 
 export type ElementType = "grass" | "fire" | "water" | "electric" | "poison" | "ice" | "rock" | "fighting" | "flying" | "dark" | "ethereal" | "stellar";
 
