@@ -9195,7 +9195,7 @@ function IdlePage() {
               )}
               <div style={{
                 width: "100%", height: "100%",
-                backgroundImage: `url(${skinUrl ?? trainerSheet})`,
+                backgroundImage: `url(${(skinUrl && skinUrl.length > 5) ? skinUrl : trainerSheet})`,
                 backgroundSize: "400% 400%",
                 backgroundPosition: `${walkStep * 33.333}% ${DIR_ROW[walkDir] * 33.333}%`,
                 imageRendering: "pixelated",
@@ -12182,9 +12182,14 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           cursor: "grab", overflow: "hidden", background: "#050208"
         }}>
           {/* Background Image */}
-          <img src={assetUrlFromJson(worldMapBgAsset)} alt="World Map" style={{
-            width: "100%", height: "100%", objectFit: "cover", opacity: 1
-          }} />
+          <img 
+            src={WORLD_MAP_CONFIG.bg} 
+            alt="World Map" 
+            style={{
+              width: "100%", height: "100%", objectFit: "cover", opacity: 1,
+              display: "block"
+            }} 
+          />
 
           {/* Regions */}
           {WORLD_REGIONS.map(reg => {
