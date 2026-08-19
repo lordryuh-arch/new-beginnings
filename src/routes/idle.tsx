@@ -1106,6 +1106,7 @@ const ITEM_IMG: Record<string, string> = {
   orb_xp_supreme_24h: assetUrlFromJson(orbXpSupremeAsset),
   incenso_mel_raro_24h: assetUrlFromJson(orbXpMinorAsset),
   safira_verde: assetUrlFromJson(safiraVerdeAsset),
+  masterball: iconMasterballUrl,
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
   { id: "potion",    name: "Poção",     icon: "🧪", chance: 0.30 },
