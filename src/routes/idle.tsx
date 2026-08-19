@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                  { key: "as-next", target: "abismo_dragao", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#ff9628" },
-                ],
-                abismo_dragao: [
-                  { key: "ad-back", target: "abismo_sombra", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#28143c" },
-                  { key: "ad-next", target: "cadeia_ab", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#8ac9ff" },
-                ],
-                cadeia_ab: [
-                  { key: "cab-back", target: "abismo_dragao", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#ff9628" },
                   { key: "cab-next", target: "cadeia_ab1", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#c084fc" },
                 ],
                 cadeia_ab1: [
@@ -10748,11 +10740,10 @@ function IdlePage() {
                             {tm.raid ? (
                               <div style={{ textAlign: "center", color: "#ff8ad6", fontSize: 10, fontWeight: 900, letterSpacing: 1.2 }}>
                                 ☠ ZONA DE RAID · chefes de níveis variados (não é faixa de progressão)
-                              </div>
-                            ) : tm.maxLevel && (
-                              <div style={{ textAlign: "center", color: "#8a7a9c", fontSize: 10 }}>
-                                Pokémon selvagens: Lv {tm.minLevel}–{tm.maxLevel}
-                              </div>
+                </div>
+              );
+            })()}
+          </Panel>
                             )}
                           </div>
 
