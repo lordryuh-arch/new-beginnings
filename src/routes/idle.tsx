@@ -7012,6 +7012,7 @@ function IdlePage() {
   );
 
   return (
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16725,7 +16726,8 @@ function GovernanteDialog(props: {
       </div>
     </div>,
     document.body
-  );
+      </>
+);
 }
 
 
