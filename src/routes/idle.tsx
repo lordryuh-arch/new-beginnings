@@ -30,6 +30,9 @@ import catEggsAsset from "@/assets/cat2-eggs.png.asset.json";
 import catOtherAsset from "@/assets/cat2-other.png.asset.json";
 import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
+import { WorldMapOverlay } from "@/components/WorldMapOverlay";
+import { WORLD_REGIONS } from "@/game/worldMap";
+
 import { grantEmeraldFor } from "@/lib/emerald";
 
 import chestClosedImg from "@/assets/icons/chest-closed.png";
@@ -1775,6 +1778,8 @@ function IdlePage() {
   const [statsCardPet, setStatsCardPet] = useState<PetInstance | null>(null);
   const [eventToast, setEventToast] = useState<{ id: number; icon: string; title: string; sub?: string; color: string } | null>(null);
   const [showAutoSettings, setShowAutoSettings] = useState(false);
+  const [showWorldMap, setShowWorldMap] = useState(false);
+
   const [attackAnim, setAttackAnim] = useState<{ id: number; fromX: number; fromY: number; toX: number; toY: number; ts: number; crit: boolean; element: ElementFx } | null>(null);
   const [enemyAttackAnim, setEnemyAttackAnim] = useState<{ id: number; fromX: number; fromY: number; toX: number; toY: number; ts: number; element: ElementFx } | null>(null);
   const [captureAnim, setCaptureAnim] = useState<{ id: number; fromX: number; fromY: number; toX: number; toY: number; ts: number; ballImg: string; success: boolean } | null>(null);
@@ -9965,8 +9970,18 @@ function IdlePage() {
         {/* ============ COLUNA DIREITA ============ */}
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
-            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
+            <div className="flex flex-col gap-3">
+              <p className="text-[11px] text-[#f5cf6b]/80 leading-tight">Você está em: <strong className="text-white uppercase">{map.name}</strong></p>
+              <button
+                onClick={() => setShowWorldMap(true)}
+                className="w-full py-2 bg-[#f5cf6b] hover:bg-[#ffd94d] text-[#0b0510] font-black text-xs tracking-widest uppercase rounded border border-[#0b0510]/20 shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95"
+              >
+                <Compass size={16} />
+                Explorar Mundo
+              </button>
+            </div>
           </Panel>
+
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
             border: "2px solid #f5cf6b",
