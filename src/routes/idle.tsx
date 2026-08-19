@@ -10852,6 +10852,7 @@ function IdlePage() {
         </Panel>
         </Panel>
         </Panel>
+        </Panel>
           </Panel>
             })()}
           </Panel>
