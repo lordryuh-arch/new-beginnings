@@ -10746,7 +10746,6 @@ function IdlePage() {
                             @keyframes c4RingRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
                           `}</style>
 
-                        </div>
                       </div>
                     );
                   })()}
