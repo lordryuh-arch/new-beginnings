@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                  { key: "to-n3", target: "n3", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#e8b878" },
-                ],
-                n3: [
-                  { key: "to-n2", target: "n2", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#d9a86a" },
-                  { key: "to-pantano_fogo", target: "pantano_fogo", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#ff4a1a" },
-                ],
-                pantano_fogo: [
-                  { key: "to-n3", target: "n3", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#e8b878" },
                   { key: "to-abismo_gelo", target: "abismo_gelo", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#78c8ff" },
                 ],
                 abismo_gelo: [
@@ -10748,11 +10740,10 @@ function IdlePage() {
                             {tm.name}
                           </div>
                           <div style={{ textAlign: "center", color: "#c8b8d0", fontSize: 11, marginBottom: 14 }}>
-                            {tm.diff} {tm.stars ? <span style={{ color: "#ffd94d" }}>{"★".repeat(tm.stars)}</span> : null} · {tm.element ?? "—"}
-                          </div>
-
-                          <div style={{ display: "grid", gap: 8, marginBottom: 14 }}>
-                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(0,0,0,0.4)", border: `1px solid ${lvOk ? "#7ef27a" : "#e05252"}`, borderRadius: 8, padding: "8px 12px" }}>
+                </div>
+              );
+            })()}
+          </Panel>
                               <span style={{ color: "#c8b8d0", fontSize: 12, fontWeight: 700 }}>🎖 Nível exigido</span>
                               <span style={{ color: lvOk ? "#7ef27a" : "#ff8888", fontWeight: 900 }}>
                                 Lv {tm.minLevel} {lvOk ? "✓" : `(você: ${trainerLv})`}
