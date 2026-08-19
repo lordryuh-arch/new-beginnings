@@ -1212,7 +1212,7 @@ function loadIdle(): IdleState {
       if (!uskins.includes("default")) uskins.unshift("default");
       s.unlockedSkins = uskins;
       // Sanitiza mapa removido (Pedreira Antiga)
-      if (!IDLE_MAPS[s.currentMap]) s.currentMap = "arena";
+      if (!IDLE_MAPS[s.currentMap]) s.currentMap = INITIAL_MAP_ID;
       return s;
     }
   } catch { /* ignore */ }
