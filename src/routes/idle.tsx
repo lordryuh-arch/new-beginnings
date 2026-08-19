@@ -10748,11 +10748,11 @@ function IdlePage() {
 
                         </div>
                       </div>
+                  </div>
                 </div>
-              </div>
-            );
-          })()}
-        </Panel>
+              );
+            })()}
+          </Panel>
                     const tm = IDLE_MAPS[pendingGate.target as keyof typeof IDLE_MAPS];
                     const trainerLv = idle.trainerLevel ?? 1;
                       const lvOk = true;
