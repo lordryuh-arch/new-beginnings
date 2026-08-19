@@ -29,7 +29,7 @@ def generate_image():
         "Lovable-API-Key": LOVABLE_API_KEY
     }
     data = {
-        "model": "openai/dall-e-3", # Padrão para imagens
+        "model": "google/gemini-3.1-flash-image", # Padrão para imagens
         "prompt": "An epic RPG pixel art world map for a Pokemon-style game. Islands, forests, mountains, deserts, and oceans. Retro 16-bit style, high quality, vibrant colors, clear biomes, top-down view.",
         "n": 1,
         "size": "1024x1024",
