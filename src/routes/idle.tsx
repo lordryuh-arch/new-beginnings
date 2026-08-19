@@ -212,12 +212,32 @@ import caveFloorAsset from "@/assets/cave-floor.jpg.asset.json";
 import stalagmiteAsset from "@/assets/stalagmite.png.asset.json";
 import caveCrystalAsset from "@/assets/cave-crystal.png.asset.json";
 
+// Pixel Art World Map Backgrounds
+import mapArenaAssetGenerated from "@/assets/maps/arena.png.asset.json";
+import mapPraiaAssetGenerated from "@/assets/maps/praia.png.asset.json";
+import mapCavernaAssetGenerated from "@/assets/maps/caverna.png.asset.json";
+import mapNeveAssetGenerated from "@/assets/maps/neve.png.asset.json";
+import mapDesertoAssetGenerated from "@/assets/maps/deserto.png.asset.json";
+import mapFantasmaAssetGenerated from "@/assets/maps/fantasma.png.asset.json";
+import mapVulcaoAssetGenerated from "@/assets/maps/vulcao.png.asset.json";
+import mapFlorestaAssetGenerated from "@/assets/maps/floresta.png.asset.json";
+
+const mapArenaGeneratedUrl = assetUrlFromJson(mapArenaAssetGenerated);
+const mapPraiaGeneratedUrl = assetUrlFromJson(mapPraiaAssetGenerated);
+const mapCavernaGeneratedUrl = assetUrlFromJson(mapCavernaAssetGenerated);
+const mapNeveGeneratedUrl = assetUrlFromJson(mapNeveAssetGenerated);
+const mapDesertoGeneratedUrl = assetUrlFromJson(mapDesertoAssetGenerated);
+const mapFantasmaGeneratedUrl = assetUrlFromJson(mapFantasmaAssetGenerated);
+const mapVulcaoGeneratedUrl = assetUrlFromJson(mapVulcaoAssetGenerated);
+const mapFlorestaGeneratedUrl = assetUrlFromJson(mapFlorestaAssetGenerated);
+
 import crystalClusterAsset from "@/assets/crystal-cluster.png.asset.json";
 const caveFloorUrl = assetUrlFromJson(caveFloorAsset);
 const stalagmiteUrl = assetUrlFromJson(stalagmiteAsset);
 const caveCrystalUrl = assetUrlFromJson(caveCrystalAsset);
 
 const crystalClusterUrl = assetUrlFromJson(crystalClusterAsset);
+
 
 // Pokemon GIFs (reusa os que já existem no projeto)
 import charizardGif from "@/assets/charizard.gif";
@@ -464,7 +484,7 @@ const sfxBonusUrl = assetUrlFromJson(sfxBonusAsset);
 const sfxChestOpenUrl = assetUrlFromJson(sfxChestOpenAsset);
 
 type IdleMapId =
-  | "arena" | "terra" | "deserto_purpura" | "terry" | "n2" | "n3" | "pantano_fogo" | "venofogo" | "praia" | "neve" | "deserto" | "caverna" | "fantasma"
+  | "arena" | "terra" | "deserto_purpura" | "terry" | "n2" | "n3" | "pantano_fogo" | "venofogo" | "praia" | "neve" | "deserto" | "caverna" | "fantasma" | "floresta"
   | "gelius1" | "gelius2"
   // Cadeia endgame — 3 bases (Vale das Rochas, Vulcão Ativo, Núcleo) + 4 recolores
   | "vale_rochas" | "vale_planta" | "vale_gelo" | "vale_veneno" | "vale_fogo"
@@ -483,6 +503,7 @@ type IdleMapId =
   | "absol_start" | "governante_hall"
   // Terceiro Continente — Bônus
   | "continent3_map1" | "continent3_map2";
+
 // overlay: cor de recolorização aplicada por cima do bg (mix-blend: color)
 // stars: dificuldade (1-8) exibida na UI
 type IdleMapDef = {
@@ -494,7 +515,9 @@ type IdleMapDef = {
   raid?: boolean;
 };
 const IDLE_MAPS: Record<IdleMapId, IdleMapDef> = {
-  arena:    { name: "Vale Verdejante",         diff: "Fácil",     bg: idleArenaUrl,    rate: 1.0, minLevel: 1,  maxLevel: 30, element: "Grama", stars: 1 },
+  floresta: { name: "Floresta Obsidian",      diff: "Fácil",     bg: mapFlorestaGeneratedUrl,  rate: 1.1, minLevel: 1,  maxLevel: 25,  element: "Grama", stars: 1 },
+  arena:    { name: "Vale Verdejante",         diff: "Fácil",     bg: mapArenaGeneratedUrl,    rate: 1.0, minLevel: 1,  maxLevel: 30, element: "Grama", stars: 1 },
+
   terra:    { name: "Ninho de Marimbondo",     diff: "Fácil+",    bg: mapTerraUrl,     rate: 1.2, minLevel: 10, maxLevel: 35, element: "Terra", stars: 1 },
   deserto_purpura: { name: "Areias de Anúbis", diff: "Médio",     bg: mapDesertoPurpuraUrl, rate: 1.8, minLevel: 20, maxLevel: 55, element: "Terra/Veneno", stars: 2, entryCrystals: 5 },
   terry:    { name: "Terras de Terry",         diff: "Elite",     bg: mapTerryUrl,     rate: 3.2, minLevel: 200, maxLevel: 400, element: "Terra", stars: 4, entryCrystals: 8 },
@@ -513,22 +536,23 @@ const IDLE_MAPS: Record<IdleMapId, IdleMapDef> = {
   cadeia_f1:  { name: "Chamas do Fim",          diff: "COSMICO",   bg: mapCadeiaF1Url,  rate: 34.0, minLevel: 4000, maxLevel: 6000, element: "Fogo/Cosmico", stars: 10, entryCrystals: 8000 },
   // ═══ EVENTO MÍTICO SHINY — abre 5min a cada 1h ═══
   evento_myth: { name: "Domínio Mítico Shiny",  diff: "EVENTO",    bg: mapMythshinyEventUrl, rate: 40.0, minLevel: 1, maxLevel: 9999, element: "Todos", stars: 10 },
-  praia:    { name: "Praia Coral",             diff: "Fácil+",    bg: mapBeachUrl,     rate: 1.3, minLevel: 15, maxLevel: 40, element: "Água", stars: 1 },
-  venofogo: { name: "Pântano Ardente",         diff: "Difícil",   bg: mapVenofogoOrangeUrl, rate: 1.8, minLevel: 25, maxLevel: 120, element: "Veneno/Fogo", stars: 2 },
+  praia:    { name: "Praia Coral",             diff: "Fácil+",    bg: mapPraiaGeneratedUrl,     rate: 1.3, minLevel: 15, maxLevel: 40, element: "Água", stars: 1 },
+  venofogo: { name: "Pântano Ardente",         diff: "Difícil",   bg: mapVulcaoGeneratedUrl, rate: 1.8, minLevel: 25, maxLevel: 120, element: "Veneno/Fogo", stars: 2 },
 
-  neve:     { name: "Vale Verdejante de Neve", diff: "Médio",     bg: mapSnowUrl,      rate: 1.6, minLevel: 40, maxLevel: 65, element: "Gelo", stars: 2 },
-  deserto:  { name: "Deserto Escaldante",      diff: "Médio+",    bg: mapDesertUrl,    rate: 2.0, minLevel: 50, maxLevel: 75, element: "Fogo", stars: 2 },
-  caverna:  { name: "Caverna Rochosa",         diff: "Extremo",   bg: mapCaveUrl,      rate: 3.5, minLevel: 60, maxLevel: 90, element: "Pedra", stars: 3,
+  neve:     { name: "Vale Verdejante de Neve", diff: "Médio",     bg: mapNeveGeneratedUrl,      rate: 1.6, minLevel: 40, maxLevel: 65, element: "Gelo", stars: 2 },
+  deserto:  { name: "Deserto Escaldante",      diff: "Médio+",    bg: mapDesertoGeneratedUrl,    rate: 2.0, minLevel: 50, maxLevel: 75, element: "Fogo", stars: 2 },
+  caverna:  { name: "Caverna Rochosa",         diff: "Extremo",   bg: mapCavernaGeneratedUrl,      rate: 3.5, minLevel: 60, maxLevel: 90, element: "Pedra", stars: 3,
               cycle: { cycleMs: 2.5 * 60 * 60 * 1000, openMs: 30 * 60 * 1000 } },
-  fantasma: { name: "Cemitério Assombrado",    diff: "RAID",      bg: mapFantasmaUrl,  rate: 4.0, minLevel: 1,  maxLevel: 9999, element: "Fantasma", stars: 4, raid: true },
+  fantasma: { name: "Cemitério Assombrado",    diff: "RAID",      bg: mapFantasmaGeneratedUrl,  rate: 4.0, minLevel: 1,  maxLevel: 9999, element: "Fantasma", stars: 4, raid: true },
   // ═══ ENDGAME — cadeia progressiva, portal visível mas exige nível de treinador ═══
   vale_rochas:       { name: "Vale das Rochas",   diff: "Lendário",   bg: mapPedreiraCavernaUrl, rate: 6.0, minLevel: 50,  maxLevel: 150, element: "Pedra",  stars: 4 },
   vale_planta:       { name: "Vale Esmeralda",    diff: "Lendário+",  bg: mapPedreiraCavernaUrl, rate: 6.5, minLevel: 120, maxLevel: 220, element: "Planta", stars: 5, overlay: "rgba(70,210,90,0.42)" },
   vale_gelo:         { name: "Vale Gélido",       diff: "Mítico",     bg: mapPedreiraCavernaUrl, rate: 7.0, minLevel: 190, maxLevel: 290, element: "Gelo",   stars: 6, overlay: "rgba(140,220,255,0.45)" },
   vale_veneno:       { name: "Vale Tóxico",       diff: "Mítico+",    bg: mapPedreiraCavernaUrl, rate: 7.5, minLevel: 260, maxLevel: 360, element: "Veneno", stars: 7, overlay: "rgba(180,90,220,0.48)" },
   vale_fogo:         { name: "Vale Ígneo",        diff: "Mítico+",    bg: mapPedreiraCavernaUrl, rate: 8.0, minLevel: 330, maxLevel: 420, element: "Fogo",   stars: 7, overlay: "rgba(255,95,45,0.45)" },
-  vulcao_ativo:      { name: "Vulcão Ativo",      diff: "PRIMORDIAL", bg: mapVictoryRoadUrl,     rate: 9.0, minLevel: 400, maxLevel: 470, element: "Fogo",   stars: 8 },
+  vulcao_ativo:      { name: "Vulcão Ativo",      diff: "PRIMORDIAL", bg: mapVulcaoGeneratedUrl,     rate: 9.0, minLevel: 400, maxLevel: 470, element: "Fogo",   stars: 8 },
   nucleo_primordial: { name: "Núcleo Primordial", diff: "PRIMORDIAL", bg: mapVenenoUrl,          rate: 10.0, minLevel: 460, maxLevel: 500, element: "Misto", stars: 8 },
+
   // ═══ EVENTO GELIUS (a cada 2h, 10min de duração, troca de fase aos 5min) ═══
   gelius1: { name: "Gelius — Onda 1", diff: "EVENTO", bg: assetUrlFromJson(mapGelius1Asset), rate: 5.0, minLevel: 1,   maxLevel: 200,  element: "Gelo/Evento", stars: 5 },
   gelius2: { name: "Gelius — Onda 2", diff: "EVENTO", bg: assetUrlFromJson(mapGelius2Asset), rate: 7.0, minLevel: 400, maxLevel: 1000, element: "Gelo/Evento", stars: 8 },
@@ -563,6 +587,60 @@ const WORLD_PORTALS: WorldPortalDef[] = ENDGAME_CHAIN.flatMap((c) => {
   ];
 });
 
+// Portal da Floresta Obsidian no mapa inicial (Vale Verdejante)
+WORLD_PORTALS.push({
+  key: "arena->floresta",
+  from: "arena",
+  to: "floresta",
+  x: 400,
+  y: 400,
+  arriveX: 1000,
+  arriveY: 1000,
+  color: "#4ade80",
+  label: "Floresta Obsidian",
+  reqLevel: 1,
+});
+
+WORLD_PORTALS.push({
+  key: "floresta->arena",
+  from: "floresta",
+  to: "arena",
+  x: 1000,
+  y: 1000,
+  arriveX: 420,
+  arriveY: 420,
+  color: "#94a3b8",
+  label: "↩ Vale Verdejante",
+});
+
+// Portal da Praia no mapa inicial (Vale Verdejante)
+WORLD_PORTALS.push({
+  key: "arena->praia",
+  from: "arena",
+  to: "praia",
+  x: 1600,
+  y: 1600,
+  arriveX: 400,
+  arriveY: 400,
+  color: "#38bdf8",
+  label: "Praia Coral",
+  reqLevel: 15,
+});
+
+WORLD_PORTALS.push({
+  key: "praia->arena",
+  from: "praia",
+  to: "arena",
+  x: 400,
+  y: 400,
+  arriveX: 1600,
+  arriveY: 1600,
+  color: "#94a3b8",
+  label: "↩ Vale Verdejante",
+});
+
+
+
 // Retorna se a caverna está atualmente aberta e ms para o próximo evento (abrir/fechar)
 function caveWindow(now: number = Date.now()): { open: boolean; msUntilChange: number } {
   const c = IDLE_MAPS.caverna.cycle!;
@@ -575,6 +653,10 @@ function caveWindow(now: number = Date.now()): { open: boolean; msUntilChange: n
 function mythEventInfo(now: number = Date.now()): { open: boolean; msUntilChange: number } {
   const CYCLE = 60 * 60 * 1000;
   const OPEN = 5 * 60 * 1000;
+  // Bypassing requirements for testing
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const lvOk = true;
+
   const t = now % CYCLE;
   if (t < OPEN) return { open: true, msUntilChange: OPEN - t };
   return { open: false, msUntilChange: CYCLE - t };
@@ -734,7 +816,23 @@ function buildObstacles(worldW: number, worldH: number, mapId: IdleMapId = "aren
 
   // Cemitério Assombrado (fantasma): mesma composição do Ninho de Marimbondo,
   // porém re-tematizado — lápides gigantes no lugar dos casulos, árvores mortas ao redor.
+  if (mapId === "floresta") {
+    const list: Obstacle[] = [];
+    let id = 1;
+    const kinds = [
+      { src: treeOakUrl, w: 120, h: 140, collideR: 12, blocks: true },
+      { src: bushBerryAsset, w: 40, h: 40, collideR: 0, blocks: false },
+    ];
+    for (let i = 0; i < 40; i++) {
+      const k = kinds[Math.floor(rand() * kinds.length)];
+      const x = 50 + rand() * (worldW - 100);
+      const y = 50 + rand() * (worldH - 100);
+      list.push({ id: id++, x, y, w: k.w, h: k.h, src: typeof k.src === 'string' ? k.src : assetUrlFromJson(k.src), blocks: k.blocks, collideR: k.collideR });
+    }
+    return list;
+  }
   if (mapId === "fantasma") {
+
     const kinds = [
       { src: treeOakUrl,     w: 110, h: 124, collideR: 0,  blocks: false },
       { src: rockBoulderUrl, w:  86, h:  76, collideR: 10, blocks: true  },
@@ -785,9 +883,20 @@ function buildObstacles(worldW: number, worldH: number, mapId: IdleMapId = "aren
     return list;
   }
 
+  if (mapId === "praia") {
+    const list: Obstacle[] = [];
+    let id = 1;
+    for (let i = 0; i < 20; i++) {
+      const x = 50 + rand() * (worldW - 100);
+      const y = 50 + rand() * (worldH - 100);
+      list.push({ id: id++, x, y, w: 60, h: 60, src: rockBoulderUrl, blocks: true, collideR: 15 });
+    }
+    return list;
+  }
   // Pântano em Chamas (venofogo): MESMA composição do Vale Verdejante (arena),
   // porém re-tematizada — árvores/matos de fogo, 2 lagos de lava e um vulcão central.
   if (mapId === "venofogo") {
+
     const kinds = [
       { src: rockLavaUrl, w: 56, h: 50, collideR: 8, blocks: true },
     ];
@@ -1059,8 +1168,11 @@ const SHOP_BOOKS: ShopBook[] = [
 ];
 
 
+const INITIAL_MAP_ID = "floresta";
+
 const POTION_PRICE = 100;
 const POTION_HEAL_PCT = 0.5;
+
 
 // Espécies desbloqueadas por nível do líder — spawn cresce com o progresso
 const LEVEL_UNLOCKS: { minLv: number; species: Species[] }[] = [
@@ -1100,7 +1212,7 @@ function loadIdle(): IdleState {
       if (!uskins.includes("default")) uskins.unshift("default");
       s.unlockedSkins = uskins;
       // Sanitiza mapa removido (Pedreira Antiga)
-      if (!IDLE_MAPS[s.currentMap]) s.currentMap = "arena";
+      if (!IDLE_MAPS[s.currentMap]) s.currentMap = INITIAL_MAP_ID;
       return s;
     }
   } catch { /* ignore */ }
@@ -1112,7 +1224,8 @@ function freshIdle(): IdleState {
     startedAt: now, lastTickAt: now,
     pending: { gold: 0, rubies: 0, crystals: 0 },
     totals: { gold: 0, captured: 0, kills: 0 },
-    currentMap: "arena",
+    currentMap: INITIAL_MAP_ID,
+
     tasks: DEFAULT_TASKS(),
     mapsUnlocked: 3,
     caughtSpecies: [],
@@ -8196,10 +8309,27 @@ function IdlePage() {
                 {weather === "rain" ? "CHUVA" : "NEVE"}
               </div>
             </div>
+          {idle.currentMap === "floresta" && (
+            <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 9999 }}>
+              {[...Array(15)].map((_, i) => (
+                <div
+                  key={i}
+                  className="wx-leaf"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    "--leaf-x": `${(Math.random() - 0.5) * 300}px`,
+                    "--leaf-d": `${3 + Math.random() * 4}s`,
+                    "--leaf-r": `${180 + Math.random() * 360}deg`,
+                    animationDelay: `${Math.random() * 5}s`,
+                  } as React.CSSProperties}
+                />
+              ))}
+            </div>
           )}
 
 
             {/* Contador de jogadores online removido a pedido do usuário */}
+
 
 
 
@@ -8239,6 +8369,22 @@ function IdlePage() {
                 zIndex: 0,
               }}
             />
+
+            {/* Overlay de cor opcional por cima do fundo */}
+            {map.overlay && (
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  backgroundColor: map.overlay,
+                  mixBlendMode: "color",
+                  pointerEvents: "none",
+                  zIndex: 1,
+                }}
+              />
+            )}
+
 
             {/* Obstáculos (árvores, pedras) — z-index pela BASE (y) para o treinador passar por trás */}
             {obstacles.map((o) => (
@@ -10572,6 +10718,22 @@ function IdlePage() {
           50%  { transform: translate3d(var(--drift, 0px), 55vh, 0); }
           100% { transform: translate3d(calc(var(--drift, 0px) * -0.5), 110vh, 0); }
         }
+
+        @keyframes leaf-fall {
+          0%   { transform: translate(0, -10px) rotate(0deg); opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { transform: translate(var(--leaf-x, 20px), 110vh) rotate(var(--leaf-r, 360deg)); opacity: 0; }
+        }
+        .wx-leaf {
+          position: absolute;
+          width: 8px; height: 8px;
+          background: #4ade80;
+          box-shadow: inset -2px -2px 0 rgba(0,0,0,0.2);
+          animation: leaf-fall var(--leaf-d, 4s) linear infinite;
+          pointer-events: none;
+        }
+
 
 
         /* ===== Baús ===== */
