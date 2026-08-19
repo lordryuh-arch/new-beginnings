@@ -1,11 +1,8 @@
-import { assetUrlFromJson } from "@/lib/assetUrl";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useServerFn } from "@tanstack/react-start";
-import eggSpriteAsset from "@/assets/black-mitic-egg.png.asset.json";
-const eggSprite = assetUrlFromJson(eggSpriteAsset);
-import incubatorSpriteAsset from "@/assets/black-mitic-incubator.png.asset.json";
-const incubatorSprite = assetUrlFromJson(incubatorSpriteAsset);
+import eggSprite from "@/assets/black-mitic-egg.png";
+import incubatorSprite from "@/assets/black-mitic-incubator.png";
 import eggMusicAsset from "@/assets/egg-transitus.mp3.asset.json";
 import { ItemPixelIcon } from "@/components/ItemPixelIcon";
 import { getBlackEggSave, saveBlackEggSave } from "@/lib/blackEgg.functions";

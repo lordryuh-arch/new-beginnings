@@ -5,31 +5,18 @@ import { createPortal } from "react-dom";
 import { FlaskConical, Sparkles } from "lucide-react";
 import { ItemPixelIcon } from "@/components/ItemPixelIcon";
 import type { LucideIcon } from "lucide-react";
-import navInicioAsset from "@/assets/icons/nav-inicio.png.asset.json";
-const navInicio = assetUrlFromJson(navInicioAsset);
-import navPokemonAsset from "@/assets/icons/nav-pokemon.png.asset.json";
-const navPokemon = assetUrlFromJson(navPokemonAsset);
-import navMochilaAsset from "@/assets/icons/nav-mochila.png.asset.json";
-const navMochila = assetUrlFromJson(navMochilaAsset);
-import navBatalhaAsset from "@/assets/icons/nav-batalha.png.asset.json";
-const navBatalha = assetUrlFromJson(navBatalhaAsset);
-import navMelhoriasAsset from "@/assets/icons/nav-melhorias.png.asset.json";
-const navMelhorias = assetUrlFromJson(navMelhoriasAsset);
-import navColecaoAsset from "@/assets/icons/nav-colecao.png.asset.json";
-const navColecao = assetUrlFromJson(navColecaoAsset);
-import navLojaAsset from "@/assets/icons/nav-loja.png.asset.json";
-const navLoja = assetUrlFromJson(navLojaAsset);
-import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
-const navWallet = assetUrlFromJson(navWalletAsset);
-import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
-const navMarket = assetUrlFromJson(navMarketAsset);
-import navPokeballAsset from "@/assets/nav-pokeball.png.asset.json";
-const navPokeball = assetUrlFromJson(navPokeballAsset);
-import pokemonTabBgAsset from "@/assets/pokemon-tab-bg.jpg.asset.json";
-const pokemonTabBg = assetUrlFromJson(pokemonTabBgAsset);
+import navInicio from "@/assets/icons/nav-inicio.png";
+import navPokemon from "@/assets/icons/nav-pokemon.png";
+import navMochila from "@/assets/icons/nav-mochila.png";
+import navBatalha from "@/assets/icons/nav-batalha.png";
+import navMelhorias from "@/assets/icons/nav-melhorias.png";
+import navColecao from "@/assets/icons/nav-colecao.png";
+import navLoja from "@/assets/icons/nav-loja.png";
+import navWallet from "@/assets/icons/nav-wallet.png";
+import navMarket from "@/assets/icons/nav-market.png";
+import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
-import { WorldMapOverlay } from "@/game/WorldMapOverlay";
 import iconCrystalBlue from "@/assets/icon-crystal-blue-diamond.png.asset.json";
 import iconCashPackage from "@/assets/icon-cash-package.png.asset.json";
 import eventBannerImg from "@/assets/event-banner.png.asset.json";
@@ -45,75 +32,41 @@ import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
 import { grantEmeraldFor } from "@/lib/emerald";
 
-import chestClosedImgAsset from "@/assets/icons/chest-closed.png.asset.json";
-const chestClosedImg = assetUrlFromJson(chestClosedImgAsset);
-import chestOpenImgAsset from "@/assets/icons/chest-open.png.asset.json";
-const chestOpenImg = assetUrlFromJson(chestOpenImgAsset);
-import ballPokeImgAsset from "@/assets/items/icon-pokeball.png.asset.json";
-const ballPokeImg = assetUrlFromJson(ballPokeImgAsset);
-import ballGreatImgAsset from "@/assets/items/icon-greatball.png.asset.json";
-const ballGreatImg = assetUrlFromJson(ballGreatImgAsset);
-import ballUltraImgAsset from "@/assets/items/icon-ultraball.png.asset.json";
-const ballUltraImg = assetUrlFromJson(ballUltraImgAsset);
-import potionNewImgAsset from "@/assets/items/icon-potion.png.asset.json";
-const potionNewImg = assetUrlFromJson(potionNewImgAsset);
-import premiumBoxImgAsset from "@/assets/items/icon-premium-box.png.asset.json";
-const premiumBoxImg = assetUrlFromJson(premiumBoxImgAsset);
-import chestEmeraldImgAsset from "@/assets/chest-emerald.png.asset.json";
-const chestEmeraldImg = assetUrlFromJson(chestEmeraldImgAsset);
-import chestAmuletImgAsset from "@/assets/items/icon-chest-amulet.png.asset.json";
-const chestAmuletImg = assetUrlFromJson(chestAmuletImgAsset);
-import bagIconImgAsset from "@/assets/items/icon-bag.png.asset.json";
-const bagIconImg = assetUrlFromJson(bagIconImgAsset);
-import reviveIconImgAsset from "@/assets/items/icon-revive.png.asset.json";
-const reviveIconImg = assetUrlFromJson(reviveIconImgAsset);
-import berryIconImgAsset from "@/assets/items/icon-berry.png.asset.json";
-const berryIconImg = assetUrlFromJson(berryIconImgAsset);
-import keyIconImgAsset from "@/assets/items/icon-key.png.asset.json";
-const keyIconImg = assetUrlFromJson(keyIconImgAsset);
-import fxSlashImgAsset from "@/assets/items/fx-slash.png.asset.json";
-const fxSlashImg = assetUrlFromJson(fxSlashImgAsset);
-import fxGrassImgAsset from "@/assets/fx/fx-grass.png.asset.json";
-const fxGrassImg = assetUrlFromJson(fxGrassImgAsset);
-import fxFireImgAsset from "@/assets/fx/fx-fire.png.asset.json";
-const fxFireImg = assetUrlFromJson(fxFireImgAsset);
-import fxWaterImgAsset from "@/assets/fx/fx-water.png.asset.json";
-const fxWaterImg = assetUrlFromJson(fxWaterImgAsset);
-import fxElectricImgAsset from "@/assets/fx/fx-electric.png.asset.json";
-const fxElectricImg = assetUrlFromJson(fxElectricImgAsset);
-import fxPoisonImgAsset from "@/assets/fx/fx-poison.png.asset.json";
-const fxPoisonImg = assetUrlFromJson(fxPoisonImgAsset);
-import fxPsychicImgAsset from "@/assets/fx/fx-psychic.png.asset.json";
-const fxPsychicImg = assetUrlFromJson(fxPsychicImgAsset);
-import fxIceImgAsset from "@/assets/fx/fx-ice.png.asset.json";
-const fxIceImg = assetUrlFromJson(fxIceImgAsset);
-import fxRockImgAsset from "@/assets/fx/fx-rock.png.asset.json";
-const fxRockImg = assetUrlFromJson(fxRockImgAsset);
-import fxFightingImgAsset from "@/assets/fx/fx-fighting.png.asset.json";
-const fxFightingImg = assetUrlFromJson(fxFightingImgAsset);
-import fxFlyingImgAsset from "@/assets/fx/fx-flying.png.asset.json";
-const fxFlyingImg = assetUrlFromJson(fxFlyingImgAsset);
-import autoIconImgAsset from "@/assets/items/icon-auto.png.asset.json";
-const autoIconImg = assetUrlFromJson(autoIconImgAsset);
-import bookAtkImgAsset from "@/assets/icons/book-atk.png.asset.json";
-const bookAtkImg = assetUrlFromJson(bookAtkImgAsset);
-import bookDefImgAsset from "@/assets/icons/book-def.png.asset.json";
-const bookDefImg = assetUrlFromJson(bookDefImgAsset);
-import bookExpImgAsset from "@/assets/icons/book-exp.png.asset.json";
-const bookExpImg = assetUrlFromJson(bookExpImgAsset);
+import chestClosedImg from "@/assets/icons/chest-closed.png";
+import chestOpenImg from "@/assets/icons/chest-open.png";
+import ballPokeImg from "@/assets/items/icon-pokeball.png";
+import ballGreatImg from "@/assets/items/icon-greatball.png";
+import ballUltraImg from "@/assets/items/icon-ultraball.png";
+import potionNewImg from "@/assets/items/icon-potion.png";
+import premiumBoxImg from "@/assets/items/icon-premium-box.png";
+import chestEmeraldImg from "@/assets/chest-emerald.png";
+import chestAmuletImg from "@/assets/items/icon-chest-amulet.png";
+import bagIconImg from "@/assets/items/icon-bag.png";
+import reviveIconImg from "@/assets/items/icon-revive.png";
+import berryIconImg from "@/assets/items/icon-berry.png";
+import keyIconImg from "@/assets/items/icon-key.png";
+import fxSlashImg from "@/assets/items/fx-slash.png";
+import fxGrassImg from "@/assets/fx/fx-grass.png";
+import fxFireImg from "@/assets/fx/fx-fire.png";
+import fxWaterImg from "@/assets/fx/fx-water.png";
+import fxElectricImg from "@/assets/fx/fx-electric.png";
+import fxPoisonImg from "@/assets/fx/fx-poison.png";
+import fxPsychicImg from "@/assets/fx/fx-psychic.png";
+import fxIceImg from "@/assets/fx/fx-ice.png";
+import fxRockImg from "@/assets/fx/fx-rock.png";
+import fxFightingImg from "@/assets/fx/fx-fighting.png";
+import fxFlyingImg from "@/assets/fx/fx-flying.png";
+import autoIconImg from "@/assets/items/icon-auto.png";
+import bookAtkImg from "@/assets/icons/book-atk.png";
+import bookDefImg from "@/assets/icons/book-def.png";
+import bookExpImg from "@/assets/icons/book-exp.png";
 import potionIconAsset from "@/assets/potion-icon.png.asset.json";
-import houseLarImgAsset from "@/assets/house-lar.png.asset.json";
-const houseLarImg = assetUrlFromJson(houseLarImgAsset);
-import houseLabImgAsset from "@/assets/house-lab.png.asset.json";
-const houseLabImg = assetUrlFromJson(houseLabImgAsset);
-import walletHeroAsset from "@/assets/wallet-exchange.jpg.asset.json";
-const walletHero = assetUrlFromJson(walletHeroAsset);
-import npcOakSpriteAsset from "@/assets/npc-oak.png.asset.json";
-const npcOakSprite = assetUrlFromJson(npcOakSpriteAsset);
-import npcAbyssWitchAsset from "@/assets/npc-abyss-witch.png.asset.json";
-const npcAbyssWitch = assetUrlFromJson(npcAbyssWitchAsset);
-import continent4BgAsset from "@/assets/continent4-abyss.jpg.asset.json";
-const continent4Bg = assetUrlFromJson(continent4BgAsset);
+import houseLarImg from "@/assets/house-lar.png";
+import houseLabImg from "@/assets/house-lab.png";
+import walletHero from "@/assets/wallet-exchange.jpg";
+import npcOakSprite from "@/assets/npc-oak.png";
+import npcAbyssWitch from "@/assets/npc-abyss-witch.png";
+import continent4Bg from "@/assets/continent4-abyss.jpg";
 import npcTraderAsset from "@/assets/npc-trader.png.asset.json";
 
 import { AuthGate, loadIdentity, signOutRubyM, type LocalIdentity } from "@/components/AuthGate";
@@ -136,8 +89,7 @@ import { TraitIcon } from "@/components/TraitIcon";
 import { SynergyPanel } from "@/components/SynergyPanel";
 import { PokemonStatsCard } from "@/components/PokemonStatsCard";
 import { PokemonMarketPanel } from "@/components/PokemonMarketPanel";
-import trainerSheetAsset from "@/assets/trainer.png.asset.json";
-const trainerSheet = assetUrlFromJson(trainerSheetAsset);
+import trainerSheet from "@/assets/trainer.png";
 import skinPedroAsset from "@/assets/skins/pedro.webp.asset.json";
 import skinPhoneAsset from "@/assets/skins/phone.webp.asset.json";
 import skinGokuAsset from "@/assets/skins/goku.webp.asset.json";
@@ -168,18 +120,12 @@ type Dir = keyof typeof DIR_ROW;
 // ============ assets ============
 import idleArenaAsset from "@/assets/idle-arena.jpg.asset.json";
 import trophyIconAsset from "@/assets/trophy-icon.png.asset.json";
-import chestGrassImgAsset from "@/assets/chest-grass.png.asset.json";
-const chestGrassImg = assetUrlFromJson(chestGrassImgAsset);
-import chestFireImgAsset from "@/assets/chest-fire.png.asset.json";
-const chestFireImg = assetUrlFromJson(chestFireImgAsset);
-import chestWaterImgAsset from "@/assets/chest-water.png.asset.json";
-const chestWaterImg = assetUrlFromJson(chestWaterImgAsset);
-import chestElectricImgAsset from "@/assets/chest-electric.png.asset.json";
-const chestElectricImg = assetUrlFromJson(chestElectricImgAsset);
-import chestDarkImgAsset from "@/assets/chest-dark.png.asset.json";
-const chestDarkImg = assetUrlFromJson(chestDarkImgAsset);
-import chestDragonImgAsset from "@/assets/chest-dragon.png.asset.json";
-const chestDragonImg = assetUrlFromJson(chestDragonImgAsset);
+import chestGrassImg from "@/assets/chest-grass.png";
+import chestFireImg from "@/assets/chest-fire.png";
+import chestWaterImg from "@/assets/chest-water.png";
+import chestElectricImg from "@/assets/chest-electric.png";
+import chestDarkImg from "@/assets/chest-dark.png";
+import chestDragonImg from "@/assets/chest-dragon.png";
 const STONE_CHEST: Record<string, string> = {
   stone_grass: chestGrassImg, stone_fire: chestFireImg, stone_water: chestWaterImg,
   stone_electric: chestElectricImg, stone_dark: chestDarkImg, stone_dragon: chestDragonImg,
@@ -215,8 +161,7 @@ import mapOddish1Asset from "@/assets/map-oddish-1.png.asset.json";
 import mapGrassOddish2Asset from "@/assets/grass-oddish-2.png.asset.json";
 import mapGrassOddish3Asset from "@/assets/grass-oddish-3.png.asset.json";
 import mapOddish2Asset from "@/assets/map-oddish-2.png.asset.json";
-import mapOddish3UrlAsset from "@/assets/map-oddish3.png.asset.json";
-const mapOddish3Url = assetUrlFromJson(mapOddish3UrlAsset);
+import mapOddish3Url from "@/assets/map-oddish3.png";
 import absolStartMapAsset from "@/assets/absol-start-map.png.asset.json";
 import governanteHallMapAsset from "@/assets/governante-hall-map.png.asset.json";
 import continent3Map1Asset from "@/assets/maps/map-continent3-1.png.asset.json";
@@ -247,14 +192,11 @@ import orbXpMinorAsset from "@/assets/orb-xp-minor.png.asset.json";
 import orbXpMajorAsset from "@/assets/orb-xp-major.png.asset.json";
 import orbXpSupremeAsset from "@/assets/orb-xp-supreme.png.asset.json";
 import orbXpTeamAsset from "@/assets/orb-xp-team.png.asset.json";
-import orbIncubatorImgAsset from "@/assets/orb-incubator.png.asset.json";
-const orbIncubatorImg = assetUrlFromJson(orbIncubatorImgAsset);
+import orbIncubatorImg from "@/assets/orb-incubator.png";
 import redLakeAsset from "@/assets/red-lake.png.asset.json";
 import volcanoAsset from "@/assets/volcano.png.asset.json";
-import mapBeachUrlAsset from "@/assets/map-beach-idle.png.asset.json";
-const mapBeachUrl = assetUrlFromJson(mapBeachUrlAsset);
-import collectIconImgAsset from "@/assets/icons/collect-icon.png.asset.json";
-const collectIconImg = assetUrlFromJson(collectIconImgAsset);
+import mapBeachUrl from "@/assets/map-beach-idle.png";
+import collectIconImg from "@/assets/icons/collect-icon.png";
 import rubyGemAsset from "@/assets/ruby-gem.png.asset.json";
 import crystalRedAsset from "@/assets/items/icon-crystal-red.png.asset.json";
 const crystalRedImg = assetUrlFromJson(crystalRedAsset);
@@ -276,29 +218,18 @@ const caveCrystalUrl = assetUrlFromJson(caveCrystalAsset);
 const crystalClusterUrl = assetUrlFromJson(crystalClusterAsset);
 
 // Pokemon GIFs (reusa os que já existem no projeto)
-import charizardGifAsset from "@/assets/charizard.gif.asset.json";
-const charizardGif = assetUrlFromJson(charizardGifAsset);
-import pikachuGifAsset from "@/assets/pikachu.gif.asset.json";
-const pikachuGif = assetUrlFromJson(pikachuGifAsset);
-import dragoniteGifAsset from "@/assets/dragonite.gif.asset.json";
-const dragoniteGif = assetUrlFromJson(dragoniteGifAsset);
-import bulbasaurGifAsset from "@/assets/bulbasaur.gif.asset.json";
-const bulbasaurGif = assetUrlFromJson(bulbasaurGifAsset);
-import charmanderGifAsset from "@/assets/charmander.gif.asset.json";
-const charmanderGif = assetUrlFromJson(charmanderGifAsset);
-import squirtleGifAsset from "@/assets/squirtle.gif.asset.json";
-const squirtleGif = assetUrlFromJson(squirtleGifAsset);
+import charizardGif from "@/assets/charizard.gif";
+import pikachuGif from "@/assets/pikachu.gif";
+import dragoniteGif from "@/assets/dragonite.gif";
+import bulbasaurGif from "@/assets/bulbasaur.gif";
+import charmanderGif from "@/assets/charmander.gif";
+import squirtleGif from "@/assets/squirtle.gif";
 import rattataFAsset from "@/assets/rattata-f.gif.asset.json";
-import pidgeyGifAsset from "@/assets/pidgey.gif.asset.json";
-const pidgeyGif = assetUrlFromJson(pidgeyGifAsset);
-import beedrillGifAsset from "@/assets/beedrill.gif.asset.json";
-const beedrillGif = assetUrlFromJson(beedrillGifAsset);
-import butterfreeGifAsset from "@/assets/butterfree.gif.asset.json";
-const butterfreeGif = assetUrlFromJson(butterfreeGifAsset);
-import pinsirGifAsset from "@/assets/pinsir.gif.asset.json";
-const pinsirGif = assetUrlFromJson(pinsirGifAsset);
-import golemGifAsset from "@/assets/golem.gif.asset.json";
-const golemGif = assetUrlFromJson(golemGifAsset);
+import pidgeyGif from "@/assets/pidgey.gif";
+import beedrillGif from "@/assets/beedrill.gif";
+import butterfreeGif from "@/assets/butterfree.gif";
+import pinsirGif from "@/assets/pinsir.gif";
+import golemGif from "@/assets/golem.gif";
 import jolteonIdleAsset from "@/assets/jolteon.gif.asset.json";
 import laprasIdleAsset from "@/assets/lapras.gif.asset.json";
 import blazikenIdleAsset from "@/assets/blaziken.gif.asset.json";
@@ -334,12 +265,9 @@ import magnemiteAsset from "@/assets/magnemite.gif.asset.json";
 import nidoranFAsset from "@/assets/nidoran-f.gif.asset.json";
 import snorlaxAsset from "@/assets/snorlax.gif.asset.json";
 import gloomAsset from "@/assets/gloom.gif.asset.json";
-import caterpieGifAsset from "@/assets/caterpie.gif.asset.json";
-const caterpieGif = assetUrlFromJson(caterpieGifAsset);
-import metapodGifAsset from "@/assets/metapod.gif.asset.json";
-const metapodGif = assetUrlFromJson(metapodGifAsset);
-import vulpixGifAsset from "@/assets/vulpix.gif.asset.json";
-const vulpixGif = assetUrlFromJson(vulpixGifAsset);
+import caterpieGif from "@/assets/caterpie.gif";
+import metapodGif from "@/assets/metapod.gif";
+import vulpixGif from "@/assets/vulpix.gif";
 import pidgeottoAsset from "@/assets/pidgeotto.gif.asset.json";
 import raticateFAsset from "@/assets/raticate-f.gif.asset.json";
 import fearowAsset from "@/assets/fearow.gif.asset.json";
@@ -411,34 +339,20 @@ const moltresUrl = assetUrlFromJson(moltresAsset);
 const zapdosUrl = assetUrlFromJson(zapdosAsset);
 const articunoUrl = assetUrlFromJson(articunoAsset);
 // ═══ MTC — Míticos Brilhantes ═══
-import abomasnowGifAsset from "@/assets/abomasnow.gif.asset.json";
-const abomasnowGif = assetUrlFromJson(abomasnowGifAsset);
-import cloysterGifAsset from "@/assets/cloyster.gif.asset.json";
-const cloysterGif = assetUrlFromJson(cloysterGifAsset);
-import cloysterShinyGifAsset from "@/assets/cloyster-shiny.gif.asset.json";
-const cloysterShinyGif = assetUrlFromJson(cloysterShinyGifAsset);
-import exeggutorGifAsset from "@/assets/exeggutor.gif.asset.json";
-const exeggutorGif = assetUrlFromJson(exeggutorGifAsset);
-import exeggutorShinyGifAsset from "@/assets/exeggutor-shiny.gif.asset.json";
-const exeggutorShinyGif = assetUrlFromJson(exeggutorShinyGifAsset);
-import feraligatrGifAsset from "@/assets/feraligatr.gif.asset.json";
-const feraligatrGif = assetUrlFromJson(feraligatrGifAsset);
-import heracrossGifAsset from "@/assets/heracross.gif.asset.json";
-const heracrossGif = assetUrlFromJson(heracrossGifAsset);
-import heracrossShinyGifAsset from "@/assets/heracross-shiny.gif.asset.json";
-const heracrossShinyGif = assetUrlFromJson(heracrossShinyGifAsset);
-import hitmonchanShinyGifAsset from "@/assets/hitmonchan-shiny.gif.asset.json";
-const hitmonchanShinyGif = assetUrlFromJson(hitmonchanShinyGifAsset);
-import kangaskhanGifAsset from "@/assets/kangaskhan.gif.asset.json";
-const kangaskhanGif = assetUrlFromJson(kangaskhanGifAsset);
-import meganiumGifAsset from "@/assets/meganium.gif.asset.json";
-const meganiumGif = assetUrlFromJson(meganiumGifAsset);
-import meganiumShinyGifAsset from "@/assets/meganium-shiny.gif.asset.json";
-const meganiumShinyGif = assetUrlFromJson(meganiumShinyGifAsset);
-import moltresShinyGifAsset from "@/assets/moltres-shiny.gif.asset.json";
-const moltresShinyGif = assetUrlFromJson(moltresShinyGifAsset);
-import onixShinyGifAsset from "@/assets/onix-shiny.gif.asset.json";
-const onixShinyGif = assetUrlFromJson(onixShinyGifAsset);
+import abomasnowGif from "@/assets/abomasnow.gif";
+import cloysterGif from "@/assets/cloyster.gif";
+import cloysterShinyGif from "@/assets/cloyster-shiny.gif";
+import exeggutorGif from "@/assets/exeggutor.gif";
+import exeggutorShinyGif from "@/assets/exeggutor-shiny.gif";
+import feraligatrGif from "@/assets/feraligatr.gif";
+import heracrossGif from "@/assets/heracross.gif";
+import heracrossShinyGif from "@/assets/heracross-shiny.gif";
+import hitmonchanShinyGif from "@/assets/hitmonchan-shiny.gif";
+import kangaskhanGif from "@/assets/kangaskhan.gif";
+import meganiumGif from "@/assets/meganium.gif";
+import meganiumShinyGif from "@/assets/meganium-shiny.gif";
+import moltresShinyGif from "@/assets/moltres-shiny.gif";
+import onixShinyGif from "@/assets/onix-shiny.gif";
 
 
 
@@ -467,8 +381,6 @@ const mapCadeiaAbUrl = assetUrlFromJson(mapCadeiaAbAsset);
 const mapCadeiaAb1Url = assetUrlFromJson(mapCadeiaAb1Asset);
 const mapCadeiaF1Url = assetUrlFromJson(mapCadeiaF1Asset);
 const mapMythshinyEventUrl = assetUrlFromJson(mapMythshinyEventAsset);
-import iconMasterballAsset from "@/assets/ball-master.png.asset.json";
-const iconMasterballUrl = assetUrlFromJson(iconMasterballAsset);
 const iceBallIconUrl = assetUrlFromJson(iceBallIconAsset);
 const scrollTeleportUrl = assetUrlFromJson(scrollTeleportAsset);
 // URLs dos 10 novos mapas endgame
@@ -495,9 +407,9 @@ const orbXpMajorUrl = assetUrlFromJson(orbXpMajorAsset);
 const orbXpSupremeUrl = assetUrlFromJson(orbXpSupremeAsset);
 const orbXpTeamUrl = assetUrlFromJson(orbXpTeamAsset);
 // Ícones "de buff" bonitos (HUD do treinador) — orb XP, incenso e orb de time
-const buffOrbXpUrl = assetUrlFromJson(orbXpMajorAsset);
-const buffIncenseHoneyUrl = assetUrlFromJson(orbXpMinorAsset);
-const buffTeamOrbUrl = assetUrlFromJson(orbXpTeamAsset);
+const buffOrbXpUrl = (new URL("../assets/buff-orb-xp.png", import.meta.url)).href;
+const buffIncenseHoneyUrl = (new URL("../assets/buff-incense-honey.png", import.meta.url)).href;
+const buffTeamOrbUrl = (new URL("../assets/buff-team-orb.png", import.meta.url)).href;
 const npcTraderUrl = assetUrlFromJson(npcTraderAsset);
 const redLakeUrl = assetUrlFromJson(redLakeAsset);
 const volcanoUrl = assetUrlFromJson(volcanoAsset);
@@ -1004,7 +916,6 @@ function buildObstacles(worldW: number, worldH: number, mapId: IdleMapId = "aren
   return list;
 }
 
-type EggId = "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite";
 type Task = { id: string; title: string; reward: number; progress: number; target: number; done: boolean };
 type IdleState = {
   startedAt: number;
@@ -1104,10 +1015,9 @@ const ITEM_IMG: Record<string, string> = {
   premium_box: premiumBoxImg,
   bau_esmeralda: chestEmeraldImg,
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
-  orb_xp_supreme_24h: assetUrlFromJson(orbXpSupremeAsset),
-  incenso_mel_raro_24h: assetUrlFromJson(orbXpMinorAsset),
+  orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
+  incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
   safira_verde: assetUrlFromJson(safiraVerdeAsset),
-  masterball: iconMasterballUrl,
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
   { id: "potion",    name: "Poção",     icon: "🧪", chance: 0.30 },
@@ -1129,7 +1039,7 @@ const ALL_BALLS: ShopBall[] = [
   { id: "pokeball",   name: "Pokébola",   price: 500,    img: ballPokeImg,  captureMult: 1 },
   { id: "greatball",  name: "Great Ball", price: 5000,   img: ballGreatImg, captureMult: 2 },
   { id: "ultraball",  name: "Ultra Ball", price: 15000,  img: ballUltraImg, captureMult: 3.5 },
-  { id: "masterball", name: "Master Ball", price: 999999, img: iconMasterballUrl, captureMult: 999 },
+  { id: "masterball", name: "Master Ball", price: 999999, img: ballUltraImg, captureMult: 999 },
 ];
 
 type ShopBook = { id: "book_atk" | "book_def" | "book_exp" | "book_exp_big" | "book_exp_max" | "book_vip" | "book_vip_30" | "book_vip_60" | "orb_xp_minor" | "orb_xp_major" | "orb_xp_supreme" | "orb_team"; name: string; desc: string; price: number; img: string; currency?: "crystals" | "gold"; priceGold?: number };
@@ -1137,8 +1047,7 @@ const SHOP_BOOKS: ShopBook[] = [
   { id: "book_atk", name: "Livro de Ataque", desc: "+10% de dano permanente por uso", price: 100, img: bookAtkImg },
   { id: "book_def", name: "Livro de Defesa", desc: "-10% de dano recebido por uso",  price: 100, img: bookDefImg },
   { id: "book_exp", name: "Livro de EXP",    desc: "+30% EXP em batalhas por 1 hora",   price: 30, img: bookExpImg },
-  { id: "book_exp_big", name: "Livro de EXP Raro", desc: "+20% EXP por 1 hora", price: 300, img: bookExpImg },
-  { id: "book_exp_max", name: "Livro de EXP Lendário", desc: "+30% EXP por 1 hora", price: 900, img: bookExpImg },
+
   { id: "book_vip_30", name: "Livro VIP 30d ✦✦", desc: "+30% ouro e +30% EXP por 30 DIAS", price: 500, img: bookExpImg },
   { id: "book_vip_60", name: "Livro VIP 60d ✦✦✦", desc: "+40% ouro e +40% EXP por 60 DIAS", price: 1000, img: bookExpImg },
   // ═══ ORB DE XP FRACO — único vendido; os fortes vêm da troca com NPC ═══
@@ -1208,8 +1117,8 @@ function freshIdle(): IdleState {
     seenSpecies: [],
     collection: [],
     craftPoints: 0,
-    items: { premium_box: 1, pokeball: 20 },
-    bank: { gold: 5000, crystals: 50 },
+    items: { premium_box: 1 },
+    bank: { gold: 0, crystals: 30 },
     buffs: { atk: 0, def: 0, expMult: 0, expMultUntil: 0, goldMult: 0, goldMultUntil: 0, honeyUntil: 0, honeyRareUntil: 0, orbMult: 0, orbUntil: 0, orbId: "", teamOrbUntil: 0 },
     globalStats: { attack: 0, speed: 0, synergy: 0, resistance: 0, mastery: 0 },
     autoHeal: { enabled: true, threshold: 0.5 },
@@ -5625,12 +5534,7 @@ function IdlePage() {
 
   // Loja — apenas 1 ovo místico (500 cristais), raridade totalmente aleatória
   // Loja — ovos temporariamente removidos da venda
-  const SHOP_EGGS: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[] = [
-    { id: "egg_common", name: "Ovo Comum", price: 1000, currency: "gold", desc: "Um ovo básico que pode chocar espécies comuns.", color: "#c8b8d0" },
-    { id: "egg_rare", name: "Ovo Raro", price: 50, currency: "crystals", desc: "Aumenta a chance de Pokémon raros.", color: "#6bd4ff" },
-    { id: "egg_epic", name: "Ovo Épico", price: 150, currency: "crystals", desc: "Alta chance de Pokémon épicos.", color: "#c084fc" },
-    { id: "egg_mystic", name: "Ovo Místico", price: 500, currency: "crystals", desc: "Ovo lendário com chance de Míticos.", color: "#ff97e1" },
-  ];
+  const SHOP_EGGS: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[] = [];
 
   const buyEgg = (e: typeof SHOP_EGGS[number]) => {
     setIdle((s) => {
@@ -7971,28 +7875,6 @@ function IdlePage() {
               );
             })()}
             <button onClick={() => { playClick(); setTab("config"); }} style={{ ...zoomBtn, marginTop: 6, fontSize: 14 }} title="Configurações">⚙</button>
-            <button
-              onClick={() => { playClick(); setWorldMapOpen(true); }}
-              style={{
-                ...zoomBtn,
-                marginTop: 4,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "linear-gradient(180deg, #3a2a5c, #1a1030)",
-                border: "1px solid #f5cf6b",
-                boxShadow: "0 0 10px rgba(245,207,107,0.4)"
-              }}
-              title="Abrir Mapa Mundi (M)"
-            >
-              <img
-                src={assetUrlFromJson(iconWorldGlobe)}
-                alt="Mapa Mundi"
-                width={22}
-                height={22}
-                style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 4px #f5cf6b)" }}
-              />
-            </button>
             <button
               onClick={() => { playClick(); pushChat("🏆 Ranked temporariamente bloqueado.", "info"); }}
               style={{
@@ -12193,25 +12075,6 @@ function IdlePage() {
           pushChat(`🐺✦ Governante consumiu ${use}× Carta Riolu Suprema e materializou ${use}× RIOLU BLACK MITIC BRILHANT PLUS Lv 1000 na Coleção.`, "cap");
         }}
       />
-      <WorldMapOverlay
-        isOpen={worldMapOpen}
-        onClose={() => setWorldMapOpen(false)}
-        trainerLevel={idle.trainerLevel ?? 1}
-        currentMap={idle.currentMap}
-        items={idle.items ?? {}}
-        onTeleport={(mapId) => {
-          setIdle(s => ({ ...s, currentMap: mapId as IdleMapId }));
-          setTrainerPos({ x: WORLD_W / 2, y: WORLD_H / 2 });
-          setEnemies([]);
-          pushChat(`🌍 Viajando para ${IDLE_MAPS[mapId as IdleMapId]?.name}...`, "info");
-        }}
-        onConsumeTeleport={() => {
-          setIdle(s => ({
-            ...s,
-            items: { ...s.items, scroll_teleport: Math.max(0, (s.items.scroll_teleport ?? 0) - 1) }
-          }));
-        }}
-      />
     </div>
 
 
@@ -12630,8 +12493,8 @@ function TabOverlay({
   onBuyTeleportScroll: (qty?: number) => void;
   onBuyBook: (bk: ShopBook, qty?: number) => void;
   onBuyPotion: (qty?: number) => void;
-  onBuyEgg: (e: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }) => void;
-  shopEggs: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[];
+  onBuyEgg: (e: { id: "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite"; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }) => void;
+  shopEggs: { id: "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite"; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[];
 
   onBuyChestAmulet: () => void;
 
@@ -13131,7 +12994,7 @@ function TabOverlay({
 
       {tab === "mochila" && (() => {
         const NAMES: Record<string, string> = {
-          potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
+          potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
           book_atk: "Livro Ataque", book_def: "Livro Defesa", book_exp: "Livro EXP",
           book_exp_big: "Livro EXP Raro", book_exp_max: "Livro EXP Lendário", book_vip: "Livro VIP ✦",
           book_vip_30: "Livro VIP 30d ✦✦", book_vip_60: "Livro VIP 60d ✦✦✦",
@@ -13160,7 +13023,6 @@ function TabOverlay({
           pokeball: "Pokébola padrão. Chance base de captura.",
           greatball: "Great Ball. Melhor chance de captura contra pokémon fortes.",
           ultraball: "Ultra Ball. Alta chance de captura, essencial contra míticos.",
-          masterball: "Master Ball. Captura infalível (100% de chance).",
           book_atk: "Aumenta o Ataque do time em batalha (permanente ao usar).",
           book_def: "Aumenta a Defesa do time em batalha (permanente ao usar).",
           book_exp: "Livro de EXP · +10% EXP por 1 hora.",
@@ -15037,7 +14899,7 @@ function WalletScreen({
   const sellGain = sellAmt * 800;
 
   const ITEM_NAMES: Record<string, string> = {
-    potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
+    potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
     stone_grass: "Stone Verdejante 🌿", stone_fire: "Stone Ígnea 🔥", stone_water: "Stone Aquática 💧",
     stone_electric: "Stone Elétrica ⚡", stone_dark: "Stone Sombria 🌑", stone_dragon: "Stone Dragão 🐉",
     egg_common: "Ovo Comum", egg_rare: "Ovo Raro", egg_epic: "Ovo Épico", egg_mystic: "Ovo Místico",
@@ -15192,7 +15054,7 @@ function MarketScreen({
   npcPrices: Record<string, number>;
 }) {
   const LABELS: Record<string, string> = {
-    pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
+    pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
     chest_amulet: "Amuleto do Baú",
     potion: "Poção",
     stone_grass: "Stone Verdejante 🌿", stone_fire: "Stone Ígnea 🔥",

@@ -1,4 +1,3 @@
-import { assetUrlFromJson } from "@/lib/assetUrl";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import apriRed from "@/assets/apricorn/red.png.asset.json";
 import apriBlu from "@/assets/apricorn/blu.png.asset.json";
@@ -8,13 +7,10 @@ import apriWht from "@/assets/apricorn/wht.png.asset.json";
 import apriYlw from "@/assets/apricorn/ylw.png.asset.json";
 import apriGen from "@/assets/apricorn/pnk.png.asset.json";
 
-import iconPokeballAsset from "@/assets/icon-pokeball.png.asset.json";
-const iconPokeball = assetUrlFromJson(iconPokeballAsset);
-import iconGreatballAsset from "@/assets/icon-greatball.png.asset.json";
-const iconGreatball = assetUrlFromJson(iconGreatballAsset);
+import iconPokeball from "@/assets/icon-pokeball.png";
+import iconGreatball from "@/assets/icon-greatball.png";
 
-import iconFastballAsset from "@/assets/icon-fastball.png.asset.json";
-const iconFastball = assetUrlFromJson(iconFastballAsset);
+import iconFastball from "@/assets/icon-fastball.png";
 
 export type ApricornId = "generic" | "red" | "blue" | "green" | "black" | "white" | "yellow";
 export type KurtBallId = "pokeball" | "greatball" | "fastball";

@@ -1,18 +1,11 @@
-import { assetUrlFromJson } from "@/lib/assetUrl";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { loadCraftStore, saveCraftStore, type CraftId } from "@/components/VelhoDosMaresOverlay";
-import imgMadeiraAsset from "@/assets/craft/madeira.png.asset.json";
-const imgMadeira = assetUrlFromJson(imgMadeiraAsset);
-import imgPecasAsset from "@/assets/craft/pecas.png.asset.json";
-const imgPecas = assetUrlFromJson(imgPecasAsset);
-import imgCordaAsset from "@/assets/craft/corda.png.asset.json";
-const imgCorda = assetUrlFromJson(imgCordaAsset);
-import imgCartaAsset from "@/assets/craft/carta.png.asset.json";
-const imgCarta = assetUrlFromJson(imgCartaAsset);
-import imgAncoraAsset from "@/assets/craft/ancora.png.asset.json";
-const imgAncora = assetUrlFromJson(imgAncoraAsset);
-import imgCombustivelAsset from "@/assets/craft/combustivel.png.asset.json";
-const imgCombustivel = assetUrlFromJson(imgCombustivelAsset);
+import imgMadeira from "@/assets/craft/madeira.png";
+import imgPecas from "@/assets/craft/pecas.png";
+import imgCorda from "@/assets/craft/corda.png";
+import imgCarta from "@/assets/craft/carta.png";
+import imgAncora from "@/assets/craft/ancora.png";
+import imgCombustivel from "@/assets/craft/combustivel.png";
 
 
 

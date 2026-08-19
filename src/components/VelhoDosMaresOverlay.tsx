@@ -1,35 +1,20 @@
-import { assetUrlFromJson } from "@/lib/assetUrl";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
-import imgMadeiraAsset from "@/assets/craft/madeira.png.asset.json";
-const imgMadeira = assetUrlFromJson(imgMadeiraAsset);
-import imgPecasAsset from "@/assets/craft/pecas.png.asset.json";
-const imgPecas = assetUrlFromJson(imgPecasAsset);
-import imgCordaAsset from "@/assets/craft/corda.png.asset.json";
-const imgCorda = assetUrlFromJson(imgCordaAsset);
-import imgAncoraAsset from "@/assets/craft/ancora.png.asset.json";
-const imgAncora = assetUrlFromJson(imgAncoraAsset);
-import imgCartaAsset from "@/assets/craft/carta.png.asset.json";
-const imgCarta = assetUrlFromJson(imgCartaAsset);
-import imgCombustivelAsset from "@/assets/craft/combustivel.png.asset.json";
-const imgCombustivel = assetUrlFromJson(imgCombustivelAsset);
+import imgMadeira from "@/assets/craft/madeira.png";
+import imgPecas from "@/assets/craft/pecas.png";
+import imgCorda from "@/assets/craft/corda.png";
+import imgAncora from "@/assets/craft/ancora.png";
+import imgCarta from "@/assets/craft/carta.png";
+import imgCombustivel from "@/assets/craft/combustivel.png";
 
 // Materiais do mercador (mesmos itens / mesmos ícones)
-import imgLenhaAsset from "@/assets/materials/lenha.png.asset.json";
-const imgLenha = assetUrlFromJson(imgLenhaAsset);
-import imgFibraAsset from "@/assets/materials/fibra.png.asset.json";
-const imgFibra = assetUrlFromJson(imgFibraAsset);
-import imgFerroAsset from "@/assets/materials/ferro.png.asset.json";
-const imgFerro = assetUrlFromJson(imgFerroAsset);
-import imgPedraAsset from "@/assets/materials/pedra.png.asset.json";
-const imgPedra = assetUrlFromJson(imgPedraAsset);
-import imgBronzeAsset from "@/assets/materials/bronze.png.asset.json";
-const imgBronze = assetUrlFromJson(imgBronzeAsset);
-import imgOleoAsset from "@/assets/materials/oleo.png.asset.json";
-const imgOleo = assetUrlFromJson(imgOleoAsset);
-import imgChicoteAsset from "@/assets/materials/chicote.png.asset.json";
-const imgChicote = assetUrlFromJson(imgChicoteAsset);
-import imgSucataAsset from "@/assets/materials/sucata.png.asset.json";
-const imgSucata = assetUrlFromJson(imgSucataAsset);
+import imgLenha from "@/assets/materials/lenha.png";
+import imgFibra from "@/assets/materials/fibra.png";
+import imgFerro from "@/assets/materials/ferro.png";
+import imgPedra from "@/assets/materials/pedra.png";
+import imgBronze from "@/assets/materials/bronze.png";
+import imgOleo from "@/assets/materials/oleo.png";
+import imgChicote from "@/assets/materials/chicote.png";
+import imgSucata from "@/assets/materials/sucata.png";
 
 import {
   loadMaterialsStore,
