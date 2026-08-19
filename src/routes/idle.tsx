@@ -12122,7 +12122,7 @@ function IdlePage() {
     
 
 
-  );
+  </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>);
 }</div>
 // ============ Componentes visuais ============
 function Panel({ title, accent, children }: any) {
