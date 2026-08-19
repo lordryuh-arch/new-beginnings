@@ -7012,7 +7012,8 @@ function IdlePage() {
   );
 
   return (
-    <>
+    <div id=\"idle-root-container\">
+
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -17280,7 +17281,8 @@ function GovernanteDialog(props: {
         </div>
       </div>
     </div>
-    </>
+    </div>
+
   );
 }
 
