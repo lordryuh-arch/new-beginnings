@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WORLD_REGIONS, WorldRegion } from './worldMap';
 import { assetUrlFromJson } from '@/lib/assetUrl';
 import overworldAsset from '@/assets/world/overworld.png.asset.json';
@@ -25,7 +25,23 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
 }) => {
   const [selectedRegion, setSelectedRegion] = useState<WorldRegion | null>(null);
   const [hoverRegion, setHoverRegion] = useState<WorldRegion | null>(null);
+  const [activeParticles, setActiveParticles] = useState<{x: number, y: number, id: number}[]>([]);
   
+  useEffect(() => {
+    if (!isOpen) return;
+    const interval = setInterval(() => {
+      setActiveParticles(prev => {
+        const newPart = {
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          id: Math.random()
+        };
+        return [...prev.slice(-20), newPart];
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const mapUrl = assetUrlFromJson(overworldAsset);
@@ -34,7 +50,6 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
   const handleEnterRegion = (region: WorldRegion) => {
     if (trainerLevel < region.requiredLevel) return;
     
-    // Teleporta para o primeiro mapa da região
     const targetMap = region.mapIds[0];
     if (targetMap === currentMap) {
       onClose();
@@ -43,15 +58,9 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
 
     if (teleportScrolls > 0) {
       onConsumeTeleport();
-      onTeleport(targetMap);
-      onClose();
-    } else {
-      // Se não tiver scroll, talvez apenas feche ou mostre aviso? 
-      // O prompt diz "clicar e teleportar", assumiremos que consome se tiver.
-      // Se for gratuito, basta remover a verificação.
-      onTeleport(targetMap);
-      onClose();
     }
+    onTeleport(targetMap);
+    onClose();
   };
 
   return (
@@ -60,13 +69,13 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
         position: 'fixed',
         inset: 0,
         zIndex: 10005,
-        background: 'rgba(0,0,0,0.85)',
+        background: 'rgba(5, 2, 10, 0.92)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
-        backdropFilter: 'blur(8px)',
-        fontFamily: 'monospace'
+        backdropFilter: 'blur(12px)',
+        fontFamily: "'Press Start 2P', monospace"
       }}
       onClick={onClose}
     >
@@ -74,209 +83,249 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
         style={{
           width: '95vw',
           height: '90vh',
-          maxWidth: 1200,
+          maxWidth: 1300,
           background: '#0b0510',
-          border: '2px solid #f5cf6b',
-          borderRadius: 16,
+          border: '3px solid #f5cf6b',
+          borderRadius: 4,
           position: 'relative',
           overflow: 'hidden',
-          boxShadow: '0 0 40px rgba(245,207,107,0.3)',
+          boxShadow: '0 0 60px rgba(0,0,0,1), 0 0 20px rgba(245,207,107,0.2)',
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          imageRendering: 'pixelated'
         }}
         onClick={e => e.stopPropagation()}
       >
+        {/* Animated Background Particles */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1 }}>
+          {activeParticles.map(p => (
+            <div key={p.id} style={{
+              position: 'absolute',
+              left: `${p.x}%`,
+              top: `${p.y}%`,
+              width: 2,
+              height: 2,
+              background: '#f5cf6b',
+              opacity: 0.3,
+              animation: 'floatParticle 3s linear forwards'
+            }} />
+          ))}
+        </div>
+
         {/* Header */}
         <div style={{
-          padding: '12px 20px',
-          background: 'linear-gradient(180deg, #1a1030, #0b0510)',
-          borderBottom: '1px solid #f5cf6b44',
+          padding: '16px 24px',
+          background: 'rgba(26, 16, 48, 0.8)',
+          borderBottom: '2px solid #f5cf6b44',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          zIndex: 10
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <img src={assetUrlFromJson(iconWorldGlobe)} width={24} height={24} style={{ imageRendering: 'pixelated' }} />
-            <h2 style={{ color: '#f5cf6b', margin: 0, fontSize: 18, letterSpacing: 2 }}>MAPA MUNDI</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+            <img src={assetUrlFromJson(iconWorldGlobe)} width={32} height={32} style={{ filter: 'drop-shadow(0 0 8px #f5cf6b)' }} />
+            <div>
+              <h2 style={{ color: '#f5cf6b', margin: 0, fontSize: 16, textShadow: '2px 2px #000' }}>RUBYM WORLD MAP</h2>
+              <div style={{ fontSize: 8, color: '#8a7a9c', marginTop: 4 }}>DISCOVER THE ANCIENT SECRETS</div>
+            </div>
           </div>
           <button 
             onClick={onClose}
             style={{
-              background: 'transparent',
-              border: '1px solid #f5cf6b',
-              color: '#f5cf6b',
-              padding: '4px 12px',
-              borderRadius: 6,
+              background: '#3a1010',
+              border: '2px solid #ff5252',
+              color: '#ff5252',
+              padding: '8px 16px',
+              fontSize: 10,
               cursor: 'pointer',
-              fontWeight: 900
+              boxShadow: '2px 2px #000'
             }}
-          >FECHAR [ESC]</button>
+          >CLOSE [ESC]</button>
         </div>
 
-        {/* Map Area */}
-        <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#000' }}>
-          {/* Background Map Image */}
-          <div style={{
-            width: '100%',
-            height: '100%',
-            backgroundImage: `url(${mapUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            imageRendering: 'pixelated',
-            opacity: 0.8
-          }} />
+        {/* Main Content Area */}
+        <div style={{ flex: 1, display: 'flex', position: 'relative', zIndex: 5 }}>
+          {/* Map Section */}
+          <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#000', borderRight: '2px solid #f5cf6b44' }}>
+            <div style={{
+              width: '100%',
+              height: '100%',
+              backgroundImage: `url(${mapUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.7,
+              transition: 'transform 0.5s ease-out',
+              transform: selectedRegion ? 'scale(1.1)' : 'scale(1)'
+            }} />
 
-          {/* Regions Layer */}
-          <div style={{ position: 'absolute', inset: 0 }}>
-            {WORLD_REGIONS.map(region => {
-              const isLocked = trainerLevel < region.requiredLevel;
-              const isSelected = selectedRegion?.id === region.id;
-              const isHovered = hoverRegion?.id === region.id;
-              
-              return (
-                <div
-                  key={region.id}
-                  style={{
-                    position: 'absolute',
-                    left: `${region.x}%`,
-                    top: `${region.y}%`,
-                    transform: 'translate(-50%, -50%)',
-                    cursor: 'pointer',
-                    zIndex: isHovered || isSelected ? 10 : 5
-                  }}
-                  onMouseEnter={() => setHoverRegion(region)}
-                  onMouseLeave={() => setHoverRegion(null)}
-                  onClick={() => setSelectedRegion(region)}
-                >
-                  {/* Region Marker */}
-                  <div style={{
-                    width: 24,
-                    height: 24,
-                    borderRadius: '50%',
-                    background: isLocked ? '#444' : (isSelected ? '#f5cf6b' : '#fff'),
-                    border: '2px solid #000',
-                    boxShadow: isLocked ? 'none' : `0 0 15px ${isSelected ? '#f5cf6b' : '#fff'}`,
-                    display: 'grid',
-                    placeItems: 'center',
-                    transition: 'all 0.2s'
-                  }}>
-                    {isLocked && <span style={{ fontSize: 12 }}>🔒</span>}
-                  </div>
-
-                  {/* Region Name Tag */}
-                  {(isHovered || isSelected) && (
-                    <div style={{
+            {/* Region Markers */}
+            <div style={{ position: 'absolute', inset: 0 }}>
+              {WORLD_REGIONS.map(region => {
+                const isLocked = trainerLevel < region.requiredLevel;
+                const isSelected = selectedRegion?.id === region.id;
+                
+                return (
+                  <div
+                    key={region.id}
+                    style={{
                       position: 'absolute',
-                      top: '100%',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      marginTop: 8,
-                      background: 'rgba(11,5,16,0.9)',
-                      border: '1px solid #f5cf6b',
-                      padding: '4px 8px',
-                      borderRadius: 4,
-                      whiteSpace: 'nowrap',
-                      color: isLocked ? '#888' : '#f5cf6b',
-                      fontSize: 12,
-                      fontWeight: 900,
-                      pointerEvents: 'none'
+                      left: `${region.x}%`,
+                      top: `${region.y}%`,
+                      transform: 'translate(-50%, -50%)',
+                      cursor: 'pointer',
+                      zIndex: isSelected ? 20 : 10
+                    }}
+                    onMouseEnter={() => setHoverRegion(region)}
+                    onMouseLeave={() => setHoverRegion(null)}
+                    onClick={() => setSelectedRegion(region)}
+                  >
+                    {/* Living Marker */}
+                    <div style={{
+                      width: isSelected ? 32 : 24,
+                      height: isSelected ? 32 : 24,
+                      background: isLocked ? '#222' : region.color,
+                      border: '3px solid #000',
+                      boxShadow: isLocked ? 'none' : `0 0 20px ${region.color}cc`,
+                      display: 'grid',
+                      placeItems: 'center',
+                      transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                      animation: isLocked ? 'none' : 'markerPulse 2s infinite'
                     }}>
-                      {region.name.toUpperCase()}
-                      {isLocked && ` (Lv. ${region.requiredLevel})`}
+                      {isLocked ? (
+                         <span style={{ fontSize: 8 }}>LOCKED</span>
+                      ) : (
+                        <div style={{ width: 6, height: 6, background: '#fff', borderRadius: 1 }} />
+                      )}
                     </div>
-                  )}
 
-                  {/* Obsidian Point Visualization */}
-                  {region.obsidianPoint && !isLocked && (
-                    <div style={{
-                      position: 'absolute',
-                      left: `${region.obsidianPoint.x - region.x}%`,
-                      top: `${region.obsidianPoint.y - region.y}%`,
-                      width: 12,
-                      height: 12,
-                      background: 'radial-gradient(circle, #a855f7, #000)',
-                      borderRadius: '50%',
-                      boxShadow: '0 0 10px #a855f7',
-                      animation: 'teamPulse 2s infinite'
-                    }} />
-                  )}
-                </div>
-              );
-            })}
+                    {/* Obsidian Energy Pulse */}
+                    {region.obsidianPoint && !isLocked && (
+                      <div style={{
+                        position: 'absolute',
+                        inset: -20,
+                        border: `1px solid ${region.color}`,
+                        borderRadius: '50%',
+                        opacity: 0,
+                        animation: 'energyWave 3s infinite'
+                      }} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Info Panel */}
-          {selectedRegion && (
-            <div style={{
-              position: 'absolute',
-              right: 20,
-              top: 20,
-              width: 280,
-              background: 'linear-gradient(160deg, #1a1030 0%, #0b0510 100%)',
-              border: '2px solid #f5cf6b',
-              borderRadius: 12,
-              padding: 16,
-              boxShadow: '0 8px 32px rgba(0,0,0,0.8)',
-              zIndex: 20
-            }}>
-              <h3 style={{ color: '#f5cf6b', margin: '0 0 8px 0', fontSize: 16 }}>{selectedRegion.name}</h3>
-              <div style={{ fontSize: 12, color: '#c8b8d0', display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <div>ELEMENTO: <span style={{ color: '#f5cf6b' }}>{selectedRegion.element.toUpperCase()}</span></div>
-                <div>NÍVEL REQ: <span style={{ color: trainerLevel >= selectedRegion.requiredLevel ? '#8affb0' : '#ff5252' }}>{selectedRegion.requiredLevel}</span></div>
-                <div style={{ marginTop: 4, padding: 8, background: '#0b0510', borderRadius: 6, border: '1px solid #3d2b52' }}>
-                  A região abriga mapas como: {selectedRegion.mapIds.join(', ')}.
+          {/* Sidebar / Info Panel */}
+          <div style={{ 
+            width: 350, 
+            background: 'rgba(11, 5, 16, 0.95)', 
+            padding: 24,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 20
+          }}>
+            {selectedRegion ? (
+              <>
+                <div style={{ borderBottom: '2px solid #f5cf6b', paddingBottom: 16 }}>
+                  <div style={{ fontSize: 10, color: selectedRegion.color, marginBottom: 8 }}>{selectedRegion.element.toUpperCase()} REGION</div>
+                  <h3 style={{ color: '#fff', fontSize: 18, margin: 0, textShadow: '2px 2px #000' }}>{selectedRegion.name}</h3>
                 </div>
-              </div>
 
-              <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <button
-                  disabled={trainerLevel < selectedRegion.requiredLevel}
-                  onClick={() => handleEnterRegion(selectedRegion)}
-                  style={{
-                    width: '100%',
-                    padding: '10px',
-                    background: trainerLevel >= selectedRegion.requiredLevel ? 'linear-gradient(180deg, #7ef27a, #5ec26a)' : '#333',
-                    color: '#0b0510',
-                    border: 'none',
-                    borderRadius: 8,
-                    fontWeight: 900,
-                    cursor: trainerLevel >= selectedRegion.requiredLevel ? 'pointer' : 'not-allowed',
-                    fontSize: 13
-                  }}
-                >
-                  VIAJAR AGORA
-                </button>
-                <div style={{ textAlign: 'center', fontSize: 10, color: '#8a7a9c' }}>
-                  {teleportScrolls > 0 
-                    ? `Custo: 1× Pergaminho (Você tem ${teleportScrolls})`
-                    : "Sem pergaminhos - Viagem lenta via pé."}
+                <p style={{ color: '#8a7a9c', fontSize: 10, lineHeight: 1.6, margin: 0 }}>
+                  {selectedRegion.description}
+                </p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ padding: 12, background: '#1a1030', border: '1px solid #3d2b52' }}>
+                    <div style={{ fontSize: 8, color: '#f5cf6b', marginBottom: 6 }}>REQUIREMENTS</div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9 }}>
+                      <span style={{ color: '#fff' }}>Trainer Lv.</span>
+                      <span style={{ color: trainerLevel >= selectedRegion.requiredLevel ? '#8affb0' : '#ff5252' }}>
+                        {trainerLevel}/{selectedRegion.requiredLevel}
+                      </span>
+                    </div>
+                  </div>
+
+                  {selectedRegion.obsidianPoint && (
+                    <div style={{ padding: 12, background: '#1a1030', border: '1px solid #a855f744' }}>
+                      <div style={{ fontSize: 8, color: '#a855f7', marginBottom: 6 }}>OBSIDIAN MONUMENT</div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9 }}>
+                        <span style={{ color: '#fff' }}>Power Rating</span>
+                        <span style={{ color: '#a855f7' }}>{selectedRegion.obsidianPoint.power}⚡</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
+
+                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ textAlign: 'center', fontSize: 8, color: '#8a7a9c' }}>
+                    {teleportScrolls > 0 
+                      ? `CONSUME: 1x TELEPORT SCROLL (${teleportScrolls} LEFT)`
+                      : "FREE TRAVEL: WALKING SPEED"}
+                  </div>
+                  <button
+                    disabled={trainerLevel < selectedRegion.requiredLevel}
+                    onClick={() => handleEnterRegion(selectedRegion)}
+                    style={{
+                      width: '100%',
+                      padding: '16px',
+                      background: trainerLevel >= selectedRegion.requiredLevel ? selectedRegion.color : '#333',
+                      color: '#000',
+                      border: 'none',
+                      boxShadow: trainerLevel >= selectedRegion.requiredLevel ? `0 4px 0 ${selectedRegion.color}88, 0 0 20px ${selectedRegion.color}44` : 'none',
+                      fontWeight: 900,
+                      cursor: trainerLevel >= selectedRegion.requiredLevel ? 'pointer' : 'not-allowed',
+                      fontSize: 12,
+                      fontFamily: "'Press Start 2P', monospace"
+                    }}
+                  >
+                    ENTER REGION
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+                <p style={{ color: '#4a3a5c', fontSize: 10, lineHeight: 1.8 }}>
+                  SELECT A REGION ON THE MAP TO VIEW DETAILS AND TELEPORT
+                </p>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
-        {/* Footer HUD */}
+        {/* Global HUD Bar */}
         <div style={{
-          padding: '10px 20px',
+          padding: '12px 24px',
           background: '#0b0510',
-          borderTop: '1px solid #f5cf6b44',
-          fontSize: 11,
-          color: '#8a7a9c',
+          borderTop: '2px solid #f5cf6b44',
           display: 'flex',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          fontSize: 9,
+          color: '#8a7a9c'
         }}>
-          <div>Seu Nível: <b style={{ color: '#f5cf6b' }}>{trainerLevel}</b></div>
-          <div>Clique nas regiões para detalhes. Atalho: [M]</div>
+          <div>CURRENT STATUS: <span style={{ color: '#f5cf6b' }}>EXPLORING</span></div>
+          <div style={{ display: 'flex', gap: 20 }}>
+            <div>REGIONS: <span style={{ color: '#fff' }}>{WORLD_REGIONS.length}</span></div>
+            <div>MONUMENTS: <span style={{ color: '#a855f7' }}>{WORLD_REGIONS.filter(r => r.obsidianPoint).length}</span></div>
+          </div>
         </div>
-      </div>
 
-      <style>{`
-        @keyframes teamPulse {
-          0%, 100% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.1); opacity: 1; }
-        }
-      `}</style>
+        <style>{`
+          @keyframes markerPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.15); }
+          }
+          @keyframes energyWave {
+            0% { transform: scale(0.5); opacity: 0.8; }
+            100% { transform: scale(2.5); opacity: 0; }
+          }
+          @keyframes floatParticle {
+            0% { transform: translateY(0); opacity: 0.3; }
+            100% { transform: translateY(-100px); opacity: 0; }
+          }
+        `}</style>
+      </div>
     </div>
   );
 };
