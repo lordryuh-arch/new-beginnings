@@ -45,3 +45,4 @@ def create_placeholders(dir_path):
 create_placeholders('src/components')
 create_placeholders('src/routes')
 create_placeholders('src/lib')
+create_placeholders('src/game')
