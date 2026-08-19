@@ -90,7 +90,10 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
           borderRadius: 4,
           position: 'relative',
           overflow: 'hidden',
-          boxShadow: '0 0 60px rgba(0,0,0,1), 0 0 20px rgba(245,207,107,0.2)',
+          boxShadow: '0 0 80px rgba(0,0,0,1), 0 0 20px rgba(245,207,107,0.1)',
+          backgroundImage: `url(${assetUrlFromJson(bagBgDarkAsset)})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           display: 'flex',
           flexDirection: 'column',
           imageRendering: 'pixelated'
