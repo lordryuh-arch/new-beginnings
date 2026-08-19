@@ -9195,10 +9195,11 @@ function IdlePage() {
               )}
               <div style={{
                 width: "100%", height: "100%",
-                backgroundImage: `url(${(skinUrl && skinUrl.length > 5) ? skinUrl : (trainerSheetAsset.url)})`,
+                backgroundImage: `url(${skinUrl && skinUrl.length > 5 ? skinUrl : trainerSheetAsset.url})`,
                 backgroundSize: "400% 400%",
                 backgroundPosition: `${walkStep * 33.333}% ${DIR_ROW[walkDir] * 33.333}%`,
                 imageRendering: "pixelated",
+                border: !skinUrl ? "2px solid yellow" : "none" // Debug visual se estiver usando fallback
               }} />
             </div>
 
