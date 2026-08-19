@@ -927,7 +927,10 @@ type IdleState = {
   mapsUnlocked: number;
   caughtSpecies: Species[];
   seenSpecies: Species[];
+  discoveredRegions?: string[];
+  activatedObsidianPoints?: string[];
   collection?: CollectionEntry[];
+
   craftPoints?: number;
   items: Record<string, number>;
   bank: { gold: number; crystals: number };
@@ -1115,7 +1118,10 @@ function freshIdle(): IdleState {
     mapsUnlocked: 3,
     caughtSpecies: [],
     seenSpecies: [],
+    discoveredRegions: ["grasslands"],
+    activatedObsidianPoints: [],
     collection: [],
+
     craftPoints: 0,
     items: { premium_box: 1 },
     bank: { gold: 0, crystals: 30 },
