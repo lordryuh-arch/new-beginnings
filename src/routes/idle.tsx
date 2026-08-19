@@ -12102,7 +12102,7 @@ function IdlePage() {
         onTravel={(mapId) => {
           setIdle(s => ({ ...s, currentMap: mapId as any }));
           setWorldMapOpen(false);
-          pushChat(`✦ Teletransportado para ${IDLE_MAPS[mapId as any]?.name ?? mapId}.`, "info");
+          pushChat(`✦ Teletransportado para ${IDLE_MAPS[mapId as IdleMapId]?.name ?? mapId}.`, "info");
         }}
         activatedObsidian={idle.activatedObsidian ?? []}
       />
