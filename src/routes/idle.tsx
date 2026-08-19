@@ -7012,7 +7012,7 @@ function IdlePage() {
   );
 
   return (
-    <div className="fragment-replacement">
+    <>
 
       {showWorldMap && (
         <WorldMapOverlay
@@ -7074,22 +7074,22 @@ function IdlePage() {
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(circle at 20% 20%, rgba(180,255,180,0.25), transparent 55%), radial-gradient(circle at 85% 85%, rgba(80,220,120,0.28), transparent 60%)" }} />
             <div style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)", fontSize: 10, letterSpacing: 6, color: "#8affb0", fontWeight: 900, textShadow: "0 0 12px #8affb0", background: "#0a1a0a", padding: "3px 12px", borderRadius: 999, border: "1px solid #8dfa8d" }}>
               ✦ EVENTO GRASS ODDISH ✦
-            </div>
+            </>
 
             <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 6, marginBottom: 10, position: "relative" }}>
               <img src={oddishUrl} alt="Oddish" className="cash-pack-float" style={{ width: 62, height: 62, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))" }} />
               <img src={oddishUrl} alt="Oddish" className="cash-pack-float" style={{ width: 78, height: 78, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))", animationDelay: "0.4s" }} />
               <img src={oddishUrl} alt="Oddish" className="cash-pack-float" style={{ width: 62, height: 62, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))", animationDelay: "0.8s" }} />
-            </div>
+            </>
 
             <div style={{ fontSize: 20, fontWeight: 900, color: "#fff", letterSpacing: 1, textShadow: "0 0 12px rgba(141,250,141,0.7)", position: "relative" }}>
               Entrar no Vale dos Oddish?
-            </div>
+            </>
             <div style={{ fontSize: 12, color: "#d6ffd6", marginTop: 8, lineHeight: 1.5, position: "relative" }}>
               Um mapa especial onde só nascem <b style={{ color: "#8affb0" }}>Oddish</b> nas raridades
               {" "}<b>Raro</b>, <b style={{ color: "#c98aff" }}>Épico</b> e <b style={{ color: "#ffd76a" }}>Mítico</b>.
               <br />Taxa de captura padrão do servidor.
-            </div>
+            </>
 
             <div style={{
               marginTop: 14,
@@ -7101,17 +7101,17 @@ function IdlePage() {
               boxShadow: "inset 0 0 20px rgba(141,250,141,0.15)",
               position: "relative",
             }}>
-              <div style={{ fontSize: 11, color: "#c8e8c8", fontWeight: 700 }}>Custo</div>
+              <div style={{ fontSize: 11, color: "#c8e8c8", fontWeight: 700 }}>Custo</>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#8affb0", textShadow: "0 0 10px rgba(141,250,141,0.7)" }}>
                 {oddishConfirm.need}
-              </div>
-              <div style={{ fontSize: 18 }}>🌿</div>
+              </>
+              <div style={{ fontSize: 18 }}>🌿</>
               <div style={{ width: 1, height: 22, background: "rgba(141,250,141,0.4)", margin: "0 6px" }} />
-              <div style={{ fontSize: 11, color: "#c8e8c8", fontWeight: 700 }}>Você tem</div>
+              <div style={{ fontSize: 11, color: "#c8e8c8", fontWeight: 700 }}>Você tem</>
               <div style={{ fontSize: 18, fontWeight: 900, color: "#fff" }}>
                 {oddishConfirm.have}
-              </div>
-            </div>
+              </>
+            </>
 
             <div style={{ display: "flex", justifyContent: "center", gap: 10, marginTop: 18, position: "relative" }}>
               <button
@@ -7143,9 +7143,9 @@ function IdlePage() {
               >
                 ENTRAR (-20 🌿)
               </button>
-            </div>
-          </div>
-        </div>
+            </>
+          </>
+        </>
       )}
 
       {/* 🌿 MODAL — Faltam Stones Verdejantes */}
@@ -7179,21 +7179,21 @@ function IdlePage() {
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(circle at 20% 20%, rgba(255,200,200,0.22), transparent 55%), radial-gradient(circle at 85% 85%, rgba(220,80,80,0.24), transparent 60%)" }} />
             <div style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)", fontSize: 10, letterSpacing: 6, color: "#ffd0d0", fontWeight: 900, textShadow: "0 0 12px #ff9a9a", background: "#2a0d0d", padding: "3px 12px", borderRadius: 999, border: "1px solid #ff9a9a" }}>
               ✦ EVENTO BLOQUEADO ✦
-            </div>
+            </>
 
             <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 6, marginBottom: 10, position: "relative" }}>
               <div style={{ width: 74, height: 74, borderRadius: "50%", overflow: "hidden", border: "2px solid #d6ffd6", boxShadow: "0 0 18px rgba(141,250,141,0.7)", background: "radial-gradient(circle at 50% 40%, #1a3d1c 0%, #0a1a0a 80%)", display: "grid", placeItems: "center" }}>
                 <img src={oddishUrl} alt="Oddish" style={{ width: "94%", height: "94%", objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6)) grayscale(0.3)" }} />
-              </div>
-            </div>
+              </>
+            </>
 
             <div style={{ fontSize: 18, fontWeight: 900, color: "#fff", letterSpacing: 1, textShadow: "0 0 12px rgba(255,150,150,0.7)", position: "relative" }}>
               Você precisa de Stone Verdejante 🌿
-            </div>
+            </>
             <div style={{ fontSize: 12, color: "#ffd6d6", marginTop: 8, lineHeight: 1.45, position: "relative" }}>
               Para entrar no evento <b style={{ color: "#8affb0" }}>Grass Oddish</b> são necessárias
               {" "}<b style={{ color: "#fff" }}>{oddishNoStone.need} 🌿</b>.
-            </div>
+            </>
 
             <div style={{
               marginTop: 14,
@@ -7205,20 +7205,20 @@ function IdlePage() {
               boxShadow: "inset 0 0 20px rgba(141,250,141,0.15)",
               position: "relative",
             }}>
-              <div style={{ fontSize: 11, color: "#c8e8c8", fontWeight: 700 }}>Você tem</div>
+              <div style={{ fontSize: 11, color: "#c8e8c8", fontWeight: 700 }}>Você tem</>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#ff9a9a", textShadow: "0 0 10px rgba(255,140,140,0.6)" }}>
                 {oddishNoStone.have}
-              </div>
-              <div style={{ fontSize: 14, color: "#8affb0", fontWeight: 900 }}>/</div>
+              </>
+              <div style={{ fontSize: 14, color: "#8affb0", fontWeight: 900 }}>/</>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#8affb0", textShadow: "0 0 10px rgba(141,250,141,0.7)" }}>
                 {oddishNoStone.need}
-              </div>
-              <div style={{ fontSize: 16 }}>🌿</div>
-            </div>
+              </>
+              <div style={{ fontSize: 16 }}>🌿</>
+            </>
 
             <div style={{ fontSize: 10.5, color: "#c8b8b8", marginTop: 12, lineHeight: 1.4, position: "relative" }}>
               Dica: Stones Verdejantes caem de Pokémon do tipo Planta e podem ser encontradas em baús elementais.
-            </div>
+            </>
 
             <button
               onClick={() => setOddishNoStone(null)}
@@ -7237,8 +7237,8 @@ function IdlePage() {
             >
               FECHAR ✕
             </button>
-          </div>
-        </div>
+          </>
+        </>
       )}
 
       {/* 🏆 RANKING GLOBAL — Grass Oddish */}
@@ -7270,26 +7270,26 @@ function IdlePage() {
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", borderRadius: 18, background: "radial-gradient(circle at 20% 15%, rgba(180,255,180,0.18), transparent 55%), radial-gradient(circle at 85% 85%, rgba(80,220,120,0.22), transparent 60%)" }} />
 
             <div style={{ position: "relative", textAlign: "center", marginBottom: 10 }}>
-              <div style={{ fontSize: 10, letterSpacing: 6, color: "#8affb0", fontWeight: 900, textShadow: "0 0 10px #8affb0" }}>✦ RANKING GLOBAL ✦</div>
+              <div style={{ fontSize: 10, letterSpacing: 6, color: "#8affb0", fontWeight: 900, textShadow: "0 0 10px #8affb0" }}>✦ RANKING GLOBAL ✦</>
               <div style={{ fontSize: 20, fontWeight: 900, color: "#eaffea", marginTop: 2, textShadow: "0 2px 0 rgba(0,0,0,0.5)" }}>
                 🏆 Grass Oddish
-              </div>
+              </>
               <div style={{ fontSize: 10.5, color: "#c8e8c8", marginTop: 4, lineHeight: 1.35 }}>
                 Total de Oddish capturados — atualizado ao vivo. Quando o evento encerrar, o pódio final fica visível pra todos.
-              </div>
+              </>
               <div style={{ fontSize: 10, color: "#a8d0a8", marginTop: 6 }}>
                 Seus capturados: <b style={{ color: "#fff" }}>{idle.grassOddishCaptured ?? 0}</b>
-              </div>
-            </div>
+              </>
+            </>
 
             <div style={{ position: "relative", flex: 1, overflowY: "auto", background: "rgba(0,0,0,0.35)", borderRadius: 12, border: "1px solid rgba(141,250,141,0.35)", padding: 6 }}>
               {oddishRankLoading && oddishRankRows.length === 0 && (
-                <div style={{ padding: 20, textAlign: "center", color: "#c8e8c8", fontSize: 12 }}>Carregando ranking…</div>
+                <div style={{ padding: 20, textAlign: "center", color: "#c8e8c8", fontSize: 12 }}>Carregando ranking…</>
               )}
               {!oddishRankLoading && oddishRankRows.length === 0 && (
                 <div style={{ padding: 20, textAlign: "center", color: "#c8e8c8", fontSize: 12 }}>
                   Ninguém pontuou ainda. Seja o primeiro a capturar Oddish no evento!
-                </div>
+                </>
               )}
               {oddishRankRows.map((r, i) => {
                 const pos = i + 1;
@@ -7317,17 +7317,17 @@ function IdlePage() {
                     border: isMe ? "1px solid #8dfa8d" : (pos <= 5 ? `1px solid ${topColor}55` : "1px solid transparent"),
                     boxShadow: pos <= 3 ? `0 0 10px ${topColor}44` : "none",
                   }}>
-                    <div style={{ width: 38, fontSize: pos <= 5 ? 16 : 12, fontWeight: 900, color: topColor, textAlign: "center", textShadow: pos <= 3 ? `0 0 8px ${topColor}` : "none" }}>{medal}</div>
+                    <div style={{ width: 38, fontSize: pos <= 5 ? 16 : 12, fontWeight: 900, color: topColor, textAlign: "center", textShadow: pos <= 3 ? `0 0 8px ${topColor}` : "none" }}>{medal}</>
                     <div style={{ flex: 1, minWidth: 0, fontSize: 12, fontWeight: 800, color: isMe ? "#fff" : "#eaffea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {r.username}{isMe ? " (você)" : ""}
-                    </div>
+                    </>
                     <div style={{ fontSize: 13, fontWeight: 900, color: "#8affb0", textShadow: "0 0 6px rgba(141,250,141,0.5)" }}>
                       {r.captures.toLocaleString("pt-BR")} 🌿
-                    </div>
-                  </div>
+                    </>
+                  </>
                 );
               })}
-            </div>
+            </>
 
             <button
               onClick={() => setOddishRankOpen(false)}
@@ -7346,8 +7346,8 @@ function IdlePage() {
             >
               FECHAR ✕
             </button>
-          </div>
-        </div>
+          </>
+        </>
       )}
 
       {/* 🌿 SPLASH — Entrada no Evento Grass Oddish */}
@@ -7375,7 +7375,7 @@ function IdlePage() {
             overflow: "hidden",
           }}>
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(circle at 20% 20%, rgba(180,255,180,0.25), transparent 55%), radial-gradient(circle at 85% 85%, rgba(80,220,120,0.28), transparent 60%)" }} />
-            <div style={{ position: "absolute", top: -30, left: "50%", transform: "translateX(-50%)", fontSize: 11, letterSpacing: 6, color: "#8affb0", fontWeight: 900, textShadow: "0 0 12px #8affb0" }}>✦ EVENTO ATIVO ✦</div>
+            <div style={{ position: "absolute", top: -30, left: "50%", transform: "translateX(-50%)", fontSize: 11, letterSpacing: 6, color: "#8affb0", fontWeight: 900, textShadow: "0 0 12px #8affb0" }}>✦ EVENTO ATIVO ✦</>
             <div style={{ display: "flex", justifyContent: "center", gap: 10, marginBottom: 10 }}>
               {[0,1,2].map((i) => (
                 <img key={i} src={oddishUrl} alt="Oddish" width={72} height={72}
@@ -7383,24 +7383,24 @@ function IdlePage() {
                     filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.7)) drop-shadow(0 0 12px rgba(141,250,141,0.9))",
                     animation: `cash-pack-float 1.4s ease-in-out ${i * 0.15}s infinite` }} />
               ))}
-            </div>
+            </>
             <h1 style={{ margin: 0, fontSize: 30, fontWeight: 900, letterSpacing: 3, color: "#eaffea", textShadow: "0 2px 0 rgba(0,0,0,0.7), 0 0 18px rgba(141,250,141,0.75)" }}>
               🌿 GRASS ODDISH 🌿
             </h1>
             <div style={{ marginTop: 4, fontSize: 12, fontWeight: 800, letterSpacing: 4, color: "#c8e8c8" }}>
               PORTAL VERDE ABERTO
-            </div>
+            </>
             <div style={{ marginTop: 14, padding: "10px 14px", background: "rgba(0,0,0,0.35)", border: "1px solid rgba(141,250,141,0.35)", borderRadius: 12, textAlign: "left", fontSize: 12.5, lineHeight: 1.55, color: "#e8ffe8" }}>
-              <div style={{ marginBottom: 6 }}>• Somente <b style={{ color: "#8affb0" }}>Oddish</b> aparece neste mapa.</div>
-              <div style={{ marginBottom: 6 }}>• Raridades: <b style={{ color: "#7effa0" }}>Raro</b> · <b style={{ color: "#c58bff" }}>Épico</b> · <b style={{ color: "#ffd76a" }}>Mítico</b>.</div>
-              <div style={{ marginBottom: 6 }}>• Taxa de captura <b>igual ao servidor</b> — o ganho é o <b>volume</b> de spawns.</div>
-              <div>• Contador de capturas ativo no menu lateral.</div>
-            </div>
+              <div style={{ marginBottom: 6 }}>• Somente <b style={{ color: "#8affb0" }}>Oddish</b> aparece neste mapa.</>
+              <div style={{ marginBottom: 6 }}>• Raridades: <b style={{ color: "#7effa0" }}>Raro</b> · <b style={{ color: "#c58bff" }}>Épico</b> · <b style={{ color: "#ffd76a" }}>Mítico</b>.</>
+              <div style={{ marginBottom: 6 }}>• Taxa de captura <b>igual ao servidor</b> — o ganho é o <b>volume</b> de spawns.</>
+              <div>• Contador de capturas ativo no menu lateral.</>
+            </>
             <div style={{ marginTop: 14, fontSize: 11, color: "#a8d0a8", letterSpacing: 1 }}>
               Clique em qualquer lugar para fechar
-            </div>
-          </div>
-        </div>
+            </>
+          </>
+        </>
       )}
       {/* ❄️ Overlay de Congelamento REMOVIDO */}
 
@@ -7461,7 +7461,7 @@ function IdlePage() {
               textTransform: "uppercase", marginBottom: 2, opacity: 0.9,
             }}>
               Ascensão
-            </div>
+            </>
             <div style={{
               display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
               color: "#f4e4b8", fontSize: 18, fontWeight: 700, letterSpacing: 2,
@@ -7470,21 +7470,21 @@ function IdlePage() {
               <span style={goldRule()} />
               <span>NÍVEL {levelToast.level}</span>
               <span style={goldRule()} />
-            </div>
+            </>
             <div style={{
               marginTop: 6, fontSize: 11, letterSpacing: 0.5,
               color: "#c9c0a8", fontFamily: "'Trebuchet MS', system-ui, sans-serif",
             }}>
               {levelToast.gains.join(" · ")}
-            </div>
+            </>
             <div style={{
               marginTop: 3, fontSize: 10.5, color: "#e8c76a",
               fontFamily: "'Trebuchet MS', system-ui, sans-serif",
             }}>
               ✦ Bônus <strong style={{ color: "#fff2c2" }}>+{levelToast.bonus}</strong>
-            </div>
-          </div>
-        </div>
+            </>
+          </>
+        </>
       );
       })()}
 
@@ -7526,29 +7526,29 @@ function IdlePage() {
                 alt="Zapdos"
                 style={{ width: 48, height: 48, imageRendering: "pixelated" }}
               />
-            </div>
+            </>
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
               <div style={{
                 fontSize: 10, letterSpacing: 3, color: "#ffd23a",
                 textTransform: "uppercase", opacity: 0.9,
               }}>
                 ✦ Evento Relâmpago ✦
-              </div>
+              </>
               <div style={{
                 color: "#fff2c2", fontSize: 18, fontWeight: 800, letterSpacing: 2,
                 textShadow: "0 0 12px rgba(255,210,58,0.6), 0 1px 0 #000",
               }}>
                 ZAPDOS APARECEU!
-              </div>
+              </>
               <div style={{
                 fontSize: 11, color: "#e0c470",
                 fontFamily: "'Trebuchet MS', system-ui, sans-serif",
               }}>
                 ✦ Mítico Brilhante · Lv 420 · Odisséia / Caverna Sombria · Ultra Ball
-              </div>
-            </div>
-          </div>
-        </div>
+              </>
+            </>
+          </>
+        </>
       )}
 
       <div className="idle-grid" style={{
@@ -7573,7 +7573,7 @@ function IdlePage() {
             const vip = isVip();
             const accent = vip ? "#ffd66b" : "#c9b8ff";
             return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -7634,7 +7634,7 @@ function IdlePage() {
                       alt=""
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
-                  </div>
+                  </>
                   {/* Selo de nível — pendurado no medalhão */}
                   <div style={{
                     position: "absolute", bottom: -4, right: -4,
@@ -7646,8 +7646,8 @@ function IdlePage() {
                     boxShadow: "0 2px 4px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.35)",
                     fontFamily: "'Cinzel', Georgia, serif", lineHeight: 1,
                     letterSpacing: 0.2,
-                  }}>{trainerLv}</div>
-                </div>
+                  }}>{trainerLv}</>
+                </>
 
                 <div style={{ flex: 1, minWidth: 0 }}>
                   {/* Nome + VIP */}
@@ -7671,7 +7671,7 @@ function IdlePage() {
                       color: "#f7ecf7",
                       textShadow: "0 1px 0 #000",
                     }}>{name}</span>
-                  </div>
+                  </>
 
                   {/* Barra de XP fina */}
                   <div style={{
@@ -7687,7 +7687,7 @@ function IdlePage() {
                       boxShadow: "0 0 5px rgba(245,207,107,0.6)",
                       transition: "width 400ms",
                     }} />
-                  </div>
+                  </>
                   <div style={{
                     marginTop: 2, fontSize: 8.5, letterSpacing: 0.4,
                     color: "#a8a0b8", fontFamily: "monospace",
@@ -7695,16 +7695,16 @@ function IdlePage() {
                   }}>
                     <span>XP</span>
                     <span style={{ color: "#e8d089" }}>{curXp} / {nextAt}</span>
-                  </div>
+                  </>
 
                   {/* Pills de status */}
                   <div style={{ display: "flex", gap: 3, marginTop: 4, flexWrap: "nowrap" }}>
                     <span style={pillStyle("#ffd66b")}>🪙 {fmtK(idle.totals.gold)}</span>
                     <span style={pillStyle("#ff97e1")}>★ {idle.totals.captured}</span>
                     <span style={pillStyle("#8fd0ff")}>⚔ {team.length}/6</span>
-                  </div>
-                </div>
-              </div>
+                  </>
+                </>
+              </>
             );
           })()}
 
@@ -7724,7 +7724,7 @@ function IdlePage() {
               >
                 {teamCollapsed ? "▼ EXPANDIR" : "▲ MINIMIZAR"}
               </button>
-            </div>
+            </>
             <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
               {(teamCollapsed ? team.slice(0, 1) : team).map((p) => (
                 <TeamRow key={p.uid} pet={p} onClick={() => setPetDetailUid(p.uid)} energyTick={energyTick} />
@@ -7732,10 +7732,10 @@ function IdlePage() {
               {teamCollapsed && team.length > 1 && (
                 <div style={{ fontSize: 10, color: "#8a7a9c", textAlign: "center", fontStyle: "italic" }}>
                   +{team.length - 1} no banco (minimizado)
-                </div>
+                </>
               )}
               <button style={{ ...smallBtn, marginTop: 2 }} onClick={() => setTab("pokemon")}>Ver todos</button>
-            </div>
+            </>
           </Panel>
 
 
@@ -7777,16 +7777,16 @@ function IdlePage() {
                         return (
                           <div key={m.id} style={{ color, textShadow: "1px 1px 0 #000", fontWeight: m.kind === "chest" ? 800 : 400 }}>
                             <span style={{ opacity: 0.7, marginRight: 4 }}>{prefix}</span>{m.text}
-                          </div>
+                          </>
                         );
                       })}
                       {filtered.length === 0 && (
-                        <div style={{ color: "#6a5a7c", fontStyle: "italic" }}>Nenhum evento neste filtro...</div>
+                        <div style={{ color: "#6a5a7c", fontStyle: "italic" }}>Nenhum evento neste filtro...</>
                       )}
-                    </div>
+                    </>
                   );
                 })()}
-              </div>
+              </>
               {/* Filtros do chat */}
               <div style={{ display: "flex", gap: 4, marginTop: 6 }}>
                 {([
@@ -7811,7 +7811,7 @@ function IdlePage() {
                     >{t.l}</button>
                   );
                 })}
-              </div>
+              </>
               {/* Composer do chat global — cooldown 10 min por jogador */}
               {(() => {
                 void chatTick;
@@ -7834,7 +7834,7 @@ function IdlePage() {
                   setChatCooldownUntil(Date.now() + 10 * 60 * 1000);
                 };
                 return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -7883,12 +7883,12 @@ function IdlePage() {
                     >
                       {onCd ? `${mm}:${ss}` : "Enviar"}
                     </button>
-                  </div>
+                  </>
                 );
               })()}
             </Panel>
-          </div>
-        </div>
+          </>
+        </>
 
 
 
@@ -7941,9 +7941,9 @@ function IdlePage() {
               return (
                 <div>
                   <button onClick={() => { playClick(); setZoom(ZOOM_LEVELS[Math.min(ZOOM_LEVELS.length - 1, curIdx + 1)]); }} style={zoomBtn}>+</button>
-                  <div style={{ ...zoomBtn, cursor: "default", fontSize: 10 }}>{Math.round(zoom * 100)}%</div>
+                  <div style={{ ...zoomBtn, cursor: "default", fontSize: 10 }}>{Math.round(zoom * 100)}%</>
                   <button onClick={() => { playClick(); setZoom(ZOOM_LEVELS[Math.max(0, curIdx - 1)]); }} style={zoomBtn}>−</button>
-                </div>
+                </>
               );
             })()}
             <button onClick={() => { playClick(); setTab("config"); }} style={{ ...zoomBtn, marginTop: 6, fontSize: 14 }} title="Configurações">⚙</button>
@@ -8187,7 +8187,7 @@ function IdlePage() {
                           style={{ objectFit: "contain", display: "block" }}
                           draggable={false}
                         />
-                      </div>
+                      </>
                       {b.subLabel && (
                         <span style={{
                           fontSize: 8, fontWeight: 800, letterSpacing: 0.5, lineHeight: 1,
@@ -8203,12 +8203,12 @@ function IdlePage() {
                       }}>
                         {fmtT(b.timeMs)}
                       </span>
-                    </div>
+                    </>
                   ))}
-                </div>
+                </>
               );
             })()}
-          </div>
+          </>
 
 
 
@@ -8235,7 +8235,7 @@ function IdlePage() {
                     }} />
                   ))}
                   <div className="wx-flash" />
-                </div>
+                </>
               )}
               {weather === "snow" && (
                 <div>
@@ -8251,7 +8251,7 @@ function IdlePage() {
                       ["--drift" as string]: `${s.drift}px`,
                     } as React.CSSProperties} />
                   ))}
-                </div>
+                </>
               )}
               <div style={{
                 position: "absolute", top: 8, left: "50%", transform: "translateX(-50%)",
@@ -8264,8 +8264,8 @@ function IdlePage() {
                 textShadow: "1px 1px 0 #000",
               }}>
                 {weather === "rain" ? "CHUVA" : "NEVE"}
-              </div>
-            </div>
+              </>
+            </>
           )}
 
 
@@ -8397,10 +8397,10 @@ function IdlePage() {
                     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                       <img src={assetUrlFromJson(trophyIconAsset)} alt="" style={{ width: 32, height: 32, imageRendering: "pixelated", filter: "drop-shadow(0 0 6px rgba(255,214,80,0.7))" }} />
                       <div>
-                        <div style={{ fontWeight: 900, fontSize: 18, color: "#ffd94d", letterSpacing: 0.5 }}>RANKING GLOBAL</div>
-                        <div style={{ fontSize: 10, opacity: 0.7 }}>Top 50 treinadores do mundo</div>
-                      </div>
-                    </div>
+                        <div style={{ fontWeight: 900, fontSize: 18, color: "#ffd94d", letterSpacing: 0.5 }}>RANKING GLOBAL</>
+                        <div style={{ fontSize: 10, opacity: 0.7 }}>Top 50 treinadores do mundo</>
+                      </>
+                    </>
                     <button
                       onClick={() => setRankOpen(false)}
                       style={{
@@ -8409,7 +8409,7 @@ function IdlePage() {
                         borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center",
                       }}
                     >×</button>
-                  </div>
+                  </>
 
                   {/* Tabs */}
                   <div style={{ display: "flex", gap: 6, padding: "10px 14px 0", background: "rgba(0,0,0,0.2)" }}>
@@ -8434,14 +8434,14 @@ function IdlePage() {
                         >{t.label}</button>
                       );
                     })}
-                  </div>
+                  </>
 
                   {/* List */}
                   <div style={{ overflow: "auto", padding: 14, flex: 1 }}>
                     {rankLoading ? (
-                      <div style={{ textAlign: "center", padding: 40, opacity: 0.7 }}>Carregando ranking…</div>
+                      <div style={{ textAlign: "center", padding: 40, opacity: 0.7 }}>Carregando ranking…</>
                     ) : rankRows.length === 0 ? (
-                      <div style={{ textAlign: "center", padding: 40, opacity: 0.7 }}>Nenhum treinador encontrado.</div>
+                      <div style={{ textAlign: "center", padding: 40, opacity: 0.7 }}>Nenhum treinador encontrado.</>
                     ) : (
                       <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
                         {rankRows.map((r, i) => {
@@ -8496,20 +8496,20 @@ function IdlePage() {
                               borderRadius: 10,
                               boxShadow: i < 3 ? "0 2px 8px rgba(255,214,80,0.1)" : "none",
                             }}>
-                              <div style={{ fontWeight: 800, color: topColor, fontSize: i < 3 ? 22 : 15, textAlign: "center" }}>{medal}</div>
+                              <div style={{ fontWeight: 800, color: topColor, fontSize: i < 3 ? 22 : 15, textAlign: "center" }}>{medal}</>
                               <div style={{ overflow: "hidden", minWidth: 0 }}>
                                 <div style={{ fontWeight: 700, fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                                   {r.name}
                                   {isMe && <span style={{ marginLeft: 6, fontSize: 10, color: "#7dff9b" }}>(você)</span>}
                                   {r.guild_name && <span style={{ marginLeft: 6, fontSize: 10, opacity: 0.75, color: "#a5d0ff" }}>[{r.guild_name}]</span>}
-                                </div>
+                                </>
                                 <div style={{ fontSize: 10, opacity: 0.7, display: "flex", gap: 8, flexWrap: "wrap" }}>
                                   <span style={{ textTransform: "capitalize" }}>
                                     ⭐ {(r.leader_species ?? "—").replace(/_/g, " ")}
                                   </span>
                                   <span>🎓 Tr {r.trainer_level}</span>
                                   <span>⚒️ {r.craft_points}</span>
-                                </div>
+                                </>
                                 {isTop50 && isMe && (
                                   <div style={{ marginTop: 6 }}>
                                     <button
@@ -8533,21 +8533,21 @@ function IdlePage() {
                                     >
                                       {alreadyClaimed ? `🔴 Chave Ruby (${rubyModeLabel}) coletada` : `🔴 Coletar ${rubyAmount}× Chave Ruby (Top ${i + 1} · ${rubyModeLabel})`}
                                     </button>
-                                  </div>
+                                  </>
                                 )}
-                              </div>
+                              </>
                               <div style={{ textAlign: "right" }}>
-                                <div style={{ fontSize: 9, opacity: 0.6, textTransform: "uppercase", letterSpacing: 0.5 }}>{mainLabel}</div>
-                                <div style={{ fontWeight: 900, fontSize: 20, color: topColor, lineHeight: 1 }}>{mainVal}</div>
-                              </div>
-                            </div>
+                                <div style={{ fontSize: 9, opacity: 0.6, textTransform: "uppercase", letterSpacing: 0.5 }}>{mainLabel}</>
+                                <div style={{ fontWeight: 900, fontSize: 20, color: topColor, lineHeight: 1 }}>{mainVal}</>
+                              </>
+                            </>
                           );
                         })}
-                      </div>
+                      </>
                     )}
-                  </div>
-                </div>
-              </div>,
+                  </>
+                </>
+              </>,
               document.body
             )}
 
@@ -8622,22 +8622,22 @@ function IdlePage() {
                   }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                    <div style={{ fontWeight: 800, fontSize: 15, color: "#ffd94d" }}>🐝 Colmeia de Beedrill</div>
+                    <div style={{ fontWeight: 800, fontSize: 15, color: "#ffd94d" }}>🐝 Colmeia de Beedrill</>
                     <button onClick={() => setHoneyShop(null)} style={{ background: "transparent", border: "none", color: "#ffe9a8", cursor: "pointer", fontSize: 18 }}>×</button>
-                  </div>
+                  </>
                   <div style={{ fontSize: 11, lineHeight: 1.4, marginBottom: 10, opacity: 0.85 }}>
                     Coloque até <b>3 Beedrills</b> nesta colmeia. Cada um produz <b>2 Incensos</b> a cada <b>10 min</b>.
                     Beedrills <b>Épicos+</b> geram <b>Incenso Raro</b> (dobra o bônus e vende por mais).
-                  </div>
+                  </>
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                     {Array.from({ length: HIVE_SLOTS_PER_COCOON }).map((_, i) => {
                       const slot = slots[i] ?? null;
                       if (!slot) {
                         return (
                           <div key={`hslot-${i}`} style={{ border: "1px dashed rgba(255,214,80,0.4)", borderRadius: 8, padding: 8, background: "rgba(0,0,0,0.25)" }}>
-                            <div style={{ fontSize: 11, opacity: 0.75, marginBottom: 6 }}>Slot {i + 1} — vazio</div>
+                            <div style={{ fontSize: 11, opacity: 0.75, marginBottom: 6 }}>Slot {i + 1} — vazio</>
                             {availableBeedrills.length === 0 ? (
-                              <div style={{ fontSize: 11, color: "#c8b8d0" }}>Nenhum Beedrill disponível.</div>
+                              <div style={{ fontSize: 11, color: "#c8b8d0" }}>Nenhum Beedrill disponível.</>
                             ) : (
                               <select
                                 onChange={(e) => { if (e.target.value) assignBeedrill(i, e.target.value); }}
@@ -8656,7 +8656,7 @@ function IdlePage() {
                                 ))}
                               </select>
                             )}
-                          </div>
+                          </>
                         );
                       }
                       const entry = beedrills.find((b) => b.uid === slot.uid);
@@ -8672,11 +8672,11 @@ function IdlePage() {
                           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                             <img src={beedrillGif} alt="Beedrill" style={{ width: 34, height: 34, imageRendering: "pixelated" }} />
                             <div style={{ flex: 1, fontSize: 12 }}>
-                              <div style={{ fontWeight: 700 }}>Beedrill Lv.{entry?.level ?? "?"}</div>
+                              <div style={{ fontWeight: 700 }}>Beedrill Lv.{entry?.level ?? "?"}</>
                               <div style={{ fontSize: 10, opacity: 0.8, color: rare ? "#ff97e1" : "#ffe9a8" }}>
                                 {entry?.rarity ?? "?"}{rare ? " · produz raro ✨" : ""}
-                              </div>
-                            </div>
+                              </>
+                            </>
                             <button
                               onClick={() => removeBeedrill(i)}
                               title="Remover"
@@ -8684,10 +8684,10 @@ function IdlePage() {
                             >
                               Remover
                             </button>
-                          </div>
+                          </>
                           <div style={{ height: 8, background: "rgba(0,0,0,0.5)", borderRadius: 4, overflow: "hidden", marginBottom: 6 }}>
                             <div style={{ width: `${pct * 100}%`, height: "100%", background: ready ? "linear-gradient(90deg,#5ec26a,#8bffb0)" : "linear-gradient(90deg,#ffd94d,#d99b1a)", transition: "width 0.4s linear" }} />
-                          </div>
+                          </>
                           {ready ? (
                             <button
                               onClick={() => collectSlot(i)}
@@ -8698,16 +8698,16 @@ function IdlePage() {
                           ) : (
                             <div style={{ fontSize: 11, textAlign: "center", opacity: 0.85 }}>
                               ⏳ {mm}:{ss} restantes
-                            </div>
+                            </>
                           )}
-                        </div>
+                        </>
                       );
                     })}
-                  </div>
+                  </>
                   <div style={{ fontSize: 10, opacity: 0.7, marginTop: 8, textAlign: "center" }}>
                     Estoque: {idle.items.incenso_mel ?? 0}x Mel · {idle.items.incenso_mel_raro ?? 0}x Raro
-                  </div>
-                </div>
+                  </>
+                </>
               );
             })()}
 
@@ -8759,8 +8759,8 @@ function IdlePage() {
                     whiteSpace: "nowrap",
                   }}>
                     {b.emoji} {b.label.toUpperCase()}
-                  </div>
-                </div>
+                  </>
+                </>
               );
             })}
 
@@ -8803,7 +8803,7 @@ function IdlePage() {
                       textAlign: "center", padding: "0 4px", lineHeight: 1.1,
                     }}>
                       {locked ? "🔒" : "🌀"}<br/>{p.label}
-                    </div>
+                    </>
                     {/* Balão-guia branco (estilo speech bubble) */}
                     <div style={{
                       position: "absolute", bottom: "calc(100% + 14px)", left: "50%", transform: "translateX(-50%)",
@@ -8820,12 +8820,12 @@ function IdlePage() {
                     }}>
                       <div style={{ fontSize: 9, color: "#6b7280", letterSpacing: 0.6, marginBottom: 2 }}>
                         {p.reqLevel ? (locked ? "🔒 PRÓXIMO MAPA" : "✓ MAPA LIBERADO") : "↩ RETORNO"}
-                      </div>
-                      <div style={{ color: "#111827", fontSize: 12 }}>{p.label}</div>
+                      </>
+                      <div style={{ color: "#111827", fontSize: 12 }}>{p.label}</>
                       {p.reqLevel && (
                         <div style={{ fontSize: 10, color: locked ? "#b91c1c" : "#15803d", marginTop: 2 }}>
                           {locked ? `Libera em Treinador Nv ${p.reqLevel} • faltam ${p.reqLevel - lv}` : `Treinador Nv ${p.reqLevel} ✓`}
-                        </div>
+                        </>
                       )}
                       {/* Rabinho do balão */}
                       <div style={{
@@ -8842,8 +8842,8 @@ function IdlePage() {
                         borderRight: "6px solid transparent",
                         borderTop: "7px solid #ffffff",
                       }} />
-                    </div>
-                  </div>
+                    </>
+                  </>
                 );
               });
             })()}
@@ -8874,7 +8874,7 @@ function IdlePage() {
                     fontSize: 10, fontWeight: 900, whiteSpace: "nowrap",
                     boxShadow: "0 0 10px rgba(255,217,77,0.5)",
                     animation: "pulse 1.6s ease-in-out infinite",
-                  }}>✦ TROCADOR</div>
+                  }}>✦ TROCADOR</>
                   <img
                     src={npcTraderUrl}
                     alt="NPC Trocador"
@@ -8886,7 +8886,7 @@ function IdlePage() {
                     width: 60, height: 8, borderRadius: "50%",
                     background: "radial-gradient(ellipse, rgba(255,217,77,0.55), transparent 70%)",
                   }} />
-                </div>
+                </>
               );
             })()}
 
@@ -8915,7 +8915,7 @@ function IdlePage() {
                     fontSize: 11, fontWeight: 900, whiteSpace: "nowrap",
                     boxShadow: "0 0 12px rgba(255,212,74,0.7)",
                     animation: "pulse 1.6s ease-in-out infinite",
-                  }}>👑 GOVERNANTE</div>
+                  }}>👑 GOVERNANTE</>
                   <img
                     src={npcGovernanteUrl}
                     alt="Governante"
@@ -8927,7 +8927,7 @@ function IdlePage() {
                     width: 90, height: 12, borderRadius: "50%",
                     background: "radial-gradient(ellipse, rgba(255,212,74,0.6), transparent 70%)",
                   }} />
-                </div>
+                </>
               );
             })()}
 
@@ -9011,7 +9011,7 @@ function IdlePage() {
                         animation: "spin 8s linear infinite",
                         pointerEvents: "none", zIndex: -1,
                       }} />
-                    </div>
+                    </>
                   )}
                   {e.menace && (
                     <div>
@@ -9040,9 +9040,9 @@ function IdlePage() {
                           textShadow: "0 0 4px #000, 0 0 8px #7a00b8",
                           pointerEvents: "none", zIndex: -1,
                           animation: "pulse 1.2s ease-in-out infinite",
-                        }}>✦</div>
+                        }}>✦</>
                       ))}
-                    </div>
+                    </>
                   )}
                   <img src={src} alt="" style={{ width: "100%", imageRendering: "pixelated" }} />
                   {e.sp === "raichu" && !camouflaged && (
@@ -9063,7 +9063,7 @@ function IdlePage() {
                         textShadow: "0 0 4px #fff4a1, 0 1px 0 #fff",
                         filter: "drop-shadow(0 0 3px #fff8b8)",
                       }}>⚡</span>
-                    </div>
+                    </>
                   )}
                   {e.sp === "rayquaza" && !camouflaged && (
                     <div style={{
@@ -9083,7 +9083,7 @@ function IdlePage() {
                         textShadow: "0 0 4px #b5ffd8, 0 1px 0 #fff",
                         filter: "drop-shadow(0 0 3px #d8ffec)",
                       }}>🐉</span>
-                    </div>
+                    </>
                   )}
                   {idle.currentMap === "grass_oddish" && !camouflaged && (e.sp === "dragonite_shiny" || e.sp === "onix_shiny" || e.sp === "riolu") && (
                     <div style={{
@@ -9103,7 +9103,7 @@ function IdlePage() {
                         textShadow: "0 0 4px #fff5b8, 0 1px 0 #fff",
                         filter: "drop-shadow(0 0 3px #fff8c8)",
                       }}>⭐XP</span>
-                    </div>
+                    </>
                   )}
                   {e.menace && (
                     <div style={{
@@ -9115,7 +9115,7 @@ function IdlePage() {
                       whiteSpace: "nowrap", pointerEvents: "none",
                       filter: "drop-shadow(0 0 4px #000)",
                       animation: "pulse 1s ease-in-out infinite",
-                    }}>✦✦✦✦✦✦✦✦✦✦<br/><span style={{ fontSize: 9, color: "#ffb3ff" }}>? ? ?</span></div>
+                    }}>✦✦✦✦✦✦✦✦✦✦<br/><span style={{ fontSize: 9, color: "#ffb3ff" }}>? ? ?</span></>
                   )}
 
                   {e.rider && (
@@ -9128,7 +9128,7 @@ function IdlePage() {
                       whiteSpace: "nowrap", pointerEvents: "none",
                       filter: "drop-shadow(0 0 6px #ff5ec7) drop-shadow(0 0 12px #ff5ec7aa)",
                       animation: "pulse 1.2s ease-in-out infinite",
-                    }}>✦</div>
+                    }}>✦</>
                   )}
                   {e.guardian && !e.rider && !camouflaged && (
                     <div style={{
@@ -9140,7 +9140,7 @@ function IdlePage() {
                       whiteSpace: "nowrap", pointerEvents: "none",
                       filter: "drop-shadow(0 0 4px #000)",
                       animation: "pulse 1.6s ease-in-out infinite",
-                    }}>✦</div>
+                    }}>✦</>
                   )}
                   {stars && !e.rider && (
                     <div style={{
@@ -9151,7 +9151,7 @@ function IdlePage() {
                       textShadow: "1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000",
                       whiteSpace: "nowrap", pointerEvents: "none",
                       filter: `drop-shadow(0 0 4px ${starColor})`,
-                    }}>{stars}</div>
+                    }}>{stars}</>
                   )}
                   {/* Nível + cristal de raridade */}
                   <div style={{
@@ -9165,7 +9165,7 @@ function IdlePage() {
                   }}>
                     <span style={{ fontSize: 9 }}>{crystal}</span>
                     Lv.{e.level}
-                  </div>
+                  </>
                   <div style={{
                     position: "absolute", bottom: -6, left: 4, right: 4, height: 5,
                     background: "#3a1010", borderRadius: 2, transform: `scaleX(${sx})`,
@@ -9176,8 +9176,8 @@ function IdlePage() {
                       height: "100%", background: e.hp > e.maxHp * 0.4 ? "#5ec26a" : "#e34a4a",
                       borderRadius: 2, transition: "width 200ms",
                     }} />
-                  </div>
-                </div>
+                  </>
+                </>
               );
             })}
 
@@ -9207,7 +9207,7 @@ function IdlePage() {
                     filter: "drop-shadow(0 3px 3px rgba(0,0,0,0.6))",
                   }}
                 />
-              </div>
+              </>
             ))}
 
 
@@ -9238,7 +9238,7 @@ function IdlePage() {
                   pointerEvents: "none",
                 }}>
                   {isVip() ? "✦ " : ""}{identity.name}
-                </div>
+                </>
               )}
               <div style={{
                 width: "100%", height: "100%",
@@ -9247,7 +9247,7 @@ function IdlePage() {
                 backgroundPosition: `${walkStep * 33.333}% ${DIR_ROW[walkDir] * 33.333}%`,
                 imageRendering: "pixelated",
               }} />
-            </div>
+            </>
 
             {/* Black Mitic Egg — pet flutuante */}
             <BlackMiticEggSprite
@@ -9266,7 +9266,7 @@ function IdlePage() {
               const x = captureAnim.fromX + (captureAnim.toX - captureAnim.fromX) * dt;
               const y = captureAnim.fromY + (captureAnim.toY - captureAnim.fromY) * dt - arcY;
               return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9297,7 +9297,7 @@ function IdlePage() {
                   filter: "drop-shadow(0 2px 3px rgba(0,0,0,0.7))",
                 }}>
                   <img src={captureAnim.ballImg} alt="" style={{ width: "100%", height: "100%", imageRendering: "pixelated" }} />
-                </div>
+                </>
               );
             })()}
 
@@ -9328,7 +9328,7 @@ function IdlePage() {
                     background: "rgba(20,40,80,0.55)",
                     padding: "1px 5px", borderRadius: 4,
                     border: "1px solid rgba(107,178,255,0.6)",
-                  }}>{rp.name}</div>
+                  }}>{rp.name}</>
                   <div style={{
                     width: "100%", height: "100%",
                     backgroundImage: `url(${rp.skinUrl ?? trainerSheet})`,
@@ -9358,7 +9358,7 @@ function IdlePage() {
                     )
                   )}
 
-                </div>
+                </>
               );
             })}
 
@@ -9379,8 +9379,8 @@ function IdlePage() {
                   left: trainerPos.x - 30, top: trainerPos.y - 90,
                   fontSize: 24, pointerEvents: "none",
                   animation: "chest-pop 900ms ease-in-out infinite",
-                }}>💤💚</div>
-              </div>
+                }}>💤💚</>
+              </>
             )}
 
             {/* Pokémon do jogador segue o treinador */}
@@ -9409,7 +9409,7 @@ function IdlePage() {
               const leaderX = renderFollowerX + lungeX;
               const leaderY = renderFollowerY + lungeY;
               return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9459,7 +9459,7 @@ function IdlePage() {
                           animationDuration: `${s.d}s`,
                         } as React.CSSProperties} />
                       ))}
-                    </div>
+                    </>
                   )}
                   {auraOn && (
                     <div>
@@ -9480,7 +9480,7 @@ function IdlePage() {
                           ["--i" as string]: i,
                         } as React.CSSProperties} />
                       ))}
-                    </div>
+                    </>
                   )}
                   {SPRITE_SHEET[leaderSp] ? (
                     <div style={{
@@ -9510,7 +9510,7 @@ function IdlePage() {
                       background: hpPct > 40 ? "#5ec26a" : hpPct > 15 ? "#f5cf6b" : "#e34a4a",
                       borderRadius: 3, transition: "width 250ms",
                     }} />
-                  </div>
+                  </>
                   {/* Barra XP */}
                   <div style={{
                     position: "absolute", bottom: -16, left: 4, right: 4, height: 4,
@@ -9520,7 +9520,7 @@ function IdlePage() {
                       width: `${xpPct}%`, height: "100%",
                       background: "#6bd4ff", borderRadius: 2, transition: "width 250ms",
                     }} />
-                  </div>
+                  </>
                   <div style={{
                     position: "absolute", top: -18, left: "50%", transform: "translateX(-50%)",
                     fontSize: 11, color: "#fff", fontWeight: 700,
@@ -9528,8 +9528,8 @@ function IdlePage() {
                     whiteSpace: "nowrap",
                   }}>
                     Lv.{leader.level} · {Math.floor(leaderHp)}/{leaderMax}
-                  </div>
-                </div>
+                  </>
+                </>
               );
             })()}
 
@@ -9609,10 +9609,10 @@ function IdlePage() {
                   zIndex: 8,
                 }}>
                   {f.kind === "myDmg" ? `-${f.text}` : f.text}
-                </div>
+                </>
               );
             })}
-          </div>
+          </>
 
           {/* ============ UI FIXA (não rola com o mapa) ============ */}
           {/* Header do mapa — barra clássica dourada com nichos de recurso */}
@@ -9644,11 +9644,11 @@ function IdlePage() {
                 fontFamily: "'Cinzel', 'Georgia', serif",
               }}>
                 ✦ {map.name}
-              </div>
+              </>
               <div style={{ fontSize: 9.5, color: "#c8b8d0", lineHeight: 1.1, whiteSpace: "nowrap", marginTop: 2 }}>
                 {map.diff} · Lv {team[0]?.level ?? 1} · <span style={{ color: "#f5cf6b", fontWeight: 700 }}>{fmtHMS(activeTime)}</span>
-              </div>
-            </div>
+              </>
+            </>
 
             <ResourceNiche
               tint="#ffd66b"
@@ -9681,8 +9681,8 @@ function IdlePage() {
               <BallSlot img={ballPokeImg}  count={idle.items.pokeball ?? 0}  tint="#ff8080" />
               <BallSlot img={ballGreatImg} count={idle.items.greatball ?? 0} tint="#7ec4ff" />
               <BallSlot img={ballUltraImg} count={idle.items.ultraball ?? 0} tint="#ffd66b" />
-            </div>
-          </div>
+            </>
+          </>
 
 
 
@@ -9707,15 +9707,15 @@ function IdlePage() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                     <span style={{ fontSize: 22, animation: "chest-pop 900ms ease-in-out infinite" }}>💤</span>
                     <div>
-                      <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{label}</div>
-                      <div style={{ fontSize: 11, color: "#c8ffd6" }}>Restam <b>{mm}:{ss}</b></div>
-                    </div>
-                  </div>
+                      <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{label}</>
+                      <div style={{ fontSize: 11, color: "#c8ffd6" }}>Restam <b>{mm}:{ss}</b></>
+                    </>
+                  </>
                   <div style={{ height: 6, background: "#1a0f26", borderRadius: 3, overflow: "hidden" }}>
                     <div style={{ width: `${pct}%`, height: "100%", background: `linear-gradient(90deg, ${accent}, #a7f3a0)`, transition: "width 200ms" }} />
-                  </div>
-                </div>
-              </div>
+                  </>
+                </>
+              </>
             );
           })()}
           {/* tick invisível pra forçar rerender enquanto descansa */}
@@ -9735,7 +9735,7 @@ function IdlePage() {
                 : "Descansar (leva 1 hora)";
             const bAction = nearBuilding === "lab" ? "RESETAR" : "DESCANSAR";
             return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9768,9 +9768,9 @@ function IdlePage() {
               }}>
                 <span style={{ fontSize: 24 }}>{bEmoji}</span>
                 <div>
-                  <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{bLabel}</div>
-                  <div style={{ fontSize: 10, color: "#c8b8d0" }}>{bDesc}</div>
-                </div>
+                  <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{bLabel}</>
+                  <div style={{ fontSize: 10, color: "#c8b8d0" }}>{bDesc}</>
+                </>
                 <button
                   onClick={() => {
                     if (nearBuilding === "lab") resetAccount();
@@ -9784,7 +9784,7 @@ function IdlePage() {
                     letterSpacing: 1, cursor: "pointer",
                   }}
                 >{bAction}</button>
-              </div>
+              </>
             );
           })()}
 
@@ -9799,21 +9799,21 @@ function IdlePage() {
             }}>
               <span style={{ fontSize: 26 }}>💀</span>
               <div>
-                <div style={{ fontWeight: 800, color: "#fff" }}>Pokémon desmaiado</div>
+                <div style={{ fontWeight: 800, color: "#fff" }}>Pokémon desmaiado</>
                 <div style={{ fontSize: 11, color: "#f5cf6b" }}>
                   Custa 50 ouro para reviver
-                </div>
-              </div>
+                </>
+              </>
               <button onClick={revive} style={{ ...smallBtn, background: "#5ec26a", color: "#0b0510", border: "none", fontWeight: 800, padding: "8px 16px" }}>
                 REVIVER
               </button>
-            </div>
+            </>
           ) : (() => {
             const ab = idle.autoBattle ?? { enabled: true, useBall: true, preferredBall: "auto" as const, captureHpPct: 1 };
             const setAB = (patch: Partial<typeof ab>) => setIdle((s) => ({ ...s, autoBattle: { ...(s.autoBattle ?? ab), ...patch } }));
             const on = ab.enabled;
             return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9845,7 +9845,7 @@ function IdlePage() {
                   borderRadius: 10, padding: "10px 12px", display: "flex", flexDirection: "column", gap: 8,
                   minWidth: 240, color: "#eadfe8", fontSize: 11, boxShadow: "0 6px 20px rgba(0,0,0,0.55)",
                 }}>
-                  <div style={{ fontWeight: 800, color: "#f5cf6b", fontSize: 12, letterSpacing: 1 }}>⚙ CONFIGURAR AUTO</div>
+                  <div style={{ fontWeight: 800, color: "#f5cf6b", fontSize: 12, letterSpacing: 1 }}>⚙ CONFIGURAR AUTO</>
                   <label style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
                     <span>Usar Pokébola</span>
                     <input type="checkbox" checked={ab.useBall} onChange={(e) => setAB({ useBall: e.target.checked })} />
@@ -9865,8 +9865,8 @@ function IdlePage() {
                           }}>{label}</button>
                         );
                       })}
-                    </div>
-                  </div>
+                    </>
+                  </>
                   <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                     <span style={{ color: "#c8b8d0" }}>Auto-Poção HP% ≤ {Math.round((idle.autoHeal?.threshold ?? 0.5) * 100)}%</span>
                     <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -9880,11 +9880,11 @@ function IdlePage() {
                         onChange={(e) => setIdle((s) => ({ ...s, autoHeal: { ...(s.autoHeal ?? { enabled: false, threshold: 0.5 }), enabled: e.target.checked } }))}
                         title="Ativar auto-poção"
                       />
-                    </div>
-                  </div>
+                    </>
+                  </>
                   <div style={{ fontSize: 10, color: "#8f8296", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 6 }}>
                     💡 Clique em um Pokémon selvagem para lançar a Pokébola manualmente.
-                  </div>
+                  </>
                   <button
                     onClick={() => {
                       if (confirm("Sair e voltar para a tela de login?")) {
@@ -9901,7 +9901,7 @@ function IdlePage() {
                   >
                     🚪 IR PARA TELA DE LOGIN
                   </button>
-                </div>
+                </>
               )}
               {/* Quick ball selector — troca rápida sem abrir configurações */}
               <div style={{
@@ -9943,7 +9943,7 @@ function IdlePage() {
                     </button>
                   );
                 })}
-              </div>
+              </>
               <div style={{
                 background: "rgba(11,5,16,0.9)", border: "1px solid rgba(245,207,107,0.4)",
                 borderRadius: 10, padding: "8px 12px", display: "flex", alignItems: "center", gap: 10,
@@ -9974,7 +9974,7 @@ function IdlePage() {
                 </button>
                 <div style={{ fontSize: 10, color: "#c8b8d0", minWidth: 90 }}>
                   Lv.{team[0]?.level ?? 1} · EXP {team[0]?.xp ?? 0}/{100 + (team[0]?.level ?? 1) * 20}
-                </div>
+                </>
                 <button
                   onClick={() => setShowAutoSettings((v) => !v)}
                   title="Configurar"
@@ -9987,8 +9987,8 @@ function IdlePage() {
                     fontSize: 16,
                   }}
                 >⚙</button>
-              </div>
-            </div>
+              </>
+            </>
             );
           })()}
 
@@ -10113,7 +10113,7 @@ function IdlePage() {
             />
 
           )}
-        </div>
+        </>
 
 
         {/* ============ COLUNA DIREITA ============ */}
@@ -10426,7 +10426,7 @@ function IdlePage() {
                     boxShadow: "0 0 8px #6bd4ff",
                   }} />
 
-                </div>
+                </>
               );
 
               return (
@@ -10443,10 +10443,10 @@ function IdlePage() {
                         fontSize: 11, fontWeight: 800, cursor: "pointer",
                       }}
                     >⛶</button>
-                  </div>
+                  </>
                   <div style={{ marginTop: 8, fontSize: 11, color: "#c8b8d0", textAlign: "center" }}>
                     {map.name} · {map.diff} {map.stars ? <span style={{ color: "#ffd94d" }}>{"★".repeat(map.stars)}</span> : null}
-                    {walkingTo && <div style={{ color: "#7ef27a", marginTop: 2 }}>→ {walkingTo}…</div>}
+                    {walkingTo && <div style={{ color: "#7ef27a", marginTop: 2 }}>→ {walkingTo}…</>}
                     <div style={{ marginTop: 8, display: "flex", justifyContent: "center" }}>
                       <button
                         onClick={() => { playClick(); setWorldMapOpen(true); }}
@@ -10474,8 +10474,8 @@ function IdlePage() {
                         />
                         MAPA MUNDI
                       </button>
-                    </div>
-                  </div>
+                    </>
+                  </>
 
 
 
@@ -10499,12 +10499,12 @@ function IdlePage() {
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
                           <div style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 16, letterSpacing: 1 }}>
                             🗺 {map.name} — clique num ponto pra viajar
-                          </div>
+                          </>
                           <button
                             onClick={() => setBigMapOpen(false)}
                             style={{ background: "#3a1010", border: "1px solid #f5cf6b", color: "#f5cf6b", borderRadius: 6, padding: "4px 10px", fontWeight: 800, cursor: "pointer" }}
                           >✕</button>
-                        </div>
+                        </>
                         {renderMap(true, true)}
                         <div style={{ marginTop: 10, fontSize: 12, color: "#c8b8d0", textAlign: "center" }}>
                           🏠 Lar · 🔬 Laboratório · {currentGates.map((g) => {
@@ -10516,9 +10516,9 @@ function IdlePage() {
                               </span>
                             );
                           })}
-                        </div>
-                      </div>
-                    </div>
+                        </>
+                      </>
+                    </>
                   )}
 
                   {worldMapOpen && (() => {
@@ -10613,7 +10613,7 @@ function IdlePage() {
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8, padding: "0 4px", gap: 8 }}>
                             <div style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 15, letterSpacing: 2 }}>
                               {tabTitle}
-                            </div>
+                            </>
                             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
                               <span style={{ background: scrollsAvail > 0 ? "linear-gradient(135deg,#3d2a08,#5a3d10)" : "#1a1420", border: `1px solid ${scrollsAvail > 0 ? "#f5cf6b" : "#4a3a52"}`, color: scrollsAvail > 0 ? "#ffe08a" : "#7a6a82", borderRadius: 6, padding: "4px 10px", fontSize: 11, fontWeight: 900 }}>
                                 📜 Pergaminho: {scrollsAvail}
@@ -10622,8 +10622,8 @@ function IdlePage() {
                                 onClick={() => setWorldMapOpen(false)}
                                 style={{ background: "#3a1010", border: "1px solid #f5cf6b", color: "#f5cf6b", borderRadius: 6, padding: "4px 12px", fontWeight: 800, cursor: "pointer" }}
                               >✕</button>
-                            </div>
-                          </div>
+                            </>
+                          </>
                           {/* Tabs de continentes */}
                           <div style={{ display: "flex", gap: 6, marginBottom: 8, padding: "0 4px" }}>
                             {([
@@ -10653,12 +10653,12 @@ function IdlePage() {
                                     boxShadow: active ? "0 0 14px rgba(245,207,107,0.5)" : undefined,
                                   }}
                                 >
-                                  <div style={{ fontWeight: 900, fontSize: 12, letterSpacing: 1 }}>{t.label}</div>
-                                  <div style={{ fontSize: 10, opacity: 0.85, marginTop: 2 }}>{t.sub}</div>
+                                  <div style={{ fontWeight: 900, fontSize: 12, letterSpacing: 1 }}>{t.label}</>
+                                  <div style={{ fontSize: 10, opacity: 0.85, marginTop: 2 }}>{t.sub}</>
                                 </button>
                               );
                             })}
-                          </div>
+                          </>
                           <div style={{
                             position: "relative", width: "100%", aspectRatio: "1536 / 1024",
                             borderRadius: 2, overflow: "hidden",
@@ -10683,7 +10683,7 @@ function IdlePage() {
                                   backgroundSize: "20px 20px",
                                   animation: "stardustFloat 20s linear infinite"
                                 }} />
-                              </div>
+                              </>
 
                               {/* Renderização do Cenário Continental via Asset da Referência */}
                               <div style={{
@@ -10710,8 +10710,8 @@ function IdlePage() {
                                       mixBlendMode: "multiply"
                                     }} />
                                   )}
-                                </div>
-                              </div>
+                                </>
+                              </>
                               {activeTab === 4 && (
                                 <div className="c4-fog" style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(circle at 30% 40%, rgba(0,242,255,0.10), transparent 55%), radial-gradient(circle at 70% 65%, rgba(255,42,42,0.10), transparent 55%), linear-gradient(180deg, rgba(6,2,14,0.35), rgba(6,2,14,0.65))" }} />
                               )}
@@ -10725,12 +10725,12 @@ function IdlePage() {
                                       style={{ width: 150, height: "auto", filter: "drop-shadow(0 0 18px rgba(74,158,255,0.75))" }}
                                     />
                                     <div className="c4-dialog" style={{ marginBottom: 18, maxWidth: 330, background: "linear-gradient(135deg, rgba(10,4,20,0.95), rgba(24,8,34,0.95))", border: "2px solid #4a9eff", borderRadius: 12, padding: "10px 14px", boxShadow: "0 0 34px rgba(74,158,255,0.45)" }}>
-                                      <div style={{ color: "#8fd6ff", fontWeight: 900, fontSize: 12, letterSpacing: 1 }}>VHARYX · A BRUXA DAS GEMAS</div>
+                                      <div style={{ color: "#8fd6ff", fontWeight: 900, fontSize: 12, letterSpacing: 1 }}>VHARYX · A BRUXA DAS GEMAS</>
                                       <div style={{ color: "#e6dcf5", fontSize: 11, lineHeight: 1.5, marginTop: 4 }}>
                                         "Cristal, Ruby e Safira… as três correntes que selam o abismo. Toque em um selo e eu te conto o que dorme lá dentro — mas nenhum se abrirá hoje."
-                                      </div>
-                                    </div>
-                                  </div>
+                                      </>
+                                    </>
+                                  </>
                                 )}
                             {WORLD_PINS.map((pin: any) => {
                               const m = IDLE_MAPS[pin.id as keyof typeof IDLE_MAPS];
@@ -10763,15 +10763,15 @@ function IdlePage() {
                                         }}
                                       >
                                         <div style={{ width: 7, height: 7, background: glowColor, borderRadius: "50%", boxShadow: `0 0 10px ${glowColor}` }} />
-                                      </div>
-                                    </div>
+                                      </>
+                                    </>
                                     <div style={{
                                       background: "rgba(0,0,0,0.82)", border: `1px solid ${glowColor}`, borderRadius: 4,
                                       padding: "2px 6px", fontSize: 8, fontWeight: 900, color: glowColor, whiteSpace: "nowrap",
                                       textShadow: `0 0 6px ${glowColor}`,
                                     }}>
                                       🔒 {pin.name}
-                                    </div>
+                                    </>
                                   </button>
                                 );
                               }
@@ -10850,7 +10850,7 @@ function IdlePage() {
                                              pin.type === "beach" ? "🏖️" : 
                                              pin.type === "mountain" ? "🏔️" : 
                                              pin.type === "snow" ? "❄️" : "🏛️"}
-                                          </div>
+                                          </>
                                           <div style={{ position: "relative" }}>
                                             {pin.type === "castle" ? "🏰" : 
                                              pin.type === "village" ? "🏡" : 
@@ -10860,10 +10860,10 @@ function IdlePage() {
                                              pin.type === "beach" ? "🏖️" : 
                                              pin.type === "mountain" ? "🏔️" : 
                                              pin.type === "snow" ? "❄️" : "🏛️"}
-                                          </div>
-                                        </div>
+                                          </>
+                                        </>
 
-                                     </div>
+                                     </>
 
 
                                      {/* Indicador de Selecionado */}
@@ -10874,7 +10874,7 @@ function IdlePage() {
                                          boxShadow: "0 0 10px #7ef27a",
                                        }} />
                                      )}
-                                   </div>
+                                   </>
                                    <div className="map-pin-label" style={{
                                      marginTop: 4, padding: "2px 6px",
                                      background: "rgba(11,5,16,0.9)", border: `1px solid ${current ? "#7ef27a" : "#f5cf6b"}`,
@@ -10886,17 +10886,17 @@ function IdlePage() {
                                      boxShadow: "0 2px 4px rgba(0,0,0,0.5)",
                                    }}>
                                      {m.name}
-                                   </div>
+                                   </>
                                 </button>
                               );
                             })}
-                          </div>
+                          </>
 
                           <div style={{ marginTop: 8, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", fontSize: 10, color: "#c8b8d0", fontFamily: "monospace" }}>
                             <span>📍 Você está em <b style={{ color: "#7ef27a" }}>{map.name}</b></span>
                             <span>🎖 Lv <b style={{ color: "#f5cf6b" }}>{trainerLv}</b></span>
                             <span style={{ color: "#8a7a9c" }}>Selecione uma ilha para viajar via Portal (🪙 1000 + 💎 taxa).</span>
-                          </div>
+                          </>
 
                           <style>{`
                             @keyframes worldPinPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.2); } }
@@ -10906,8 +10906,8 @@ function IdlePage() {
                             @keyframes c4RingRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
                           `}</style>
 
-                        </div>
-                      </div>
+                        </>
+                      </>
                     );
                   })()}
 
@@ -10936,13 +10936,13 @@ function IdlePage() {
                             boxShadow: "0 0 80px rgba(245,207,107,0.5), inset 0 0 30px rgba(245,207,107,0.08)",
                           }}
                         >
-                          <div style={{ textAlign: "center", color: "#f5cf6b", fontSize: 12, letterSpacing: 3, fontWeight: 900, marginBottom: 4 }}>PORTAL DE VIAGEM</div>
+                          <div style={{ textAlign: "center", color: "#f5cf6b", fontSize: 12, letterSpacing: 3, fontWeight: 900, marginBottom: 4 }}>PORTAL DE VIAGEM</>
                           <div style={{ textAlign: "center", color: "#fff", fontSize: 22, fontWeight: 900, marginBottom: 2, textShadow: "0 0 12px rgba(245,207,107,0.6)" }}>
                             {tm.name}
-                          </div>
+                          </>
                           <div style={{ textAlign: "center", color: "#c8b8d0", fontSize: 11, marginBottom: 14 }}>
                             {tm.diff} {tm.stars ? <span style={{ color: "#ffd94d" }}>{"★".repeat(tm.stars)}</span> : null} · {tm.element ?? "—"}
-                          </div>
+                          </>
 
                           <div style={{ display: "grid", gap: 8, marginBottom: 14 }}>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(0,0,0,0.4)", border: `1px solid ${lvOk ? "#7ef27a" : "#e05252"}`, borderRadius: 8, padding: "8px 12px" }}>
@@ -10950,31 +10950,31 @@ function IdlePage() {
                               <span style={{ color: lvOk ? "#7ef27a" : "#ff8888", fontWeight: 900 }}>
                                 Lv {tm.minLevel} {lvOk ? "✓" : `(você: ${trainerLv})`}
                               </span>
-                            </div>
+                            </>
                             {cost > 0 && (
                               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(0,0,0,0.4)", border: `1px solid ${crystalOk ? "#7fd8ff" : "#e05252"}`, borderRadius: 8, padding: "8px 12px" }}>
                                 <span style={{ color: "#c8b8d0", fontSize: 12, fontWeight: 700 }}>💎 Custo de entrada</span>
                                 <span style={{ color: crystalOk ? "#7fd8ff" : "#ff8888", fontWeight: 900 }}>
                                   {cost} cristais {crystalOk ? "" : `(você: ${idle.bank.crystals})`}
                                 </span>
-                              </div>
+                              </>
                             )}
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(0,0,0,0.4)", border: `1px solid ${goldOk ? "#f5cf6b" : "#e05252"}`, borderRadius: 8, padding: "8px 12px" }}>
                               <span style={{ color: "#c8b8d0", fontSize: 12, fontWeight: 700 }}>🪙 Taxa de teleporte</span>
                               <span style={{ color: goldOk ? "#f5cf6b" : "#ff8888", fontWeight: 900 }}>
                                 {gold} ouro {goldOk ? "" : `(você: ${idle.bank.gold})`}
                               </span>
-                            </div>
+                            </>
                             {tm.raid ? (
                               <div style={{ textAlign: "center", color: "#ff8ad6", fontSize: 10, fontWeight: 900, letterSpacing: 1.2 }}>
                                 ☠ ZONA DE RAID · chefes de níveis variados (não é faixa de progressão)
-                              </div>
+                              </>
                             ) : tm.maxLevel && (
                               <div style={{ textAlign: "center", color: "#8a7a9c", fontSize: 10 }}>
                                 Pokémon selvagens: Lv {tm.minLevel}–{tm.maxLevel}
-                              </div>
+                              </>
                             )}
-                          </div>
+                          </>
 
                           <div style={{ display: "flex", gap: 8 }}>
                             <button
@@ -11000,12 +11000,12 @@ function IdlePage() {
                                 boxShadow: canGo ? "0 0 20px rgba(245,207,107,0.5)" : "none",
                               }}
                             >{lvOk ? (crystalOk ? "✓ VIAJAR" : "💎 CRISTAIS INSUFICIENTES") : "🔒 NÍVEL INSUFICIENTE"}</button>
-                          </div>
-                        </div>
-                      </div>
+                          </>
+                        </>
+                      </>
                     );
                   })()}
-                </div>
+                </>
               );
             })()}
           </Panel>
@@ -11022,11 +11022,11 @@ function IdlePage() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
               <span style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 12, letterSpacing: 1 }}>COLETA</span>
               <span style={{ color: "#f5cf6b", fontWeight: 700, fontSize: 11 }}>⏱ {fmtHMS(Math.min(OFFLINE_CAP_MS, activeTime))}</span>
-            </div>
+            </>
             <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", marginBottom: 8, fontSize: 13, fontWeight: 700 }}>
               <span title="Ouro" style={{ color: "#f4c430" }}>● {fmtK(idle.pending.gold)}</span>
               <span title="Cristais">💎 {Math.floor(idle.pending.crystals)}</span>
-            </div>
+            </>
             <button
               onClick={collect}
               style={{
@@ -11048,7 +11048,7 @@ function IdlePage() {
               <img src={collectIconImg} alt="" width={26} height={26} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }} />
               COLETAR
             </button>
-          </div>
+          </>
 
 
 
@@ -11083,7 +11083,7 @@ function IdlePage() {
                 color: "#1a0f26", padding: "2px 7px", borderRadius: 10,
                 boxShadow: "0 0 8px rgba(245,207,107,0.5)",
               }}>EM BREVE</span>
-            </div>
+            </>
 
             <div style={{ display: "flex", alignItems: "center", gap: 10, position: "relative" }}>
               <div style={{
@@ -11100,16 +11100,16 @@ function IdlePage() {
                   className="cash-pack-float"
                   style={{ objectFit: "contain" }}
                 />
-              </div>
+              </>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 11, fontWeight: 900, color: "#fff", letterSpacing: 0.5, lineHeight: 1.2 }}>
                   Lojinha Cash
-                </div>
+                </>
                 <div style={{ fontSize: 10, color: "#d0b8f0", marginTop: 3, lineHeight: 1.35 }}>
                   Pacotes premium com cristais, ovos míticos, VIP e cosméticos.
-                </div>
-              </div>
-            </div>
+                </>
+              </>
+            </>
 
             <button
               onClick={() => setCashShopOpen(true)}
@@ -11134,7 +11134,7 @@ function IdlePage() {
               <span className="lojinha-star lojinha-star-4" aria-hidden>✧</span>
               <span className="lojinha-star lojinha-star-5" aria-hidden>★</span>
             </button>
-          </div>
+          </>
 
           {/* BANNER — Evento Odisséia Oddish (clique para entrar quando aberto) */}
           <div
@@ -11191,7 +11191,7 @@ function IdlePage() {
                 className="cash-pack-float"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
-            </div>
+            </>
             <div style={{ flex: 1, minWidth: 0, position: "relative" }}>
             {(() => {
               const st = oddishEventStatus();
@@ -11213,16 +11213,16 @@ function IdlePage() {
                   <div style={{
                     fontSize: 11, fontWeight: 900, color: "#ffd6ec",
                     letterSpacing: 1, textShadow: "0 1px 0 rgba(0,0,0,0.6)",
-                  }}>✦ ODISSÉIA ODDISH</div>
+                  }}>✦ ODISSÉIA ODDISH</>
                   <div
                     className={isOpen ? "cash-pack-float" : undefined}
                     style={{ fontSize: 12, fontWeight: 900, color: isOpen ? "#8affb0" : "#fff", marginTop: 2, lineHeight: 1.2 }}
                   >
                     {isOpen ? "PORTAL ABERTO" : active ? "Aguardando janela" : "Em breve"}
-                  </div>
+                  </>
                   <div style={{ fontSize: 9.5, color: "#e6c8f0", marginTop: 3, lineHeight: 1.3, fontFamily: "monospace" }}>
                     {timerTxt}
-                  </div>
+                  </>
                   <span style={{
                     position: "absolute", top: 6, right: 8,
                     fontSize: 9, fontWeight: 900, letterSpacing: 1,
@@ -11231,11 +11231,11 @@ function IdlePage() {
                     boxShadow: isOpen ? "0 0 12px rgba(138,255,176,0.85)" : "0 0 8px rgba(255,138,198,0.6)",
                     animation: isOpen ? "pulse 1s infinite" : undefined,
                   }}>{label}</span>
-                </div>
+                </>
               );
             })()}
-            </div>
-          </div>
+            </>
+          </>
 
           {/* BANNER — Evento Grass Oddish (custa 20 Stone Verdejante) */}
           <div
@@ -11285,23 +11285,23 @@ function IdlePage() {
             <div style={{ width: 58, height: 58, flexShrink: 0, borderRadius: "50%", overflow: "hidden", border: "2px solid #d6ffd6", boxShadow: "0 0 14px rgba(141,250,141,0.75), inset 0 0 8px rgba(0,0,0,0.4)", background: "radial-gradient(circle at 50% 40%, #1a3d1c 0%, #0a1a0a 80%)", display: "grid", placeItems: "center", position: "relative" }}>
               <img src={oddishUrl} alt="Oddish" width={54} height={54} className="cash-pack-float" style={{ width: "94%", height: "94%", objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))" }} />
               <span style={{ position: "absolute", inset: 0, borderRadius: "50%", pointerEvents: "none", boxShadow: "inset 0 0 12px rgba(141,250,141,0.55)", animation: "pulse 1.6s ease-in-out infinite" }} />
-            </div>
+            </>
             <div style={{ flex: 1, minWidth: 0, position: "relative" }}>
-              <div style={{ fontSize: 11, fontWeight: 900, color: "#d6ffd6", letterSpacing: 1, textShadow: "0 1px 0 rgba(0,0,0,0.6)" }}>✦ GRASS ODDISH</div>
+              <div style={{ fontSize: 11, fontWeight: 900, color: "#d6ffd6", letterSpacing: 1, textShadow: "0 1px 0 rgba(0,0,0,0.6)" }}>✦ GRASS ODDISH</>
               <div className="cash-pack-float" style={{ fontSize: 12, fontWeight: 900, color: "#8affb0", marginTop: 2, lineHeight: 1.2 }}>
                 {!ODDISH_EVENT.enabled ? "EVENTO ENCERRADO" : (idle.currentMap === "grass_oddish" ? "SAIR DO EVENTO" : "ENTRAR (20 🌿)")}
-              </div>
+              </>
               <div style={{ fontSize: 9.5, color: "#c8e8c8", marginTop: 3, lineHeight: 1.3, fontFamily: "monospace" }}>
                 Oddish capturados: <b style={{ color: "#fff" }}>{idle.grassOddishCaptured ?? 0}</b>
-              </div>
+              </>
               <div style={{ fontSize: 8.5, color: "#a8d0a8", marginTop: 2, lineHeight: 1.25 }}>
                 {!ODDISH_EVENT.enabled ? "Mapa bloqueado. Ranking preservado." : "Só Oddish (Raro/Épico/Mítico). Taxa de captura padrão."}
-              </div>
+              </>
               <span style={{ position: "absolute", top: 6, right: 8, fontSize: 9, fontWeight: 900, letterSpacing: 1, background: !ODDISH_EVENT.enabled ? "linear-gradient(135deg,#888,#444)" : (idle.currentMap === "grass_oddish" ? "linear-gradient(135deg,#8affb0,#3ec96f)" : "linear-gradient(135deg,#d6ffd6,#8dfa8d)"), color: "#0a2010", padding: "2px 7px", borderRadius: 10, boxShadow: "0 0 10px rgba(141,250,141,0.7)" }}>
                 {!ODDISH_EVENT.enabled ? "ENCERRADO" : (idle.currentMap === "grass_oddish" ? "DENTRO" : "ABERTO")}
               </span>
-            </div>
-          </div>
+            </>
+          </>
           <button
             onClick={(e) => { e.stopPropagation(); playClick(); setOddishRankOpen(true); }}
             style={{
@@ -11326,7 +11326,7 @@ function IdlePage() {
 
           {/* Guia do Prof. Carvalho removido a pedido do usuário */}
 
-        </div>
+        </>
 
 
 
@@ -11437,8 +11437,8 @@ function IdlePage() {
             <span style={{ fontSize: 28, lineHeight: 1, filter: "drop-shadow(0 0 8px #22d3ee)" }}>☁️</span>
             <span>Salvar</span>
           </button>
-        </div>
-      </div>
+        </>
+      </>
 
       <style>{`
         /* ===== Layout responsivo ===== */
@@ -11685,7 +11685,7 @@ function IdlePage() {
       {identity && (
         <div style={{ position: "fixed", bottom: 8, left: 8, fontSize: 10, color: "#8a7a9c", zIndex: 100 }}>
           {identity.name}
-        </div>
+        </>
       )}
 
 
@@ -11716,20 +11716,20 @@ function IdlePage() {
                 <img src={npcTraderUrl} alt="" width={72} height={90}
                   style={{ imageRendering: "pixelated", filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.6))" }} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 16, fontWeight: 900, color: "#ffd94d" }}>🧙 Elyra, a Trocadora</div>
+                  <div style={{ fontSize: 16, fontWeight: 900, color: "#ffd94d" }}>🧙 Elyra, a Trocadora</>
                   <div style={{ fontSize: 11, color: "#c8b8d0", lineHeight: 1.5, marginTop: 4, fontStyle: "italic" }}>
                     "Traga-me Pokémon da sua <b style={{ color: "#ffd94d" }}>Coleção</b> e eu os transformarei em <b style={{ color: "#ffd94d" }}>Orbs de XP</b>. Você escolhe quais entregar."
-                  </div>
-                </div>
+                  </>
+                </>
                 <button
                   onClick={() => { setWorldTraderOpen(false); setWorldTraderPick(null); setWorldTraderSel(new Set()); }}
                   style={{ background: "transparent", border: "none", color: "#eadfe8", cursor: "pointer", fontSize: 20 }}
                 >✕</button>
-              </div>
+              </>
 
               {!worldTraderPick && (
                 <div>
-                  <div style={{ color: "#b8a8c8", fontSize: 12, marginBottom: 10 }}>Escolha a raridade da troca:</div>
+                  <div style={{ color: "#b8a8c8", fontSize: 12, marginBottom: 10 }}>Escolha a raridade da troca:</>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                     {ORB_TRADES.map((t) => {
                       const available = collection.filter((c) =>
@@ -11751,28 +11751,28 @@ function IdlePage() {
                         }}>
                           <img src={t.img} alt={t.label} width={72} height={72}
                             style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 12px ${t.color}bb)` }} />
-                          <div style={{ fontWeight: 900, color: "#eadfe8", fontSize: 14 }}>{t.label}</div>
-                          <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center", lineHeight: 1.4 }}>{t.desc}</div>
+                          <div style={{ fontWeight: 900, color: "#eadfe8", fontSize: 14 }}>{t.label}</>
+                          <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center", lineHeight: 1.4 }}>{t.desc}</>
                           <div style={{ fontSize: 11, color: available >= t.count ? "#8ae28a" : "#e28a8a", fontWeight: 700 }}>
                             {t.rarity.toUpperCase()} na coleção: {available}/{t.count}
-                          </div>
+                          </>
                           {t.requires && (
                             <div style={{ fontSize: 10, fontWeight: 800, color: reqOk ? "#8ae28a" : "#ff9a6b", background: reqOk ? "#0f2018" : "#2a1620", border: `1px solid ${reqOk ? "#8ae28a55" : "#ff9a6b55"}`, borderRadius: 6, padding: "3px 8px", textAlign: "center" }}>
                               {reqOk ? "✓" : "🔒"} Requer {t.requires.qty}× {t.requires.label} ({reqOwned}/{t.requires.qty})
-                            </div>
+                            </>
                           )}
-                          <div style={{ fontSize: 10, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                          <div style={{ fontSize: 10, color: "#8a7a9c" }}>Você tem: {owned}</>
                           {/* Barra de chance base — visível já na seleção */}
                           <div style={{ width: "100%", background: "#0f0820", border: "1px solid #3a2a4a", borderRadius: 8, padding: "6px 8px" }}>
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, color: "#c8b8d0", marginBottom: 3 }}>
                               <span>Sucesso base</span>
                               <b style={{ color: t.baseSuccess >= 0.75 ? "#8ae28a" : t.baseSuccess >= 0.5 ? "#ffd94d" : "#ff9a6b" }}>{Math.round(t.baseSuccess * 100)}%</b>
-                            </div>
+                            </>
                             <div style={{ height: 6, background: "#1a0f26", borderRadius: 4, overflow: "hidden" }}>
                               <div style={{ width: `${t.baseSuccess * 100}%`, height: "100%", background: `linear-gradient(90deg, #6bd66b, ${t.color})` }} />
-                            </div>
-                            <div style={{ fontSize: 9, color: "#8a7a9c", marginTop: 3, textAlign: "center" }}>+ combustível até 95%</div>
-                          </div>
+                            </>
+                            <div style={{ fontSize: 9, color: "#8a7a9c", marginTop: 3, textAlign: "center" }}>+ combustível até 95%</>
+                          </>
                           <button
                             disabled={!canTrade}
                             onClick={() => { setWorldTraderPick(t); setWorldTraderSel(new Set()); setWorldTraderFuel(new Set()); setWorldTraderFuelTab("common"); }}
@@ -11784,11 +11784,11 @@ function IdlePage() {
                               cursor: canTrade ? "pointer" : "not-allowed",
                             }}
                           >{!reqOk ? `FORJE 1 ${t.requires!.label.toUpperCase()} PRIMEIRO` : available >= t.count ? "ESCOLHER POKÉMON" : `PRECISA ${t.count} ${t.rarity.toUpperCase()}`}</button>
-                        </div>
+                        </>
                       );
                     })}
-                  </div>
-                </div>
+                  </>
+                </>
               )}
 
               {worldTraderPick && (() => {
@@ -11813,49 +11813,49 @@ function IdlePage() {
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                       <div style={{ fontWeight: 900, color: pick.color, fontSize: 14 }}>
                         Incubadora · {pick.count}× {pick.rarity.toUpperCase()}
-                      </div>
+                      </>
                       <button
                         onClick={() => { setWorldTraderPick(null); setWorldTraderSel(new Set()); setWorldTraderFuel(new Set()); }}
                         style={{ background: "transparent", border: "1px solid #3a2a4a", color: "#eadfe8", cursor: "pointer", fontSize: 11, padding: "4px 10px", borderRadius: 6 }}
                       >← VOLTAR</button>
-                    </div>
+                    </>
 
                     {/* Barra de chances */}
                     <div style={{ background: "#0f0820", border: "1px solid #3a2a4a", borderRadius: 10, padding: 10, marginBottom: 10 }}>
                       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#c8b8d0", marginBottom: 4 }}>
                         <span>Chance de SUCESSO</span>
                         <b style={{ color: success >= 0.75 ? "#8ae28a" : success >= 0.5 ? "#ffd94d" : "#ff9a6b" }}>{Math.round(success * 100)}%</b>
-                      </div>
+                      </>
                       <div style={{ height: 8, background: "#1a0f26", borderRadius: 4, overflow: "hidden" }}>
                         <div style={{ width: `${success * 100}%`, height: "100%", background: `linear-gradient(90deg, #6bd66b, ${pick.color})`, transition: "width .3s" }} />
-                      </div>
+                      </>
                       {pick.upgradeTo && (
                         <div>
                           <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#c8b8d0", margin: "8px 0 4px" }}>
                             <span>✨ Orb EVOLUI (upgrade)</span>
                             <b style={{ color: "#ff9adf" }}>{Math.round(upgradeChance * 100)}%</b>
-                          </div>
+                          </>
                           <div style={{ height: 6, background: "#1a0f26", borderRadius: 4, overflow: "hidden" }}>
                             <div style={{ width: `${upgradeChance * 100}%`, height: "100%", background: "linear-gradient(90deg, #ff9adf, #ffd94d)" }} />
-                          </div>
-                        </div>
+                          </>
+                        </>
                       )}
                       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#c8b8d0", margin: "8px 0 4px" }}>
                         <span>⏱️ +TEMPO extra (+1~2h)</span>
                         <b style={{ color: "#ffd94d" }}>{Math.round(timeChance * 100)}%</b>
-                      </div>
+                      </>
                       <div style={{ height: 6, background: "#1a0f26", borderRadius: 4, overflow: "hidden" }}>
                         <div style={{ width: `${timeChance * 100}%`, height: "100%", background: "linear-gradient(90deg, #ffd94d, #8ae28a)" }} />
-                      </div>
-                    </div>
+                      </>
+                    </>
 
                     <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 6 }}>
                       Selecionados: <b style={{ color: canConfirm ? "#8ae28a" : "#ffd94d" }}>{selCount}/{pick.count}</b>
-                    </div>
+                    </>
                     {eligible.length === 0 ? (
                       <div style={{ color: "#e28a8a", fontSize: 12, padding: 24, textAlign: "center" }}>
                         Você não tem Pokémon {pick.rarity.toUpperCase()} na coleção.
-                      </div>
+                      </>
                     ) : (
                       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(84px, 1fr))", gap: 6, maxHeight: "22vh", overflowY: "auto", padding: 4 }}>
                         {eligible.map((c) => {
@@ -11885,15 +11885,15 @@ function IdlePage() {
                               ) : (
                                 <div style={{ width: 48, height: 48, background: "#2a1638", borderRadius: 8 }} />
                               )}
-                              <div style={{ fontSize: 9, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}</div>
-                              <div style={{ fontSize: 9, color: "#ffd94d" }}>Lv.{c.level}</div>
+                              <div style={{ fontSize: 9, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}</>
+                              <div style={{ fontSize: 9, color: "#ffd94d" }}>Lv.{c.level}</>
                               {sel && (
-                                <div style={{ position: "absolute", top: 2, right: 2, background: pick.color, color: "#0b0510", width: 16, height: 16, borderRadius: 999, fontSize: 10, fontWeight: 900, display: "grid", placeItems: "center" }}>✓</div>
+                                <div style={{ position: "absolute", top: 2, right: 2, background: pick.color, color: "#0b0510", width: 16, height: 16, borderRadius: 999, fontSize: 10, fontWeight: 900, display: "grid", placeItems: "center" }}>✓</>
                               )}
                             </button>
                           );
                         })}
-                      </div>
+                      </>
                     )}
 
                     {/* Combustível: filtros de raridade */}
@@ -11904,7 +11904,7 @@ function IdlePage() {
                           {fuelCount > 0 && <span style={{ marginLeft: 6, fontSize: 10, color: "#8a7a9c" }}>
                             ({breakdown.common > 0 && `${breakdown.common}C `}{breakdown.uncommon > 0 && `${breakdown.uncommon}I `}{breakdown.rare > 0 && `${breakdown.rare}R`})
                           </span>}
-                        </div>
+                        </>
                         <div style={{ display: "flex", gap: 4 }}>
                           {fuelRarities.map((r) => {
                             const tier = FUEL_TIERS[r];
@@ -11921,10 +11921,10 @@ function IdlePage() {
                               >{tier.label} +{Math.round(tier.boost * 100)}% ({count})</button>
                             );
                           })}
-                        </div>
-                      </div>
+                        </>
+                      </>
                       {fuelOfTab.length === 0 ? (
-                        <div style={{ fontSize: 11, color: "#8a7a9c", padding: 8, textAlign: "center" }}>Nenhum {FUEL_TIERS[activeTab].label} disponível.</div>
+                        <div style={{ fontSize: 11, color: "#8a7a9c", padding: 8, textAlign: "center" }}>Nenhum {FUEL_TIERS[activeTab].label} disponível.</>
                       ) : (
                         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(64px, 1fr))", gap: 4, maxHeight: "16vh", overflowY: "auto" }}>
                           {fuelOfTab.map((c) => {
@@ -11952,13 +11952,13 @@ function IdlePage() {
                                 {GIF[c.species] ? (
                                   <img src={GIF[c.species]} alt="" style={{ width: 38, height: 38, imageRendering: "pixelated" }} />
                                 ) : <div style={{ width: 38, height: 38, background: "#2a1638", borderRadius: 6 }} />}
-                                <div style={{ fontSize: 8, color: "#c8b8d0" }}>Lv.{c.level}</div>
+                                <div style={{ fontSize: 8, color: "#c8b8d0" }}>Lv.{c.level}</>
                               </button>
                             );
                           })}
-                        </div>
+                        </>
                       )}
-                    </div>
+                    </>
 
                     <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
                       <button
@@ -11984,13 +11984,13 @@ function IdlePage() {
                           border: "none", borderRadius: 8, cursor: canConfirm ? "pointer" : "not-allowed",
                         }}
                       >⚗️ INCUBAR</button>
-                    </div>
-                  </div>
+                    </>
+                  </>
                 );
               })()}
 
-            </div>
-          </div>
+            </>
+          </>
         );
       })()}
 
@@ -12018,7 +12018,7 @@ function IdlePage() {
           >
             <div style={{ fontSize: 12, color: "#c8b8d0", letterSpacing: 2, fontWeight: 900, marginBottom: 8 }}>
               {orbAnim.phase === "spinning" ? "⚗️  INCUBANDO..." : orbAnim.phase === "success" ? (orbAnim.lucky ? "🌟  SORTE!" : "✨  SUCESSO!") : "💥  FALHOU!"}
-            </div>
+            </>
             <div style={{ position: "relative", height: 240, display: "grid", placeItems: "center" }}>
               {/* base incubadora */}
               <img
@@ -12044,7 +12044,7 @@ function IdlePage() {
                     border: `3px dashed ${orbAnim.color}88`,
                     boxShadow: `inset 0 0 30px ${orbAnim.color}55`,
                   }} />
-                </div>
+                </>
               )}
               {/* orb resultante */}
               {orbAnim.phase === "success" && orbAnim.img && (
@@ -12065,7 +12065,7 @@ function IdlePage() {
                 <div>
                   <div style={{
                     position: "absolute", fontSize: 96, animation: "orb-crack .8s ease-out both", pointerEvents: "none",
-                  }}>💔</div>
+                  }}>💔</>
                   {[0,1,2,3,4,5].map((i) => {
                     const angle = (i / 6) * Math.PI * 2;
                     const dx = Math.cos(angle) * 80;
@@ -12079,27 +12079,27 @@ function IdlePage() {
                       } as React.CSSProperties} />
                     );
                   })}
-                </div>
+                </>
               )}
-            </div>
+            </>
             <div style={{ marginTop: 10, minHeight: 40 }}>
               {orbAnim.phase === "spinning" && (
-                <div style={{ fontSize: 12, color: "#c8b8d0" }}>A energia se condensa... aguarde.</div>
+                <div style={{ fontSize: 12, color: "#c8b8d0" }}>A energia se condensa... aguarde.</>
               )}
               {orbAnim.phase === "success" && (
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 900, color: orbAnim.color }}>+1× {orbAnim.label}</div>
+                  <div style={{ fontSize: 16, fontWeight: 900, color: orbAnim.color }}>+1× {orbAnim.label}</>
                   {orbAnim.lucky && orbAnim.extraHours ? (
-                    <div style={{ fontSize: 12, color: "#ffd94d", fontWeight: 700 }}>🌟 SORTE! +{orbAnim.extraHours}h extras ao ativar</div>
+                    <div style={{ fontSize: 12, color: "#ffd94d", fontWeight: 700 }}>🌟 SORTE! +{orbAnim.extraHours}h extras ao ativar</>
                   ) : orbAnim.lucky ? (
-                    <div style={{ fontSize: 12, color: "#ffd94d", fontWeight: 700 }}>🌟 SORTE! Orb evoluiu de raridade!</div>
+                    <div style={{ fontSize: 12, color: "#ffd94d", fontWeight: 700 }}>🌟 SORTE! Orb evoluiu de raridade!</>
                   ) : null}
-                </div>
+                </>
               )}
               {orbAnim.phase === "fail" && (
-                <div style={{ fontSize: 12, color: "#e28a8a" }}>A instabilidade dispersou a energia. Pokémon perdidos.</div>
+                <div style={{ fontSize: 12, color: "#e28a8a" }}>A instabilidade dispersou a energia. Pokémon perdidos.</>
               )}
-            </div>
+            </>
             {orbAnim.phase !== "spinning" && (
               <button
                 onClick={() => setOrbAnim(null)}
@@ -12109,8 +12109,8 @@ function IdlePage() {
                 }}
               >FECHAR</button>
             )}
-          </div>
-        </div>
+          </>
+        </>
       )}
 
 
@@ -12147,14 +12147,14 @@ function IdlePage() {
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <div style={{ fontWeight: 800, color: "#f5cf6b" }}>🔑 Resgatar código</div>
+              <div style={{ fontWeight: 800, color: "#f5cf6b" }}>🔑 Resgatar código</>
               <button onClick={() => setCodeOpen(false)} style={{
                 background: "transparent", border: "none", color: "#f3e5c5", cursor: "pointer", fontSize: 16,
               }}>✕</button>
-            </div>
+            </>
             <div style={{ fontSize: 11, color: "#c8b8d0", marginBottom: 8 }}>
               Digite um código secreto para receber recompensas.
-            </div>
+            </>
             <div style={{ display: "flex", gap: 6 }}>
               <input
                 value={codeInput}
@@ -12178,17 +12178,17 @@ function IdlePage() {
                   fontFamily: "monospace", fontSize: 12,
                 }}
               >Resgatar</button>
-            </div>
+            </>
             {codeMsg && (
               <div style={{
                 marginTop: 10, padding: "6px 8px", borderRadius: 6, fontSize: 12,
                 background: codeMsg.kind === "ok" ? "rgba(126,242,122,0.12)" : "rgba(227,74,74,0.12)",
                 border: `1px solid ${codeMsg.kind === "ok" ? "#7ef27a" : "#e34a4a"}`,
                 color: codeMsg.kind === "ok" ? "#7ef27a" : "#ffb0b0",
-              }}>{codeMsg.text}</div>
+              }}>{codeMsg.text}</>
             )}
-          </div>
-        </div>
+          </>
+        </>
       )}
 
       {/* ===== Painel de Troca Black Mitic Plus (RESGTT55) ===== */}
@@ -12279,26 +12279,26 @@ function IdlePage() {
                 <div>
                   <div style={{ fontWeight: 900, fontSize: 16, color: "#d9b3ff", letterSpacing: 1 }}>
                     🔄 TROCA BLACK MITIC PLUS
-                  </div>
+                  </>
                   <div style={{ fontSize: 11, color: "#b18cd9", marginTop: 2 }}>
                     Troque um Pokémon Black Mitic Plus da sua Coleção por outra espécie. Todos vêm com 6 traits VERSÁTIL.
-                  </div>
-                </div>
+                  </>
+                </>
                 <button
                   onClick={() => setBmpSwapOpen(false)}
                   style={{ background: "transparent", border: "1px solid #a25bff", color: "#d9b3ff", cursor: "pointer", fontSize: 12, padding: "4px 10px", borderRadius: 6 }}
                 >FECHAR ✕</button>
-              </div>
+              </>
 
               {/* Passo 1: escolher BMP */}
               <div style={{ marginTop: 12, padding: 10, borderRadius: 8, background: "rgba(162,91,255,0.06)", border: "1px solid rgba(162,91,255,0.25)" }}>
                 <div style={{ fontSize: 12, fontWeight: 800, color: "#e8d1ff", marginBottom: 6 }}>
                   1) SEU BLACK MITIC PLUS ({bmpEntries.length})
-                </div>
+                </>
                 {bmpEntries.length === 0 ? (
                   <div style={{ fontSize: 12, color: "#c8a8e8", padding: 8 }}>
                     Você não possui nenhum Black Mitic Plus na Coleção.
-                  </div>
+                  </>
                 ) : (
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: 8 }}>
                     {bmpEntries.map((e) => {
@@ -12320,24 +12320,24 @@ function IdlePage() {
                           {src ? (
                             <img src={src} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />
                           ) : (
-                            <div style={{ width: 48, height: 48, display: "grid", placeItems: "center", fontSize: 22 }}>✦</div>
+                            <div style={{ width: 48, height: 48, display: "grid", placeItems: "center", fontSize: 22 }}>✦</>
                           )}
                           <div style={{ fontSize: 10, fontWeight: 800, textAlign: "center" }}>
                             {e.species.toUpperCase()}
-                          </div>
-                          <div style={{ fontSize: 9, color: "#c9a2ff" }}>Lv {e.level}</div>
+                          </>
+                          <div style={{ fontSize: 9, color: "#c9a2ff" }}>Lv {e.level}</>
                         </button>
                       );
                     })}
-                  </div>
+                  </>
                 )}
-              </div>
+              </>
 
               {/* Passo 2: escolher destino */}
               <div style={{ marginTop: 12, padding: 10, borderRadius: 8, background: "rgba(162,91,255,0.06)", border: "1px solid rgba(162,91,255,0.25)" }}>
                 <div style={{ fontSize: 12, fontWeight: 800, color: "#e8d1ff", marginBottom: 6 }}>
                   2) ESCOLHA A ESPÉCIE DESEJADA ({BMP_SWAP_POOL.length})
-                </div>
+                </>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(96px, 1fr))", gap: 6 }}>
                   {BMP_SWAP_POOL.map((sp) => {
                     const src = GIF[sp];
@@ -12359,24 +12359,24 @@ function IdlePage() {
                         {src ? (
                           <img src={src} alt="" style={{ width: 40, height: 40, imageRendering: "pixelated" }} />
                         ) : (
-                          <div style={{ width: 40, height: 40, display: "grid", placeItems: "center", fontSize: 18 }}>✦</div>
+                          <div style={{ width: 40, height: 40, display: "grid", placeItems: "center", fontSize: 18 }}>✦</>
                         )}
                         <div style={{ fontSize: 9, fontWeight: 700, textAlign: "center", lineHeight: 1.1 }}>
                           {sp.toUpperCase()}
-                        </div>
+                        </>
                       </button>
                     );
                   })}
-                </div>
-              </div>
+                </>
+              </>
 
               {/* Confirmação */}
               <div style={{ marginTop: 12, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
                 <div style={{ fontSize: 11, color: "#c8a8e8" }}>
-                  {source ? <div>Fonte: <b style={{ color: "#ffd166" }}>{source.species.toUpperCase()}</b></div> : "Selecione um BMP acima."}
+                  {source ? <div>Fonte: <b style={{ color: "#ffd166" }}>{source.species.toUpperCase()}</b></> : "Selecione um BMP acima."}
                   {" · "}
-                  {bmpSwapTarget ? <div>Destino: <b style={{ color: "#ffd166" }}>{bmpSwapTarget.toString().toUpperCase()}</b></div> : "Escolha a espécie destino."}
-                </div>
+                  {bmpSwapTarget ? <div>Destino: <b style={{ color: "#ffd166" }}>{bmpSwapTarget.toString().toUpperCase()}</b></> : "Escolha a espécie destino."}
+                </>
                 <button
                   disabled={!canConfirm}
                   onClick={confirmSwap}
@@ -12389,17 +12389,17 @@ function IdlePage() {
                     boxShadow: canConfirm ? "0 0 12px rgba(255,209,102,0.55)" : "none",
                   }}
                 >CONFIRMAR TROCA ✦</button>
-              </div>
+              </>
               {bmpSwapMsg && (
                 <div style={{
                   marginTop: 10, padding: "8px 10px", borderRadius: 6, fontSize: 12,
                   background: bmpSwapMsg.kind === "ok" ? "rgba(126,242,122,0.12)" : "rgba(227,74,74,0.12)",
                   border: `1px solid ${bmpSwapMsg.kind === "ok" ? "#7ef27a" : "#e34a4a"}`,
                   color: bmpSwapMsg.kind === "ok" ? "#7ef27a" : "#ffb0b0",
-                }}>{bmpSwapMsg.text}</div>
+                }}>{bmpSwapMsg.text}</>
               )}
-            </div>
-          </div>
+            </>
+          </>
         );
       })()}
 
@@ -12440,7 +12440,7 @@ function IdlePage() {
               textAlign: "center",
               animation: "chest-pop 380ms ease-out",
             }}>
-              <div style={{ fontSize: 12, color: "#8a7a9c", letterSpacing: 3, marginBottom: 4 }}>OVO CHOCOU!</div>
+              <div style={{ fontSize: 12, color: "#8a7a9c", letterSpacing: 3, marginBottom: 4 }}>OVO CHOCOU!</>
               <div style={{
                 margin: "10px auto 16px", width: 90, height: 104,
                 borderRadius: "45% / 55%",
@@ -12453,7 +12453,7 @@ function IdlePage() {
                 letterSpacing: 2, textTransform: "uppercase",
               }}>
                 {eggOpenResult.sp.replace(/_/g, " ")}
-              </div>
+              </>
               <div style={{
                 marginTop: 8, display: "inline-block",
                 padding: "4px 14px", borderRadius: 20,
@@ -12461,13 +12461,13 @@ function IdlePage() {
                 fontSize: 12, fontWeight: 900, letterSpacing: 2,
               }}>
                 {label.toUpperCase()}
-              </div>
+              </>
               <div style={{ marginTop: 16, fontSize: 11, color: "#b8a8c8" }}>
                 Foi adicionado ao seu time/coleção com stats bonificados pela raridade.
-              </div>
-              <div style={{ marginTop: 12, fontSize: 10, color: "#8a7a9c" }}>Clique para fechar</div>
-            </div>
-          </div>
+              </>
+              <div style={{ marginTop: 12, fontSize: 10, color: "#8a7a9c" }}>Clique para fechar</>
+            </>
+          </>
         );
       })()}
 
@@ -12492,7 +12492,7 @@ function IdlePage() {
             </h2>
             <div style={{ color: "#b8a8c8", fontSize: 13, textAlign: "center", marginBottom: 22 }}>
               Você vai começar a jornada com este Pokémon (nível 5).
-            </div>
+            </>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
               {([
                 { sp: "charmander" as const, name: "Charmander", img: charmanderGif, color: "#ff6b3d", desc: "Fogo — ataque forte" },
@@ -12511,17 +12511,17 @@ function IdlePage() {
                 >
                   <img src={c.img} alt={c.name} width={96} height={96}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${c.color}88)` }} />
-                  <div style={{ color: c.color, fontWeight: 900, fontSize: 16 }}>{c.name}</div>
-                  <div style={{ color: "#b8a8c8", fontSize: 11, textAlign: "center" }}>{c.desc}</div>
+                  <div style={{ color: c.color, fontWeight: 900, fontSize: 16 }}>{c.name}</>
+                  <div style={{ color: "#b8a8c8", fontSize: 11, textAlign: "center" }}>{c.desc}</>
                   <div style={{
                     marginTop: 4, padding: "6px 14px", background: c.color, color: "#0b0510",
                     borderRadius: 6, fontWeight: 800, fontSize: 12,
-                  }}>ESCOLHER</div>
+                  }}>ESCOLHER</>
                 </button>
               ))}
-            </div>
-          </div>
-        </div>
+            </>
+          </>
+        </>
       )}
 
       {/* ===== Modal: detalhes do Pokémon (energia + tempo) ===== */}
@@ -12546,34 +12546,34 @@ function IdlePage() {
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ width: 72, height: 72, background: "#0b0510", borderRadius: 8, display: "grid", placeItems: "center", overflow: "hidden", border: "1px solid #f5cf6b55" }}>
                   {src && <img src={src} alt="" style={{ width: "90%", imageRendering: "pixelated" }} />}
-                </div>
+                </>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 900, fontSize: 16 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Lv.{pet.level} · {pet.rarity}</div>
-                </div>
+                  <div style={{ fontWeight: 900, fontSize: 16 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</>
+                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Lv.{pet.level} · {pet.rarity}</>
+                </>
                 <button onClick={() => setPetDetailUid(null)} style={{ background: "#3a1010", border: "1px solid #f5cf6b", color: "#f5cf6b", borderRadius: 6, padding: "4px 10px", fontWeight: 800, cursor: "pointer" }}>✕</button>
-              </div>
+              </>
               <div style={{ marginTop: 14 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11 }}><span>❤️ HP</span><span>{hp}/{maxHp}</span></div>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11 }}><span>❤️ HP</span><span>{hp}/{maxHp}</span></>
                 <div style={{ height: 8, background: "#3a1010", borderRadius: 4, marginTop: 3 }}>
                   <div style={{ width: `${Math.max(0, Math.min(100, (hp / maxHp) * 100))}%`, height: "100%", background: "#5ec26a", borderRadius: 4 }} />
-                </div>
-              </div>
+                </>
+              </>
               <div style={{ marginTop: 12 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11 }}>
                   <span>⚡ Energia {resting ? "(descansando)" : ""}</span>
                   <span>{infinite ? "∞ MÍTICO" : `${energy}/100`}</span>
-                </div>
+                </>
                 <div style={{ height: 8, background: "#0e2438", borderRadius: 4, marginTop: 3 }}>
                   <div style={{ width: `${infinite ? 100 : energy}%`, height: "100%", background: resting ? "#7fc4ff" : (energy > 30 ? "#4a9eff" : "#ff7a3d"), borderRadius: 4 }} />
-                </div>
+                </>
                 <div style={{ fontSize: 10, color: "#c8b8d0", marginTop: 4, textAlign: "right" }}>
                   {infinite ? "Não cansa" : (msFull > 0 ? `Cheia em ${fmtMS(msFull)}` : "Energia cheia")}
-                </div>
-              </div>
+                </>
+              </>
               <div style={{ marginTop: 12, fontSize: 10, color: "#8a7a9c" }}>
                 XP {pet.xp ?? 0}/{100 + pet.level * 20}
-              </div>
+              </>
               {!infinite && !resting && energy < ENERGY_MAX && (
                 <button
                   onClick={() => {
@@ -12595,8 +12595,8 @@ function IdlePage() {
                 >🏡 Levar à Casa Azul (5💎 · 5 min)</button>
               )}
 
-            </div>
-          </div>
+            </>
+          </>
         );
       })()}
 
@@ -12611,12 +12611,12 @@ function IdlePage() {
             <div onClick={(e) => e.stopPropagation()} style={{ background: "linear-gradient(180deg,#0a1830,#0e0818)", border: "2px solid #4a9eff", borderRadius: 12, padding: 18, width: 380, maxHeight: "80vh", overflow: "auto", color: "#eadfe8" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <div style={{ fontWeight: 900, fontSize: 16, color: "#7fc4ff" }}>🏡 CASA AZUL</div>
-                  <div style={{ fontSize: 11, color: "#c8b8d0" }}>Restaura 100 de energia em 5 min · custa {AZUL_REST_COST}💎</div>
-                </div>
+                  <div style={{ fontWeight: 900, fontSize: 16, color: "#7fc4ff" }}>🏡 CASA AZUL</>
+                  <div style={{ fontSize: 11, color: "#c8b8d0" }}>Restaura 100 de energia em 5 min · custa {AZUL_REST_COST}💎</>
+                </>
                 <button onClick={() => setAzulPickerOpen(false)} style={{ background: "#0a1830", border: "1px solid #4a9eff", color: "#7fc4ff", borderRadius: 6, padding: "4px 10px", fontWeight: 800, cursor: "pointer" }}>✕</button>
-              </div>
-              <div style={{ marginTop: 8, fontSize: 11, color: "#8fd0ff" }}>Seu saldo: 💎 {idle.bank.crystals}</div>
+              </>
+              <div style={{ marginTop: 8, fontSize: 11, color: "#8fd0ff" }}>Seu saldo: 💎 {idle.bank.crystals}</>
               <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 8 }}>
                 {party.map((p) => {
                   const infinite = (ENERGY_REGEN_MS[p.rarity] ?? 0) === 0;
@@ -12629,12 +12629,12 @@ function IdlePage() {
                     <div key={p.uid} style={{ display: "flex", gap: 8, alignItems: "center", background: p.uid === azulPreselectUid ? "#12305a" : "#0a1830", border: `1px solid ${p.uid === azulPreselectUid ? "#7fc4ff" : "#4a9eff33"}`, padding: 8, borderRadius: 8, boxShadow: p.uid === azulPreselectUid ? "0 0 12px #4a9eff55" : undefined }}>
                       <div style={{ width: 44, height: 44, background: "#0b0510", borderRadius: 6, display: "grid", placeItems: "center", overflow: "hidden" }}>
                         {src ? <img src={src} alt="" style={{ width: "90%", imageRendering: "pixelated" }} /> : <span>❓</span>}
-                      </div>
+                      </>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 12, fontWeight: 700 }}>{p.species.replace(/_/g, " ").toUpperCase()}</div>
-                        <div style={{ fontSize: 10, color: "#c8b8d0" }}>Lv.{p.level} · {p.rarity}</div>
-                        <div style={{ fontSize: 10, color: resting ? "#7fc4ff" : (energy < 30 ? "#ff7a3d" : "#8fd0ff") }}>⚡ {label}</div>
-                      </div>
+                        <div style={{ fontSize: 12, fontWeight: 700 }}>{p.species.replace(/_/g, " ").toUpperCase()}</>
+                        <div style={{ fontSize: 10, color: "#c8b8d0" }}>Lv.{p.level} · {p.rarity}</>
+                        <div style={{ fontSize: 10, color: resting ? "#7fc4ff" : (energy < 30 ? "#ff7a3d" : "#8fd0ff") }}>⚡ {label}</>
+                      </>
                       {(() => {
                         const canSpeed = resting && idle.bank.crystals >= AZUL_REST_COST;
                         const canPickNow = canPick;
@@ -12653,13 +12653,13 @@ function IdlePage() {
                           >{infinite ? "—" : label}</button>
                         );
                       })()}
-                    </div>
+                    </>
                   );
                 })}
-                {party.length === 0 && <div style={{ fontSize: 11, color: "#8a7a9c" }}>Nenhum Pokémon na sua equipe.</div>}
-              </div>
-            </div>
-          </div>
+                {party.length === 0 && <div style={{ fontSize: 11, color: "#8a7a9c" }}>Nenhum Pokémon na sua equipe.</>}
+              </>
+            </>
+          </>
         );
       })()}
 
@@ -12689,16 +12689,16 @@ function IdlePage() {
             }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                 <div>
-                  <div style={{ fontSize: 10, color: "#8b6a30", fontWeight: 900, letterSpacing: 2 }}>REGISTRO ✦</div>
+                  <div style={{ fontSize: 10, color: "#8b6a30", fontWeight: 900, letterSpacing: 2 }}>REGISTRO ✦</>
                   <div style={{ fontSize: 22, fontWeight: 900, color: "#4a3010", fontFamily: "Georgia, serif" }}>
                     {sp.replace(/_/g, " ").toUpperCase()}
-                  </div>
+                  </>
                   <div style={{ marginTop: 4, fontSize: 11, padding: "3px 10px", borderRadius: 12, background: rColor, color: "#fff", display: "inline-block", fontWeight: 900, letterSpacing: 1 }}>
                     {entry.rarity.toUpperCase()} · Nv. {displayLevel}
-                  </div>
-                </div>
+                  </>
+                </>
                 <button onClick={() => setColecaoDetailUid(null)} style={{ background: "#b8862a", border: "none", color: "#fff9e8", borderRadius: 6, padding: "4px 10px", fontWeight: 900, cursor: "pointer" }}>✕</button>
-              </div>
+              </>
               <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "120px 1fr", gap: 14, alignItems: "center" }}>
                 <div style={{
                   width: 120, height: 120, background: "linear-gradient(180deg,#fff,#e8d4a8)",
@@ -12706,23 +12706,23 @@ function IdlePage() {
                   boxShadow: `inset 0 0 20px ${rColor}55`,
                 }}>
                   {src && <img src={src} alt="" style={{ width: 96, height: 96, imageRendering: "pixelated" }} />}
-                </div>
-                <div style={{ fontSize: 13, fontStyle: "italic", color: "#5a4020", lineHeight: 1.5 }}>&ldquo;{lore}&rdquo;</div>
-              </div>
+                </>
+                <div style={{ fontSize: 13, fontStyle: "italic", color: "#5a4020", lineHeight: 1.5 }}>&ldquo;{lore}&rdquo;</>
+              </>
               <div style={{ marginTop: 14, background: "rgba(255,255,255,0.5)", border: "1px solid #b8862a55", borderRadius: 8, padding: 10 }}>
-                <div style={{ fontWeight: 900, fontSize: 11, color: "#6b4a10", letterSpacing: 2, marginBottom: 6 }}>ATRIBUTOS BASE</div>
+                <div style={{ fontWeight: 900, fontSize: 11, color: "#6b4a10", letterSpacing: 2, marginBottom: 6 }}>ATRIBUTOS BASE</>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, fontSize: 12 }}>
                   {(["hp","atk","def","spa","spd","spe"] as const).map((k) => (
                     <div key={k} style={{ background: "rgba(255,255,255,0.6)", borderRadius: 4, padding: "4px 8px" }}>
-                      <div style={{ fontSize: 9, color: "#8b6a30", fontWeight: 700 }}>{k.toUpperCase()}</div>
-                      <div style={{ fontWeight: 800, color: "#4a3010" }}>{base[k]}</div>
-                    </div>
+                      <div style={{ fontSize: 9, color: "#8b6a30", fontWeight: 700 }}>{k.toUpperCase()}</>
+                      <div style={{ fontWeight: 800, color: "#4a3010" }}>{base[k]}</>
+                    </>
                   ))}
-                </div>
-              </div>
+                </>
+              </>
               <div style={{ marginTop: 10, fontSize: 11, color: "#6b4a10" }}>
                 Ouro por derrota: <b>{base.goldRange[0]}-{base.goldRange[1]}</b> · Nível mínimo: <b>{base.minLv}</b>
-              </div>
+              </>
               <button
                 onClick={() => {
                   const basePet = livePet ?? makePet(sp, displayLevel, entry.rarity);
@@ -12764,10 +12764,10 @@ function IdlePage() {
                 >COLOCAR NO TIME</button>
               )}
               {isCurrent && (
-                <div style={{ marginTop: 14, textAlign: "center", color: "#3d7a4a", fontWeight: 900 }}>★ Este está no seu time</div>
+                <div style={{ marginTop: 14, textAlign: "center", color: "#3d7a4a", fontWeight: 900 }}>★ Este está no seu time</>
               )}
-            </div>
-          </div>
+            </>
+          </>
         );
       })()}
 
@@ -12824,7 +12824,7 @@ function IdlePage() {
                   transform: tgt.face === "right" ? "scaleX(-1)" : "none",
                 }} />
               ) : <span style={{ fontSize: 26 }}>❓</span>}
-            </div>
+            </>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 2 }}>
                 <span style={{
@@ -12846,7 +12846,7 @@ function IdlePage() {
                   textTransform: "uppercase",
                   overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
                 }}>{tgt.sp.replace(/_/g, " ")}</span>
-              </div>
+              </>
               <div style={{
                 position: "relative", height: 12, background: "#0a0410",
                 border: "1px solid #4a1a1a", borderRadius: 6, overflow: "hidden",
@@ -12864,15 +12864,15 @@ function IdlePage() {
                   fontSize: 9, fontWeight: 900, color: "#fff",
                   textShadow: "1px 1px 0 #000, -1px -1px 0 #000",
                   letterSpacing: 0.5,
-                }}>{Math.max(0, Math.round(tgt.hp))} / {tgt.maxHp}</div>
-              </div>
+                }}>{Math.max(0, Math.round(tgt.hp))} / {tgt.maxHp}</>
+              </>
               <div style={{
                 fontSize: 8, color: rColor, marginTop: 2, letterSpacing: 1.5,
                 textTransform: "uppercase", fontWeight: 800,
                 textShadow: "1px 1px 0 #000",
-              }}>◆ {tgt.rarity} ◆ ALVO</div>
-            </div>
-          </div>
+              }}>◆ {tgt.rarity} ◆ ALVO</>
+            </>
+          </>
         );
       })()}
 
@@ -13126,7 +13126,7 @@ function IdlePage() {
           pushChat(`🐺✦ Governante consumiu ${use}× Carta Riolu Suprema e materializou ${use}× RIOLU BLACK MITIC BRILHANT PLUS Lv 1000 na Coleção.`, "cap");
         }}
       />
-    </div>
+    </>
 
 
   );
@@ -13136,7 +13136,7 @@ function IdlePage() {
 // ============ Componentes visuais ============
 function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13167,10 +13167,10 @@ function Panel({ title, accent, children }: { title: string; accent: string; chi
         background: accent, color: "#fff",
         padding: "6px 10px", fontWeight: 700, fontSize: 12,
         letterSpacing: 1,
-      }}>{title}</div>
-      <div style={{ padding: 10 }}>{children}</div>
-    </div>
-    </div>
+      }}>{title}</>
+      <div style={{ padding: 10 }}>{children}</>
+    </>
+    </>
   );
 }
 
@@ -13185,12 +13185,12 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
   if (!src) {
     return (
       <div onClick={onClick} style={{ display: "flex", gap: 8, alignItems: "center", background: "#2a1a3a", padding: 6, borderRadius: 6, cursor: onClick ? "pointer" : undefined }}>
-        <div style={{ width: 48, height: 48, background: "#0b0510", borderRadius: 6, display: "grid", placeItems: "center", fontSize: 20 }}>❓</div>
+        <div style={{ width: 48, height: 48, background: "#0b0510", borderRadius: 6, display: "grid", placeItems: "center", fontSize: 20 }}>❓</>
         <div style={{ flex: 1, fontSize: 12 }}>
-          <div style={{ fontWeight: 600 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
-          <div style={{ fontSize: 10, color: "#b8a8c8" }}>Lv.{pet.level}</div>
-        </div>
-      </div>
+          <div style={{ fontWeight: 600 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</>
+          <div style={{ fontSize: 10, color: "#b8a8c8" }}>Lv.{pet.level}</>
+        </>
+      </>
     );
   }
   const maxHp = calcIdleMaxHp(pet);
@@ -13265,8 +13265,8 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
           <img src={src} alt="" style={{ width: "82%", imageRendering: "pixelated", filter: exhausted ? "grayscale(1) brightness(0.55)" : "drop-shadow(0 1px 2px rgba(0,0,0,0.8))" }} />
           {resting && <span style={{ position: "absolute", top: -2, right: -2, fontSize: 11, filter: "drop-shadow(0 0 3px #4a9eff)" }}>🏡</span>}
           {exhausted && <span style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", fontSize: 15, textShadow: "0 0 4px #000" }}>🔒</span>}
-        </div>
-      </div>
+        </>
+      </>
 
 
       <div style={{ flex: 1, minWidth: 0 }}>
@@ -13284,7 +13284,7 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
             background: "linear-gradient(180deg, #ffd66b, #b8862a)", color: "#2a1a0a",
             border: "1px solid rgba(0,0,0,0.4)",
           }}>LV {pet.level}</span>
-        </div>
+        </>
         {/* HP */}
         <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 3 }}>
           <span style={{ fontSize: 9, color: "#ff9d9d", width: 10 }}>❤</span>
@@ -13298,9 +13298,9 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
               background: pct > 40 ? "linear-gradient(180deg, #a7f3a0, #3ea854)" : "linear-gradient(180deg, #ff9d9d, #a83030)",
               boxShadow: pct > 40 ? "0 0 5px #5ec26a88" : "0 0 5px #e34a4a88",
             }} />
-          </div>
+          </>
           <span style={{ fontSize: 8.5, color: "#f0d0d0", fontWeight: 700, minWidth: 44, textAlign: "right", fontFamily: "monospace" }}>{hp}/{maxHp}</span>
-        </div>
+        </>
         {/* Energia */}
         <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 2 }}>
           <span style={{ fontSize: 9, color: "#8fd0ff", width: 10 }}>⚡</span>
@@ -13312,14 +13312,14 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
               width: `${infinite ? 100 : ePct}%`, height: "100%",
               background: resting ? "linear-gradient(180deg, #a7d8ff, #4a9eff)" : (energy > 30 ? "linear-gradient(180deg, #8fd0ff, #2a6ec9)" : "linear-gradient(180deg, #ffb37a, #d95a1e)"),
             }} />
-          </div>
+          </>
           <span style={{ fontSize: 8.5, color: "#a5c8ff", minWidth: 30, textAlign: "right", fontWeight: 700 }}>
             {infinite ? "∞" : `${energy}%`}
           </span>
-        </div>
-      </div>
-    </div>
-    </div>
+        </>
+      </>
+    </>
+    </>
   );
 }
 
@@ -13327,7 +13327,7 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
 function ProgressRow({ icon, label, value, target }: { icon: string; label: string; value: number; target: number }) {
   const pct = Math.min(100, (value / target) * 100);
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13353,12 +13353,12 @@ function ProgressRow({ icon, label, value, target }: { icon: string; label: stri
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, marginBottom: 3 }}>
         <span>{icon} {label}</span>
         <span style={{ color: "#f5cf6b" }}>{value}/{target}</span>
-      </div>
+      </>
       <div style={{ height: 5, background: "#3a1010", borderRadius: 2 }}>
         <div style={{ width: `${pct}%`, height: "100%", background: "#5ec26a", borderRadius: 2 }} />
-      </div>
-    </div>
-    </div>
+      </>
+    </>
+    </>
   );
 }
 
@@ -13420,8 +13420,8 @@ function ResourceNiche({ tint, icon, value, title }: { tint: string; icon: React
         textShadow: "0 1px 0 #000",
         fontFamily: "'Cinzel', Georgia, serif", letterSpacing: 0.4,
       }}>{value}</span>
-    </div>
-    </div>
+    </>
+    </>
   );
 }
 
@@ -13429,7 +13429,7 @@ function ResourceNiche({ tint, icon, value, title }: { tint: string; icon: React
 function BallSlot({ img, count, tint }: { img: string; count: number; tint: string }) {
   const empty = count <= 0;
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13514,8 +13514,8 @@ function BallSlot({ img, count, tint }: { img: string; count: number; tint: stri
         boxShadow: "0 2px 3px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.08)",
         lineHeight: 1,
       }}>{count}</span>
-    </div>
-    </div>
+    </>
+    </>
   );
 }
 
@@ -13552,7 +13552,7 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
   const q = clamp(qty);
   const ok = canBuyFn(q);
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13588,21 +13588,21 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
           padding: "3px 8px", fontSize: 11, fontWeight: 800, borderRadius: 5,
           border: `1px solid #4a3a52`, background: "#1a0f26", color: "#b8a8c8", cursor: "pointer",
         }}>MAX</button>
-      </div>
+      </>
       <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
         <button onClick={() => setQty(clamp(q - 1))} style={{ width: 28, height: 30, background: "#2a1a3a", border: "1px solid #4a3a52", color: "#eadfe8", borderRadius: 5, cursor: "pointer", fontWeight: 900 }}>−</button>
         <input type="number" min={1} max={max} value={qty}
           onChange={(e) => setQty(clamp(parseInt(e.target.value, 10)))}
           style={{ flex: 1, height: 30, textAlign: "center", background: "#0f0819", border: "1px solid #4a3a52", color: "#eadfe8", borderRadius: 5, fontWeight: 800, fontSize: 13 }} />
         <button onClick={() => setQty(clamp(q + 1))} style={{ width: 28, height: 30, background: "#2a1a3a", border: "1px solid #4a3a52", color: "#eadfe8", borderRadius: 5, cursor: "pointer", fontWeight: 900 }}>+</button>
-      </div>
+      </>
       <button onClick={() => ok && onBuy(q)} disabled={!ok} style={{
         width: "100%", padding: "8px 10px", fontWeight: 800, fontSize: 12,
         background: ok ? buttonColor : "#3a2a4a", color: ok ? "#0b0510" : "#6a5a7c",
         border: "none", borderRadius: 6, cursor: ok ? "pointer" : "not-allowed",
       }}>{ok ? `COMPRAR ×${q} ${unitLabel}` : disabledLabel}</button>
-    </div>
-    </div>
+    </>
+    </>
   );
 }
 
@@ -13751,7 +13751,7 @@ function TabOverlay({
     setFragConfirm(null);
   };
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13783,7 +13783,7 @@ function TabOverlay({
         <button onClick={onClose} style={{ ...smallBtn, background: "#c92a2a", color: "#fff", border: "none", padding: "6px 14px" }}>
           ← Voltar
         </button>
-      </div>
+      </>
 
       {tab === "pokemon" && leader && (
         <div style={{
@@ -13805,7 +13805,7 @@ function TabOverlay({
             fontSize: 10, fontWeight: 900, letterSpacing: 3,
             color: "#ff97e1", textShadow: "0 0 8px rgba(255,151,225,0.7)",
             opacity: 0.85,
-          }}>✦ MEW ✦</div>
+          }}>✦ MEW ✦</>
           <div style={{ position: "relative" }}>
           <PokemonDetail pet={leader} currentHp={leaderHp} src={gifMap[leader.species]} />
           <ActiveBonuses leaderRarity={leader.rarity} team={team} buffs={buffs} idle={idle} />
@@ -13823,7 +13823,7 @@ function TabOverlay({
               mythic_shiny: { c: "#ff97e1", label: "MÍTICO ✦" },
             };
             return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13860,17 +13860,17 @@ function TabOverlay({
                   <div>
                     <div style={{ color: "#f5cf6b", fontSize: 18, fontWeight: 900, letterSpacing: 2, textShadow: "0 2px 0 #0b0510, 0 0 10px rgba(245,207,107,0.6)" }}>
                       ⚔ SEU TIME ⚔
-                    </div>
+                    </>
                     <div style={{ color: "#b8a8c8", fontSize: 10, marginTop: 2, letterSpacing: 1 }}>
                       Ordene por prioridade — o Líder é o #1
-                    </div>
-                  </div>
+                    </>
+                  </>
                   <div style={{
                     background: "rgba(245,207,107,0.15)", border: "1px solid rgba(245,207,107,0.4)",
                     padding: "4px 12px", borderRadius: 999, color: "#f5cf6b",
                     fontSize: 12, fontWeight: 900, letterSpacing: 1,
-                  }}>{team.length}/6</div>
-                </div>
+                  }}>{team.length}/6</>
+                </>
 
                 <SynergyPanel team={team} />
 
@@ -13909,11 +13909,11 @@ function TabOverlay({
                     const maxStat = Math.max(stats.atk, stats.def, stats.spa, stats.spd, stats.spe, 1);
                     const StatIcon = ({ kind, col }: { kind: string; col: string }) => {
                       const paths: Record<string, any> = {
-                        atk: <div><path d="M4 20 L14 10 M12 8 L20 4 L18 12 L10 10 Z" stroke={col} strokeWidth="2" fill={col+"55"} strokeLinejoin="round"/><circle cx="5" cy="19" r="1.5" fill={col}/></div>,
-                        def: <div><path d="M12 3 L20 6 V12 C20 17 16 20 12 21 C8 20 4 17 4 12 V6 Z" stroke={col} strokeWidth="2" fill={col+"55"} strokeLinejoin="round"/><path d="M9 12 L11 14 L15 10" stroke={col} strokeWidth="2" fill="none" strokeLinecap="round"/></div>,
-                        spa: <div><path d="M12 3 L14 10 L21 12 L14 14 L12 21 L10 14 L3 12 L10 10 Z" stroke={col} strokeWidth="1.5" fill={col+"77"} strokeLinejoin="round"/></div>,
-                        spd: <div><circle cx="12" cy="12" r="8" stroke={col} strokeWidth="2" fill={col+"33"}/><path d="M12 4 Q16 12 12 20 Q8 12 12 4" stroke={col} strokeWidth="1.5" fill={col+"77"}/></div>,
-                        spe: <div><path d="M13 3 L4 14 H11 L9 21 L20 10 H13 Z" stroke={col} strokeWidth="1.5" fill={col+"77"} strokeLinejoin="round"/></div>,
+                        atk: <div><path d="M4 20 L14 10 M12 8 L20 4 L18 12 L10 10 Z" stroke={col} strokeWidth="2" fill={col+"55"} strokeLinejoin="round"/><circle cx="5" cy="19" r="1.5" fill={col}/></>,
+                        def: <div><path d="M12 3 L20 6 V12 C20 17 16 20 12 21 C8 20 4 17 4 12 V6 Z" stroke={col} strokeWidth="2" fill={col+"55"} strokeLinejoin="round"/><path d="M9 12 L11 14 L15 10" stroke={col} strokeWidth="2" fill="none" strokeLinecap="round"/></>,
+                        spa: <div><path d="M12 3 L14 10 L21 12 L14 14 L12 21 L10 14 L3 12 L10 10 Z" stroke={col} strokeWidth="1.5" fill={col+"77"} strokeLinejoin="round"/></>,
+                        spd: <div><circle cx="12" cy="12" r="8" stroke={col} strokeWidth="2" fill={col+"33"}/><path d="M12 4 Q16 12 12 20 Q8 12 12 4" stroke={col} strokeWidth="1.5" fill={col+"77"}/></>,
+                        spe: <div><path d="M13 3 L4 14 H11 L9 21 L20 10 H13 Z" stroke={col} strokeWidth="1.5" fill={col+"77"} strokeLinejoin="round"/></>,
                       };
                       return (
                         <svg viewBox="0 0 24 24" width="18" height="18" style={{ filter: `drop-shadow(0 0 3px ${col}aa)` }}>
@@ -13930,21 +13930,21 @@ function TabOverlay({
                           display: "flex", alignItems: "center", justifyContent: "center",
                           flexShrink: 0,
                           boxShadow: `0 0 6px ${col}55, inset 0 1px 0 rgba(255,255,255,0.15)`,
-                        }}><StatIcon kind={kind} col={col} /></div>
+                        }}><StatIcon kind={kind} col={col} /></>
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ display: "flex", justifyContent: "space-between", fontSize: 8, fontWeight: 900, letterSpacing: 1, color: "#c8b8d0", marginBottom: 2 }}>
                             <span>{label}</span>
                             <span style={{ color: col, fontFamily: "monospace", fontSize: 9 }}>{val}</span>
-                          </div>
+                          </>
                           <div style={{ height: 4, background: "rgba(0,0,0,0.55)", borderRadius: 3, overflow: "hidden", border: "1px solid rgba(0,0,0,0.7)" }}>
                             <div style={{
                               width: `${(val / maxStat) * 100}%`, height: "100%",
                               background: `linear-gradient(90deg, ${col}, ${col}dd)`,
                               boxShadow: `0 0 4px ${col}88`,
                             }} />
-                          </div>
-                        </div>
-                      </div>
+                          </>
+                        </>
+                      </>
                     );
                     return (
                       <div key={p.uid} style={{
@@ -13979,7 +13979,7 @@ function TabOverlay({
                               fontSize: 10, fontWeight: 900,
                               color: isLeader ? rc : "#8a7a9c",
                               textShadow: "0 1px 2px #000",
-                            }}>{isLeader ? "★" : `#${i + 1}`}</div>
+                            }}>{isLeader ? "★" : `#${i + 1}`}</>
                             {/* Level bottom-right badge */}
                             <div style={{
                               position: "absolute", bottom: -4, right: -4,
@@ -13989,30 +13989,30 @@ function TabOverlay({
                               borderRadius: 999, display: "flex", alignItems: "center", justifyContent: "center",
                               fontSize: 10, fontWeight: 900, letterSpacing: 0.5,
                               boxShadow: "0 2px 4px rgba(0,0,0,0.6)",
-                            }}>Lv{p.level}</div>
-                          </div>
+                            }}>Lv{p.level}</>
+                          </>
                           {isLeader && (
                             <div style={{
                               padding: "2px 8px", borderRadius: 999,
                               background: `linear-gradient(180deg, ${rc}, ${rc}bb)`,
                               color: "#0b0510", fontSize: 8, fontWeight: 900, letterSpacing: 1.5,
                               boxShadow: `0 2px 6px ${rc}88`, border: "1px solid #fff4d0",
-                            }}>LÍDER</div>
+                            }}>LÍDER</>
                           )}
-                        </div>
+                        </>
 
                         {/* Info + Stats */}
                         <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 6, position: "relative" }}>
                           <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
                             <div style={{ color: "#f7ecf7", fontWeight: 900, fontSize: 14, textTransform: "uppercase", letterSpacing: 1, textShadow: "0 1px 0 #000" }}>
                               {p.species.replace(/_/g, " ")}
-                            </div>
+                            </>
                             <div style={{
                               background: `linear-gradient(180deg, ${rc}, ${rc}aa)`, color: "#0b0510",
                               fontSize: 8, fontWeight: 900, letterSpacing: 1,
                               padding: "2px 7px", borderRadius: 4,
                               boxShadow: `0 0 8px ${rc}88`, border: "1px solid rgba(0,0,0,0.4)",
-                            }}>{rarityInfo.label}</div>
+                            }}>{rarityInfo.label}</>
                             <button
                               onClick={() => setStatsCardPet(p)}
                               title="Ver ficha completa"
@@ -14022,7 +14022,7 @@ function TabOverlay({
                                 padding: "2px 8px", fontSize: 9, fontWeight: 900, letterSpacing: 1, cursor: "pointer",
                               }}
                             >⚡ {computePower(p)} • CARD</button>
-                          </div>
+                          </>
 
 
                           {/* HP */}
@@ -14030,7 +14030,7 @@ function TabOverlay({
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, fontWeight: 900, letterSpacing: 1, marginBottom: 2 }}>
                               <span style={{ color: "#ff9ea1" }}>❤ HP</span>
                               <span style={{ color: hpColor, fontFamily: "monospace" }}>{Math.floor(petHp)}/{petMax}</span>
-                            </div>
+                            </>
                             <div style={{
                               height: 9, background: "rgba(0,0,0,0.6)",
                               border: "1px solid rgba(0,0,0,0.75)",
@@ -14043,8 +14043,8 @@ function TabOverlay({
                                 boxShadow: `0 0 6px ${hpColor}88, inset 0 1px 0 rgba(255,255,255,0.4)`,
                                 transition: "width 200ms",
                               }} />
-                            </div>
-                          </div>
+                            </>
+                          </>
 
                           {/* Stats grid */}
                           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginTop: 2 }}>
@@ -14053,8 +14053,8 @@ function TabOverlay({
                             {statRow("spa", "S.ATK", stats.spa, "#c084fc")}
                             {statRow("spd", "S.DEF", stats.spd, "#7ef2a2")}
                             {statRow("spe", "VEL", stats.spe, "#f5cf6b")}
-                          </div>
-                        </div>
+                          </>
+                        </>
 
                         {/* Actions */}
                         <div style={{ display: "flex", flexDirection: "column", gap: 4, justifyContent: "center", flexShrink: 0, position: "relative" }}>
@@ -14077,7 +14077,7 @@ function TabOverlay({
                                 border: `1px solid ${i === team.length - 1 ? "#3a2450" : "#5a3d78"}`,
                                 borderRadius: 5, cursor: i === team.length - 1 ? "not-allowed" : "pointer",
                               }}>▼</button>
-                          </div>
+                          </>
                           {!isLeader && (
                             <button onClick={() => move(i, 0)}
                               title="Tornar Líder"
@@ -14103,8 +14103,8 @@ function TabOverlay({
                               borderRadius: 5, cursor: "pointer",
                               boxShadow: "0 2px 4px rgba(138,26,26,0.55)",
                             }}>↩ RETIRAR</button>
-                        </div>
-                      </div>
+                        </>
+                      </>
                     );
                   })}
 
@@ -14119,15 +14119,15 @@ function TabOverlay({
                     }}>
                       <span style={{ fontSize: 16, opacity: 0.5 }}>＋</span>
                       SLOT VAZIO — Adicione pela Coleção
-                    </div>
+                    </>
                   ))}
-                </div>
-              </div>
+                </>
+              </>
             );
           })()}
 
-          </div>
-        </div>
+          </>
+        </>
       )}
 
 
@@ -14138,11 +14138,11 @@ function TabOverlay({
         <div>
           <div style={{ color: "#c8b8d0", fontSize: 13, marginBottom: 12 }}>
             Complete as tarefas para ganhar <img src={crystalGreenImg} alt="" style={{ width: 12, verticalAlign: "middle" }} /> cristais.
-          </div>
+          </>
           {tasks.length === 0 ? (
             <div style={{ color: "#8a7a9c", fontSize: 13, padding: 20, textAlign: "center" }}>
               Todas as tarefas foram concluídas! Aguarde novas em breve.
-            </div>
+            </>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {tasks.map((t) => (
@@ -14157,14 +14157,14 @@ function TabOverlay({
                       <img src={crystalGreenImg} alt="" style={{ width: 14, imageRendering: "pixelated" }} />
                       {t.reward}
                     </span>
-                  </div>
+                  </>
                   <div style={{ height: 6, background: "#3a1010", borderRadius: 3 }}>
                     <div style={{
                       width: `${Math.min(100, (t.progress / t.target) * 100)}%`,
                       height: "100%", background: t.done ? "#5ec26a" : "#c92a2a",
                       borderRadius: 3, transition: "width 200ms",
                     }} />
-                  </div>
+                  </>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 6 }}>
                     <span style={{ color: "#b8a8c8", fontSize: 11 }}>{t.progress}/{t.target}</span>
                     {t.done && (
@@ -14173,12 +14173,12 @@ function TabOverlay({
                         COLETAR
                       </button>
                     )}
-                  </div>
-                </div>
+                  </>
+                </>
               ))}
-            </div>
+            </>
           )}
-        </div>
+        </>
       )}
 
       {tab === "mochila" && (() => {
@@ -14293,7 +14293,7 @@ function TabOverlay({
         };
 
         return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -14345,39 +14345,39 @@ function TabOverlay({
                 boxShadow: `inset 0 2px 4px rgba(255,255,255,0.6), 0 3px 8px rgba(0,0,0,0.35)`,
               }}>
                 <img src={bagIconImg} alt="" width={40} height={40} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 2px 2px rgba(0,0,0,0.4))" }} />
-              </div>
+              </>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{
                   color: P.goldDark, fontSize: 22, fontWeight: 900, letterSpacing: 3, lineHeight: 1,
                   textShadow: `0 1px 0 ${P.panel}, 0 2px 3px rgba(0,0,0,0.15)`,
-                }}>✦ MOCHILA ✦</div>
+                }}>✦ MOCHILA ✦</>
                 <div style={{ color: P.inkSoft, fontSize: 10.5, marginTop: 6, fontStyle: "italic" }}>
                   "Um bom aventureiro carrega o mundo nas costas."
-                </div>
-              </div>
+                </>
+              </>
               <div style={{ display: "flex", flexDirection: "column", gap: 5, alignItems: "flex-end" }}>
                 <div style={{
                   background: `linear-gradient(180deg, ${P.panel}, ${P.bg2})`, color: P.ink,
                   border: `1.5px solid ${P.goldDark}`, borderRadius: 8, padding: "3px 10px",
                   fontSize: 10.5, fontWeight: 900, letterSpacing: 0.5,
                   boxShadow: `inset 0 0 0 1px ${P.goldLight}80`,
-                }}>{totalTypes} tipos · {totalCount} itens</div>
+                }}>{totalTypes} tipos · {totalCount} itens</>
                 <div style={{ display: "flex", gap: 5 }}>
                   <div style={{
                     background: `linear-gradient(180deg, ${P.goldLight}, ${P.gold})`, color: P.ink,
                     border: `1.5px solid ${P.goldDark}`, borderRadius: 8, padding: "3px 10px",
                     fontSize: 11, fontWeight: 900,
                     boxShadow: "0 2px 0 rgba(0,0,0,0.2)",
-                  }}>💰 {bank.gold.toLocaleString()}</div>
+                  }}>💰 {bank.gold.toLocaleString()}</>
                   <div style={{
                     background: "linear-gradient(180deg, #c084fc, #9333ea)", color: "#fff",
                     border: "1.5px solid #7e22ce", borderRadius: 8, padding: "3px 10px",
                     fontSize: 11, fontWeight: 900,
                     boxShadow: "0 2px 0 rgba(0,0,0,0.2)",
-                  }}>💎 {Math.floor(bank.crystals).toLocaleString()}</div>
-                </div>
-              </div>
-            </div>
+                  }}>💎 {Math.floor(bank.crystals).toLocaleString()}</>
+                </>
+              </>
+            </>
 
             {/* GRID LAYOUT — sidebar categorias + grade */}
             <div className="mochila-body" style={{ display: "grid", gridTemplateColumns: "196px minmax(0, 1fr)", gap: 12 }}>
@@ -14391,7 +14391,7 @@ function TabOverlay({
                 <div style={{
                   textAlign: "center", fontSize: 10, fontWeight: 900, letterSpacing: 2,
                   color: P.goldDark, padding: "4px 0 6px", borderBottom: `1px dashed ${P.goldDark}55`,
-                }}>CATEGORIAS</div>
+                }}>CATEGORIAS</>
                 {CATS.map((c) => {
                   const active = mochilaCat === c.id;
                   const count = c.id === "all" ? entries.length : entries.filter(([id]) => catOf(id) === c.id).length;
@@ -14446,8 +14446,8 @@ function TabOverlay({
                   borderTop: `1px dashed ${P.goldDark}55`,
                 }}>
                   {SLOTS_MIN - filtered.length > 0 ? `${SLOTS_MIN - filtered.length} slots livres` : "Mochila cheia"}
-                </div>
-              </div>
+                </>
+              </>
 
               {/* GRADE DE ITENS */}
               <div style={{
@@ -14463,7 +14463,7 @@ function TabOverlay({
                     {entries.length === 0
                       ? "Sua mochila está vazia. Derrote Pokémon, abra baús ou visite a Loja!"
                       : "Nenhum item nesta categoria."}
-                  </div>
+                  </>
                 ) : (
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(126px, 1fr))", gap: 10 }}>
                     {filtered.map(([id, n]) => {
@@ -14491,7 +14491,7 @@ function TabOverlay({
                             borderRadius: 999, minWidth: 24, textAlign: "center",
                             boxShadow: "0 2px 4px rgba(0,0,0,0.5)",
                             border: `1.5px solid ${P.panel}`,
-                          }}>x{n}</div>
+                          }}>x{n}</>
                           <div
                             onClick={(e) => { e.stopPropagation(); setItemDetail(id); }}
                             title="Ver detalhes"
@@ -14519,11 +14519,11 @@ function TabOverlay({
                             ) : (
                               <ItemPixelIcon id={id} size={52} color={color} />
                             )}
-                          </div>
+                          </>
                           <div style={{
                             fontSize: 10.5, fontWeight: 900, color: P.ink, letterSpacing: 0.2, lineHeight: 1.15,
                             minHeight: 24, display: "flex", alignItems: "center",
-                          }}>{NAMES[id] ?? id}</div>
+                          }}>{NAMES[id] ?? id}</>
                           <div style={{ display: "flex", gap: 4, width: "100%" }}>
                             <button
                               onClick={() => {
@@ -14581,7 +14581,7 @@ function TabOverlay({
                               >💚</button>
                             )}
 
-                          </div>
+                          </>
                           {(() => {
                             const UP: Record<string, { to: string; cost: number; trainerLv: number; label: string }> = {
                               book_exp: { to: "book_exp_big", cost: 3, trainerLv: 10, label: "EXP Raro" },
@@ -14614,7 +14614,7 @@ function TabOverlay({
                               >⚒️ {rule.label}</button>
                             );
                           })()}
-                        </div>
+                        </>
                       );
                     })}
                     {Array.from({ length: emptyCount }).map((_, i) => (
@@ -14625,10 +14625,10 @@ function TabOverlay({
                         boxShadow: `inset 0 0 12px ${P.gold}22`,
                       }} />
                     ))}
-                  </div>
+                  </>
                 )}
-              </div>
-            </div>
+              </>
+            </>
             <style>{`
               @media (max-width: 720px) {
                 .mochila-body { grid-template-columns: 1fr !important; }
@@ -14674,20 +14674,20 @@ function TabOverlay({
                         ) : (
                           <ItemPixelIcon id={id} size={68} color={color} />
                         )}
-                      </div>
+                      </>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 16, fontWeight: 900, lineHeight: 1.2 }}>{name}</div>
-                        <div style={{ fontSize: 11, color: P.inkSoft, marginTop: 4, fontWeight: 700 }}>Quantidade: <span style={{ color: P.gold }}>x{count}</span></div>
+                        <div style={{ fontSize: 16, fontWeight: 900, lineHeight: 1.2 }}>{name}</>
+                        <div style={{ fontSize: 11, color: P.inkSoft, marginTop: 4, fontWeight: 700 }}>Quantidade: <span style={{ color: P.gold }}>x{count}</span></>
                         {sellPrice > 0 && (
-                          <div style={{ fontSize: 11, color: P.inkSoft, marginTop: 2, fontWeight: 700 }}>Preço de venda: <span style={{ color: "#ffd66b" }}>{sellPrice} 🪙</span></div>
+                          <div style={{ fontSize: 11, color: P.inkSoft, marginTop: 2, fontWeight: 700 }}>Preço de venda: <span style={{ color: "#ffd66b" }}>{sellPrice} 🪙</span></>
                         )}
-                      </div>
-                    </div>
+                      </>
+                    </>
                     <div style={{
                       marginTop: 14, padding: 12, borderRadius: 10,
                       background: `${P.bg2}80`, border: `1px dashed ${P.goldDark}88`,
                       fontSize: 12.5, lineHeight: 1.5, color: P.ink,
-                    }}>{desc}</div>
+                    }}>{desc}</>
                     <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
                       {!isEgg && count > 0 && (
                         <button onClick={() => { onUseItem(id, 1); setItemDetail(null); }} style={{
@@ -14712,12 +14712,12 @@ function TabOverlay({
                         background: "transparent", color: P.inkSoft,
                         border: `1.5px solid ${P.goldDark}`, borderRadius: 8, cursor: "pointer",
                       }}>FECHAR</button>
-                    </div>
-                  </div>
-                </div>
+                    </>
+                  </>
+                </>
               );
             })()}
-          </div>
+          </>
         );
       })()}
 
@@ -14738,23 +14738,23 @@ function TabOverlay({
             <div>
               <div style={{ color: "#6b4a10", fontSize: 20, fontWeight: 900, letterSpacing: 3, fontFamily: "Georgia, serif" }}>
                 ✦ COLEÇÃO ✦
-              </div>
+              </>
               <div style={{ color: "#8b6a30", fontSize: 12, marginTop: 2, fontStyle: "italic" }}>
                 Registro particular do treinador
-              </div>
-            </div>
+              </>
+            </>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               <div style={{ background: collection.length >= MAX_COLLECTION ? "#c0392b" : "#b8862a", color: "#fff9e8", fontWeight: 900, padding: "8px 14px", borderRadius: 20, fontSize: 12, boxShadow: "0 2px 8px rgba(184,134,42,0.5)" }}>
                 {collection.length} / {MAX_COLLECTION} NA COLEÇÃO
-              </div>
+              </>
               <div style={{ background: "#8b6a30", color: "#fff9e8", fontWeight: 900, padding: "8px 14px", borderRadius: 20, fontSize: 12 }}>
                 {caughtSpecies.length} ESPÉCIES
-              </div>
+              </>
               <div style={{ background: "linear-gradient(180deg,#7c3aed,#4f26a4)", color: "#fff9e8", fontWeight: 900, padding: "8px 14px", borderRadius: 20, fontSize: 12, boxShadow: "0 2px 8px rgba(124,58,237,0.5)" }}>
                 ⚒️ {craftPoints} PTS CRAFT
-              </div>
-            </div>
-          </div>
+              </>
+            </>
+          </>
           {/* Filtros */}
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginBottom: 12, padding: "8px 10px", background: "rgba(107,74,16,0.12)", borderRadius: 10, border: "1px dashed rgba(107,74,16,0.35)" }}>
             <input
@@ -14817,13 +14817,13 @@ function TabOverlay({
             )}
             <div style={{ fontSize: 11, color: "#6b4a10", fontWeight: 800 }}>
               🔒 {lockedSet.size} travados
-            </div>
-          </div>
+            </>
+          </>
 
           {collection.length === 0 ? (
             <div style={{ color: "#8b6a30", fontSize: 13, padding: 30, textAlign: "center", fontStyle: "italic" }}>
               Nenhum Pokémon capturado ainda. Continue a jornada — a taxa de captura é baixa (5%).
-            </div>
+            </>
           ) : (() => {
             const rarityOrder: Record<Rarity, number> = {
               common: 0, uncommon: 1, rare: 2, epic: 3, legendary: 4, mythic: 5, mythic_shiny: 6,
@@ -14843,10 +14843,10 @@ function TabOverlay({
               return a.species.localeCompare(b.species);
             });
             if (filtered.length === 0) {
-              return <div style={{ color: "#8b6a30", fontSize: 13, padding: 30, textAlign: "center", fontStyle: "italic" }}>Nenhum Pokémon corresponde aos filtros.</div>;
+              return <div style={{ color: "#8b6a30", fontSize: 13, padding: 30, textAlign: "center", fontStyle: "italic" }}>Nenhum Pokémon corresponde aos filtros.</>;
             }
             return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -14929,9 +14929,9 @@ function TabOverlay({
                      )}
                     <div style={{ position: "absolute", top: 4, left: 6, fontSize: 9, fontWeight: 900, color: "#8b6a30", letterSpacing: 1, zIndex: 2 }}>
                       #{String(i + 1).padStart(3, "0")}
-                    </div>
+                    </>
                     {inTeam && (
-                      <div style={{ position: "absolute", top: 4, right: 6, fontSize: 9, fontWeight: 900, color: "#3d7a4a", zIndex: 2 }}>★ TIME</div>
+                      <div style={{ position: "absolute", top: 4, right: 6, fontSize: 9, fontWeight: 900, color: "#3d7a4a", zIndex: 2 }}>★ TIME</>
                     )}
                     {/* Checkbox de bulk select */}
                     {bulkMode && canBulkPick && (
@@ -14944,7 +14944,7 @@ function TabOverlay({
                         display: "flex", alignItems: "center", justifyContent: "center",
                         boxShadow: isSelected ? "0 0 8px rgba(124,58,237,0.7)" : "none",
                         zIndex: 3,
-                      }}>{isSelected ? "✓" : ""}</div>
+                      }}>{isSelected ? "✓" : ""}</>
                     )}
                     {/* Botão cadeado */}
                     <button
@@ -14967,7 +14967,7 @@ function TabOverlay({
                        title={bulkMode ? "Selecionar/deselecionar" : "Ver detalhes"}
                      >
                        {gifMap[sp] && <img src={gifMap[sp]} alt="" style={{ width: 64, height: 64, imageRendering: "pixelated", marginTop: 6, display: "block", filter: isBMP ? `drop-shadow(0 0 8px ${bmpAccent})` : undefined }} />}
-                       <div style={{ fontSize: 11, marginTop: 2, color: isBMP ? "#f7ecff" : "#4a3010", fontWeight: 800, textAlign: "center", textShadow: isBMP ? "0 1px 3px #000" : undefined }}>{sp.replace(/_/g, " ").toUpperCase()}</div>
+                       <div style={{ fontSize: 11, marginTop: 2, color: isBMP ? "#f7ecff" : "#4a3010", fontWeight: 800, textAlign: "center", textShadow: isBMP ? "0 1px 3px #000" : undefined }}>{sp.replace(/_/g, " ").toUpperCase()}</>
                      </button>
 
                      {/* Raridade / Badge BMP */}
@@ -14980,12 +14980,12 @@ function TabOverlay({
                        position: "relative", zIndex: 1,
                      }}>
                        {isBMP ? (isBrilhant ? "BLACK MITIC BRILHANT PLUS" : "BLACK MITIC PLUS") : entry.rarity.toUpperCase()}
-                     </div>
+                     </>
 
                      {/* Nível */}
                      <div style={{ fontSize: 11, color: isBMP ? "#f5cf6b" : "#6b4a10", fontWeight: 900, position: "relative", zIndex: 1, textShadow: isBMP ? "0 1px 2px #000" : undefined }}>
                        Nv. {displayLevel}{inTeam && teamPet && teamPet.level !== entry.level ? ` (cap. Nv.${entry.level})` : ""}
-                     </div>
+                     </>
 
                      {/* Traits — mostra TODOS (até 6) para Black Mitic */}
                      <div
@@ -15003,7 +15003,7 @@ function TabOverlay({
                        {traits.length > 0
                          ? traits.slice(0, isBMP ? 6 : 4).map((id) => <TraitIcon key={id} id={id} size={isBMP ? 20 : 22} />)
                          : <span style={{ fontSize: 9, color: "#b8a066", fontWeight: 700, letterSpacing: 0.5, opacity: 0.7 }}>— sem traits —</span>}
-                     </div>
+                     </>
 
 
                     {/* Botão fragmentar (ícone cristal) */}
@@ -15058,16 +15058,16 @@ function TabOverlay({
                             />
                           </span>
                           <span style={{ fontSize: 13 }}>+{gain}</span>
-                        </div>
+                        </>
                       )}
                     </button>
-                  </div>
+                  </>
                 );
               })}
-            </div>
+            </>
             );
           })()}
-        </div>
+        </>
       )}
 
 
@@ -15086,23 +15086,23 @@ function TabOverlay({
             <div>
               <div style={{ color: "#ff6b8a", fontSize: 18, fontWeight: 900, letterSpacing: 2 }}>
                 📕 POKÉDEX
-              </div>
+              </>
               <div style={{ color: "#ffb3c1", fontSize: 11, marginTop: 2 }}>
                 Registro de Pokémon enfrentados em duelos
-              </div>
-            </div>
+              </>
+            </>
             <div style={{
               background: "#e11d48", color: "#fff", fontWeight: 900,
               padding: "6px 14px", borderRadius: 20, fontSize: 13,
               boxShadow: "0 0 12px #e11d4888",
             }}>
               {seenSpecies.length} REGISTRADO{seenSpecies.length === 1 ? "" : "S"}
-            </div>
-          </div>
+            </>
+          </>
           {seenSpecies.length === 0 ? (
             <div style={{ color: "#ffb3c1", fontSize: 13, padding: 30, textAlign: "center", fontStyle: "italic" }}>
               Nenhum Pokémon registrado ainda. Derrote inimigos em batalha para registrá-los!
-            </div>
+            </>
           ) : (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(110px, 1fr))", gap: 10 }}>
               {seenSpecies.map((sp, i) => {
@@ -15116,20 +15116,20 @@ function TabOverlay({
                   }}>
                     <div style={{ fontSize: 9, color: "#ff6b8a", fontWeight: 800, letterSpacing: 1 }}>
                       Nº {String(i + 1).padStart(3, "0")}
-                    </div>
+                    </>
                     {gifMap[sp] && <img src={gifMap[sp]} alt="" style={{ width: 56, height: 56, imageRendering: "pixelated" }} />}
                     <div style={{ fontSize: 11, marginTop: 2, color: "#fff", fontWeight: 700 }}>
                       {sp.replace(/_/g, " ").toUpperCase()}
-                    </div>
+                    </>
                     <div style={{ fontSize: 9, marginTop: 4, color: caught ? "#ffd94d" : "#ff6b8a", fontWeight: 800 }}>
                       {caught ? "★ CAPTURADO" : "✓ VISTO"}
-                    </div>
-                  </div>
+                    </>
+                  </>
                 );
               })}
-            </div>
+            </>
           )}
-        </div>
+        </>
       )}
 
 
@@ -15143,7 +15143,7 @@ function TabOverlay({
           }}>
             <span style={{ color: "#f4c430" }}>● Ouro: {fmtK(bank.gold)}</span>
             <span style={{ color: "#c084fc" }}>💎 Cristais: {Math.floor(bank.crystals)}</span>
-        </div>
+        </>
       )}
 
       {tab === "loja" && (
@@ -15156,7 +15156,7 @@ function TabOverlay({
             const isActive = activeUntil > Date.now();
             const color = ITEM_COLORS[bk.id] ?? "#ff97e1";
             return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15195,16 +15195,16 @@ function TabOverlay({
                     boxShadow: `0 0 18px ${color}55, inset 0 0 18px rgba(255,255,255,0.08)`,
                   }}>
                     <img src={bk.img} alt="Orb de Time" width={72} height={72} style={{ filter: `drop-shadow(0 0 10px ${color})` }} />
-                  </div>
+                  </>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ color: "#fff0fb", fontSize: 18, fontWeight: 900, letterSpacing: 1 }}>{bk.name}</div>
-                    <div style={{ color: "#eac6df", fontSize: 12, lineHeight: 1.45, marginTop: 4 }}>{bk.desc}</div>
+                    <div style={{ color: "#fff0fb", fontSize: 18, fontWeight: 900, letterSpacing: 1 }}>{bk.name}</>
+                    <div style={{ color: "#eac6df", fontSize: 12, lineHeight: 1.45, marginTop: 4 }}>{bk.desc}</>
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
                       <span style={{ color: "#c084fc", fontSize: 12, fontWeight: 900 }}>💎 {bk.price} cristais</span>
                       <span style={{ color: "#8a7a9c", fontSize: 12 }}>Você tem: {owned}</span>
                       {isActive && <span style={{ color: "#7ef2a2", fontSize: 12, fontWeight: 900 }}>ATIVO</span>}
-                    </div>
-                  </div>
+                    </>
+                  </>
                   <button
                     onClick={() => onBuyBook(bk)}
                     disabled={!canBuy}
@@ -15218,8 +15218,8 @@ function TabOverlay({
                       boxShadow: canBuy ? `0 0 12px ${color}55` : "none",
                     }}
                   >{canBuy ? "COMPRAR ORB" : "SEM CRISTAIS"}</button>
-                </div>
-              </div>
+                </>
+              </>
             );
           })()}
 
@@ -15229,13 +15229,13 @@ function TabOverlay({
             border: "1px solid #6bd4ff55", borderRadius: 12, padding: 14, marginBottom: 20,
             display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap",
           }}>
-            <div style={{ fontSize: 40 }}>🧪</div>
+            <div style={{ fontSize: 40 }}>🧪</>
             <div style={{ flex: 1, minWidth: 160 }}>
-              <div style={{ fontWeight: 800, color: "#eadfe8" }}>Poção</div>
-              <div style={{ fontSize: 11, color: "#b8a8c8" }}>Recupera {Math.round(POTION_HEAL_PCT * 100)}% do HP. Usada no auto quando ativado.</div>
-              <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● {POTION_PRICE} ouro cada</div>
-              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {items.potion ?? 0}</div>
-            </div>
+              <div style={{ fontWeight: 800, color: "#eadfe8" }}>Poção</>
+              <div style={{ fontSize: 11, color: "#b8a8c8" }}>Recupera {Math.round(POTION_HEAL_PCT * 100)}% do HP. Usada no auto quando ativado.</>
+              <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● {POTION_PRICE} ouro cada</>
+              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {items.potion ?? 0}</>
+            </>
             <div style={{ minWidth: 220 }}>
               <QtyBuy
                 presets={[1, 10, 50, 100]}
@@ -15246,8 +15246,8 @@ function TabOverlay({
                 onBuy={(n) => onBuyPotion(n)}
                 disabledLabel="SEM OURO"
               />
-            </div>
-          </div>
+            </>
+          </>
 
 
           <h3 style={{ color: "#f5cf6b", fontSize: 15, margin: "6px 0 10px" }}>Pokébolas — pagas em ouro</h3>
@@ -15265,10 +15265,10 @@ function TabOverlay({
                 }}>
                   <img src={b.img} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 8px ${color}88)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{b.name}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Chance de captura x{b.captureMult}</div>
-                  <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● {b.price} ouro</div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{b.name}</>
+                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Chance de captura x{b.captureMult}</>
+                  <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● {b.price} ouro</>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</>
                   <QtyBuy
                     presets={[1, 10, 50, 100]}
                     max={9999}
@@ -15278,10 +15278,10 @@ function TabOverlay({
                     onBuy={(n) => onBuyBall(b, n)}
                     disabledLabel="SEM OURO"
                   />
-                </div>
+                </>
               );
             })}
-          </div>
+          </>
 
           <h3 style={{ color: "#c084fc", fontSize: 15, margin: "6px 0 10px" }}>Pacote de Ultra Ball — pago em cristais 💎</h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12, marginBottom: 20 }}>
@@ -15291,7 +15291,7 @@ function TabOverlay({
               const canBuy = bank.crystals >= COST;
               const color = "#c084fc";
               return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15321,10 +15321,10 @@ function TabOverlay({
                 }}>
                   <img src={ballUltraImg} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${color}bb)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pacote Ultra Ball ×{QTY}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>20 Ultra Ball — captura x3.5</div>
-                  <div style={{ fontSize: 12, color, fontWeight: 700 }}>💎 {COST} cristais</div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned} Ultra Ball</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pacote Ultra Ball ×{QTY}</>
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>20 Ultra Ball — captura x3.5</>
+                  <div style={{ fontSize: 12, color, fontWeight: 700 }}>💎 {COST} cristais</>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned} Ultra Ball</>
                   <QtyBuy
                     presets={[1, 5, 10, 25]}
                     max={999}
@@ -15334,7 +15334,7 @@ function TabOverlay({
                     onBuy={(n) => onBuyUltraBundle(n)}
                     disabledLabel="SEM CRISTAIS"
                   />
-                </div>
+                </>
               );
             })()}
             {(() => {
@@ -15343,7 +15343,7 @@ function TabOverlay({
               const canBuy = bank.crystals >= COST;
               const color = "#8ec5ff";
               return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15373,10 +15373,10 @@ function TabOverlay({
                 }}>
                   <img src={scrollTeleportUrl} alt="" width={64} height={64}
                     style={{ filter: `drop-shadow(0 0 10px ${color}bb)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pergaminho de Teleporte</div>
-                  <div style={{ fontSize: 11, color: "#b8c8dc", textAlign: "center" }}>Teleporte instantâneo no Mapa Mundi — sem taxa de ouro, sem custo de cristais</div>
-                  <div style={{ fontSize: 12, color, fontWeight: 700 }}>💎 {COST} cristais</div>
-                  <div style={{ fontSize: 11, color: "#8aa0b8" }}>Você tem: {owned}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pergaminho de Teleporte</>
+                  <div style={{ fontSize: 11, color: "#b8c8dc", textAlign: "center" }}>Teleporte instantâneo no Mapa Mundi — sem taxa de ouro, sem custo de cristais</>
+                  <div style={{ fontSize: 12, color, fontWeight: 700 }}>💎 {COST} cristais</>
+                  <div style={{ fontSize: 11, color: "#8aa0b8" }}>Você tem: {owned}</>
                   <QtyBuy
                     presets={[1, 5, 10, 25]}
                     max={999}
@@ -15386,10 +15386,10 @@ function TabOverlay({
                     onBuy={(n) => onBuyTeleportScroll(n)}
                     disabledLabel="SEM CRISTAIS"
                   />
-                </div>
+                </>
               );
             })()}
-          </div>
+          </>
 
 
 
@@ -15420,13 +15420,13 @@ function TabOverlay({
                       position: "absolute", bottom: 12, right: 12, width: 6, height: 6,
                       background: "#fff", opacity: 0.4, borderRadius: "50%",
                     }} />
-                  </div>
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{e.name}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{e.desc}</div>
+                  </>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{e.name}</>
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{e.desc}</>
                   <div style={{ fontSize: 12, color: e.currency === "gold" ? "#f4c430" : "#c084fc", fontWeight: 700 }}>
                     {e.currency === "gold" ? `● ${e.price} ouro` : `💎 ${e.price} cristais`}
-                  </div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  </>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</>
                   <button
                     onClick={() => onBuyEgg(e)}
                     disabled={!canBuy}
@@ -15436,10 +15436,10 @@ function TabOverlay({
                       border: "none", borderRadius: 6, cursor: canBuy ? "pointer" : "not-allowed",
                     }}
                   >{canBuy ? "COMPRAR OVO" : e.currency === "gold" ? "SEM OURO" : "SEM CRISTAIS"}</button>
-                </div>
+                </>
               );
             })}
-          </div>
+          </>
 
           <h3 style={{ color: "#6bd4ff", fontSize: 15, margin: "6px 0 10px" }}>Amuletos</h3>
           <div style={{
@@ -15449,11 +15449,11 @@ function TabOverlay({
           }}>
             <img src={chestAmuletImg} alt="" width={64} height={64} style={{ imageRendering: "pixelated" }} />
             <div style={{ flex: 1, minWidth: 160 }}>
-              <div style={{ fontWeight: 800, color: "#eadfe8" }}>Amuleto do Caçador de Tesouros</div>
-              <div style={{ fontSize: 11, color: "#b8a8c8" }}>Dobra as recompensas de ouro e cristais ao abrir baús no mapa.</div>
-              <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● 250.000 ouro</div>
-              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Status: {chestAmuletOwned ? "Adquirido ✅" : "Não possuído ❌"}</div>
-            </div>
+              <div style={{ fontWeight: 800, color: "#eadfe8" }}>Amuleto do Caçador de Tesouros</>
+              <div style={{ fontSize: 11, color: "#b8a8c8" }}>Dobra as recompensas de ouro e cristais ao abrir baús no mapa.</>
+              <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● 250.000 ouro</>
+              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Status: {chestAmuletOwned ? "Adquirido ✅" : "Não possuído ❌"}</>
+            </>
             <button
               onClick={() => onBuyChestAmulet()}
               disabled={chestAmuletOwned > 0 || bank.gold < 250000}
@@ -15466,8 +15466,8 @@ function TabOverlay({
             >
               {chestAmuletOwned ? "JÁ POSSUI" : bank.gold < 250000 ? "SEM OURO" : "COMPRAR AMULETO"}
             </button>
-          </div>
-        </div>
+          </>
+        </>
       )}
 
       {tab === "loja" && (
@@ -15489,10 +15489,10 @@ function TabOverlay({
                 }}>
                   <img src={bk.img} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 8px ${color}88)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{bk.name}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{bk.desc}</div>
-                  <div style={{ fontSize: 12, color: useGold ? "#ffd94d" : "#c084fc", fontWeight: 700 }}>{useGold ? "🪙" : "💎"} {bk.price}</div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{bk.name}</>
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{bk.desc}</>
+                  <div style={{ fontSize: 12, color: useGold ? "#ffd94d" : "#c084fc", fontWeight: 700 }}>{useGold ? "🪙" : "💎"} {bk.price}</>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</>
                   <QtyBuy
                     presets={[1, 10, 50, 100]}
                     max={9999}
@@ -15503,10 +15503,10 @@ function TabOverlay({
                     disabledLabel={useGold ? "SEM OURO" : "SEM CRISTAL"}
                   />
 
-                </div>
+                </>
               );
             })}
-          </div>
+          </>
 
           {/* ═══ Trocador NPC — Orbs de XP por Pokémon capturados ═══ */}
           <h3 style={{ color: "#ffd94d", fontSize: 15, margin: "22px 0 6px" }}>
@@ -15515,7 +15515,7 @@ function TabOverlay({
           <div style={{ color: "#b8a8c8", fontSize: 11, marginBottom: 10, lineHeight: 1.5 }}>
             O NPC aceita Pokémon da sua <b>Coleção</b> (não da equipe) em troca de Orbs mais fortes.
             <b style={{ color: "#ffd94d" }}> Você escolhe</b> quais Pokémon entregar.
-          </div>
+          </>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
             {orbTrades.map((t) => {
               const available = collection.filter((c) =>
@@ -15537,17 +15537,17 @@ function TabOverlay({
                 }}>
                   <img src={t.img} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${t.color}aa)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{t.label}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{t.desc}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{t.label}</>
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{t.desc}</>
                   <div style={{ fontSize: 11, color: canTrade ? "#8ae28a" : "#e28a8a" }}>
                     Coleção {t.rarity.toUpperCase()}: {available} (precisa {t.count})
-                  </div>
+                  </>
                   {t.requires && (
                     <div style={{ fontSize: 10, fontWeight: 800, color: reqOk ? "#8ae28a" : "#ff9a6b", background: reqOk ? "#0f2018" : "#2a1620", border: `1px solid ${reqOk ? "#8ae28a55" : "#ff9a6b55"}`, borderRadius: 6, padding: "3px 8px", textAlign: "center" }}>
                       {reqOk ? "✓" : "🔒"} Requer {t.requires.qty}× {t.requires.label} ({reqOwned}/{t.requires.qty})
-                    </div>
+                    </>
                   )}
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</>
                   <button
                     disabled={!canTrade}
                     onClick={() => {
@@ -15562,10 +15562,10 @@ function TabOverlay({
                       cursor: canTrade ? "pointer" : "not-allowed",
                     }}
                   >{!reqOk ? `FORJE 1 ${t.requires!.label.toUpperCase()} PRIMEIRO` : canTrade ? "ESCOLHER POKÉMON" : `PRECISA DE ${t.count} ${t.rarity.toUpperCase()}`}</button>
-                </div>
+                </>
               );
             })}
-          </div>
+          </>
 
           {orbPicker && (() => {
             const op = orbPicker as NonNullable<typeof orbPicker>;
@@ -15593,16 +15593,16 @@ function TabOverlay({
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                     <div style={{ fontWeight: 900, color: op.color, fontSize: 15 }}>
                       🧙 Escolha {op.count} Pokémon {op.rarity.toUpperCase()}
-                    </div>
+                    </>
                     <button onClick={() => setOrbPicker(null)} style={{ background: "transparent", border: "none", color: "#eadfe8", cursor: "pointer", fontSize: 18 }}>✕</button>
-                  </div>
+                  </>
                   <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 10 }}>
                     Selecionados: <b style={{ color: canConfirm ? "#8ae28a" : "#ffd94d" }}>{selCount}/{op.count}</b> — Recompensa: <b>{op.label}</b>
-                  </div>
+                  </>
                   {eligible.length === 0 ? (
                     <div style={{ color: "#e28a8a", fontSize: 12, padding: 20, textAlign: "center" }}>
                       Você não tem Pokémon {op.rarity.toUpperCase()} na coleção.
-                    </div>
+                    </>
                   ) : (
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(96px, 1fr))", gap: 8 }}>
                       {eligible.map((c) => {
@@ -15632,18 +15632,18 @@ function TabOverlay({
                             ) : (
                               <div style={{ width: 54, height: 54, background: "#2a1638", borderRadius: 8 }} />
                             )}
-                            <div style={{ fontSize: 10, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}</div>
-                            <div style={{ fontSize: 10, color: "#ffd94d" }}>Lv.{c.level}</div>
+                            <div style={{ fontSize: 10, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}</>
+                            <div style={{ fontSize: 10, color: "#ffd94d" }}>Lv.{c.level}</>
                             {sel && (
                               <div style={{
                                 position: "absolute", top: 2, right: 2, background: op.color, color: "#0b0510",
                                 width: 18, height: 18, borderRadius: 999, fontSize: 11, fontWeight: 900, display: "grid", placeItems: "center",
-                              }}>✓</div>
+                              }}>✓</>
                             )}
                           </button>
                         );
                       })}
-                    </div>
+                    </>
                   )}
                   <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
                     <button
@@ -15669,12 +15669,12 @@ function TabOverlay({
                         border: "none", borderRadius: 8, cursor: canConfirm ? "pointer" : "not-allowed",
                       }}
                     >CONFIRMAR TROCA</button>
-                  </div>
-                </div>
-              </div>
+                  </>
+                </>
+              </>
             );
           })()}
-        </div>
+        </>
       )}
 
 
@@ -15740,7 +15740,7 @@ function TabOverlay({
         };
 
         return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15785,11 +15785,11 @@ function TabOverlay({
                         top: 100 + 95 * Math.sin(angle),
                         transform: "translate(-50%, -50%)",
                         fontSize: 9, fontWeight: 900, color: p.color, textShadow: "0 1px 2px #000"
-                      }}>{p.label}</div>
+                      }}>{p.label}</>
                     );
                   })}
-                </div>
-              </div>
+                </>
+              </>
               <div style={{ flex: 1, minWidth: 280 }}>
                 <h3 style={{ color: "#f5cf6b", margin: "0 0 4px 0", fontSize: 18, letterSpacing: 1, textShadow: "0 2px 4px #000" }}>ANATOMIA DA CONTA</h3>
                 <p style={{ fontSize: 10, color: "#a8a0b8", margin: "0 0 12px 0", lineHeight: 1.4 }}>
@@ -15803,31 +15803,31 @@ function TabOverlay({
                       <div key={p.key} style={{ background: "#1a0f26", border: "1px solid #3a2e58", borderRadius: 10, padding: "8px 12px", display: "flex", gap: 10, alignItems: "center" }}>
                         <div style={{ width: 36, height: 36, background: "#000", borderRadius: 8, display: "grid", placeItems: "center", border: `1px solid ${cfg.color}44` }}>
                           <img src={STONE_CHEST[cfg.stone]} alt="" style={{ width: 28, height: 28, imageRendering: "pixelated" }} />
-                        </div>
+                        </>
                         <div style={{ flex: 1 }}>
                           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 2 }}>
                             <span style={{ fontSize: 10, color: cfg.color, fontWeight: 900 }}>{p.label} <span style={{ color: "#a8a0b8", fontSize: 9 }}>Lv.{stats[k] ?? 0}</span></span>
                             <span style={{ fontSize: 9, color: "#ff5252", fontWeight: 700 }}>Falha: {cfg.fail}%</span>
-                          </div>
-                          <div style={{ fontSize: 9, color: "#eadfe8", marginBottom: 4, opacity: 0.8 }}>{cfg.desc}</div>
+                          </>
+                          <div style={{ fontSize: 9, color: "#eadfe8", marginBottom: 4, opacity: 0.8 }}>{cfg.desc}</>
                           <button 
                             onClick={() => upgradeStat(k)}
                             style={{ width: "100%", padding: "4px", background: `linear-gradient(180deg, ${cfg.color}, ${cfg.color}aa)`, border: "none", borderRadius: 4, fontSize: 10, fontWeight: 900, cursor: "pointer", color: "#000" }}
                           >MELHORAR (Custo: 50+ Stones)</button>
-                        </div>
-                      </div>
+                        </>
+                      </>
                     );
                   })}
-                </div>
-              </div>
-            </div>
+                </>
+              </>
+            </>
 
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
               <BuffCell img={bookAtkImg} label="Ataque" value={`+${Math.round((((idle.buffs?.atk ?? 0)) + ((stats.attack ?? 0) * 0.05)) * 100)}%`} color="#ff5252" />
               <BuffCell img={bookDefImg} label="Defesa" value={`-${Math.round((((idle.buffs?.def ?? 0)) + ((stats.resistance ?? 0) * 0.03)) * 100)}%`} color="#4a7bff" />
               <BuffCell img={bookExpImg} label="EXP TOTAL" value={`+${totalExpPct}%`} color="#5ec26a" />
-            </div>
+            </>
 
             <div style={{ position: "relative", width: "100%", height: "180px", background: "rgba(0,0,0,0.5)", borderRadius: 16, border: "2px solid #b9a7ff44", overflow: "hidden", display: "flex", justifyContent: "center", alignItems: "center", boxShadow: "0 0 20px rgba(185, 167, 255, 0.15)" }}>
               <img 
@@ -15855,9 +15855,9 @@ function TabOverlay({
                 border: "1px solid #b9a7ff33"
               }}>
                 ✦ BLACK MITIC PLUS LEGENDARY ✦
-              </div>
-            </div>
-          </div>
+              </>
+            </>
+          </>
         );
       })()}
 
@@ -15878,7 +15878,7 @@ function TabOverlay({
           </h3>
           <div style={{ fontSize: 11, color: "#b9a7ff", marginBottom: 8 }}>
             Skins premium ficam bloqueadas. Abra a <strong>Caixa Premium ✦</strong> na Mochila para ganhar Tickets e desbloquear a skin que quiser.
-          </div>
+          </>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: 10 }}>
             {SKINS.map((s) => {
               const active = s.id === skinId;
@@ -15917,25 +15917,25 @@ function TabOverlay({
                     {s.url ? (
                       <img src={s.url} alt={s.label} style={{ maxWidth: "100%", maxHeight: "100%", imageRendering: "pixelated" }} />
                     ) : (
-                      <div style={{ fontSize: 32 }}>🧢</div>
+                      <div style={{ fontSize: 32 }}>🧢</>
                     )}
-                  </div>
-                  <div style={{ fontSize: 11, fontWeight: 700, textAlign: "center" }}>{s.label}</div>
-                  {active && <div style={{ fontSize: 9, color: "#f5cf6b" }}>✓ EM USO</div>}
+                  </>
+                  <div style={{ fontSize: 11, fontWeight: 700, textAlign: "center" }}>{s.label}</>
+                  {active && <div style={{ fontSize: 9, color: "#f5cf6b" }}>✓ EM USO</>}
                   {!unlocked && (
                     <div style={{ fontSize: 9, color: canUnlock ? "#f5cf6b" : "#8a7fa0", fontWeight: 700 }}>
                       {canUnlock ? "🎟️ USAR TICKET" : "🔒 BLOQUEADA"}
-                    </div>
+                    </>
                   )}
                   {!unlocked && (
-                    <div style={{ position: "absolute", top: 6, right: 6, fontSize: 14 }}>🔒</div>
+                    <div style={{ position: "absolute", top: 6, right: 6, fontSize: 14 }}>🔒</>
                   )}
                 </button>
               );
             })}
-          </div>
+          </>
 
-        </div>
+        </>
       )}
 
       {tab === "wallet" && (
@@ -15952,11 +15952,11 @@ function TabOverlay({
       {tab === "market" && (
         <div style={{ minHeight: 320, display: "grid", placeItems: "center", textAlign: "center", padding: 24 }}>
           <div>
-            <div style={{ fontSize: 54, filter: "grayscale(1)", opacity: 0.7 }}>🔒</div>
-            <div style={{ marginTop: 12, color: "#f5cf6b", fontSize: 20, fontWeight: 900 }}>MERCADO BLOQUEADO</div>
-            <div style={{ marginTop: 8, color: "#c8b8d0", fontSize: 13 }}>Este sistema está temporariamente indisponível.</div>
-          </div>
-        </div>
+            <div style={{ fontSize: 54, filter: "grayscale(1)", opacity: 0.7 }}>🔒</>
+            <div style={{ marginTop: 12, color: "#f5cf6b", fontSize: 20, fontWeight: 900 }}>MERCADO BLOQUEADO</>
+            <div style={{ marginTop: 8, color: "#c8b8d0", fontSize: 13 }}>Este sistema está temporariamente indisponível.</>
+          </>
+        </>
       )}
 
 
@@ -15966,7 +15966,7 @@ function TabOverlay({
         <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 520 }}>
           <div style={{ color: "#c8b8d0", fontSize: 13, lineHeight: 1.5 }}>
             Ajuste os sons e a música do jogo. A música toca em loop de fundo enquanto você joga.
-          </div>
+          </>
 
           <div style={{
             background: "linear-gradient(160deg, #1a0f26, #251638)",
@@ -15980,12 +15980,12 @@ function TabOverlay({
               <span style={{ color: "#eadfe8", fontWeight: 700 }}>🎵 Música de fundo</span>
             </label>
             <div>
-              <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 4 }}>Volume da música: {Math.round(audioSettings.musicVol * 100)}%</div>
+              <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 4 }}>Volume da música: {Math.round(audioSettings.musicVol * 100)}%</>
               <input type="range" min={0} max={1} step={0.05} value={audioSettings.musicVol}
                 onChange={(e) => setAudioSettings((s) => ({ ...s, musicVol: Number(e.target.value) }))}
                 style={{ width: "100%" }} />
-            </div>
-          </div>
+            </>
+          </>
 
           <div style={{
             background: "linear-gradient(160deg, #1a0f26, #251638)",
@@ -15999,12 +15999,12 @@ function TabOverlay({
               <span style={{ color: "#eadfe8", fontWeight: 700 }}>🔊 Efeitos sonoros (clique, level-up, capturas)</span>
             </label>
             <div>
-              <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 4 }}>Volume dos efeitos: {Math.round(audioSettings.sfxVol * 100)}%</div>
+              <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 4 }}>Volume dos efeitos: {Math.round(audioSettings.sfxVol * 100)}%</>
               <input type="range" min={0} max={1} step={0.05} value={audioSettings.sfxVol}
                 onChange={(e) => setAudioSettings((s) => ({ ...s, sfxVol: Number(e.target.value) }))}
                 style={{ width: "100%" }} />
-            </div>
-          </div>
+            </>
+          </>
 
           <div style={{
             background: "linear-gradient(160deg, #0f1f2e, #16324a)",
@@ -16020,20 +16020,20 @@ function TabOverlay({
             <div>
               <div style={{ fontSize: 11, color: "#b8a8c8", marginBottom: 4 }}>
                 Usar poção quando HP &lt;= {Math.round(autoHeal.threshold * 100)}% (você tem {items.potion ?? 0} poção)
-              </div>
+              </>
               <input type="range" min={0.1} max={0.9} step={0.05} value={autoHeal.threshold}
                 onChange={(e) => setAutoHeal({ ...autoHeal, threshold: Number(e.target.value) })}
                 style={{ width: "100%" }} />
-            </div>
+            </>
             <div style={{ fontSize: 11, color: "#8a7a9c" }}>
               Cada poção custa {POTION_PRICE} ouro na Loja e recupera {Math.round(POTION_HEAL_PCT * 100)}% de HP.
-            </div>
-          </div>
+            </>
+          </>
 
           <div style={{ fontSize: 11, color: "#8a7a9c" }}>
             Se a música não iniciar automaticamente, clique em qualquer lugar da tela — os navegadores exigem uma interação antes de tocar áudio.
-          </div>
-        </div>
+          </>
+        </>
       )}
 
       {statsCardPet && (
@@ -16083,16 +16083,16 @@ function TabOverlay({
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 18, fontWeight: 900, color: "#f7ecf7", letterSpacing: 2, textShadow: "0 2px 0 #000" }}>
                     ⚒️ FRAGMENTAR {isBulk ? `${list.length} POKÉMON` : "POKÉMON"}
-                  </div>
+                  </>
                   <div style={{ fontSize: 11, color: "#c8b8d0", marginTop: 2, fontStyle: "italic" }}>
                     Ação permanente — converte em pontos de craft.
-                  </div>
-                </div>
+                  </>
+                </>
                 <button onClick={() => setFragConfirm(null)} style={{
                   width: 32, height: 32, borderRadius: 8, border: "1px solid #6a5a7c",
                   background: "#2a1638", color: "#f7ecf7", fontSize: 16, fontWeight: 900, cursor: "pointer",
                 }}>✕</button>
-              </div>
+              </>
 
               <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 10, position: "relative" }}>
                 <div style={{
@@ -16114,13 +16114,13 @@ function TabOverlay({
                         )}
                         <div style={{ fontSize: 10, fontWeight: 900, color: "#f7ecf7", letterSpacing: 1, marginTop: 2 }}>
                           {e.species.replace(/_/g, " ").toUpperCase()}
-                        </div>
+                        </>
                         <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 4, flexWrap: "wrap" }}>
                           <span style={{ fontSize: 8, padding: "2px 6px", borderRadius: 8, background: rc, color: "#0b0510", fontWeight: 900, letterSpacing: 1 }}>
                             {e.rarity.toUpperCase()}
                           </span>
                           <span style={{ fontSize: 9, color: "#f5cf6b", fontWeight: 900 }}>Lv {e.level}</span>
-                        </div>
+                        </>
                         <div style={{
                           marginTop: 6, fontSize: 11, fontWeight: 900,
                           color: "#e9d5ff", letterSpacing: 0.5,
@@ -16128,11 +16128,11 @@ function TabOverlay({
                         }}>
                           <img src={assetUrlFromJson(iconFragmentCrystal)} alt="" width={16} height={16} style={{ imageRendering: "pixelated" }} />
                           +{e.gain}
-                        </div>
-                      </div>
+                        </>
+                      </>
                     );
                   })}
-                </div>
+                </>
 
                 <div style={{
                   marginTop: 4, padding: "12px 14px", borderRadius: 12,
@@ -16140,7 +16140,7 @@ function TabOverlay({
                   border: "1.5px solid #a78bfa88",
                   display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
                 }}>
-                  <div style={{ fontSize: 11, fontWeight: 900, color: "#c8b8d0", letterSpacing: 2 }}>GANHO TOTAL</div>
+                  <div style={{ fontSize: 11, fontWeight: 900, color: "#c8b8d0", letterSpacing: 2 }}>GANHO TOTAL</>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <img src={assetUrlFromJson(iconFragmentCrystal)} alt="" width={26} height={26}
                       style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 6px rgba(233,213,255,0.9))" }} />
@@ -16150,8 +16150,8 @@ function TabOverlay({
                       WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                     }}>+{fragConfirm.totalGain}</span>
                     <span style={{ fontSize: 10, color: "#c8b8d0", fontWeight: 800, letterSpacing: 1 }}>PTS CRAFT</span>
-                  </div>
-                </div>
+                  </>
+                </>
 
                 <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
                   <button
@@ -16173,20 +16173,20 @@ function TabOverlay({
                       textShadow: "0 1px 2px rgba(0,0,0,0.5)",
                     }}
                   >⚒️ CONFIRMAR</button>
-                </div>
-              </div>
-            </div>
-          </div>
+                </>
+              </>
+            </>
+          </>
         );
       })()}
-    </div>
-    </div>
+    </>
+    </>
   );
 }
 
 function BuffCell({ img, label, value, color }: { img: string; label: string; value: string; color: string }) {
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16213,10 +16213,10 @@ function BuffCell({ img, label, value, color }: { img: string; label: string; va
       padding: 12, textAlign: "center",
     }}>
       <img src={img} alt="" width={40} height={40} style={{ imageRendering: "pixelated" }} />
-      <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}</div>
-      <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}</div>
-    </div>
-    </div>
+      <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}</>
+      <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}</>
+    </>
+    </>
   );
 }
 
@@ -16252,7 +16252,7 @@ function WalletScreen({
   };
 
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16293,15 +16293,15 @@ function WalletScreen({
         }} />
         <div style={{ position: "relative", padding: "16px 18px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: 10 }}>
           <div>
-            <div style={{ color: "#ffe58a", fontWeight: 900, fontSize: 22, letterSpacing: 2, textShadow: "2px 2px 0 #000, 0 0 12px #f5cf6b66" }}>✦ BANCO MEDIEVAL</div>
-            <div style={{ color: "#dcc8e0", fontSize: 12, marginTop: 3, textShadow: "1px 1px 0 #000" }}>Gerencie seus bens e visualize suas reservas no cofre real.</div>
-          </div>
+            <div style={{ color: "#ffe58a", fontWeight: 900, fontSize: 22, letterSpacing: 2, textShadow: "2px 2px 0 #000, 0 0 12px #f5cf6b66" }}>✦ BANCO MEDIEVAL</>
+            <div style={{ color: "#dcc8e0", fontSize: 12, marginTop: 3, textShadow: "1px 1px 0 #000" }}>Gerencie seus bens e visualize suas reservas no cofre real.</>
+          </>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #f5cf6b88", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}</div>
-            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #8fd0ff88", borderRadius: 8, padding: "6px 12px", color: "#8fd0ff", fontWeight: 800 }}>💎 {bank.crystals.toLocaleString()}</div>
-          </div>
-        </div>
-      </div>
+            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #f5cf6b88", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}</>
+            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #8fd0ff88", borderRadius: 8, padding: "6px 12px", color: "#8fd0ff", fontWeight: 800 }}>💎 {bank.crystals.toLocaleString()}</>
+          </>
+        </>
+      </>
 
       {/* Navegação Interna */}
       <div style={{ display: "flex", gap: 8 }}>
@@ -16319,44 +16319,44 @@ function WalletScreen({
             {v === "cambio" ? "🪙 CÂMBIO" : v === "itens" ? "🎒 ITENS GUARDADOS" : "🐉 POKÉMON NO COFRE"}
           </button>
         ))}
-      </div>
+      </>
 
       <div style={{ background: "rgba(14,8,24,0.4)", borderRadius: 12, padding: 2, minHeight: 300 }}>
         {activeView === "cambio" && (
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, padding: 12 }}>
             <div style={{ background: "#1a0f26", border: "1px solid #8fd0ff55", borderRadius: 10, padding: 14 }}>
-              <div style={{ color: "#8fd0ff", fontWeight: 800, marginBottom: 6 }}>Comprar 💎</div>
+              <div style={{ color: "#8fd0ff", fontWeight: 800, marginBottom: 6 }}>Comprar 💎</>
               <input type="number" min={1} value={buyAmt} onChange={(e) => setBuyAmt(Math.max(1, parseInt(e.target.value) || 1))}
                 style={{ width: "100%", background: "#0e0818", color: "#f3e5c5", border: "1px solid #8fd0ff55", borderRadius: 6, padding: 8 }} />
-              <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Custo: <b style={{ color: "#f5cf6b" }}>{(buyAmt * 1000).toLocaleString()} ouro</b></div>
+              <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Custo: <b style={{ color: "#f5cf6b" }}>{(buyAmt * 1000).toLocaleString()} ouro</b></>
               <button disabled={bank.gold < buyAmt * 1000} onClick={() => onExchange("g2c", buyAmt)}
                 style={{ width: "100%", background: bank.gold < buyAmt * 1000 ? "#333" : "linear-gradient(180deg,#4a9eff,#1e3a5f)", color: "#fff", border: "none", borderRadius: 8, padding: "10px 0", fontWeight: 800, cursor: "pointer" }}>
                 Converter
               </button>
-            </div>
+            </>
             <div style={{ background: "#1a0f26", border: "1px solid #f5cf6b55", borderRadius: 10, padding: 14 }}>
-              <div style={{ color: "#f5cf6b", fontWeight: 800, marginBottom: 6 }}>Vender 💎</div>
+              <div style={{ color: "#f5cf6b", fontWeight: 800, marginBottom: 6 }}>Vender 💎</>
               <input type="number" min={1} value={sellAmt} onChange={(e) => setSellAmt(Math.max(1, parseInt(e.target.value) || 1))}
                 style={{ width: "100%", background: "#0e0818", color: "#f3e5c5", border: "1px solid #f5cf6b55", borderRadius: 6, padding: 8 }} />
-              <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Recebe: <b style={{ color: "#f5cf6b" }}>{(sellAmt * 800).toLocaleString()} ouro</b></div>
+              <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Recebe: <b style={{ color: "#f5cf6b" }}>{(sellAmt * 800).toLocaleString()} ouro</b></>
               <button disabled={bank.crystals < sellAmt} onClick={() => onExchange("c2g", sellAmt)}
                 style={{ width: "100%", background: bank.crystals < sellAmt ? "#333" : "linear-gradient(180deg,#f5cf6b,#8b6a30)", color: "#0e0818", border: "none", borderRadius: 8, padding: "10px 0", fontWeight: 800, cursor: "pointer" }}>
                 Converter
               </button>
-            </div>
-          </div>
+            </>
+          </>
         )}
 
         {activeView === "itens" && (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: 10, padding: 12, maxHeight: 400, overflowY: "auto" }}>
             {Object.entries(items).filter(([_, qty]) => qty > 0).map(([id, qty]) => (
               <div key={id} style={{ background: "#1a0f26", border: "1px solid #f5cf6b33", borderRadius: 8, padding: 10, textAlign: "center" }}>
-                <div style={{ fontSize: 24 }}>📦</div>
-                <div style={{ fontSize: 10, color: "#f5cf6b", fontWeight: 800, marginTop: 4 }}>{ITEM_NAMES[id] || id.toUpperCase()}</div>
-                <div style={{ fontSize: 12, color: "#fff", fontWeight: 900 }}>×{qty.toLocaleString()}</div>
-              </div>
+                <div style={{ fontSize: 24 }}>📦</>
+                <div style={{ fontSize: 10, color: "#f5cf6b", fontWeight: 800, marginTop: 4 }}>{ITEM_NAMES[id] || id.toUpperCase()}</>
+                <div style={{ fontSize: 12, color: "#fff", fontWeight: 900 }}>×{qty.toLocaleString()}</>
+              </>
             ))}
-          </div>
+          </>
         )}
 
         {activeView === "pokemon" && (
@@ -16368,13 +16368,13 @@ function WalletScreen({
                 style={{ background: "#1a0f26", border: "1px solid #8fd0ff33", borderRadius: 8, padding: 8, textAlign: "center", cursor: "pointer" }}
               >
                 {gifMap[entry.species] && <img src={gifMap[entry.species]} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />}
-                <div style={{ fontSize: 9, color: "#8fd0ff", fontWeight: 800 }}>{entry.species.replace(/_/g, " ").toUpperCase()}</div>
-                <div style={{ fontSize: 10, color: "#fff" }}>Nv. {entry.level}</div>
-              </div>
+                <div style={{ fontSize: 9, color: "#8fd0ff", fontWeight: 800 }}>{entry.species.replace(/_/g, " ").toUpperCase()}</>
+                <div style={{ fontSize: 10, color: "#fff" }}>Nv. {entry.level}</>
+              </>
             ))}
-          </div>
+          </>
         )}
-      </div>
+      </>
 
       <div style={{
         background: "linear-gradient(160deg, #2a1a0a, #3d2b0f)",
@@ -16382,16 +16382,16 @@ function WalletScreen({
         display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16
       }}>
         <div style={{ flex: 1 }}>
-          <div style={{ color: "#ff9d3d", fontWeight: 900, fontSize: 14 }}>🏛️ COFRE DE RESGATE</div>
-          <div style={{ color: "#c8a878", fontSize: 11 }}>Sincronize seus bens preciosos com o cofre do reino.</div>
-        </div>
+          <div style={{ color: "#ff9d3d", fontWeight: 900, fontSize: 14 }}>🏛️ COFRE DE RESGATE</>
+          <div style={{ color: "#c8a878", fontSize: 11 }}>Sincronize seus bens preciosos com o cofre do reino.</>
+        </>
         <button
           onClick={() => window.dispatchEvent(new CustomEvent("rubym:toast", { detail: { title: "Banco Medieval", body: "Recursos sincronizados!", tone: "success" } }))}
           style={{ padding: "10px 20px", background: "linear-gradient(180deg, #ff9d3d, #c67100)", color: "#fff", border: "none", borderRadius: 8, fontWeight: 900, cursor: "pointer" }}
         >RESGATAR TUDO</button>
-      </div>
-    </div>
-    </div>
+      </>
+    </>
+    </>
   );
 }
 
@@ -16477,7 +16477,7 @@ function MarketScreen({
 
 
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16502,15 +16502,15 @@ function MarketScreen({
       <div style={{ maxWidth: 900 }}>
       <div style={{ background: "linear-gradient(180deg,#3d2b0f,#241503)", border: "2px solid #ff9d3d66", borderRadius: 12, padding: 16, marginBottom: 14, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
-          <div style={{ color: "#ff9d3d", fontWeight: 900, fontSize: 18, letterSpacing: 2 }}>🏷 MERCADO ENTRE TREINADORES</div>
+          <div style={{ color: "#ff9d3d", fontWeight: 900, fontSize: 18, letterSpacing: 2 }}>🏷 MERCADO ENTRE TREINADORES</>
           <div style={{ color: "#c8a878", fontSize: 12, marginTop: 4, fontStyle: "italic" }}>
             Compre e venda itens de outros jogadores. Anunciar é exclusivo <b style={{ color: "#ffd94d" }}>VIP ✦</b>.
-          </div>
-        </div>
+          </>
+        </>
         <div style={{ display: "flex", gap: 10 }}>
-          <div style={{ background: "#0e0818", border: "1px solid #f5cf6b55", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}</div>
-        </div>
-      </div>
+          <div style={{ background: "#0e0818", border: "1px solid #f5cf6b55", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}</>
+        </>
+      </>
 
       <div style={{ display: "flex", gap: 6, marginBottom: 12 }}>
         {(["browse", "create", "npc"] as const).map((m) => (
@@ -16526,13 +16526,13 @@ function MarketScreen({
         <button onClick={() => void refresh()} disabled={loading} style={{ marginLeft: "auto", padding: "6px 12px", borderRadius: 8, fontSize: 12, fontWeight: 800, border: "1px solid #3a2a4a", background: "transparent", color: "#c8b8d0", cursor: loading ? "wait" : "pointer" }}>
           {loading ? "…" : "↻ Atualizar"}
         </button>
-      </div>
+      </>
 
       {mode === "browse" && (
         <div>
           {soldPayouts.length > 0 && (
             <div>
-              <div style={{ color: "#ffd94d", fontSize: 12, fontWeight: 800, margin: "6px 2px" }}>💰 VENDAS CONCLUÍDAS — COLETAR PAGAMENTO</div>
+              <div style={{ color: "#ffd94d", fontSize: 12, fontWeight: 800, margin: "6px 2px" }}>💰 VENDAS CONCLUÍDAS — COLETAR PAGAMENTO</>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 10, marginBottom: 16 }}>
                 {soldPayouts.map((l) => {
                   const cur = l.currency ?? "gold";
@@ -16542,27 +16542,27 @@ function MarketScreen({
                         {STONE_CHEST[l.item_id] ? (
                           <img src={STONE_CHEST[l.item_id]} alt="" width={44} height={44} />
                         ) : (
-                          <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
+                          <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</>
                         )}
                         <div>
-                          <div style={{ color: "#ffd94d", fontWeight: 800, fontSize: 13 }}>Vendido: {l.qty}x {LABELS[l.item_id] ?? l.item_id}</div>
-                          <div style={{ color: "#c8a878", fontSize: 11 }}>Receber <b style={{ color: CUR_COLOR[cur] }}>{l.price.toLocaleString()} {CUR_LABEL[cur]}</b></div>
-                        </div>
-                      </div>
+                          <div style={{ color: "#ffd94d", fontWeight: 800, fontSize: 13 }}>Vendido: {l.qty}x {LABELS[l.item_id] ?? l.item_id}</>
+                          <div style={{ color: "#c8a878", fontSize: 11 }}>Receber <b style={{ color: CUR_COLOR[cur] }}>{l.price.toLocaleString()} {CUR_LABEL[cur]}</b></>
+                        </>
+                      </>
                       <button onClick={() => void onClaimPayout({ id: l.id, item_id: l.item_id, qty: l.qty, price: l.price, currency: l.currency }).then((ok) => { if (ok) { setSoldPayouts((prev) => prev.filter((x) => x.id !== l.id)); } })}
                         style={{ width: "100%", marginTop: 8, background: "linear-gradient(180deg,#ffd94d,#8b6a10)", color: "#0e0818", border: "none", borderRadius: 6, padding: "8px 0", fontWeight: 800, cursor: "pointer", fontSize: 12 }}>
                         Coletar {l.price.toLocaleString()} {CUR_LABEL[cur]}
                       </button>
-                    </div>
+                    </>
                   );
                 })}
-              </div>
-            </div>
+              </>
+            </>
           )}
           {mine.length > 0 && (
             <div>
 
-              <div style={{ color: "#8fd0ff", fontSize: 12, fontWeight: 800, margin: "6px 2px" }}>MEUS ANÚNCIOS</div>
+              <div style={{ color: "#8fd0ff", fontSize: 12, fontWeight: 800, margin: "6px 2px" }}>MEUS ANÚNCIOS</>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10, marginBottom: 16 }}>
                 {mine.map((l) => (
                   <div key={l.id} style={{ background: "#101a2a", border: "1px solid #4a9eff55", borderRadius: 10, padding: 12 }}>
@@ -16570,29 +16570,29 @@ function MarketScreen({
                       {STONE_CHEST[l.item_id] ? (
                         <div style={{ width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", background: "radial-gradient(circle, rgba(255,217,77,0.18), transparent 70%)", borderRadius: 8, filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.6))" }}>
                           <img src={STONE_CHEST[l.item_id]} alt="" width={52} height={52} style={{ imageRendering: "auto" }} />
-                        </div>
+                        </>
                       ) : (
-                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
+                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</>
                       )}
                       <div>
-                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}</div>
-                        <div style={{ color: "#8a7a9c", fontSize: 11 }}>Seu anúncio</div>
-                      </div>
-                    </div>
-                    <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Preço: <b style={{ color: CUR_COLOR[l.currency ?? "gold"] }}>{l.price.toLocaleString()} {CUR_LABEL[l.currency ?? "gold"]}</b></div>
+                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}</>
+                        <div style={{ color: "#8a7a9c", fontSize: 11 }}>Seu anúncio</>
+                      </>
+                    </>
+                    <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Preço: <b style={{ color: CUR_COLOR[l.currency ?? "gold"] }}>{l.price.toLocaleString()} {CUR_LABEL[l.currency ?? "gold"]}</b></>
 
                     <button onClick={() => void onCancel(l).then((ok) => { if (ok) void refresh(); })}
                       style={{ width: "100%", background: "#3a1010", color: "#fff", border: "1px solid #ff6b6b55", borderRadius: 6, padding: "6px 0", fontWeight: 800, cursor: "pointer", fontSize: 12 }}>
                       Cancelar anúncio
                     </button>
-                  </div>
+                  </>
                 ))}
-              </div>
-            </div>
+              </>
+            </>
           )}
-          <div style={{ color: "#ff9d3d", fontSize: 12, fontWeight: 800, margin: "6px 2px" }}>À VENDA ({others.length})</div>
+          <div style={{ color: "#ff9d3d", fontSize: 12, fontWeight: 800, margin: "6px 2px" }}>À VENDA ({others.length})</>
           {others.length === 0 ? (
-            <div style={{ color: "#8a7a9c", fontStyle: "italic", padding: 20, textAlign: "center" }}>Nenhum anúncio ativo no momento.</div>
+            <div style={{ color: "#8a7a9c", fontStyle: "italic", padding: 20, textAlign: "center" }}>Nenhum anúncio ativo no momento.</>
           ) : (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
               {others.map((l) => {
@@ -16605,16 +16605,16 @@ function MarketScreen({
                       {STONE_CHEST[l.item_id] ? (
                         <div style={{ width: 64, height: 64, display: "flex", alignItems: "center", justifyContent: "center", background: "radial-gradient(circle, rgba(255,157,61,0.22), transparent 70%)", borderRadius: 10, filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.7))" }}>
                           <img src={STONE_CHEST[l.item_id]} alt="" width={58} height={58} style={{ imageRendering: "auto" }} />
-                        </div>
+                        </>
                       ) : (
-                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
+                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</>
                       )}
                       <div>
-                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}</div>
-                        <div style={{ color: "#8a7a9c", fontSize: 11 }}>por <b style={{ color: "#c8b8d0" }}>{l.seller_name}</b></div>
-                      </div>
-                    </div>
-                    <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Preço: <b style={{ color: CUR_COLOR[cur] }}>{l.price.toLocaleString()} {CUR_LABEL[cur]}</b></div>
+                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}</>
+                        <div style={{ color: "#8a7a9c", fontSize: 11 }}>por <b style={{ color: "#c8b8d0" }}>{l.seller_name}</b></>
+                      </>
+                    </>
+                    <div style={{ fontSize: 12, color: "#c8b8d0", margin: "8px 0" }}>Preço: <b style={{ color: CUR_COLOR[cur] }}>{l.price.toLocaleString()} {CUR_LABEL[cur]}</b></>
                     <button disabled={!canBuy} onClick={() => void onBuy(l).then((ok) => {
                         if (ok) {
                           setListings((prev) => prev.filter((x) => x.id !== l.id));
@@ -16625,13 +16625,13 @@ function MarketScreen({
                       {canBuy ? "Comprar" : `${CUR_LABEL[cur]} insuficiente(s)`}
                     </button>
 
-                  </div>
+                  </>
                 );
               })}
 
-            </div>
+            </>
           )}
-        </div>
+        </>
       )}
 
       {mode === "create" && (
@@ -16639,9 +16639,9 @@ function MarketScreen({
           {!isVip && (
             <div style={{ background: "#3a1010", border: "1px solid #ff6b6b55", borderRadius: 8, padding: 10, marginBottom: 12, color: "#ff9d9d", fontSize: 12 }}>
               ✦ Anunciar no mercado é exclusivo VIP. Compre um <b>Livro VIP 30d/60d</b> na Loja para liberar.
-            </div>
+            </>
           )}
-          <div style={{ color: "#ffd94d", fontWeight: 800, fontSize: 14, marginBottom: 10 }}>Novo anúncio</div>
+          <div style={{ color: "#ffd94d", fontWeight: 800, fontSize: 14, marginBottom: 10 }}>Novo anúncio</>
           <label style={{ fontSize: 12, color: "#c8b8d0", display: "block", marginBottom: 4 }}>Item</label>
           <select value={selItem} onChange={(e) => { const v = e.target.value; setSelItem(v); if (isStoneId(v)) setSelQty(STONE_PACK_SIZE); }}
             style={{ width: "100%", background: "#0e0818", color: "#f3e5c5", border: "1px solid #ffd94d55", borderRadius: 6, padding: 8, marginBottom: 10 }}>
@@ -16653,10 +16653,10 @@ function MarketScreen({
             <div style={{ display: "flex", alignItems: "center", gap: 12, background: "linear-gradient(180deg,#2a1a3e,#160b24)", border: "1px solid #ffd94d66", borderRadius: 10, padding: 10, marginBottom: 10 }}>
               <img src={STONE_CHEST[selItem]} alt="" width={64} height={64} style={{ filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.7))" }} />
               <div>
-                <div style={{ color: "#ffd94d", fontWeight: 900, fontSize: 13 }}>Baú de {LABELS[selItem]}</div>
-                <div style={{ color: "#c8b8d0", fontSize: 11 }}>Pack mínimo <b style={{ color: "#7dffbe" }}>{STONE_PACK_SIZE}</b> stones — pode anunciar mais.</div>
-              </div>
-            </div>
+                <div style={{ color: "#ffd94d", fontWeight: 900, fontSize: 13 }}>Baú de {LABELS[selItem]}</>
+                <div style={{ color: "#c8b8d0", fontSize: 11 }}>Pack mínimo <b style={{ color: "#7dffbe" }}>{STONE_PACK_SIZE}</b> stones — pode anunciar mais.</>
+              </>
+            </>
           )}
           <label style={{ fontSize: 12, color: "#c8b8d0", display: "block", marginBottom: 4 }}>Quantidade {isStoneId(selItem) && <span style={{ color: "#8a7a9c" }}>(mín. {STONE_PACK_SIZE} para stones)</span>}</label>
           <input type="number" min={isStoneId(selItem) ? STONE_PACK_SIZE : 1} max={99999} value={selQty}
@@ -16691,12 +16691,12 @@ function MarketScreen({
           })()}
 
 
-        </div>
+        </>
       )}
 
       {mode === "npc" && (
         <div>
-          <div style={{ color: "#c8a878", fontSize: 12, marginBottom: 10, fontStyle: "italic" }}>Venda rápida ao NPC — preço fixo, sem esperar comprador.</div>
+          <div style={{ color: "#c8a878", fontSize: 12, marginBottom: 10, fontStyle: "italic" }}>Venda rápida ao NPC — preço fixo, sem esperar comprador.</>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10 }}>
             {Object.keys(npcPrices).map((id) => {
               const have = items[id] ?? 0;
@@ -16705,13 +16705,13 @@ function MarketScreen({
               return (
                 <div key={id} style={{ background: "#1a0f26", border: `1px solid ${disabled ? "#3a2a4a" : "#ff9d3d66"}`, borderRadius: 10, padding: 12, opacity: disabled ? 0.55 : 1 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                    <div style={{ fontSize: 22 }}>{ICONS[id] ?? "📦"}</div>
+                    <div style={{ fontSize: 22 }}>{ICONS[id] ?? "📦"}</>
                     <div>
-                      <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{LABELS[id] ?? id}</div>
-                      <div style={{ color: "#8a7a9c", fontSize: 11 }}>Estoque: <b style={{ color: "#c8b8d0" }}>{have}</b></div>
-                    </div>
-                  </div>
-                  <div style={{ fontSize: 12, color: "#c8b8d0", marginBottom: 8 }}>NPC: <b style={{ color: "#ff9d3d" }}>{price} ouro / un.</b></div>
+                      <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{LABELS[id] ?? id}</>
+                      <div style={{ color: "#8a7a9c", fontSize: 11 }}>Estoque: <b style={{ color: "#c8b8d0" }}>{have}</b></>
+                    </>
+                  </>
+                  <div style={{ fontSize: 12, color: "#c8b8d0", marginBottom: 8 }}>NPC: <b style={{ color: "#ff9d3d" }}>{price} ouro / un.</b></>
                   <div style={{ display: "flex", gap: 6 }}>
                     <button disabled={disabled} onClick={() => onNpcSell(id, 1)}
                       style={{ flex: 1, background: disabled ? "#333" : "linear-gradient(180deg,#ff9d3d,#8b4a10)", color: "#0e0818", border: "none", borderRadius: 6, padding: "6px 0", fontWeight: 800, cursor: disabled ? "not-allowed" : "pointer", fontSize: 12 }}>
@@ -16721,15 +16721,15 @@ function MarketScreen({
                       style={{ flex: 1, background: (disabled || have < 10) ? "#333" : "#8b4a10", color: "#fff", border: "none", borderRadius: 6, padding: "6px 0", fontWeight: 800, cursor: (disabled || have < 10) ? "not-allowed" : "pointer", fontSize: 12 }}>
                       Vender 10
                     </button>
-                  </div>
-                </div>
+                  </>
+                </>
               );
             })}
-          </div>
-        </div>
+          </>
+        </>
       )}
-    </div>
-    </div>
+    </>
+    </>
   );
 }
 
@@ -16755,7 +16755,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
   const rColor = rarityColor[pet.rarity] ?? "#f5cf6b";
 
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16807,20 +16807,20 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
           <div style={{
             position: "absolute", top: 4, left: 4,
             fontSize: 8, letterSpacing: 1.5, color: "#8a7a9c", fontWeight: 700,
-          }}>Nº {String(Object.keys(SPECIES_BASE).indexOf(pet.species) + 1).padStart(3, "0")}</div>
+          }}>Nº {String(Object.keys(SPECIES_BASE).indexOf(pet.species) + 1).padStart(3, "0")}</>
           <div style={{
             position: "absolute", bottom: 4, right: 4,
             background: "linear-gradient(180deg,#f5cf6b,#b8862a)",
             color: "#1a0f26", padding: "2px 7px", borderRadius: 10,
             fontWeight: 900, fontSize: 10, letterSpacing: 1,
             boxShadow: "0 2px 4px rgba(0,0,0,0.5)",
-          }}>LV {pet.level}</div>
-        </div>
+          }}>LV {pet.level}</>
+        </>
         <div style={{
           padding: "4px 6px", fontSize: 9, fontWeight: 900, letterSpacing: 1.2,
           color: "#0b0510", background: rColor, borderRadius: 4, textAlign: "center",
-        }}>{base.rarity.toUpperCase()}</div>
-      </div>
+        }}>{base.rarity.toUpperCase()}</>
+      </>
 
       {/* RIGHT: NAME + BARS + STATS */}
       <div style={{ display: "flex", flexDirection: "column", gap: 8, minWidth: 0 }}>
@@ -16828,7 +16828,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
           fontSize: 18, fontWeight: 900, color: rColor,
           textShadow: `1px 1px 0 #000, 0 0 10px ${rColor}55`,
           letterSpacing: 1.5, lineHeight: 1,
-        }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
+        }}>{pet.species.replace(/_/g, " ").toUpperCase()}</>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           <StatBar label="HP" value={Math.floor(currentHp)} max={maxHp} pct={hpPct} color="#5ec26a" />
@@ -16837,15 +16837,15 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 2 }}>
               <span style={{ color: "#c8b8d0", fontWeight: 700, letterSpacing: 1 }}>⚡ ENERGIA</span>
               <span style={{ color: "#8fd0ff", fontWeight: 700 }}>{infinite ? "∞ MÍTICO" : `${energy}/100${msFull > 0 ? " · " + fmtMS(msFull) : ""}`}</span>
-            </div>
+            </>
             <div style={{ height: 8, background: "#0e1a2e", borderRadius: 3, border: "1px solid rgba(0,0,0,0.6)" }}>
               <div style={{
                 width: `${infinite ? 100 : energy}%`, height: "100%", borderRadius: 3,
                 background: energy > 30 ? "linear-gradient(90deg,#3b7fd6,#6cb6ff)" : "linear-gradient(90deg,#c74a1a,#ff9a5a)",
               }} />
-            </div>
-          </div>
-        </div>
+            </>
+          </>
+        </>
 
         {/* STATS ROW */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 4 }}>
@@ -16856,7 +16856,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
           <StatCell label="VEL" value={base.spe} />
           <StatCell label="HP" value={maxHp} />
           <StatCell label="CRIT" value={crit} />
-        </div>
+        </>
 
         {pet.ascensionStats && Object.keys(pet.ascensionStats).length > 0 && (
           <div style={{
@@ -16864,7 +16864,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
             border: "1px solid rgba(126,242,122,0.35)",
             borderRadius: 6, padding: "5px 7px",
           }}>
-            <div style={{ color: "#7ef27a", fontSize: 9, fontWeight: 900, letterSpacing: 1.5, marginBottom: 4 }}>✨ ASCENSÃO</div>
+            <div style={{ color: "#7ef27a", fontSize: 9, fontWeight: 900, letterSpacing: 1.5, marginBottom: 4 }}>✨ ASCENSÃO</>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 4 }}>
               {(["hp","atk","def","spa","spd","spe","crit"] as const).map((k) => {
                 const v = (pet.ascensionStats as Record<string, number>)[k];
@@ -16872,12 +16872,12 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
                 const lbl: Record<string,string> = { hp:"HP", atk:"ATK", def:"DEF", spa:"SPA", spd:"SPD", spe:"VEL", crit:"CRIT" };
                 return <StatCell key={k} label={`+${lbl[k]}`} value={v} />;
               })}
-            </div>
-          </div>
+            </>
+          </>
         )}
-      </div>
-    </div>
-    </div>
+      </>
+    </>
+    </>
   );
 }
 function StatBar({ label, value, max, pct, color }: { label: string; value: number; max: number; pct: number; color: string }) {
@@ -16886,7 +16886,7 @@ function StatBar({ label, value, max, pct, color }: { label: string; value: numb
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 2 }}>
         <span style={{ color: "#c8b8d0", fontWeight: 700, letterSpacing: 1 }}>{label}</span>
         <span style={{ color: "#f5cf6b", fontWeight: 700 }}>{value}/{max}</span>
-      </div>
+      </>
       <div style={{ height: 8, background: "#2a0808", borderRadius: 3, border: "1px solid rgba(0,0,0,0.6)" }}>
         <div style={{
           width: `${pct}%`, height: "100%", borderRadius: 3,
@@ -16894,14 +16894,14 @@ function StatBar({ label, value, max, pct, color }: { label: string; value: numb
           boxShadow: `0 0 6px ${color}66`,
           transition: "width 300ms",
         }} />
-      </div>
-    </div>
-    </div>
+      </>
+    </>
+    </>
   );
 }
 function StatCell({ label, value }: { label: string; value: number }) {
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16928,10 +16928,10 @@ function StatCell({ label, value }: { label: string; value: number }) {
       border: "1px solid rgba(245,207,107,0.22)",
       borderRadius: 4, padding: "3px 4px", textAlign: "center",
     }}>
-      <div style={{ fontSize: 8, color: "#8a7a9c", letterSpacing: 1, fontWeight: 700 }}>{label}</div>
-      <div style={{ fontSize: 12, fontWeight: 900, color: "#f3e5c5", textShadow: "1px 1px 0 #000" }}>{value}</div>
-    </div>
-    </div>
+      <div style={{ fontSize: 8, color: "#8a7a9c", letterSpacing: 1, fontWeight: 700 }}>{label}</>
+      <div style={{ fontSize: 12, fontWeight: 900, color: "#f3e5c5", textShadow: "1px 1px 0 #000" }}>{value}</>
+    </>
+    </>
   );
 }
 
@@ -16964,7 +16964,7 @@ const RARITY_LORE: Partial<Record<Rarity, string>> = {
 function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) {
   const lore = SPECIES_LORE[species] ?? RARITY_LORE[rarity] ?? "Um Pokémon único, com história ainda por contar.";
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16996,10 +16996,10 @@ function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) 
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
         <span style={{ fontSize: 14 }}>📖</span>
         <span style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 12, letterSpacing: 2 }}>SOBRE {species.replace(/_/g, " ").toUpperCase()}</span>
-      </div>
-      <div style={{ fontSize: 13, color: "#e8dbe5", lineHeight: 1.55, fontStyle: "italic" }}>&ldquo;{lore}&rdquo;</div>
-    </div>
-    </div>
+      </>
+      <div style={{ fontSize: 13, color: "#e8dbe5", lineHeight: 1.55, fontStyle: "italic" }}>&ldquo;{lore}&rdquo;</>
+    </>
+    </>
   );
 }
 function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
@@ -17038,10 +17038,10 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
       border: `1px solid ${color}66`, borderRadius: 8, padding: "8px 10px",
       minWidth: 110, flex: "1 1 120px",
     }}>
-      <div style={{ fontSize: 10, color: "#c8b8d0", letterSpacing: 1 }}>{label}</div>
-      <div style={{ fontSize: 18, fontWeight: 900, color, textShadow: "1px 1px 0 #000" }}>{value}</div>
-      {sub && <div style={{ fontSize: 9, color: "#8a7a9c", marginTop: 2 }}>{sub}</div>}
-    </div>
+      <div style={{ fontSize: 10, color: "#c8b8d0", letterSpacing: 1 }}>{label}</>
+      <div style={{ fontSize: 18, fontWeight: 900, color, textShadow: "1px 1px 0 #000" }}>{value}</>
+      {sub && <div style={{ fontSize: 9, color: "#8a7a9c", marginTop: 2 }}>{sub}</>}
+    </>
   );
   // Preview de sinergia por tier
   const synergyRow = (["rare","epic","legendary","mythic"] as Rarity[]).map((r) => ({
@@ -17049,7 +17049,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
     active: synergyRarity === r,
   }));
   return (
-    <div className="fragment-replacement">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -17076,7 +17076,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
       background: "#1a0f26", border: "1px solid rgba(245,207,107,0.15)",
       borderRadius: 10, padding: 12,
     }}>
-      <div style={{ color: "#f5cf6b", fontSize: 12, fontWeight: 900, letterSpacing: 2, marginBottom: 8 }}>✨ BÔNUS ATIVOS</div>
+      <div style={{ color: "#f5cf6b", fontSize: 12, fontWeight: 900, letterSpacing: 2, marginBottom: 8 }}>✨ BÔNUS ATIVOS</>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
         <Chip label="EXP TOTAL" value={`+${totalXpPct + Math.round((idle.globalStats?.mastery ?? 0) * 2)}%`} color="#6bd4ff"
           sub={`${expActive ? `Livro +${Math.round(buffs.expMult * 100)}% (${fmt(buffs.expMultUntil! - now)})` : "Sem livro"} · Líder +${Math.round(rarityBonus * 100)}% · Maestria +${Math.round((idle.globalStats?.mastery ?? 0) * 2)}%`} />
@@ -17086,7 +17086,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
           sub={`Líder ${leaderRarity} +${Math.round(rarityBonus * 100)}% · Maestria +${Math.round((idle.globalStats?.mastery ?? 0) * 5)}%`} />
         <Chip label="ATK / DEF" value={`+${Math.round((buffs.atk + (idle.globalStats?.attack ?? 0) * 0.05) * 100)}% / -${Math.round((buffs.def + (idle.globalStats?.resistance ?? 0) * 0.03) * 100)}%`} color="#ff7a3d"
           sub={`Bônus Globais: ATK Lv.${idle.globalStats?.attack ?? 0} · RES Lv.${idle.globalStats?.resistance ?? 0}`} />
-      </div>
+      </>
       <div style={{
         marginTop: 10, padding: "8px 10px",
         background: synergyBonus > 0 ? "linear-gradient(180deg,#2a1a3a,#180d24)" : "#150a1e",
@@ -17095,7 +17095,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
       }}>
         <div style={{ fontSize: 10, letterSpacing: 1, color: "#c8b8d0", marginBottom: 6 }}>
           🤝 SINERGIA DE TIME {synergyRarity ? `— ativo: ${rarityLabel[synergyRarity]} +${Math.round(synergyBonus * 100)}%` : "— monte um time todo da mesma tier"}
-        </div>
+        </>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {synergyRow.map(({ r, pct, active }) => (
             <div key={r} style={{
@@ -17105,12 +17105,12 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
               fontSize: 10, color: active ? "#e9d5ff" : "#8a7a9c", fontWeight: 700,
             }}>
               {rarityLabel[r]} · +{pct}%
-            </div>
+            </>
           ))}
-        </div>
-      </div>
-    </div>
-    </div>
+        </>
+      </>
+    </>
+    </>
   );
 }
 
@@ -17189,7 +17189,7 @@ function GovernanteDialog(props: {
             alt="Governante"
             style={{ width: "100%", height: "100%", objectFit: "contain", imageRendering: "pixelated" }}
           />
-        </div>
+        </>
         {/* Conteúdo */}
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
           <div style={{
@@ -17198,18 +17198,18 @@ function GovernanteDialog(props: {
           }}>
             👑 GOVERNANTE
             <span style={{ marginLeft: 8, fontSize: 10, color: "#c58bff", letterSpacing: 3 }}>SENHOR DAS CARTAS</span>
-          </div>
+          </>
           <div style={{
             background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,212,74,0.35)",
             borderRadius: 8, padding: 14, minHeight: 90, fontSize: 14, lineHeight: 1.5,
             fontStyle: "italic", color: "#f5eaff",
           }}>
             "{lines[step]}"
-          </div>
+          </>
           <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
             <div style={{ fontSize: 11, color: "#c58bff" }}>
               Cartas: <b style={{ color: "#ffd44a" }}>{cards}</b> · Plus: <b style={{ color: "#ffd44a" }}>{plusCards}</b> · Riolu: <b style={{ color: "#7ec4ff" }}>{rioluCards}</b> · Ovos atuais: <b style={{ color: "#ffd44a" }}>{currentEggs}/6</b>
-            </div>
+            </>
             <div style={{ flex: 1 }} />
             {!isLast ? (
               <button
@@ -17266,7 +17266,7 @@ function GovernanteDialog(props: {
                     }}
                   >✦ RECEBER {canGive} OVO{canGive > 1 ? "S" : ""}</button>
                 )}
-              </div>
+              </>
             ) : (
               <button
                 onClick={onClose}
@@ -17277,108 +17277,108 @@ function GovernanteDialog(props: {
                 }}
               >Despedir-se</button>
             )}
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+          </>
+        </>
+      </>
+    </>
+    </>
 
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+      </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
 );
 }
 
