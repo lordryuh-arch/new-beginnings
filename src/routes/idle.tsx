@@ -10845,10 +10845,10 @@ function IdlePage() {
                       </div>
                     );
                   })()}
-                  </div>
-                );
-              })()}
-            </Panel>
+                </div>
+              );
+            })()}
+          </Panel>
 
 
           {/* COLETA — logo abaixo do mapa, destaque */}
