@@ -10749,8 +10749,7 @@ function IdlePage() {
 
                         </div>
                       </div>
-                    );
-                  })()}
+                    )}
 
 
                   {pendingGate && (() => {
@@ -10847,10 +10846,9 @@ function IdlePage() {
                     );
                   })()}
                   </div>
-                </div>
-              );
-            })()}
-          </Panel>
+                );
+              })()}
+            </Panel>
 
 
           {/* COLETA — logo abaixo do mapa, destaque */}
