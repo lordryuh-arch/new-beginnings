@@ -85,6 +85,9 @@ function CommunityLayout() {
               achievement="CONQUISTA RARA"
             />
 
+            {/* Trainer Book Integration */}
+            <TrainerBook />
+
             {/* Example Post: Discovery */}
             <DiscoveryPost 
               trainer="LunaMoon" 
@@ -92,6 +95,12 @@ function CommunityLayout() {
               time="há 4h"
               content="Dica: Melhor build para Dragonite no mapa 5!"
             />
+
+            {/* Showcase Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+               <CollectibleCard pokemon="Charizard" rarity="Shiny" type="Fogo" />
+               <CollectibleCard pokemon="Mewtwo" rarity="Lendário" type="Psíquico" />
+            </div>
 
             {/* Daily Rewards Card */}
             <DailyRewardsCard />
