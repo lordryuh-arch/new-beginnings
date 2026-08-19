@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                  { key: "to-abismo_gelo", target: "abismo_gelo", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#78c8ff" },
-                ],
-                abismo_gelo: [
-                  { key: "ag-back", target: "pantano_fogo", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#ff4a1a" },
-                  { key: "ag-next", target: "abismo_veneno", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#aa50dc" },
-                ],
-                abismo_veneno: [
-                  { key: "av-back", target: "abismo_gelo", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#78c8ff" },
                   { key: "av-next", target: "abismo_raio", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#ffdc50" },
                 ],
                 abismo_raio: [
@@ -10748,11 +10740,10 @@ function IdlePage() {
                               <span style={{ color: lvOk ? "#7ef27a" : "#ff8888", fontWeight: 900 }}>
                                 Lv {tm.minLevel} {lvOk ? "✓" : `(você: ${trainerLv})`}
                               </span>
-                            </div>
-                            {cost > 0 && (
-                              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(0,0,0,0.4)", border: `1px solid ${crystalOk ? "#7fd8ff" : "#e05252"}`, borderRadius: 8, padding: "8px 12px" }}>
-                                <span style={{ color: "#c8b8d0", fontSize: 12, fontWeight: 700 }}>💎 Custo de entrada</span>
-                                <span style={{ color: crystalOk ? "#7fd8ff" : "#ff8888", fontWeight: 900 }}>
+                </div>
+              );
+            })()}
+          </Panel>
                                   {cost} cristais {crystalOk ? "" : `(você: ${idle.bank.crystals})`}
                                 </span>
                               </div>
