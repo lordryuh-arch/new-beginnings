@@ -10847,8 +10847,10 @@ function IdlePage() {
                   })()}
                   </div>
                 </div>
-              );
-            })()}
+              </div>
+            );
+          })()}
+        </Panel>
           </Panel>
         </Panel>
           <div style={{
