@@ -9969,15 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                ],
-                terra: [
-                  { key: "to-arena",    target: "arena",    x: WORLD_W / 2, y: 40,           arriveX: WORLD_W / 2, arriveY: WORLD_H - 100, color: "#7ef27a" },
-                  { key: "to-venofogo", target: "venofogo", x: WORLD_W / 2, y: WORLD_H - 40, arriveX: WORLD_W / 2, arriveY: 100,           color: "#ff5c2e" },
-                  { key: "to-fantasma", target: "fantasma", x: 60,          y: WORLD_H / 2,  arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#a259ff" },
-                  { key: "to-deserto_purpura", target: "deserto_purpura", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#b45adc" },
-                ],
-                deserto_purpura: [
-                  { key: "to-terra", target: "terra", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#d9873a" },
                   { key: "to-terry", target: "terry", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#c9a76a" },
                 ],
                 terry: [
@@ -10748,11 +10739,10 @@ function IdlePage() {
                     const goldOk = idle.bank.gold >= gold;
                     const canGo = crystalOk;
                     const close = () => setPendingGate(null);
-                    return (
-                      <div
-                        onClick={close}
-                        style={{ position: "fixed", inset: 0, zIndex: 9999, background: "rgba(0,0,0,0.82)", display: "grid", placeItems: "center", padding: 20, cursor: "pointer" }}
-                      >
+                </div>
+              );
+            })()}
+          </Panel>
                         <div
                           onClick={(e) => e.stopPropagation()}
                           style={{
