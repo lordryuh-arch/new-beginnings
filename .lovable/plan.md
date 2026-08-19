@@ -1,18 +1,29 @@
-# Implementation Plan - BMP Aura and UI Consolidation
+# Plano de Evolução: Ecossistema Social Pokémon Idle
 
-Consolidate aura effects for all Black Mitic Plus Pokémon and improve the World Map visual cues.
+Transformar o projeto atual em uma plataforma comunitária completa para treinadores, onde a jogabilidade idle alimenta uma camada social rica, preservando toda a lógica e economia existente.
 
-## User Review Required
+## 1. Análise e Infraestrutura
+- Mapear tabelas Supabase existentes (`trainer_state`, `pokemon_collection`, `guilds`).
+- Identificar eventos do jogo que podem gerar posts automáticos (ex: capturar lendário, atingir nível 100).
+- Criar rotas base para a camada social sem interferir na rota `/idle`.
 
-> [!IMPORTANT]
-> The current world map reference image is used for all continents. This plan will add visual filters (grayscale) to represent locked continents while maintaining the single background asset.
+## 2. Camada Social (Feed e Perfil)
+- **Feed Comunitário**: Implementar um feed moderno com posts de treinadores e conquistas automáticas.
+- **Perfil do Treinador**: Expandir a identidade do jogador com avatar, bio, medalhas e vitrine de Pokémon.
+- **Trainer Book**: Criar uma interface tipo "diário de bordo" que registra a jornada cronológica do jogador.
 
-- **BMP Aura Consistency**: Ensure all `black_mitic_plus` Pokémon share the same purple aura effect across Team HUD, Collection, and Market.
-- **World Map Cues**: Improve the "grayscale to color" transition on the world map to clearly show progress across Continents I, II, III, and IV.
-- **UI Polish**: Minor adjustments to the bottom navigation to ensure "Salvar" and other icons are perfectly aligned.
+## 3. Integração Jogo-Comunidade
+- **Cartas Colecionáveis**: Gerar cartas visuais (estilo TCG) baseadas em capturas raras que podem ser exibidas no perfil.
+- **Clubes e Guildas**: Estender o sistema de guildas atual para incluir fóruns internos, missões cooperativas e chat.
+- **Notificações**: Sistema de alertas para interações sociais (curtidas, novos seguidores) e eventos do jogo.
 
-## Technical Details
+## 4. Interface e Experiência
+- **Design Premium**: Aplicar a estética "Dark Obsidian/Purple Energy" sugerida na referência, mantendo a identidade visual do jogo.
+- **Navegação Moderna**: Sidebar/Top bar no desktop e Bottom bar no mobile, integrando o HUD do jogo suavemente.
+- **Performance**: Implementar paginação infinita no feed e lazy loading de imagens dos monstrinhos.
 
-- **Aura Component**: Extract the aura logic into a reusable style or component if possible, or ensure the condition `rarity === 'black_mitic_plus'` triggers the purple drop-shadow/glow in all relevant mapping loops.
-- **Map Filters**: Update the `filter` property on the `worldMapRefAsset` container based on `continentUnlocked` and `activeTab`.
-- **Navigation Layout**: Adjust the flex-basis and padding of the navigation buttons to prevent text wrapping on smaller screens.
+## Detalhes Técnicos
+- **Frontend**: Componentes React 19/TanStack Start, estilização com Tailwind v4.
+- **Backend**: Server Functions para persistência social, garantindo que recompensas comunitárias passem pelo anti-cheat.
+- **Segurança**: RLS rigoroso no Supabase para impedir que a camada social exponha dados sensíveis ou permita manipulação de saves.
+- **Incremental**: Nenhuma alteração deve quebrar a rota `/idle` ou o loop de batalha atual.
