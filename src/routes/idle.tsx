@@ -152,7 +152,7 @@ import { WORLD_REGIONS, OBSIDIAN_POINTS, WORLD_MAP_CONFIG } from "@/game/worldMa
 import mapVenofogoOrangeAsset from "@/assets/map-lava-valley.jpg.asset.json";
 import mapPantanoFogoAsset from "@/assets/map-pantano-fogo.png.asset.json";
 import worldMapGlobeAsset from "@/assets/world-map-globe.jpg.asset.json";
-import worldMapContinent2Asset from "@/assets/world-map-continent2.jpg.asset.json";
+import worldMapBgAsset from "@/assets/world-map-bg.png.asset.json";
 import mapFantasmaAsset from "@/assets/map-fantasma.jpg.asset.json";
 import mapCadeiaAbAsset from "@/assets/map-cadeia-ab.png.asset.json";
 import mapCadeiaAb1Asset from "@/assets/map-cadeia-ab1.png.asset.json";
@@ -451,7 +451,7 @@ const nidoranFUrl = assetUrlFromJson(nidoranFAsset);
 const snorlaxUrl = assetUrlFromJson(snorlaxAsset);
 const gloomUrl = assetUrlFromJson(gloomAsset);
 const npcGovernanteUrl = assetUrlFromJson(npcGovernanteAsset);
-const worldMapContinent2Url = assetUrlFromJson(worldMapContinent2Asset);
+const worldMapBgUrl = assetUrlFromJson(worldMapBgAsset);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const gameDb = supabase as any;
 
@@ -9963,7 +9963,7 @@ function IdlePage() {
           <Panel title="MAPA ATUAL" accent="#3d2b52">
             <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center", padding: "4px 0" }}>
               <div style={{ position: "relative", width: "100%", height: 120, borderRadius: 8, overflow: "hidden", border: "1px solid rgba(245,207,107,0.3)" }}>
-                <img src={assetUrlFromJson(worldMapContinent2Asset)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
+                <img src={assetUrlFromJson(worldMapBgAsset)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
                 <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)", display: "grid", placeItems: "center" }}>
                    <div style={{ textAlign: "center" }}>
                       <div style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 14, textShadow: "0 2px 4px #000" }}>{IDLE_MAPS[idle.currentMap].name.toUpperCase()}</div>
@@ -12159,7 +12159,7 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           cursor: "grab", overflow: "hidden", background: "#050208"
         }}>
           {/* Background Image */}
-          <img src={assetUrlFromJson(worldMapContinent2Asset)} alt="World Map" style={{
+          <img src={assetUrlFromJson(worldMapBgAsset)} alt="World Map" style={{
             width: "100%", height: "100%", objectFit: "cover", opacity: 1
           }} />
 

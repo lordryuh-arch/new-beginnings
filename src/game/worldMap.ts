@@ -1,6 +1,6 @@
 
-import worldMapContinent2Asset from "@/assets/world-map-continent2.jpg.asset.json";
-const overworldAsset = worldMapContinent2Asset;
+import worldMapBgAsset from "@/assets/world-map-bg.png.asset.json";
+const overworldAsset = worldMapBgAsset;
 
 export interface WorldRegion {
   id: string;
