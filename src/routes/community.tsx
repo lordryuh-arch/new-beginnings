@@ -209,8 +209,8 @@ function AchievementPost({ trainer, level, time, content, achievement }: any) {
       <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 border border-white/10 mb-6 flex items-center justify-center relative group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.2),transparent_70%)]" />
         <div className="text-slate-400 flex flex-col items-center gap-3">
-          <Sparkles size={48} className="text-purple-400 animate-pulse" />
-          <span className="text-sm font-bold uppercase tracking-widest text-white/50">Card Lendário</span>
+          <Trophy size={48} className="text-yellow-400 animate-bounce" />
+          <span className="text-sm font-bold uppercase tracking-widest text-white/50">Mestre da Liga Safira</span>
         </div>
       </div>
 

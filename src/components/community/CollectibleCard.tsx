@@ -30,7 +30,11 @@ export function CollectibleCard({ pokemon, rarity, type }: any) {
            <div className="relative z-10 text-center scale-150 transform-gpu group-hover:scale-[1.7] transition-transform duration-700">
              <Sparkles className="text-white/20 absolute -top-4 -right-4" size={24} />
              {/* Character placeholder */}
-             <div className="w-20 h-20 rounded-full bg-white/10 animate-pulse border border-white/20" />
+             <div className="w-24 h-24 flex items-center justify-center">
+               <div className="w-20 h-20 rounded-full bg-purple-500/20 animate-pulse border border-purple-500/30 flex items-center justify-center">
+                 <Sparkles className="text-purple-400/50" size={32} />
+               </div>
+             </div>
            </div>
         </div>
 
