@@ -362,7 +362,6 @@ const CLOUD_PRELOADED_KEY = "rubym.cloud.preloaded.v1";
 const MP_SESSION_KEY = "rubym.multiplayer.session.v1";
 const OFFLINE_CAP_MS = 8 * 60 * 60 * 1000;
 const idleArenaUrl = assetUrlFromJson(idleArenaAsset);
-
 const mapSnowUrl = assetUrlFromJson(mapSnowAsset);
 const mapDesertUrl = assetUrlFromJson(mapDesertAsset);
 const mapCaveUrl = assetUrlFromJson(mapCaveAsset);
@@ -6135,8 +6134,8 @@ function IdlePage() {
   const activeTime = now - idle.startedAt;
   const rawMap = IDLE_MAPS[idle.currentMap];
   // Grass Oddish rotaciona 3 backgrounds a cada 4 min pra ampliar a área do evento
-  const grassOddishBg2 = assetUrlFromJson(mapGrassOddish2Asset);
-  const grassOddishBg3 = assetUrlFromJson(mapGrassOddish3Asset);
+  const grassOddishBg2 = mapGrassOddish2Asset;
+  const grassOddishBg3 = mapGrassOddish3Asset;
   const map = idle.currentMap === "grass_oddish"
     ? { ...rawMap, bg: (() => {
         const idx = Math.floor(now / (4 * 60 * 1000)) % 3;
@@ -9170,7 +9169,7 @@ function IdlePage() {
               )}
               <div style={{
                 width: "100%", height: "100%",
-                backgroundImage: `url(${skinUrl ?? trainerSheet})`,
+                backgroundImage: `url(${assetUrlFromJson(skinUrl ?? trainerSheet)})`,
                 backgroundSize: "400% 400%",
                 backgroundPosition: `${walkStep * 33.333}% ${DIR_ROW[walkDir] * 33.333}%`,
                 imageRendering: "pixelated",
@@ -9237,7 +9236,7 @@ function IdlePage() {
                   }}>{rp.name}</div>
                   <div style={{
                     width: "100%", height: "100%",
-                    backgroundImage: `url(${rp.skinUrl ?? trainerSheet})`,
+                    backgroundImage: `url(${assetUrlFromJson(rp.skinUrl ?? trainerSheet)})`,
                     backgroundSize: "400% 400%",
                     backgroundPosition: `${rp.step * 33.333}% ${DIR_ROW[rp.dir] * 33.333}%`,
                     imageRendering: "pixelated",
@@ -9248,7 +9247,7 @@ function IdlePage() {
                       <div style={{
                         position: "absolute", left: 34, top: 20,
                         width: 36, height: 36,
-                        backgroundImage: `url(${SPRITE_SHEET[rp.leaderSp]})`,
+                        backgroundImage: `url(${assetUrlFromJson(SPRITE_SHEET[rp.leaderSp])})`,
                         backgroundSize: "400% 400%",
                         backgroundPosition: `${rp.step * 33.333}% ${DIR_ROW[rp.dir] * 33.333}%`,
                         imageRendering: "pixelated",
@@ -9369,7 +9368,7 @@ function IdlePage() {
                   {SPRITE_SHEET[leaderSp] ? (
                     <div style={{
                       width: "100%", height: "100%",
-                      backgroundImage: `url(${SPRITE_SHEET[leaderSp]})`,
+                      backgroundImage: `url(${assetUrlFromJson(SPRITE_SHEET[leaderSp])})`,
                       backgroundSize: "400% 400%",
                       backgroundPosition: `${(followerState.moving ? walkStep : 0) * 33.333}% ${DIR_ROW[followerState.dir] * 33.333}%`,
                       imageRendering: "pixelated",
@@ -9562,9 +9561,9 @@ function IdlePage() {
               borderRadius: "4px 11px 11px 4px",
               borderLeft: "1px solid rgba(245,207,107,0.25)",
             }}>
-              <BallSlot img={assetUrlFromJson(ballPokeImg)}  count={idle.items.pokeball ?? 0}  tint="#ff8080" />
-              <BallSlot img={assetUrlFromJson(ballGreatImg)} count={idle.items.greatball ?? 0} tint="#7ec4ff" />
-              <BallSlot img={assetUrlFromJson(ballUltraImg)} count={idle.items.ultraball ?? 0} tint="#ffd66b" />
+              <BallSlot img={ballPokeImg}  count={idle.items.pokeball ?? 0}  tint="#ff8080" />
+              <BallSlot img={ballGreatImg} count={idle.items.greatball ?? 0} tint="#7ec4ff" />
+              <BallSlot img={ballUltraImg} count={idle.items.ultraball ?? 0} tint="#ffd66b" />
             </div>
           </div>
 
@@ -12658,7 +12657,7 @@ function TabOverlay({
           padding: "14px 12px 18px",
           borderRadius: 18,
           border: "3px solid #6b3fa0",
-          background: `linear-gradient(180deg, rgba(20,10,35,0.82) 0%, rgba(30,15,50,0.9) 45%, rgba(20,10,35,0.95) 100%), url(${pokemonTabBg}) center/cover no-repeat`,
+          background: `linear-gradient(180deg, rgba(20,10,35,0.82) 0%, rgba(30,15,50,0.9) 45%, rgba(20,10,35,0.95) 100%), url(${assetUrlFromJson(pokemonTabBg)}) center/cover no-repeat`,
           boxShadow: "0 10px 30px rgba(0,0,0,0.55), inset 0 0 40px rgba(192,132,252,0.15), 0 0 22px rgba(192,132,252,0.25)",
           overflow: "hidden",
         }}>
@@ -12674,7 +12673,7 @@ function TabOverlay({
             opacity: 0.85,
           }}>✦ MEW ✦</div>
           <div style={{ position: "relative" }}>
-          <PokemonDetail pet={leader} currentHp={leaderHp} src={gifMap[leader.species]} />
+          <PokemonDetail pet={leader} currentHp={leaderHp} src={assetUrlFromJson(gifMap[leader.species])} />
           <ActiveBonuses leaderRarity={leader.rarity} team={team} buffs={buffs} idle={idle} />
           <SpeciesLore species={leader.species} rarity={leader.rarity} />
 
@@ -13141,7 +13140,7 @@ function TabOverlay({
           <div style={{
             background: `
               radial-gradient(circle at 50% 30%, rgba(168,85,247,0.28), transparent 55%),
-              url(${bagBgGlowUrl}) center/cover no-repeat,
+              url(${assetUrlFromJson(bagBgGlowUrl)}) center/cover no-repeat,
               linear-gradient(160deg, ${P.bg1} 0%, ${P.bg2} 60%, ${P.bg3} 100%)
             `,
             border: `3px solid ${P.gold}`, borderRadius: 16, padding: 14,
@@ -14949,7 +14948,7 @@ function WalletScreen({
         overflow: "hidden",
         border: "2px solid #f5cf6b66",
         boxShadow: "0 8px 24px rgba(0,0,0,0.55), inset 0 0 40px rgba(0,0,0,0.4)",
-        backgroundImage: `url(${walletHero})`,
+        backgroundImage: `url(${assetUrlFromJson(walletHero)})`,
         backgroundSize: "cover",
         backgroundPosition: "center 30%",
         minHeight: 160,
