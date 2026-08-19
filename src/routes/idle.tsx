@@ -14,16 +14,19 @@ import navColecaoAsset from "@/assets/icons/nav-colecao.png.asset.json";
 import navLojaAsset from "@/assets/icons/nav-loja.png.asset.json";
 import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
 import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
+import navPokedexAsset from "@/assets/icons/nav-colecao.png.asset.json"; // Usando ícone de coleção para pokedex temporariamente se não houver um específico
 
-const navInicio = assetUrlFromJson(navInicioAsset);
-const navPokemon = assetUrlFromJson(navPokemonAsset);
-const navMochila = assetUrlFromJson(navMochilaAsset);
-const navBatalha = assetUrlFromJson(navBatalhaAsset);
-const navMelhorias = assetUrlFromJson(navMelhoriasAsset);
-const navColecao = assetUrlFromJson(navColecaoAsset);
-const navLoja = assetUrlFromJson(navLojaAsset);
-const navWallet = assetUrlFromJson(navWalletAsset);
-const navMarket = assetUrlFromJson(navMarketAsset);
+const navInicio = navInicioAsset.url;
+const navPokemon = navPokemonAsset.url;
+const navMochila = navMochilaAsset.url;
+const navBatalha = navBatalhaAsset.url;
+const navMelhorias = navMelhoriasAsset.url;
+const navColecao = navColecaoAsset.url;
+const navLoja = navLojaAsset.url;
+const navWallet = navWalletAsset.url;
+const navMarket = navMarketAsset.url;
+const navPokedex = navPokedexAsset.url;
+
 import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
@@ -38,6 +41,15 @@ import catPotionsAsset from "@/assets/cat2-potions.png.asset.json";
 import catBooksAsset from "@/assets/cat2-books.png.asset.json";
 import catEggsAsset from "@/assets/cat2-eggs.png.asset.json";
 import catOtherAsset from "@/assets/cat2-other.png.asset.json";
+
+const iconFragmentCrystalUrl = iconFragmentCrystal.url;
+const iconWorldGlobeUrl = iconWorldGlobe.url;
+const iconCrystalBlueUrl = iconCrystalBlue.url;
+const iconCashPackageUrl = iconCashPackage.url;
+const eventBannerImgUrl = eventBannerImg.url;
+const trainerAvatarUrl = trainerAvatarAsset.url;
+
+
 import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
 import { grantEmeraldFor } from "@/lib/emerald";
@@ -406,13 +418,13 @@ const mapEliteRouteUrl = assetUrlFromJson(mapEliteRouteAsset);
 const mapVictoryRoadUrl = assetUrlFromJson(mapVictoryRoadAsset);
 const mapViridianUrl = assetUrlFromJson(mapViridianAsset);
 const mapVenenoUrl = assetUrlFromJson(mapVenenoAsset);
-const bagBgGlowUrl = assetUrlFromJson(bagBgGlowAsset);
-const catAllUrl = assetUrlFromJson(catAllAsset);
-const catBallsUrl = assetUrlFromJson(catBallsAsset);
-const catPotionsUrl = assetUrlFromJson(catPotionsAsset);
-const catBooksUrl = assetUrlFromJson(catBooksAsset);
-const catEggsUrl = assetUrlFromJson(catEggsAsset);
-const catOtherUrl = assetUrlFromJson(catOtherAsset);
+const bagBgGlowUrl = bagBgGlowAsset.url;
+const catAllUrl = catAllAsset.url;
+const catBallsUrl = catBallsAsset.url;
+const catPotionsUrl = catPotionsAsset.url;
+const catBooksUrl = catBooksAsset.url;
+const catEggsUrl = catEggsAsset.url;
+const catOtherUrl = catOtherAsset.url;
 // URLs dos orbs (sprites transparentes)
 const orbXpMinorUrl = assetUrlFromJson(orbXpMinorAsset);
 const orbXpMajorUrl = assetUrlFromJson(orbXpMajorAsset);
@@ -1030,7 +1042,7 @@ const ITEM_IMG: Record<string, string> = {
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
   orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
   incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
-  safira_verde: assetUrlFromJson(safiraVerdeAsset),
+  safira_verde: safiraVerdeAsset.url,
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
   { id: "potion",    name: "Poção",     icon: "🧪", chance: 0.30 },
@@ -10082,7 +10094,7 @@ function IdlePage() {
                 filter: "drop-shadow(0 0 10px rgba(245,207,107,0.6))",
               }}>
                 <img
-                  src={assetUrlFromJson(iconCashPackage)}
+                  src={iconCashPackageUrl}
                   alt=""
                   width={58}
                   height={58}
@@ -10173,7 +10185,7 @@ function IdlePage() {
               position: "relative",
             }}>
               <img
-                src={assetUrlFromJson(eventBannerImg)}
+                src={eventBannerImgUrl}
                 alt="Evento"
                 width={58}
                 height={58}
@@ -10340,7 +10352,7 @@ function IdlePage() {
             { id: "mochila",   label: "Mochila",    img: navMochila,   color: "#ffd66b" },
             { id: "melhorias", label: "Melhorias",  img: navMelhorias, color: "#7ef27a" },
             { id: "colecao",   label: "Coleção",    img: navColecao,   color: "#ff5c8a" },
-            { id: "pokedex",   label: "Pokédex",    img: navColecao,   color: "#e11d48" },
+            { id: "pokedex",   label: "Pokédex",    img: navPokedex,   color: "#e11d48" },
             { id: "loja",      label: "Loja",       img: navLoja,      color: "#6bd4ff" },
             { id: "market",    label: "Market",     img: navMarket,    color: "#ff9d3d", disabled: true },
             { id: "wallet",    label: "Banco",      img: navWallet,    color: "#ffd66b" },
