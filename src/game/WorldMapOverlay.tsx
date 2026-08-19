@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { WORLD_REGIONS, WorldRegion } from './worldMap';
 import { assetUrlFromJson } from '@/lib/assetUrl';
-import overworldAsset from '@/assets/world/overworld.png.asset.json';
+import overworldAsset from '@/assets/world-map-globe.jpg.asset.json';
 import iconWorldGlobe from '@/assets/icon-world-globe-v2.png.asset.json';
+import bagBgDarkAsset from '@/assets/bag-bg-dark.jpg.asset.json';
 
 type WorldMapOverlayProps = {
   isOpen: boolean;
@@ -89,7 +90,10 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
           borderRadius: 4,
           position: 'relative',
           overflow: 'hidden',
-          boxShadow: '0 0 60px rgba(0,0,0,1), 0 0 20px rgba(245,207,107,0.2)',
+          boxShadow: '0 0 80px rgba(0,0,0,1), 0 0 20px rgba(245,207,107,0.1)',
+          backgroundImage: `url(${assetUrlFromJson(bagBgDarkAsset)})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           display: 'flex',
           flexDirection: 'column',
           imageRendering: 'pixelated'
@@ -153,9 +157,10 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
               backgroundImage: `url(${mapUrl})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              opacity: 0.7,
+              opacity: 0.85,
+              filter: 'contrast(1.1) brightness(1.1)',
               transition: 'transform 0.5s ease-out',
-              transform: selectedRegion ? 'scale(1.1)' : 'scale(1)'
+              transform: selectedRegion ? 'scale(1.15)' : 'scale(1)'
             }} />
 
             {/* Region Markers */}
