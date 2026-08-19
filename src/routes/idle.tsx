@@ -1310,7 +1310,6 @@ function getMultiplayerSessionId(baseId: string) {
 // ============ Route ============
 export const Route = createFileRoute("/idle")({ component: () => <IdlePage /> });
 function IdlePage() { return <div>SKELETON</div>; }
-function IdlePage() {
   return (
     <div style={{ padding: 20, color: "white" }}>
       <h1>RubyM Idle - Pokémon RPG</h1>
