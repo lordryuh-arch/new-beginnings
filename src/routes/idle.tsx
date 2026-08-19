@@ -31,6 +31,8 @@ import catOtherAsset from "@/assets/cat2-other.png.asset.json";
 import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
 import { grantEmeraldFor } from "@/lib/emerald";
+import { WorldMapOverlay } from "@/components/WorldMapOverlay";
+
 
 import chestClosedImg from "@/assets/icons/chest-closed.png";
 import chestOpenImg from "@/assets/icons/chest-open.png";
@@ -9959,8 +9961,20 @@ function IdlePage() {
         {/* ============ COLUNA DIREITA ============ */}
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
-            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
+            <div style={{ position: "relative", width: "100%", height: 180, background: "#0b0510", borderRadius: 8, overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: "1px solid #3d2b52" }}>
+              <div style={{ fontSize: 12, color: "#f5cf6b", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>{IDLE_MAPS[idle.currentMap]?.name.toUpperCase()}</div>
+              <img src={IDLE_MAPS[idle.currentMap]?.bg} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.4, position: "absolute", inset: 0 }} />
+              <button 
+                onClick={() => setWorldMapOpen(true)}
+                style={{ 
+                  position: "relative", zIndex: 2, padding: "8px 16px", background: "linear-gradient(180deg, #f5cf6b, #b8862a)", 
+                  border: "none", borderRadius: 8, color: "#0b0510", fontWeight: 900, fontSize: 12, cursor: "pointer",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.5)"
+                }}
+              >ABRIR MAPA MUNDI</button>
+            </div>
           </Panel>
+
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
             border: "2px solid #f5cf6b",
@@ -12075,7 +12089,24 @@ function IdlePage() {
           pushChat(`🐺✦ Governante consumiu ${use}× Carta Riolu Suprema e materializou ${use}× RIOLU BLACK MITIC BRILHANT PLUS Lv 1000 na Coleção.`, "cap");
         }}
       />
+      
+      {worldMapOpen && (
+        <WorldMapOverlay 
+          currentTrainerLevel={idle.trainerLevel ?? 1}
+          currentMapId={idle.currentMap}
+          onClose={() => setWorldMapOpen(false)}
+          onEnterRegion={(mapId) => {
+            const target = mapId as IdleMapId;
+            setIdle(s => ({ ...s, currentMap: target }));
+            setWorldMapOpen(false);
+            const mapName = IDLE_MAPS[target]?.name || "Nova Região";
+            pushChat(`🚀 Viajando para ${mapName}...`, "cap");
+          }}
+        />
+      )}
+
     </div>
+
 
 
   );
