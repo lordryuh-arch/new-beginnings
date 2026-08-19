@@ -9965,7 +9965,7 @@ function IdlePage() {
                 <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", textAlign: "center" }}>
                   <img src={assetUrlFromJson(map.bg)} alt="" style={{ width: 120, height: 120, borderRadius: "50%", border: "2px solid #f5cf6b", objectFit: "cover", opacity: 0.6 }} />
                   <div style={{ marginTop: 8, fontSize: 13, fontWeight: 900, color: "#f5cf6b", textShadow: "0 2px 4px rgba(0,0,0,0.8)" }}>{map.name.toUpperCase()}</div>
-                  <div style={{ fontSize: 10, color: "#fff", opacity: 0.8 }}>LVL: {map.lvlRange[0]}-{map.lvlRange[1]}</div>
+                  <div style={{ fontSize: 10, color: "#fff", opacity: 0.8 }}>LVL: {map.minLevel}-{map.maxLevel || "???"}</div>
                 </div>
               </div>
 
@@ -9975,8 +9975,8 @@ function IdlePage() {
                   <div style={{ fontSize: 12, fontWeight: 900, color: "#fff" }}>X: {Math.round(trainerPos.x)} Y: {Math.round(trainerPos.y)}</div>
                 </div>
                 <div style={{ background: "rgba(0,0,0,0.3)", padding: 8, borderRadius: 6, border: "1px solid rgba(245,207,107,0.15)" }}>
-                  <div style={{ fontSize: 9, color: "#b8a8c8", fontWeight: 700 }}>RECOMPENSA</div>
-                  <div style={{ fontSize: 12, fontWeight: 900, color: "#7ef27a" }}>+{map.goldBonus}% OURO</div>
+                  <div style={{ fontSize: 9, color: "#b8a8c8", fontWeight: 700 }}>BÔNUS EXP</div>
+                  <div style={{ fontSize: 12, fontWeight: 900, color: "#7ef27a" }}>x{map.rate}</div>
                 </div>
               </div>
 
