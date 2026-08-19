@@ -9960,7 +9960,6 @@ function IdlePage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
             <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
-            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
           </Panel>
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
@@ -10748,7 +10747,7 @@ function IdlePage() {
                 const eligible = collection.filter((c) => (c.rarity === pick.rarity || (pick.rarity === "mythic" && c.rarity === "mythic_shiny")) && !teamU.has(c.uid) && !benchU.has(c.uid));
                 const fuelRarities: FuelRarity[] = (["common", "uncommon", "rare"] as FuelRarity[]).filter((r) => r !== pick.rarity);
                 const fuelPool = collection.filter((c) => (c.rarity === "common" || c.rarity === "uncommon" || c.rarity === "rare") && c.rarity !== pick.rarity && !teamU.has(c.uid) && !benchU.has(c.uid));
-                const activeTab: FuelRarity = fuelRarities.includes(worldTraderFuelTab) ? worldTraderFuelTab : fuelRarities[0];
+                const activeTab: FuelRarity = fuelRarities.includes(worldTraderFuelTab) ? worldTraderFuelTab : fuelRarities[0]
                 const fuelOfTab = fuelPool.filter((c) => c.rarity === activeTab);
                 const selCount = worldTraderSel.size;
                 const fuelCount = worldTraderFuel.size;
