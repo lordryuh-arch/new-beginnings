@@ -10266,7 +10266,7 @@ function IdlePage() {
                     boxShadow: "0 0 8px #6bd4ff",
                   }} />
 
-                </div>
+                );
               );
 
               return (
@@ -10316,6 +10316,7 @@ function IdlePage() {
                       </button>
                     </div>
                   </div>
+                  </div>
 
 
 
@@ -10357,8 +10358,8 @@ function IdlePage() {
                             );
                           })}
                         </div>
+                        </div>
                       </div>
-                    </div>
                   )}
 
                   {worldMapOpen && (() => {
@@ -10848,6 +10849,7 @@ function IdlePage() {
                 </div>
               );
             })()}
+          </Panel>
           </Panel>
 
 
