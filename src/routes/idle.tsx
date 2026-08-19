@@ -1345,6 +1345,7 @@ function IdlePage() {
     if (!levelToast) return;
     const t = setTimeout(() => setLevelToast(null), 5000);
     return () => clearTimeout(t);
+    <>
   }, [levelToast]);
   // ⚡ ZAPDOS EVENT — anúncio no topo, aparece só nos mapas da Odisséia + Caverna Sombria
   const [zapdosAnnounce, setZapdosAnnounce] = useState<{ ts: number } | null>(null);
