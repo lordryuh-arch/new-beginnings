@@ -9,22 +9,33 @@ import {
   type TicketMsg, type AdminThreadSummary, type PendingSale,
 } from "@/lib/cashshopChat";
 import { motion, AnimatePresence } from "framer-motion";
-import blackEggImg from "@/assets/black-mythic-plus-egg.jpg";
-import rubyVipImg from "@/assets/ruby-vip.jpg";
-import rubyEmeraldPackImg from "@/assets/ruby-emerald-pack.jpg";
-import chestEmeraldImg from "@/assets/chest-emerald.png";
-import packUltraballImg from "@/assets/pack-ultraball.png";
-import orb24hImg from "@/assets/orb-24h.png";
-import incense24hImg from "@/assets/incense-24h.png";
-import emeraldCoinImg from "@/assets/emerald-coin.png";
+import blackEggImgAsset from "@/assets/black-mythic-plus-egg.jpg.asset.json";
+const blackEggImg = assetUrlFromJson(blackEggImgAsset);
+import rubyVipImgAsset from "@/assets/ruby-vip.jpg.asset.json";
+const rubyVipImg = assetUrlFromJson(rubyVipImgAsset);
+import rubyEmeraldPackImgAsset from "@/assets/ruby-emerald-pack.jpg.asset.json";
+const rubyEmeraldPackImg = assetUrlFromJson(rubyEmeraldPackImgAsset);
+import chestEmeraldImgAsset from "@/assets/chest-emerald.png.asset.json";
+const chestEmeraldImg = assetUrlFromJson(chestEmeraldImgAsset);
+import packUltraballImgAsset from "@/assets/pack-ultraball.png.asset.json";
+const packUltraballImg = assetUrlFromJson(packUltraballImgAsset);
+import orb24hImgAsset from "@/assets/orb-24h.png.asset.json";
+const orb24hImg = assetUrlFromJson(orb24hImgAsset);
+import incense24hImgAsset from "@/assets/incense-24h.png.asset.json";
+const incense24hImg = assetUrlFromJson(incense24hImgAsset);
+import emeraldCoinImgAsset from "@/assets/emerald-coin.png.asset.json";
+const emeraldCoinImg = assetUrlFromJson(emeraldCoinImgAsset);
 import safiraVerdeAsset from "@/assets/icon-safira-verde.png.asset.json";
 import { assetUrlFromJson } from "@/lib/assetUrl";
 const SAFIRA_URL = assetUrlFromJson(safiraVerdeAsset);
-import safariBallImg from "@/assets/items/icon-safariball.png";
-import ultraBallIconImg from "@/assets/icon-ultraball.png";
+import safariBallImgAsset from "@/assets/items/icon-safariball.png.asset.json";
+const safariBallImg = assetUrlFromJson(safariBallImgAsset);
+import ultraBallIconImgAsset from "@/assets/icon-ultraball.png.asset.json";
+const ultraBallIconImg = assetUrlFromJson(ultraBallIconImgAsset);
 import crystalDiamondAsset from "@/assets/icon-crystal-blue-diamond.png.asset.json";
 const CRYSTAL_URL = assetUrlFromJson(crystalDiamondAsset);
-import dragoniteEggImg from "@/assets/egg-dragonite-shiny.jpg";
+import dragoniteEggImgAsset from "@/assets/egg-dragonite-shiny.jpg.asset.json";
+const dragoniteEggImg = assetUrlFromJson(dragoniteEggImgAsset);
 import { emeraldKeyFor, readEmeraldFor, writeEmeraldFor } from "@/lib/emerald";
 
 // Mantém tipos exportados p/ compat externa (não usados internamente agora)

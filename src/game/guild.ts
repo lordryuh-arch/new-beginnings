@@ -1,14 +1,22 @@
+import { assetUrlFromJson } from "@/lib/assetUrl";
 // Guild system — frontend-only persistence (localStorage), independent of save file.
 export const GUILD_KEY = "rubym.guild.v1";
 export const GUILD_OPEN_COST = 5000;
 
-import waterIcon from "@/assets/guild/water.png";
-import fireIcon from "@/assets/guild/fire.png";
-import grassIcon from "@/assets/guild/grass.png";
-import psychicIcon from "@/assets/guild/psychic.png";
-import poisonIcon from "@/assets/guild/poison.png";
-import fairyIcon from "@/assets/guild/fairy.png";
-import flyingIcon from "@/assets/guild/flying.png";
+import waterIconAsset from "@/assets/fx/fx-water.png.asset.json";
+const waterIcon = assetUrlFromJson(waterIconAsset);
+import fireIconAsset from "@/assets/fx/fx-fire.png.asset.json";
+const fireIcon = assetUrlFromJson(fireIconAsset);
+import grassIconAsset from "@/assets/fx/fx-grass.png.asset.json";
+const grassIcon = assetUrlFromJson(grassIconAsset);
+import psychicIconAsset from "@/assets/fx/fx-psychic.png.asset.json";
+const psychicIcon = assetUrlFromJson(psychicIconAsset);
+import poisonIconAsset from "@/assets/fx/fx-poison.png.asset.json";
+const poisonIcon = assetUrlFromJson(poisonIconAsset);
+import fairyIconAsset from "@/assets/fx/fx-grass.png.asset.json";
+const fairyIcon = assetUrlFromJson(fairyIconAsset);
+import flyingIconAsset from "@/assets/fx/fx-flying.png.asset.json";
+const flyingIcon = assetUrlFromJson(flyingIconAsset);
 
 export type GuildElement = "fire" | "water" | "grass" | "psychic" | "poison" | "fairy" | "flying";
 
