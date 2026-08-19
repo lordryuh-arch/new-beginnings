@@ -152,7 +152,7 @@ import { WORLD_REGIONS, OBSIDIAN_POINTS, WORLD_MAP_CONFIG } from "@/game/worldMa
 import mapVenofogoOrangeAsset from "@/assets/map-lava-valley.jpg.asset.json";
 import mapPantanoFogoAsset from "@/assets/map-pantano-fogo.png.asset.json";
 import worldMapGlobeAsset from "@/assets/world-map-globe.jpg.asset.json";
-import worldMapBgAsset from "@/assets/world-map-bg.png.asset.json";
+import worldMapBgAsset from "@/assets/world-map.png.asset.json";
 import mapFantasmaAsset from "@/assets/map-fantasma.jpg.asset.json";
 import mapCadeiaAbAsset from "@/assets/map-cadeia-ab.png.asset.json";
 import mapCadeiaAb1Asset from "@/assets/map-cadeia-ab1.png.asset.json";
@@ -3791,7 +3791,7 @@ function IdlePage() {
         // Portais bloqueados por nível do TREINADOR: ignora alvos próximos deles
         // para não travar tentando atravessar. Se estiver liberado, pode alcançar.
         const trLv = idle.trainerLevel ?? 1;
-        const lockedPortals = WORLD_PORTALS.filter((p) => p.from === idle.currentMap && (p.reqLevel ?? 0) > trLv);
+        const lockedPortals: WorldPortalDef[] = []; // Nenhum portal bloqueado
         const nearLockedPortal = (x: number, y: number) =>
           lockedPortals.some((p) => Math.hypot(x - p.x, y - p.y) < 200);
         const aliveAll = enemies.filter((e) => e.hp > 0 && !blacklistRef.current.has(e.id) && !nearLockedPortal(e.x, e.y));
@@ -8701,7 +8701,7 @@ function IdlePage() {
             {(() => {
               const lv = idle.trainerLevel ?? 1;
               return WORLD_PORTALS.filter(p => p.from === idle.currentMap).map((p) => {
-                const locked = false; // Ignora requisito de nível para portais do mundo
+                const locked = false; // Liberado para exploração total
                 return (
                   <div
                     key={p.key}
@@ -12165,7 +12165,7 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
 
           {/* Regions */}
           {WORLD_REGIONS.map(reg => {
-            const locked = trainerLevel < reg.minLevel;
+            const locked = false; // Liberado para exploração total por pedido do usuário
             const isCurrent = currentMap === reg.mapId;
             return (
               <div key={reg.id} style={{
@@ -12204,7 +12204,7 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           {/* Obsidian Points */}
           {OBSIDIAN_POINTS.map(op => {
             const activated = activatedObsidian.includes(op.id);
-            const locked = trainerLevel < op.reqLevel;
+            const locked = false; // Obsidian nodes liberados
             return (
               <div key={op.id} style={{
                 position: "absolute", left: `${(op.x / WORLD_MAP_CONFIG.width) * 100}%`,
