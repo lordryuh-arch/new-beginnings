@@ -13130,7 +13130,7 @@ function TabOverlay({
 
       {tab === "mochila" && (() => {
         const NAMES: Record<string, string> = {
-          potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
+          potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
           book_atk: "Livro Ataque", book_def: "Livro Defesa", book_exp: "Livro EXP",
           book_exp_big: "Livro EXP Raro", book_exp_max: "Livro EXP Lendário", book_vip: "Livro VIP ✦",
           book_vip_30: "Livro VIP 30d ✦✦", book_vip_60: "Livro VIP 60d ✦✦✦",
