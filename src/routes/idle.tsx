@@ -1224,7 +1224,7 @@ function freshIdle(): IdleState {
     startedAt: now, lastTickAt: now,
     pending: { gold: 0, rubies: 0, crystals: 0 },
     totals: { gold: 0, captured: 0, kills: 0 },
-    currentMap: "floresta",
+    currentMap: INITIAL_MAP_ID,
 
     tasks: DEFAULT_TASKS(),
     mapsUnlocked: 3,
