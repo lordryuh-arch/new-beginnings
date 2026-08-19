@@ -10316,6 +10316,7 @@ function IdlePage() {
                       </button>
                     </div>
                   </div>
+                  </div>
                 </div>
 
 
@@ -10846,7 +10847,7 @@ function IdlePage() {
                       </div>
                     );
                   })()}
-                </div>
+                  </div>
               );
             })()}
           </Panel>
