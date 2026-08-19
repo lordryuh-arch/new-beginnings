@@ -10845,6 +10845,7 @@ function IdlePage() {
                       </div>
                     );
                   })()}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -10852,7 +10853,6 @@ function IdlePage() {
               );
             })()}
           </Panel>
-            })()}
           </Panel>
           </Panel>
         </Panel>
