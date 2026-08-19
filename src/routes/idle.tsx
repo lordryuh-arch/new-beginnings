@@ -5,15 +5,25 @@ import { createPortal } from "react-dom";
 import { FlaskConical, Sparkles } from "lucide-react";
 import { ItemPixelIcon } from "@/components/ItemPixelIcon";
 import type { LucideIcon } from "lucide-react";
-import navInicio from "@/assets/icons/nav-inicio.png";
-import navPokemon from "@/assets/icons/nav-pokemon.png";
-import navMochila from "@/assets/icons/nav-mochila.png";
-import navBatalha from "@/assets/icons/nav-batalha.png";
-import navMelhorias from "@/assets/icons/nav-melhorias.png";
-import navColecao from "@/assets/icons/nav-colecao.png";
-import navLoja from "@/assets/icons/nav-loja.png";
-import navWallet from "@/assets/icons/nav-wallet.png";
-import navMarket from "@/assets/icons/nav-market.png";
+import navInicioAsset from "@/assets/icons/nav-inicio.png.asset.json";
+import navPokemonAsset from "@/assets/icons/nav-pokemon.png.asset.json";
+import navMochilaAsset from "@/assets/icons/nav-mochila.png.asset.json";
+import navBatalhaAsset from "@/assets/icons/nav-batalha.png.asset.json";
+import navMelhoriasAsset from "@/assets/icons/nav-melhorias.png.asset.json";
+import navColecaoAsset from "@/assets/icons/nav-colecao.png.asset.json";
+import navLojaAsset from "@/assets/icons/nav-loja.png.asset.json";
+import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
+import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
+
+const navInicio = assetUrlFromJson(navInicioAsset);
+const navPokemon = assetUrlFromJson(navPokemonAsset);
+const navMochila = assetUrlFromJson(navMochilaAsset);
+const navBatalha = assetUrlFromJson(navBatalhaAsset);
+const navMelhorias = assetUrlFromJson(navMelhoriasAsset);
+const navColecao = assetUrlFromJson(navColecaoAsset);
+const navLoja = assetUrlFromJson(navLojaAsset);
+const navWallet = assetUrlFromJson(navWalletAsset);
+const navMarket = assetUrlFromJson(navMarketAsset);
 import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
@@ -10327,7 +10337,7 @@ function IdlePage() {
           {([
             { id: "inicio",    label: "Início",     img: navInicio,    color: "#f5cf6b" },
             { id: "pokemon",   label: "Pokémon",    img: navPokemon,   color: "#ff5252" },
-            { id: "mochila",   label: "Mochila",    img: bagIconImg,   color: "#ffd66b" },
+            { id: "mochila",   label: "Mochila",    img: navMochila,   color: "#ffd66b" },
             { id: "melhorias", label: "Melhorias",  img: navMelhorias, color: "#7ef27a" },
             { id: "colecao",   label: "Coleção",    img: navColecao,   color: "#ff5c8a" },
             { id: "pokedex",   label: "Pokédex",    img: navColecao,   color: "#e11d48" },
