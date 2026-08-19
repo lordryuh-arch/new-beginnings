@@ -10266,6 +10266,7 @@ function IdlePage() {
                     boxShadow: "0 0 8px #6bd4ff",
                   }} />
 
+                </div>
               );
 
               return (
@@ -10315,7 +10316,6 @@ function IdlePage() {
                       </button>
                     </div>
                   </div>
-                  </div>
 
 
 
@@ -10357,8 +10357,8 @@ function IdlePage() {
                             );
                           })}
                         </div>
-                        </div>
                       </div>
+                    </div>
                   )}
 
                   {worldMapOpen && (() => {
@@ -10746,6 +10746,8 @@ function IdlePage() {
                             @keyframes c4RingRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
                           `}</style>
 
+                        </div>
+                      </div>
                     );
                   })()}
 
@@ -10839,14 +10841,15 @@ function IdlePage() {
                               }}
                             >{lvOk ? (crystalOk ? "✓ VIAJAR" : "💎 CRISTAIS INSUFICIENTES") : "🔒 NÍVEL INSUFICIENTE"}</button>
                           </div>
-                          </div>
                         </div>
-                      );
-                    })()}
-                  </div>
-                );
-              })()}
-            </Panel>
+                      </div>
+                    );
+                  })()}
+                </div>
+              );
+            })()}
+          </Panel>
+
 
           {/* COLETA — logo abaixo do mapa, destaque */}
           <div style={{
