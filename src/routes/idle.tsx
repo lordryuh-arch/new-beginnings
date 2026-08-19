@@ -112,7 +112,7 @@ import { SynergyPanel } from "@/components/SynergyPanel";
 import { PokemonStatsCard } from "@/components/PokemonStatsCard";
 import { PokemonMarketPanel } from "@/components/PokemonMarketPanel";
 import trainerSheetAsset from "@/assets/trainer.png.asset.json";
-const trainerSheet = assetUrlFromJson(trainerSheetAsset);
+const trainerSheet = trainerSheetAsset.url;
 import skinPedroAsset from "@/assets/skins/pedro.webp.asset.json";
 import skinPhoneAsset from "@/assets/skins/phone.webp.asset.json";
 import skinGokuAsset from "@/assets/skins/goku.webp.asset.json";
@@ -175,7 +175,7 @@ import { WORLD_REGIONS, OBSIDIAN_POINTS, WORLD_MAP_CONFIG } from "@/game/worldMa
 import mapVenofogoOrangeAsset from "@/assets/map-lava-valley.jpg.asset.json";
 import mapPantanoFogoAsset from "@/assets/map-pantano-fogo.png.asset.json";
 import worldMapGlobeAsset from "@/assets/world-map-globe.jpg.asset.json";
-import worldMapBgAsset from "@/assets/world-map.png.asset.json";
+import worldMapBgAsset from "@/assets/world-map-v4.png.asset.json";
 import mapFantasmaAsset from "@/assets/map-fantasma.jpg.asset.json";
 import mapCadeiaAbAsset from "@/assets/map-cadeia-ab.png.asset.json";
 import mapCadeiaAb1Asset from "@/assets/map-cadeia-ab1.png.asset.json";
