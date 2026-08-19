@@ -1,5 +1,5 @@
 
-import worldMapBgAsset from "@/assets/world-map-bg.png.asset.json";
+import worldMapBgAsset from "@/assets/world-map.png.asset.json";
 const overworldAsset = worldMapBgAsset;
 
 export interface WorldRegion {
