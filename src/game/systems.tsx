@@ -7,7 +7,7 @@ import iconPokeballAsset from "@/assets/items/icon-pokeball.png.asset.json";
 const iconPokeball = assetUrlFromJson(iconPokeballAsset);
 import iconGreatballAsset from "@/assets/items/icon-greatball.png.asset.json";
 const iconGreatball = assetUrlFromJson(iconGreatballAsset);
-import iconFastballAsset from "@/assets/items/icon-pokeball.png.asset.json";
+import iconFastballAsset from "@/assets/icon-fastball.png.asset.json";
 const iconFastball = assetUrlFromJson(iconFastballAsset);
 import iconUltraballAsset from "@/assets/items/icon-ultraball.png.asset.json";
 const iconUltraball = assetUrlFromJson(iconUltraballAsset);
