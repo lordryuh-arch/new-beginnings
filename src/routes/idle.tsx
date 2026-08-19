@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                oddish_o3: [
-                  { key: "o3-o1", target: "oddish_o1", x: 80, y: WORLD_H - 100, arriveX: WORLD_W - 120, arriveY: 120, color: "#7ef27a" },
-                  { key: "o3-o2", target: "oddish_o2", x: WORLD_W - 80, y: WORLD_H - 100, arriveX: 120, arriveY: 120, color: "#7ef27a" },
-                ],
-                grass_oddish: [],
-                absol_start: [
-                  { key: "absol-to-hall", target: "governante_hall", x: WORLD_W - 80, y: WORLD_H / 2, arriveX: 120, arriveY: WORLD_H / 2, color: "#c58bff" },
-                ],
                 governante_hall: [
                   { key: "hall-to-absol", target: "absol_start", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 120, arriveY: WORLD_H / 2, color: "#c58bff" },
                 ],
@@ -10748,11 +10740,10 @@ function IdlePage() {
                                 background: canGo ? "linear-gradient(135deg, #f5cf6b, #d9a441)" : "#3a2a2a",
                                 border: `2px solid ${canGo ? "#fff2b8" : "#5a3a3a"}`,
                                 color: canGo ? "#1a0f26" : "#6a5a5a",
-                                borderRadius: 8, padding: "10px", fontWeight: 900, cursor: canGo ? "pointer" : "not-allowed",
-                                fontSize: 13, letterSpacing: 1,
-                                boxShadow: canGo ? "0 0 20px rgba(245,207,107,0.5)" : "none",
-                              }}
-                            >{lvOk ? (crystalOk ? "✓ VIAJAR" : "💎 CRISTAIS INSUFICIENTES") : "🔒 NÍVEL INSUFICIENTE"}</button>
+                </div>
+              );
+            })()}
+          </Panel>
                           </div>
                         </div>
                       </div>
