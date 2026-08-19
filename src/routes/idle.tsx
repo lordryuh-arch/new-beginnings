@@ -7697,7 +7697,7 @@ function IdlePage() {
             >
               🗺️ MUNDO
             </button>
-            <Panel title="SUA EQUIPE" accent="#c92a2a">
+            <Panel  title="SUA EQUIPE" accent="#c92a2a">
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 4 }}>
               <button
                 onClick={() => setTeamCollapsed((v) => !v)}
