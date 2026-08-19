@@ -1332,8 +1332,9 @@ export const Route = createFileRoute("/idle")({
   ),
 
 
-  ),
+  },
 });
+
 
 // ============ Page ============
 function IdlePage() {
@@ -7022,8 +7023,9 @@ function IdlePage() {
   );
 
   return (
-    <div style={{ height: "100%", width: "100%" }}>
+    <>
       {showWorldMap && (
+
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
           trainerLevel={idle.trainerLevel ?? 1}
@@ -15865,10 +15867,10 @@ function GovernanteDialog(props: {
           </div>
         </div>
       </div>
-    </div>,
-    document.body
+    </div>
   );
 }
+
 
 
 
