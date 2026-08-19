@@ -10375,14 +10375,8 @@ function IdlePage() {
             );
           })}
         </div>
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 6,
-          padding: "8px 0",
-          background: "rgba(0,0,0,0.2)",
-          borderTop: "1px solid rgba(255,255,255,0.05)"
-        }}>
+      </div>
+
 
       <style>{`
         /* ===== Layout responsivo ===== */
