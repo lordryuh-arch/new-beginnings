@@ -1033,7 +1033,7 @@ const ITEM_IMG: Record<string, string> = {
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
   orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
   incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
-  safira_verde: assetUrlFromJson(safiraVerdeAsset),
+  safira_verde: safiraVerdeAsset.url,
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
   { id: "potion",    name: "Poção",     icon: "🧪", chance: 0.30 },
@@ -10085,7 +10085,7 @@ function IdlePage() {
                 filter: "drop-shadow(0 0 10px rgba(245,207,107,0.6))",
               }}>
                 <img
-                  src={assetUrlFromJson(iconCashPackage)}
+                  src={iconCashPackageUrl}
                   alt=""
                   width={58}
                   height={58}
@@ -10176,7 +10176,7 @@ function IdlePage() {
               position: "relative",
             }}>
               <img
-                src={assetUrlFromJson(eventBannerImg)}
+                src={eventBannerImgUrl}
                 alt="Evento"
                 width={58}
                 height={58}
