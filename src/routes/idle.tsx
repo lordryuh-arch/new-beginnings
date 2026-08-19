@@ -1290,28 +1290,7 @@ function fmtHMS(ms: number) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(r).padStart(2, "0")}`;
 }
 function fmtK(n: number) {
-  if (n >= 1_000_000) return (
-      {showWorldMap && (
-        <WorldMapOverlay
-          onClose={() => setShowWorldMap(false)}
-          trainerLevel={idle.trainerLevel ?? 1}
-          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
-          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
-          currentMapId={idle.currentMap}
-          onEnterMap={(target) => {
-            setIdle((s) => ({ ...s, currentMap: target }));
-            setShowWorldMap(false);
-          }}
-          onActivateObsidian={(pointId) => {
-            setIdle((s) => {
-              const current = s.activatedObsidianPoints ?? [];
-              if (current.includes(pointId)) return s;
-              return { ...s, activatedObsidianPoints: [...current, pointId] };
-            });
-            pushChat("✦ Energia Obsidian despertada!", "cap");
-          }}
-        />
-      )}n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M"; if (n >= 1000) return (n / 1000).toFixed(1) + "k"; return n.toString(); / 1_000_000).toFixed(1) + "M";
   if (n >= 1000) return (n / 1000).toFixed(1) + "K";
   return String(Math.floor(n));
 }
@@ -7033,6 +7012,27 @@ function IdlePage() {
   );
 
   return (
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat("✦ Energia Obsidian despertada!", "cap");
+          }}
+        />
+      )}
     <div style={{
       height: "100vh",
       background: "#0b0510",
