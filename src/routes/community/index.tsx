@@ -18,7 +18,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
-export const Route = createFileRoute('/community/' as any)({
+export const Route = createFileRoute('/community/')({
   component: CommunityLayout,
 });
 
