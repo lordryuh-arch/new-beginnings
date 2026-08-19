@@ -9960,9 +9960,8 @@ function IdlePage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
             <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
-
-
-          {/* COLETA — logo abaixo do mapa, destaque */}
+            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
+          </Panel>
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
             border: "2px solid #f5cf6b",
