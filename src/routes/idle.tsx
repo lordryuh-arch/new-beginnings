@@ -1,3 +1,5 @@
+import { WorldMapOverlay } from '@/components/WorldMapOverlay';
+import { WORLD_REGIONS } from '@/game/worldMap';
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import rayquazaShinyBg from "@/assets/rayquaza_shiny_bg.png.asset.json";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -1288,7 +1290,28 @@ function fmtHMS(ms: number) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(r).padStart(2, "0")}`;
 }
 function fmtK(n: number) {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000_000) return (
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat("✦ Energia Obsidian despertada!", "cap");
+          }}
+        />
+      )}n / 1_000_000).toFixed(1) + "M";
   if (n >= 1000) return (n / 1000).toFixed(1) + "K";
   return String(Math.floor(n));
 }
@@ -1388,6 +1411,8 @@ function IdlePage() {
     }
   }, [team]);
   const [idle, setIdle] = useState<IdleState>(() => loadIdle());
+  const [showWorldMap, setShowWorldMap] = useState(false);
+
   const [now, setNow] = useState(() => Date.now());
 
   // ============= Server sync (Supabase anti-cheat) =============
@@ -7660,7 +7685,18 @@ function IdlePage() {
 
 
 
-          <Panel title="SUA EQUIPE" accent="#c92a2a">
+          <Panel 
+            <button
+              onClick={() => setShowWorldMap(true)}
+              style={{
+                background: '#1a0f26', color: '#f5cf6b', border: '1px solid #f5cf6b55',
+                borderRadius: 4, padding: '2px 8px', fontSize: 10, fontWeight: 800, cursor: 'pointer',
+                marginTop: 4
+              }}
+            >
+              🗺️ MUNDO
+            </button>
+title="SUA EQUIPE" accent="#c92a2a">
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 4 }}>
               <button
                 onClick={() => setTeamCollapsed((v) => !v)}
