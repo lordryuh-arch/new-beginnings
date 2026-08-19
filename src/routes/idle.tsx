@@ -10316,7 +10316,7 @@ function IdlePage() {
                       </button>
                     </div>
                   </div>
-                </div>
+                  </div>
 
 
 
@@ -10358,7 +10358,7 @@ function IdlePage() {
                             );
                           })}
                         </div>
-                      </div>
+                        </div>
                       </div>
                   )}
 
@@ -10842,12 +10842,11 @@ function IdlePage() {
                               }}
                             >{lvOk ? (crystalOk ? "✓ VIAJAR" : "💎 CRISTAIS INSUFICIENTES") : "🔒 NÍVEL INSUFICIENTE"}</button>
                           </div>
-                          </div>
                         </div>
                       </div>
-                    </div>
+                    );
+                  })()}
                 </div>
-              </div>
               );
             })()}
           </Panel>
