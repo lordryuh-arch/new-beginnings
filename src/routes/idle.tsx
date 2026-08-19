@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                governante_hall: [
-                  { key: "hall-to-absol", target: "absol_start", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 120, arriveY: WORLD_H / 2, color: "#c58bff" },
-                ],
-                venofogo: [
-                  { key: "to-terra", target: "terra", x: WORLD_W / 2, y: 40, arriveX: WORLD_W / 2, arriveY: WORLD_H - 100, color: "#d9873a" },
-                ],
-                fantasma: [
-                  { key: "to-terra", target: "terra", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#d9873a" },
                 ],
                 praia: [
                   { key: "to-arena",   target: "arena",   x: WORLD_W - 60, y: 60,          arriveX: 100,           arriveY: WORLD_H - 100, color: "#7ef27a" },
@@ -10748,7 +10740,6 @@ function IdlePage() {
                         </div>
                       </div>
                     );
-                  })()}
                 </div>
               );
             })()}
