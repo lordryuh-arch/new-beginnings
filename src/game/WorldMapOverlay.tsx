@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { WORLD_REGIONS, WorldRegion } from './worldMap';
 import { assetUrlFromJson } from '@/lib/assetUrl';
-import overworldAsset from '@/assets/world/overworld.png.asset.json';
+import overworldAsset from '@/assets/world-map-globe.jpg.asset.json';
 import iconWorldGlobe from '@/assets/icon-world-globe-v2.png.asset.json';
+import bagBgDarkAsset from '@/assets/bag-bg-dark.jpg.asset.json';
 
 type WorldMapOverlayProps = {
   isOpen: boolean;
