@@ -1497,4 +1497,3 @@ function TabOverlay({ tab, onClose, ...props }: any) {
     );
 }
 
-function AuthGate({ children }: any) { return <>{children}</>; }
