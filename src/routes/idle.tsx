@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                  { key: "to-terry", target: "terry", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#c9a76a" },
-                ],
-                terry: [
-                  { key: "to-deserto_purpura", target: "deserto_purpura", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#b45adc" },
-                  { key: "to-n2", target: "n2", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#d9a86a" },
-                ],
-                n2: [
-                  { key: "to-terry", target: "terry", x: 60, y: WORLD_H / 2, arriveX: WORLD_W - 100, arriveY: WORLD_H / 2, color: "#c9a76a" },
                   { key: "to-n3", target: "n3", x: WORLD_W - 60, y: WORLD_H / 2, arriveX: 100, arriveY: WORLD_H / 2, color: "#e8b878" },
                 ],
                 n3: [
@@ -10748,11 +10740,10 @@ function IdlePage() {
                           style={{
                             background: "linear-gradient(160deg, #1a0f26 0%, #0b0510 100%)",
                             border: "3px solid #f5cf6b", borderRadius: 16, padding: 20,
-                            maxWidth: 420, width: "100%", cursor: "default",
-                            boxShadow: "0 0 80px rgba(245,207,107,0.5), inset 0 0 30px rgba(245,207,107,0.08)",
-                          }}
-                        >
-                          <div style={{ textAlign: "center", color: "#f5cf6b", fontSize: 12, letterSpacing: 3, fontWeight: 900, marginBottom: 4 }}>PORTAL DE VIAGEM</div>
+                </div>
+              );
+            })()}
+          </Panel>
                           <div style={{ textAlign: "center", color: "#fff", fontSize: 22, fontWeight: 900, marginBottom: 2, textShadow: "0 0 12px rgba(245,207,107,0.6)" }}>
                             {tm.name}
                           </div>
