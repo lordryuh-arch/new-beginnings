@@ -12181,14 +12181,19 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           width: "100%", height: "100%", position: "relative",
           cursor: "grab", overflow: "hidden", background: "#050208"
         }}>
-          {/* Background Image */}
+          {/* Background Image - FORCED VISIBILITY */}
           <img 
             src={WORLD_MAP_CONFIG.bg} 
             alt="World Map" 
             style={{
-              width: "100%", height: "100%", objectFit: "cover", opacity: 1,
-              display: "block"
+              width: "100%", height: "100%", objectFit: "contain", opacity: 1,
+              display: "block", position: "relative", zIndex: 1,
+              backgroundColor: "#000"
             }} 
+            onError={(e) => {
+              console.error("ERRO CARREGAMENTO MAPA:", e);
+              e.currentTarget.style.border = "5px solid red";
+            }}
           />
 
           {/* Regions */}
