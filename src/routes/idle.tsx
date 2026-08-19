@@ -7316,7 +7316,7 @@ function IdlePage() {
                     border: isMe ? "1px solid #8dfa8d" : (pos <= 5 ? `1px solid ${topColor}55` : "1px solid transparent"),
                     boxShadow: pos <= 3 ? `0 0 10px ${topColor}44` : "none",
                   }}>
-                    <div style={{ width: 38, fontSize: pos <= 5 ? 16 : 12, fontWeight: 900, color: topColor, textAlign: "center", textShadow: pos <= 3 ? `0 0 8px ${topColor}` : "none" }}>{medal}</div>
+                    <div style={{ width: 38, fontSize: pos <= 5 ? 16 : 12, fontWeight: 900, color: topColor, textAlign: "center", textShadow: pos <= 3 ? `0 0 8px ${topColor}` : "none" }}>{medal}
                     <div style={{ flex: 1, minWidth: 0, fontSize: 12, fontWeight: 800, color: isMe ? "#fff" : "#eaffea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {r.username}{isMe ? " (você)" : ""}
                     </div>
@@ -7623,7 +7623,7 @@ function IdlePage() {
                     boxShadow: "0 2px 4px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.35)",
                     fontFamily: "'Cinzel', Georgia, serif", lineHeight: 1,
                     letterSpacing: 0.2,
-                  }}>{trainerLv}</div>
+                  }}>{trainerLv}
                 </div>
 
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -8462,7 +8462,7 @@ function IdlePage() {
                               borderRadius: 10,
                               boxShadow: i < 3 ? "0 2px 8px rgba(255,214,80,0.1)" : "none",
                             }}>
-                              <div style={{ fontWeight: 800, color: topColor, fontSize: i < 3 ? 22 : 15, textAlign: "center" }}>{medal}</div>
+                              <div style={{ fontWeight: 800, color: topColor, fontSize: i < 3 ? 22 : 15, textAlign: "center" }}>{medal}
                               <div style={{ overflow: "hidden", minWidth: 0 }}>
                                 <div style={{ fontWeight: 700, fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                                   {r.name}
@@ -8503,8 +8503,8 @@ function IdlePage() {
                                 )}
                               </div>
                               <div style={{ textAlign: "right" }}>
-                                <div style={{ fontSize: 9, opacity: 0.6, textTransform: "uppercase", letterSpacing: 0.5 }}>{mainLabel}</div>
-                                <div style={{ fontWeight: 900, fontSize: 20, color: topColor, lineHeight: 1 }}>{mainVal}</div>
+                                <div style={{ fontSize: 9, opacity: 0.6, textTransform: "uppercase", letterSpacing: 0.5 }}>{mainLabel}
+                                <div style={{ fontWeight: 900, fontSize: 20, color: topColor, lineHeight: 1 }}>{mainVal}
                               </div>
                             </div>
                           );
@@ -8638,7 +8638,7 @@ function IdlePage() {
                           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                             <img src={beedrillGif} alt="Beedrill" style={{ width: 34, height: 34, imageRendering: "pixelated" }} />
                             <div style={{ flex: 1, fontSize: 12 }}>
-                              <div style={{ fontWeight: 700 }}>Beedrill Lv.{entry?.level ?? "?"}</div>
+                              <div style={{ fontWeight: 700 }}>Beedrill Lv.{entry?.level ?? "?"}
                               <div style={{ fontSize: 10, opacity: 0.8, color: rare ? "#ff97e1" : "#ffe9a8" }}>
                                 {entry?.rarity ?? "?"}{rare ? " · produz raro ✨" : ""}
                               </div>
@@ -8787,7 +8787,7 @@ function IdlePage() {
                       <div style={{ fontSize: 9, color: "#6b7280", letterSpacing: 0.6, marginBottom: 2 }}>
                         {p.reqLevel ? (locked ? "🔒 PRÓXIMO MAPA" : "✓ MAPA LIBERADO") : "↩ RETORNO"}
                       </div>
-                      <div style={{ color: "#111827", fontSize: 12 }}>{p.label}</div>
+                      <div style={{ color: "#111827", fontSize: 12 }}>{p.label}
                       {p.reqLevel && (
                         <div style={{ fontSize: 10, color: locked ? "#b91c1c" : "#15803d", marginTop: 2 }}>
                           {locked ? `Libera em Treinador Nv ${p.reqLevel} • faltam ${p.reqLevel - lv}` : `Treinador Nv ${p.reqLevel} ✓`}
@@ -9117,7 +9117,7 @@ function IdlePage() {
                       textShadow: "1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000",
                       whiteSpace: "nowrap", pointerEvents: "none",
                       filter: `drop-shadow(0 0 4px ${starColor})`,
-                    }}>{stars}</div>
+                    }}>{stars}
                   )}
                   {/* Nível + cristal de raridade */}
                   <div style={{
@@ -9272,7 +9272,7 @@ function IdlePage() {
                     background: "rgba(20,40,80,0.55)",
                     padding: "1px 5px", borderRadius: 4,
                     border: "1px solid rgba(107,178,255,0.6)",
-                  }}>{rp.name}</div>
+                  }}>{rp.name}
                   <div style={{
                     width: "100%", height: "100%",
                     backgroundImage: `url(${rp.skinUrl ?? trainerSheet})`,
@@ -9629,7 +9629,7 @@ function IdlePage() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                     <span style={{ fontSize: 22, animation: "chest-pop 900ms ease-in-out infinite" }}>💤</span>
                     <div>
-                      <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{label}</div>
+                      <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{label}
                       <div style={{ fontSize: 11, color: "#c8ffd6" }}>Restam <b>{mm}:{ss}</b></div>
                     </div>
                   </div>
@@ -9668,8 +9668,8 @@ function IdlePage() {
               }}>
                 <span style={{ fontSize: 24 }}>{bEmoji}</span>
                 <div>
-                  <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{bLabel}</div>
-                  <div style={{ fontSize: 10, color: "#c8b8d0" }}>{bDesc}</div>
+                  <div style={{ fontWeight: 800, color: "#fff", fontSize: 13 }}>{bLabel}
+                  <div style={{ fontSize: 10, color: "#c8b8d0" }}>{bDesc}
                 </div>
                 <button
                   onClick={() => {
@@ -10745,8 +10745,8 @@ function IdlePage() {
                         }}>
                           <img src={t.img} alt={t.label} width={72} height={72}
                             style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 12px ${t.color}bb)` }} />
-                          <div style={{ fontWeight: 900, color: "#eadfe8", fontSize: 14 }}>{t.label}</div>
-                          <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center", lineHeight: 1.4 }}>{t.desc}</div>
+                          <div style={{ fontWeight: 900, color: "#eadfe8", fontSize: 14 }}>{t.label}
+                          <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center", lineHeight: 1.4 }}>{t.desc}
                           <div style={{ fontSize: 11, color: available >= t.count ? "#8ae28a" : "#e28a8a", fontWeight: 700 }}>
                             {t.rarity.toUpperCase()} na coleção: {available}/{t.count}
                           </div>
@@ -10755,7 +10755,7 @@ function IdlePage() {
                               {reqOk ? "✓" : "🔒"} Requer {t.requires.qty}× {t.requires.label} ({reqOwned}/{t.requires.qty})
                             </div>
                           )}
-                          <div style={{ fontSize: 10, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                          <div style={{ fontSize: 10, color: "#8a7a9c" }}>Você tem: {owned}
                           {/* Barra de chance base — visível já na seleção */}
                           <div style={{ width: "100%", background: "#0f0820", border: "1px solid #3a2a4a", borderRadius: 8, padding: "6px 8px" }}>
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, color: "#c8b8d0", marginBottom: 3 }}>
@@ -10879,8 +10879,8 @@ function IdlePage() {
                               ) : (
                                 <div style={{ width: 48, height: 48, background: "#2a1638", borderRadius: 8 }} />
                               )}
-                              <div style={{ fontSize: 9, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}</div>
-                              <div style={{ fontSize: 9, color: "#ffd94d" }}>Lv.{c.level}</div>
+                              <div style={{ fontSize: 9, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}
+                              <div style={{ fontSize: 9, color: "#ffd94d" }}>Lv.{c.level}
                               {sel && (
                                 <div style={{ position: "absolute", top: 2, right: 2, background: pick.color, color: "#0b0510", width: 16, height: 16, borderRadius: 999, fontSize: 10, fontWeight: 900, display: "grid", placeItems: "center" }}>✓</div>
                               )}
@@ -10946,7 +10946,7 @@ function IdlePage() {
                                 {GIF[c.species] ? (
                                   <img src={GIF[c.species]} alt="" style={{ width: 38, height: 38, imageRendering: "pixelated" }} />
                                 ) : <div style={{ width: 38, height: 38, background: "#2a1638", borderRadius: 6 }} />}
-                                <div style={{ fontSize: 8, color: "#c8b8d0" }}>Lv.{c.level}</div>
+                                <div style={{ fontSize: 8, color: "#c8b8d0" }}>Lv.{c.level}
                               </button>
                             );
                           })}
@@ -11082,7 +11082,7 @@ function IdlePage() {
               )}
               {orbAnim.phase === "success" && (
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 900, color: orbAnim.color }}>+1× {orbAnim.label}</div>
+                  <div style={{ fontSize: 16, fontWeight: 900, color: orbAnim.color }}>+1× {orbAnim.label}
                   {orbAnim.lucky && orbAnim.extraHours ? (
                     <div style={{ fontSize: 12, color: "#ffd94d", fontWeight: 700 }}>🌟 SORTE! +{orbAnim.extraHours}h extras ao ativar</div>
                   ) : orbAnim.lucky ? (
@@ -11179,7 +11179,7 @@ function IdlePage() {
                 background: codeMsg.kind === "ok" ? "rgba(126,242,122,0.12)" : "rgba(227,74,74,0.12)",
                 border: `1px solid ${codeMsg.kind === "ok" ? "#7ef27a" : "#e34a4a"}`,
                 color: codeMsg.kind === "ok" ? "#7ef27a" : "#ffb0b0",
-              }}>{codeMsg.text}</div>
+              }}>{codeMsg.text}
             )}
           </div>
         </div>
@@ -11319,7 +11319,7 @@ function IdlePage() {
                           <div style={{ fontSize: 10, fontWeight: 800, textAlign: "center" }}>
                             {e.species.toUpperCase()}
                           </div>
-                          <div style={{ fontSize: 9, color: "#c9a2ff" }}>Lv {e.level}</div>
+                          <div style={{ fontSize: 9, color: "#c9a2ff" }}>Lv {e.level}
                         </button>
                       );
                     })}
@@ -11390,7 +11390,7 @@ function IdlePage() {
                   background: bmpSwapMsg.kind === "ok" ? "rgba(126,242,122,0.12)" : "rgba(227,74,74,0.12)",
                   border: `1px solid ${bmpSwapMsg.kind === "ok" ? "#7ef27a" : "#e34a4a"}`,
                   color: bmpSwapMsg.kind === "ok" ? "#7ef27a" : "#ffb0b0",
-                }}>{bmpSwapMsg.text}</div>
+                }}>{bmpSwapMsg.text}
               )}
             </div>
           </div>
@@ -11505,8 +11505,8 @@ function IdlePage() {
                 >
                   <img src={c.img} alt={c.name} width={96} height={96}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${c.color}88)` }} />
-                  <div style={{ color: c.color, fontWeight: 900, fontSize: 16 }}>{c.name}</div>
-                  <div style={{ color: "#b8a8c8", fontSize: 11, textAlign: "center" }}>{c.desc}</div>
+                  <div style={{ color: c.color, fontWeight: 900, fontSize: 16 }}>{c.name}
+                  <div style={{ color: "#b8a8c8", fontSize: 11, textAlign: "center" }}>{c.desc}
                   <div style={{
                     marginTop: 4, padding: "6px 14px", background: c.color, color: "#0b0510",
                     borderRadius: 6, fontWeight: 800, fontSize: 12,
@@ -11542,8 +11542,8 @@ function IdlePage() {
                   {src && <img src={src} alt="" style={{ width: "90%", imageRendering: "pixelated" }} />}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 900, fontSize: 16 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Lv.{pet.level} · {pet.rarity}</div>
+                  <div style={{ fontWeight: 900, fontSize: 16 }}>{pet.species.replace(/_/g, " ").toUpperCase()}
+                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Lv.{pet.level} · {pet.rarity}
                 </div>
                 <button onClick={() => setPetDetailUid(null)} style={{ background: "#3a1010", border: "1px solid #f5cf6b", color: "#f5cf6b", borderRadius: 6, padding: "4px 10px", fontWeight: 800, cursor: "pointer" }}>✕</button>
               </div>
@@ -11610,7 +11610,7 @@ function IdlePage() {
                 </div>
                 <button onClick={() => setAzulPickerOpen(false)} style={{ background: "#0a1830", border: "1px solid #4a9eff", color: "#7fc4ff", borderRadius: 6, padding: "4px 10px", fontWeight: 800, cursor: "pointer" }}>✕</button>
               </div>
-              <div style={{ marginTop: 8, fontSize: 11, color: "#8fd0ff" }}>Seu saldo: 💎 {idle.bank.crystals}</div>
+              <div style={{ marginTop: 8, fontSize: 11, color: "#8fd0ff" }}>Seu saldo: 💎 {idle.bank.crystals}
               <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 8 }}>
                 {party.map((p) => {
                   const infinite = (ENERGY_REGEN_MS[p.rarity] ?? 0) === 0;
@@ -11625,9 +11625,9 @@ function IdlePage() {
                         {src ? <img src={src} alt="" style={{ width: "90%", imageRendering: "pixelated" }} /> : <span>❓</span>}
                       </div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 12, fontWeight: 700 }}>{p.species.replace(/_/g, " ").toUpperCase()}</div>
-                        <div style={{ fontSize: 10, color: "#c8b8d0" }}>Lv.{p.level} · {p.rarity}</div>
-                        <div style={{ fontSize: 10, color: resting ? "#7fc4ff" : (energy < 30 ? "#ff7a3d" : "#8fd0ff") }}>⚡ {label}</div>
+                        <div style={{ fontSize: 12, fontWeight: 700 }}>{p.species.replace(/_/g, " ").toUpperCase()}
+                        <div style={{ fontSize: 10, color: "#c8b8d0" }}>Lv.{p.level} · {p.rarity}
+                        <div style={{ fontSize: 10, color: resting ? "#7fc4ff" : (energy < 30 ? "#ff7a3d" : "#8fd0ff") }}>⚡ {label}
                       </div>
                       {(() => {
                         const canSpeed = resting && idle.bank.crystals >= AZUL_REST_COST;
@@ -11708,8 +11708,8 @@ function IdlePage() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, fontSize: 12 }}>
                   {(["hp","atk","def","spa","spd","spe"] as const).map((k) => (
                     <div key={k} style={{ background: "rgba(255,255,255,0.6)", borderRadius: 4, padding: "4px 8px" }}>
-                      <div style={{ fontSize: 9, color: "#8b6a30", fontWeight: 700 }}>{k.toUpperCase()}</div>
-                      <div style={{ fontWeight: 800, color: "#4a3010" }}>{base[k]}</div>
+                      <div style={{ fontSize: 9, color: "#8b6a30", fontWeight: 700 }}>{k.toUpperCase()}
+                      <div style={{ fontWeight: 800, color: "#4a3010" }}>{base[k]}
                     </div>
                   ))}
                 </div>
@@ -11858,7 +11858,7 @@ function IdlePage() {
                   fontSize: 9, fontWeight: 900, color: "#fff",
                   textShadow: "1px 1px 0 #000, -1px -1px 0 #000",
                   letterSpacing: 0.5,
-                }}>{Math.max(0, Math.round(tgt.hp))} / {tgt.maxHp}</div>
+                }}>{Math.max(0, Math.round(tgt.hp))} / {tgt.maxHp}
               </div>
               <div style={{
                 fontSize: 8, color: rColor, marginTop: 2, letterSpacing: 1.5,
@@ -12123,9 +12123,9 @@ function IdlePage() {
     
 
 
-  </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+  
 </>);
-}</div>
+}
 // ============ Componentes visuais ============
 function Panel({ title, accent, children }: any) {
   return (
@@ -12138,8 +12138,8 @@ function Panel({ title, accent, children }: any) {
         background: accent, color: "#fff",
         padding: "6px 10px", fontWeight: 700, fontSize: 12,
         letterSpacing: 1,
-      }}>{title}</div>
-      <div style={{ padding: 10 }}>{children}</div>
+      }}>{title}
+      <div style={{ padding: 10 }}>{children}
     </div>
   );
 }
@@ -12157,8 +12157,8 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
       <div onClick={onClick} style={{ display: "flex", gap: 8, alignItems: "center", background: "#2a1a3a", padding: 6, borderRadius: 6, cursor: onClick ? "pointer" : undefined }}>
         <div style={{ width: 48, height: 48, background: "#0b0510", borderRadius: 6, display: "grid", placeItems: "center", fontSize: 20 }}>❓</div>
         <div style={{ flex: 1, fontSize: 12 }}>
-          <div style={{ fontWeight: 600 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
-          <div style={{ fontSize: 10, color: "#b8a8c8" }}>Lv.{pet.level}</div>
+          <div style={{ fontWeight: 600 }}>{pet.species.replace(/_/g, " ").toUpperCase()}
+          <div style={{ fontSize: 10, color: "#b8a8c8" }}>Lv.{pet.level}
         </div>
       </div>
     );
@@ -12834,7 +12834,7 @@ function TabOverlay({
                               fontSize: 10, fontWeight: 900,
                               color: isLeader ? rc : "#8a7a9c",
                               textShadow: "0 1px 2px #000",
-                            }}>{isLeader ? "★" : `#${i + 1}`}</div>
+                            }}>{isLeader ? "★" : `#${i + 1}`}
                             {/* Level bottom-right badge */}
                             <div style={{
                               position: "absolute", bottom: -4, right: -4,
@@ -12844,7 +12844,7 @@ function TabOverlay({
                               borderRadius: 999, display: "flex", alignItems: "center", justifyContent: "center",
                               fontSize: 10, fontWeight: 900, letterSpacing: 0.5,
                               boxShadow: "0 2px 4px rgba(0,0,0,0.6)",
-                            }}>Lv{p.level}</div>
+                            }}>Lv{p.level}
                           </div>
                           {isLeader && (
                             <div style={{
@@ -12867,7 +12867,7 @@ function TabOverlay({
                               fontSize: 8, fontWeight: 900, letterSpacing: 1,
                               padding: "2px 7px", borderRadius: 4,
                               boxShadow: `0 0 8px ${rc}88`, border: "1px solid rgba(0,0,0,0.4)",
-                            }}>{rarityInfo.label}</div>
+                            }}>{rarityInfo.label}
                             <button
                               onClick={() => setStatsCardPet(p)}
                               title="Ver ficha completa"
@@ -13201,13 +13201,13 @@ function TabOverlay({
                     border: `1.5px solid ${P.goldDark}`, borderRadius: 8, padding: "3px 10px",
                     fontSize: 11, fontWeight: 900,
                     boxShadow: "0 2px 0 rgba(0,0,0,0.2)",
-                  }}>💰 {bank.gold.toLocaleString()}</div>
+                  }}>💰 {bank.gold.toLocaleString()}
                   <div style={{
                     background: "linear-gradient(180deg, #c084fc, #9333ea)", color: "#fff",
                     border: "1.5px solid #7e22ce", borderRadius: 8, padding: "3px 10px",
                     fontSize: 11, fontWeight: 900,
                     boxShadow: "0 2px 0 rgba(0,0,0,0.2)",
-                  }}>💎 {Math.floor(bank.crystals).toLocaleString()}</div>
+                  }}>💎 {Math.floor(bank.crystals).toLocaleString()}
                 </div>
               </div>
             </div>
@@ -13324,7 +13324,7 @@ function TabOverlay({
                             borderRadius: 999, minWidth: 24, textAlign: "center",
                             boxShadow: "0 2px 4px rgba(0,0,0,0.5)",
                             border: `1.5px solid ${P.panel}`,
-                          }}>x{n}</div>
+                          }}>x{n}
                           <div
                             onClick={(e) => { e.stopPropagation(); setItemDetail(id); }}
                             title="Ver detalhes"
@@ -13356,7 +13356,7 @@ function TabOverlay({
                           <div style={{
                             fontSize: 10.5, fontWeight: 900, color: P.ink, letterSpacing: 0.2, lineHeight: 1.15,
                             minHeight: 24, display: "flex", alignItems: "center",
-                          }}>{NAMES[id] ?? id}</div>
+                          }}>{NAMES[id] ?? id}
                           <div style={{ display: "flex", gap: 4, width: "100%" }}>
                             <button
                               onClick={() => {
@@ -13509,7 +13509,7 @@ function TabOverlay({
                         )}
                       </div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 16, fontWeight: 900, lineHeight: 1.2 }}>{name}</div>
+                        <div style={{ fontSize: 16, fontWeight: 900, lineHeight: 1.2 }}>{name}
                         <div style={{ fontSize: 11, color: P.inkSoft, marginTop: 4, fontWeight: 700 }}>Quantidade: <span style={{ color: P.gold }}>x{count}</span></div>
                         {sellPrice > 0 && (
                           <div style={{ fontSize: 11, color: P.inkSoft, marginTop: 2, fontWeight: 700 }}>Preço de venda: <span style={{ color: "#ffd66b" }}>{sellPrice} 🪙</span></div>
@@ -13520,7 +13520,7 @@ function TabOverlay({
                       marginTop: 14, padding: 12, borderRadius: 10,
                       background: `${P.bg2}80`, border: `1px dashed ${P.goldDark}88`,
                       fontSize: 12.5, lineHeight: 1.5, color: P.ink,
-                    }}>{desc}</div>
+                    }}>{desc}
                     <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
                       {!isEgg && count > 0 && (
                         <button onClick={() => { onUseItem(id, 1); setItemDetail(null); }} style={{
@@ -13755,7 +13755,7 @@ function TabOverlay({
                         display: "flex", alignItems: "center", justifyContent: "center",
                         boxShadow: isSelected ? "0 0 8px rgba(124,58,237,0.7)" : "none",
                         zIndex: 3,
-                      }}>{isSelected ? "✓" : ""}</div>
+                      }}>{isSelected ? "✓" : ""}
                     )}
                     {/* Botão cadeado */}
                     <button
@@ -13778,7 +13778,7 @@ function TabOverlay({
                        title={bulkMode ? "Selecionar/deselecionar" : "Ver detalhes"}
                      >
                        {gifMap[sp] && <img src={gifMap[sp]} alt="" style={{ width: 64, height: 64, imageRendering: "pixelated", marginTop: 6, display: "block", filter: isBMP ? `drop-shadow(0 0 8px ${bmpAccent})` : undefined }} />}
-                       <div style={{ fontSize: 11, marginTop: 2, color: isBMP ? "#f7ecff" : "#4a3010", fontWeight: 800, textAlign: "center", textShadow: isBMP ? "0 1px 3px #000" : undefined }}>{sp.replace(/_/g, " ").toUpperCase()}</div>
+                       <div style={{ fontSize: 11, marginTop: 2, color: isBMP ? "#f7ecff" : "#4a3010", fontWeight: 800, textAlign: "center", textShadow: isBMP ? "0 1px 3px #000" : undefined }}>{sp.replace(/_/g, " ").toUpperCase()}
                      </button>
 
                      {/* Raridade / Badge BMP */}
@@ -13986,8 +13986,8 @@ function TabOverlay({
                     <img src={bk.img} alt="Orb de Time" width={72} height={72} style={{ filter: `drop-shadow(0 0 10px ${color})` }} />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ color: "#fff0fb", fontSize: 18, fontWeight: 900, letterSpacing: 1 }}>{bk.name}</div>
-                    <div style={{ color: "#eac6df", fontSize: 12, lineHeight: 1.45, marginTop: 4 }}>{bk.desc}</div>
+                    <div style={{ color: "#fff0fb", fontSize: 18, fontWeight: 900, letterSpacing: 1 }}>{bk.name}
+                    <div style={{ color: "#eac6df", fontSize: 12, lineHeight: 1.45, marginTop: 4 }}>{bk.desc}
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
                       <span style={{ color: "#c084fc", fontSize: 12, fontWeight: 900 }}>💎 {bk.price} cristais</span>
                       <span style={{ color: "#8a7a9c", fontSize: 12 }}>Você tem: {owned}</span>
@@ -14023,7 +14023,7 @@ function TabOverlay({
               <div style={{ fontWeight: 800, color: "#eadfe8" }}>Poção</div>
               <div style={{ fontSize: 11, color: "#b8a8c8" }}>Recupera {Math.round(POTION_HEAL_PCT * 100)}% do HP. Usada no auto quando ativado.</div>
               <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● {POTION_PRICE} ouro cada</div>
-              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {items.potion ?? 0}</div>
+              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {items.potion ?? 0}
             </div>
             <div style={{ minWidth: 220 }}>
               <QtyBuy
@@ -14054,10 +14054,10 @@ function TabOverlay({
                 }}>
                   <img src={b.img} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 8px ${color}88)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{b.name}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Chance de captura x{b.captureMult}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{b.name}
+                  <div style={{ fontSize: 11, color: "#b8a8c8" }}>Chance de captura x{b.captureMult}
                   <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● {b.price} ouro</div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}
                   <QtyBuy
                     presets={[1, 10, 50, 100]}
                     max={9999}
@@ -14088,7 +14088,7 @@ function TabOverlay({
                 }}>
                   <img src={ballUltraImg} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${color}bb)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pacote Ultra Ball ×{QTY}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pacote Ultra Ball ×{QTY}
                   <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>20 Ultra Ball — captura x3.5</div>
                   <div style={{ fontSize: 12, color, fontWeight: 700 }}>💎 {COST} cristais</div>
                   <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned} Ultra Ball</div>
@@ -14121,7 +14121,7 @@ function TabOverlay({
                   <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pergaminho de Teleporte</div>
                   <div style={{ fontSize: 11, color: "#b8c8dc", textAlign: "center" }}>Teleporte instantâneo no Mapa Mundi — sem taxa de ouro, sem custo de cristais</div>
                   <div style={{ fontSize: 12, color, fontWeight: 700 }}>💎 {COST} cristais</div>
-                  <div style={{ fontSize: 11, color: "#8aa0b8" }}>Você tem: {owned}</div>
+                  <div style={{ fontSize: 11, color: "#8aa0b8" }}>Você tem: {owned}
                   <QtyBuy
                     presets={[1, 5, 10, 25]}
                     max={999}
@@ -14166,12 +14166,12 @@ function TabOverlay({
                       background: "#fff", opacity: 0.4, borderRadius: "50%",
                     }} />
                   </div>
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{e.name}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{e.desc}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{e.name}
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{e.desc}
                   <div style={{ fontSize: 12, color: e.currency === "gold" ? "#f4c430" : "#c084fc", fontWeight: 700 }}>
                     {e.currency === "gold" ? `● ${e.price} ouro` : `💎 ${e.price} cristais`}
                   </div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}
                   <button
                     onClick={() => onBuyEgg(e)}
                     disabled={!canBuy}
@@ -14197,7 +14197,7 @@ function TabOverlay({
               <div style={{ fontWeight: 800, color: "#eadfe8" }}>Amuleto do Caçador de Tesouros</div>
               <div style={{ fontSize: 11, color: "#b8a8c8" }}>Dobra as recompensas de ouro e cristais ao abrir baús no mapa.</div>
               <div style={{ fontSize: 12, color: "#f4c430", fontWeight: 700 }}>● 250.000 ouro</div>
-              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Status: {chestAmuletOwned ? "Adquirido ✅" : "Não possuído ❌"}</div>
+              <div style={{ fontSize: 11, color: "#8a7a9c" }}>Status: {chestAmuletOwned ? "Adquirido ✅" : "Não possuído ❌"}
             </div>
             <button
               onClick={() => onBuyChestAmulet()}
@@ -14234,10 +14234,10 @@ function TabOverlay({
                 }}>
                   <img src={bk.img} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 8px ${color}88)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{bk.name}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{bk.desc}</div>
-                  <div style={{ fontSize: 12, color: useGold ? "#ffd94d" : "#c084fc", fontWeight: 700 }}>{useGold ? "🪙" : "💎"} {bk.price}</div>
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{bk.name}
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{bk.desc}
+                  <div style={{ fontSize: 12, color: useGold ? "#ffd94d" : "#c084fc", fontWeight: 700 }}>{useGold ? "🪙" : "💎"} {bk.price}
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}
                   <QtyBuy
                     presets={[1, 10, 50, 100]}
                     max={9999}
@@ -14282,8 +14282,8 @@ function TabOverlay({
                 }}>
                   <img src={t.img} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${t.color}aa)` }} />
-                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{t.label}</div>
-                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{t.desc}</div>
+                  <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{t.label}
+                  <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{t.desc}
                   <div style={{ fontSize: 11, color: canTrade ? "#8ae28a" : "#e28a8a" }}>
                     Coleção {t.rarity.toUpperCase()}: {available} (precisa {t.count})
                   </div>
@@ -14292,7 +14292,7 @@ function TabOverlay({
                       {reqOk ? "✓" : "🔒"} Requer {t.requires.qty}× {t.requires.label} ({reqOwned}/{t.requires.qty})
                     </div>
                   )}
-                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}</div>
+                  <div style={{ fontSize: 11, color: "#8a7a9c" }}>Você tem: {owned}
                   <button
                     disabled={!canTrade}
                     onClick={() => {
@@ -14377,8 +14377,8 @@ function TabOverlay({
                             ) : (
                               <div style={{ width: 54, height: 54, background: "#2a1638", borderRadius: 8 }} />
                             )}
-                            <div style={{ fontSize: 10, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}</div>
-                            <div style={{ fontSize: 10, color: "#ffd94d" }}>Lv.{c.level}</div>
+                            <div style={{ fontSize: 10, color: "#eadfe8", fontWeight: 700, textTransform: "capitalize" }}>{c.species.replace(/_/g, " ")}
+                            <div style={{ fontSize: 10, color: "#ffd94d" }}>Lv.{c.level}
                             {sel && (
                               <div style={{
                                 position: "absolute", top: 2, right: 2, background: op.color, color: "#0b0510",
@@ -14508,7 +14508,7 @@ function TabOverlay({
                         top: 100 + 95 * Math.sin(angle),
                         transform: "translate(-50%, -50%)",
                         fontSize: 9, fontWeight: 900, color: p.color, textShadow: "0 1px 2px #000"
-                      }}>{p.label}</div>
+                      }}>{p.label}
                     );
                   })}
                 </div>
@@ -14532,7 +14532,7 @@ function TabOverlay({
                             <span style={{ fontSize: 10, color: cfg.color, fontWeight: 900 }}>{p.label} <span style={{ color: "#a8a0b8", fontSize: 9 }}>Lv.{stats[k] ?? 0}</span></span>
                             <span style={{ fontSize: 9, color: "#ff5252", fontWeight: 700 }}>Falha: {cfg.fail}%</span>
                           </div>
-                          <div style={{ fontSize: 9, color: "#eadfe8", marginBottom: 4, opacity: 0.8 }}>{cfg.desc}</div>
+                          <div style={{ fontSize: 9, color: "#eadfe8", marginBottom: 4, opacity: 0.8 }}>{cfg.desc}
                           <button 
                             onClick={() => upgradeStat(k)}
                             style={{ width: "100%", padding: "4px", background: `linear-gradient(180deg, ${cfg.color}, ${cfg.color}aa)`, border: "none", borderRadius: 4, fontSize: 10, fontWeight: 900, cursor: "pointer", color: "#000" }}
@@ -14643,7 +14643,7 @@ function TabOverlay({
                       <div style={{ fontSize: 32 }}>🧢</div>
                     )}
                   </div>
-                  <div style={{ fontSize: 11, fontWeight: 700, textAlign: "center" }}>{s.label}</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, textAlign: "center" }}>{s.label}
                   {active && <div style={{ fontSize: 9, color: "#f5cf6b" }}>✓ EM USO</div>}
                   {!unlocked && (
                     <div style={{ fontSize: 9, color: canUnlock ? "#f5cf6b" : "#8a7fa0", fontWeight: 700 }}>
@@ -14913,8 +14913,8 @@ function BuffCell({ img, label, value, color }: { img: string; label: string; va
       padding: 12, textAlign: "center",
     }}>
       <img src={img} alt="" width={40} height={40} style={{ imageRendering: "pixelated" }} />
-      <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}</div>
-      <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}</div>
+      <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}
+      <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}
     </div>
   );
 }
@@ -14974,8 +14974,8 @@ function WalletScreen({
             <div style={{ color: "#dcc8e0", fontSize: 12, marginTop: 3, textShadow: "1px 1px 0 #000" }}>Gerencie seus bens e visualize suas reservas no cofre real.</div>
           </div>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #f5cf6b88", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}</div>
-            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #8fd0ff88", borderRadius: 8, padding: "6px 12px", color: "#8fd0ff", fontWeight: 800 }}>💎 {bank.crystals.toLocaleString()}</div>
+            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #f5cf6b88", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}
+            <div style={{ background: "rgba(14,8,24,0.85)", backdropFilter: "blur(4px)", border: "1px solid #8fd0ff88", borderRadius: 8, padding: "6px 12px", color: "#8fd0ff", fontWeight: 800 }}>💎 {bank.crystals.toLocaleString()}
           </div>
         </div>
       </div>
@@ -15029,8 +15029,8 @@ function WalletScreen({
             {Object.entries(items).filter(([_, qty]) => qty > 0).map(([id, qty]) => (
               <div key={id} style={{ background: "#1a0f26", border: "1px solid #f5cf6b33", borderRadius: 8, padding: 10, textAlign: "center" }}>
                 <div style={{ fontSize: 24 }}>📦</div>
-                <div style={{ fontSize: 10, color: "#f5cf6b", fontWeight: 800, marginTop: 4 }}>{ITEM_NAMES[id] || id.toUpperCase()}</div>
-                <div style={{ fontSize: 12, color: "#fff", fontWeight: 900 }}>×{qty.toLocaleString()}</div>
+                <div style={{ fontSize: 10, color: "#f5cf6b", fontWeight: 800, marginTop: 4 }}>{ITEM_NAMES[id] || id.toUpperCase()}
+                <div style={{ fontSize: 12, color: "#fff", fontWeight: 900 }}>×{qty.toLocaleString()}
               </div>
             ))}
           </div>
@@ -15045,8 +15045,8 @@ function WalletScreen({
                 style={{ background: "#1a0f26", border: "1px solid #8fd0ff33", borderRadius: 8, padding: 8, textAlign: "center", cursor: "pointer" }}
               >
                 {gifMap[entry.species] && <img src={gifMap[entry.species]} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />}
-                <div style={{ fontSize: 9, color: "#8fd0ff", fontWeight: 800 }}>{entry.species.replace(/_/g, " ").toUpperCase()}</div>
-                <div style={{ fontSize: 10, color: "#fff" }}>Nv. {entry.level}</div>
+                <div style={{ fontSize: 9, color: "#8fd0ff", fontWeight: 800 }}>{entry.species.replace(/_/g, " ").toUpperCase()}
+                <div style={{ fontSize: 10, color: "#fff" }}>Nv. {entry.level}
               </div>
             ))}
           </div>
@@ -15162,7 +15162,7 @@ function MarketScreen({
           </div>
         </div>
         <div style={{ display: "flex", gap: 10 }}>
-          <div style={{ background: "#0e0818", border: "1px solid #f5cf6b55", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}</div>
+          <div style={{ background: "#0e0818", border: "1px solid #f5cf6b55", borderRadius: 8, padding: "6px 12px", color: "#f5cf6b", fontWeight: 800 }}>💰 {bank.gold.toLocaleString()}
         </div>
       </div>
 
@@ -15196,10 +15196,10 @@ function MarketScreen({
                         {STONE_CHEST[l.item_id] ? (
                           <img src={STONE_CHEST[l.item_id]} alt="" width={44} height={44} />
                         ) : (
-                          <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
+                          <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}
                         )}
                         <div>
-                          <div style={{ color: "#ffd94d", fontWeight: 800, fontSize: 13 }}>Vendido: {l.qty}x {LABELS[l.item_id] ?? l.item_id}</div>
+                          <div style={{ color: "#ffd94d", fontWeight: 800, fontSize: 13 }}>Vendido: {l.qty}x {LABELS[l.item_id] ?? l.item_id}
                           <div style={{ color: "#c8a878", fontSize: 11 }}>Receber <b style={{ color: CUR_COLOR[cur] }}>{l.price.toLocaleString()} {CUR_LABEL[cur]}</b></div>
                         </div>
                       </div>
@@ -15226,10 +15226,10 @@ function MarketScreen({
                           <img src={STONE_CHEST[l.item_id]} alt="" width={52} height={52} style={{ imageRendering: "auto" }} />
                         </div>
                       ) : (
-                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
+                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}
                       )}
                       <div>
-                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}</div>
+                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}
                         <div style={{ color: "#8a7a9c", fontSize: 11 }}>Seu anúncio</div>
                       </div>
                     </div>
@@ -15261,10 +15261,10 @@ function MarketScreen({
                           <img src={STONE_CHEST[l.item_id]} alt="" width={58} height={58} style={{ imageRendering: "auto" }} />
                         </div>
                       ) : (
-                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
+                        <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}
                       )}
                       <div>
-                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}</div>
+                        <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{l.qty}x {LABELS[l.item_id] ?? l.item_id}
                         <div style={{ color: "#8a7a9c", fontSize: 11 }}>por <b style={{ color: "#c8b8d0" }}>{l.seller_name}</b></div>
                       </div>
                     </div>
@@ -15307,7 +15307,7 @@ function MarketScreen({
             <div style={{ display: "flex", alignItems: "center", gap: 12, background: "linear-gradient(180deg,#2a1a3e,#160b24)", border: "1px solid #ffd94d66", borderRadius: 10, padding: 10, marginBottom: 10 }}>
               <img src={STONE_CHEST[selItem]} alt="" width={64} height={64} style={{ filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.7))" }} />
               <div>
-                <div style={{ color: "#ffd94d", fontWeight: 900, fontSize: 13 }}>Baú de {LABELS[selItem]}</div>
+                <div style={{ color: "#ffd94d", fontWeight: 900, fontSize: 13 }}>Baú de {LABELS[selItem]}
                 <div style={{ color: "#c8b8d0", fontSize: 11 }}>Pack mínimo <b style={{ color: "#7dffbe" }}>{STONE_PACK_SIZE}</b> stones — pode anunciar mais.</div>
               </div>
             </div>
@@ -15359,9 +15359,9 @@ function MarketScreen({
               return (
                 <div key={id} style={{ background: "#1a0f26", border: `1px solid ${disabled ? "#3a2a4a" : "#ff9d3d66"}`, borderRadius: 10, padding: 12, opacity: disabled ? 0.55 : 1 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                    <div style={{ fontSize: 22 }}>{ICONS[id] ?? "📦"}</div>
+                    <div style={{ fontSize: 22 }}>{ICONS[id] ?? "📦"}
                     <div>
-                      <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{LABELS[id] ?? id}</div>
+                      <div style={{ color: "#f5cf6b", fontWeight: 800, fontSize: 13 }}>{LABELS[id] ?? id}
                       <div style={{ color: "#8a7a9c", fontSize: 11 }}>Estoque: <b style={{ color: "#c8b8d0" }}>{have}</b></div>
                     </div>
                   </div>
@@ -15438,19 +15438,19 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
           <div style={{
             position: "absolute", top: 4, left: 4,
             fontSize: 8, letterSpacing: 1.5, color: "#8a7a9c", fontWeight: 700,
-          }}>Nº {String(Object.keys(SPECIES_BASE).indexOf(pet.species) + 1).padStart(3, "0")}</div>
+          }}>Nº {String(Object.keys(SPECIES_BASE).indexOf(pet.species) + 1).padStart(3, "0")}
           <div style={{
             position: "absolute", bottom: 4, right: 4,
             background: "linear-gradient(180deg,#f5cf6b,#b8862a)",
             color: "#1a0f26", padding: "2px 7px", borderRadius: 10,
             fontWeight: 900, fontSize: 10, letterSpacing: 1,
             boxShadow: "0 2px 4px rgba(0,0,0,0.5)",
-          }}>LV {pet.level}</div>
+          }}>LV {pet.level}
         </div>
         <div style={{
           padding: "4px 6px", fontSize: 9, fontWeight: 900, letterSpacing: 1.2,
           color: "#0b0510", background: rColor, borderRadius: 4, textAlign: "center",
-        }}>{base.rarity.toUpperCase()}</div>
+        }}>{base.rarity.toUpperCase()}
       </div>
 
       {/* RIGHT: NAME + BARS + STATS */}
@@ -15459,7 +15459,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
           fontSize: 18, fontWeight: 900, color: rColor,
           textShadow: `1px 1px 0 #000, 0 0 10px ${rColor}55`,
           letterSpacing: 1.5, lineHeight: 1,
-        }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
+        }}>{pet.species.replace(/_/g, " ").toUpperCase()}
 
         <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           <StatBar label="HP" value={Math.floor(currentHp)} max={maxHp} pct={hpPct} color="#5ec26a" />
@@ -15535,8 +15535,8 @@ function StatCell({ label, value }: { label: string; value: number }) {
       border: "1px solid rgba(245,207,107,0.22)",
       borderRadius: 4, padding: "3px 4px", textAlign: "center",
     }}>
-      <div style={{ fontSize: 8, color: "#8a7a9c", letterSpacing: 1, fontWeight: 700 }}>{label}</div>
-      <div style={{ fontSize: 12, fontWeight: 900, color: "#f3e5c5", textShadow: "1px 1px 0 #000" }}>{value}</div>
+      <div style={{ fontSize: 8, color: "#8a7a9c", letterSpacing: 1, fontWeight: 700 }}>{label}
+      <div style={{ fontSize: 12, fontWeight: 900, color: "#f3e5c5", textShadow: "1px 1px 0 #000" }}>{value}
     </div>
   );
 }
@@ -15621,9 +15621,9 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
       border: `1px solid ${color}66`, borderRadius: 8, padding: "8px 10px",
       minWidth: 110, flex: "1 1 120px",
     }}>
-      <div style={{ fontSize: 10, color: "#c8b8d0", letterSpacing: 1 }}>{label}</div>
-      <div style={{ fontSize: 18, fontWeight: 900, color, textShadow: "1px 1px 0 #000" }}>{value}</div>
-      {sub && <div style={{ fontSize: 9, color: "#8a7a9c", marginTop: 2 }}>{sub}</div>}
+      <div style={{ fontSize: 10, color: "#c8b8d0", letterSpacing: 1 }}>{label}
+      <div style={{ fontSize: 18, fontWeight: 900, color, textShadow: "1px 1px 0 #000" }}>{value}
+      {sub && <div style={{ fontSize: 9, color: "#8a7a9c", marginTop: 2 }}>{sub}}
     </div>
   );
   // Preview de sinergia por tier
@@ -15843,7 +15843,7 @@ function GovernanteDialog(props: {
     </div>,
     document.body
       </>
-</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>);
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>);
 }
 
 
