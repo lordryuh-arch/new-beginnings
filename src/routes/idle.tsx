@@ -17,6 +17,7 @@ import navMarket from "@/assets/icons/nav-market.png";
 import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
+import { WorldMapOverlay } from "@/game/WorldMapOverlay";
 import iconCrystalBlue from "@/assets/icon-crystal-blue-diamond.png.asset.json";
 import iconCashPackage from "@/assets/icon-cash-package.png.asset.json";
 import eventBannerImg from "@/assets/event-banner.png.asset.json";
@@ -7876,6 +7877,28 @@ function IdlePage() {
             })()}
             <button onClick={() => { playClick(); setTab("config"); }} style={{ ...zoomBtn, marginTop: 6, fontSize: 14 }} title="Configurações">⚙</button>
             <button
+              onClick={() => { playClick(); setWorldMapOpen(true); }}
+              style={{
+                ...zoomBtn,
+                marginTop: 4,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "linear-gradient(180deg, #3a2a5c, #1a1030)",
+                border: "1px solid #f5cf6b",
+                boxShadow: "0 0 10px rgba(245,207,107,0.4)"
+              }}
+              title="Abrir Mapa Mundi (M)"
+            >
+              <img
+                src={assetUrlFromJson(iconWorldGlobe)}
+                alt="Mapa Mundi"
+                width={22}
+                height={22}
+                style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 4px #f5cf6b)" }}
+              />
+            </button>
+            <button
               onClick={() => { playClick(); pushChat("🏆 Ranked temporariamente bloqueado.", "info"); }}
               style={{
                 ...zoomBtn,
@@ -12073,6 +12096,25 @@ function IdlePage() {
           void pushCloudSaveNow({ idle: next, team: teamRef.current, restingBench, savedAt: Date.now() });
 
           pushChat(`🐺✦ Governante consumiu ${use}× Carta Riolu Suprema e materializou ${use}× RIOLU BLACK MITIC BRILHANT PLUS Lv 1000 na Coleção.`, "cap");
+        }}
+      />
+      <WorldMapOverlay
+        isOpen={worldMapOpen}
+        onClose={() => setWorldMapOpen(false)}
+        trainerLevel={idle.trainerLevel ?? 1}
+        currentMap={idle.currentMap}
+        items={idle.items ?? {}}
+        onTeleport={(mapId) => {
+          setIdle(s => ({ ...s, currentMap: mapId as IdleMapId }));
+          setTrainerPos({ x: WORLD_W / 2, y: WORLD_H / 2 });
+          setEnemies([]);
+          pushChat(`🌍 Viajando para ${IDLE_MAPS[mapId as IdleMapId]?.name}...`, "info");
+        }}
+        onConsumeTeleport={() => {
+          setIdle(s => ({
+            ...s,
+            items: { ...s.items, scroll_teleport: Math.max(0, (s.items.scroll_teleport ?? 0) - 1) }
+          }));
         }}
       />
     </div>
