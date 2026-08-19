@@ -467,6 +467,8 @@ const mapCadeiaAbUrl = assetUrlFromJson(mapCadeiaAbAsset);
 const mapCadeiaAb1Url = assetUrlFromJson(mapCadeiaAb1Asset);
 const mapCadeiaF1Url = assetUrlFromJson(mapCadeiaF1Asset);
 const mapMythshinyEventUrl = assetUrlFromJson(mapMythshinyEventAsset);
+import iconMasterballAsset from "@/assets/ball-master.png.asset.json";
+const iconMasterballUrl = assetUrlFromJson(iconMasterballAsset);
 const iceBallIconUrl = assetUrlFromJson(iceBallIconAsset);
 const scrollTeleportUrl = assetUrlFromJson(scrollTeleportAsset);
 // URLs dos 10 novos mapas endgame
@@ -1125,7 +1127,7 @@ const ALL_BALLS: ShopBall[] = [
   { id: "pokeball",   name: "Pokébola",   price: 500,    img: ballPokeImg,  captureMult: 1 },
   { id: "greatball",  name: "Great Ball", price: 5000,   img: ballGreatImg, captureMult: 2 },
   { id: "ultraball",  name: "Ultra Ball", price: 15000,  img: ballUltraImg, captureMult: 3.5 },
-  { id: "masterball", name: "Master Ball", price: 999999, img: assetUrlFromJson(iconMasterballAsset), captureMult: 999 },
+  { id: "masterball", name: "Master Ball", price: 999999, img: iconMasterballUrl, captureMult: 999 },
 ];
 
 type ShopBook = { id: "book_atk" | "book_def" | "book_exp" | "book_exp_big" | "book_exp_max" | "book_vip" | "book_vip_30" | "book_vip_60" | "orb_xp_minor" | "orb_xp_major" | "orb_xp_supreme" | "orb_team"; name: string; desc: string; price: number; img: string; currency?: "crystals" | "gold"; priceGold?: number };
