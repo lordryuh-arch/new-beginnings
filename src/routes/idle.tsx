@@ -1290,7 +1290,8 @@ function fmtHMS(ms: number) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(r).padStart(2, "0")}`;
 }
 function fmtK(n: number) {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000_000) return (<>
+n / 1_000_000).toFixed(1) + "M";
   if (n >= 1000) return (n / 1000).toFixed(1) + "K";
   return String(Math.floor(n));
 }
@@ -7012,7 +7013,7 @@ function IdlePage() {
   );
 
   return (
-    <div id="ROOT_FRAGMENT">
+    <>
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -12122,7 +12123,8 @@ function IdlePage() {
     
 
 
-  </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>);
+  </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</>);
 }</div>
 // ============ Componentes visuais ============
 function Panel({ title, accent, children }: any) {
@@ -15840,7 +15842,7 @@ function GovernanteDialog(props: {
       </div>
     </div>,
     document.body
-      </div><!-- ROOT_FRAGMENT_END -->
+      </>
 </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>);
 }
 
