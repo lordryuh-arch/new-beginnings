@@ -3,19 +3,19 @@ import { assetUrlFromJson } from "@/lib/assetUrl";
 export const GUILD_KEY = "rubym.guild.v1";
 export const GUILD_OPEN_COST = 5000;
 
-import waterIconAsset from "@/assets/guild/water.png.asset.json";
+import waterIconAsset from "@/assets/fx/fx-water.png.asset.json";
 const waterIcon = assetUrlFromJson(waterIconAsset);
-import fireIconAsset from "@/assets/guild/fire.png.asset.json";
+import fireIconAsset from "@/assets/fx/fx-fire.png.asset.json";
 const fireIcon = assetUrlFromJson(fireIconAsset);
-import grassIconAsset from "@/assets/guild/grass.png.asset.json";
+import grassIconAsset from "@/assets/fx/fx-grass.png.asset.json";
 const grassIcon = assetUrlFromJson(grassIconAsset);
-import psychicIconAsset from "@/assets/guild/psychic.png.asset.json";
+import psychicIconAsset from "@/assets/fx/fx-psychic.png.asset.json";
 const psychicIcon = assetUrlFromJson(psychicIconAsset);
-import poisonIconAsset from "@/assets/guild/poison.png.asset.json";
+import poisonIconAsset from "@/assets/fx/fx-poison.png.asset.json";
 const poisonIcon = assetUrlFromJson(poisonIconAsset);
-import fairyIconAsset from "@/assets/guild/fairy.png.asset.json";
+import fairyIconAsset from "@/assets/fx/fx-grass.png.asset.json";
 const fairyIcon = assetUrlFromJson(fairyIconAsset);
-import flyingIconAsset from "@/assets/guild/flying.png.asset.json";
+import flyingIconAsset from "@/assets/fx/fx-flying.png.asset.json";
 const flyingIcon = assetUrlFromJson(flyingIconAsset);
 
 export type GuildElement = "fire" | "water" | "grass" | "psychic" | "poison" | "fairy" | "flying";
