@@ -936,14 +936,15 @@ type IdleState = {
   globalStats?: { attack: number; speed: number; synergy: number; resistance: number; mastery: number };
   autoHeal: { enabled: boolean; threshold: number };
   autoBattle?: { enabled: boolean; useBall: boolean; preferredBall: "auto" | "pokeball" | "greatball" | "ultraball"; captureHpPct: number };
-  trainerLevel?: number;
-  trainerXp?: number;
+  trainerLevel: number;
+  trainerXp: number;
   unlockedSkins?: string[];
   hives?: Record<string, { slots: Array<{ uid: string; startedAt: number } | null> }>;
   redeemedCodes?: Record<string, boolean>;
   blackMiticPlusPending?: number;
   grassOddishCaptured?: number;
   grassOddishReturnMap?: IdleMapId;
+  activatedObsidian?: string[];
 };
 
 export type CollectionEntry = { uid: string; species: Species; level: number; rarity: Rarity; capturedAt: number; xp?: number; traits?: string[]; event?: string };
@@ -12101,7 +12102,7 @@ function IdlePage() {
         onTravel={(mapId) => {
           setIdle(s => ({ ...s, currentMap: mapId as any }));
           setWorldMapOpen(false);
-          pushChat(`✦ Teletransportado para ${IDLE_MAPS[mapId as any].name}.`, "info");
+          pushChat(`✦ Teletransportado para ${IDLE_MAPS[mapId as any]?.name ?? mapId}.`, "info");
         }}
         activatedObsidian={idle.activatedObsidian ?? []}
       />
