@@ -1344,7 +1344,7 @@ function IdlePage() {
   useEffect(() => {
     if (!levelToast) return;
     const t = setTimeout(() => setLevelToast(null), 5000);
-    return (() => clearTimeout(t);      <div style={{
+    return () => clearTimeout(t);      <div style={{
                 position: "relative",
                 padding: "7px 9px 7px 7px",
                 background:
