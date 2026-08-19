@@ -13,7 +13,12 @@ export function assetUrl(url: string) {
 
 // Preferred: pass the imported asset json directly so we can route by project_id.
 export function assetUrlFromJson(asset: { url: string; project_id?: string }) {
+  if (!asset || !asset.url) return "";
   if (!asset.url.startsWith("/__l5e/assets-v1/")) return asset.url;
-  const origin = asset.project_id === LEGACY_PROJECT_ID ? LEGACY_ORIGIN : CURRENT_ORIGIN;
+  
+  // Se o project_id for do projeto legado ou se for o projeto atual, resolvemos.
+  // Em previews do Lovable, o origin local é preferível para assets do projeto.
+  const isLegacy = asset.project_id === LEGACY_PROJECT_ID;
+  const origin = isLegacy ? LEGACY_ORIGIN : ""; // Empty origin makes it relative to current host
   return `${origin}${asset.url}`;
 }
