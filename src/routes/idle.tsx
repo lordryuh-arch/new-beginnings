@@ -7834,29 +7834,7 @@ function IdlePage() {
                   setChatCooldownUntil(Date.now() + 10 * 60 * 1000);
                 };
                 return (
-    <div>
-      {showWorldMap && (
-        <WorldMapOverlay
-          onClose={() => setShowWorldMap(false)}
-          trainerLevel={idle.trainerLevel ?? 1}
-          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
-          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
-          currentMapId={idle.currentMap}
-          onEnterMap={(target) => {
-            setIdle((s) => ({ ...s, currentMap: target }));
-            setShowWorldMap(false);
-          }}
-          onActivateObsidian={(pointId) => {
-            setIdle((s) => {
-              const current = s.activatedObsidianPoints ?? [];
-              if (current.includes(pointId)) return s;
-              return { ...s, activatedObsidianPoints: [...current, pointId] };
-            });
-            pushChat("✦ Energia Obsidian despertada!", "cap");
-          }}
-        />
-      )}
-      <div style={{ display: "flex", gap: 4, marginTop: 6 }}>
+<div style={{ display: "flex", gap: 4, marginTop: 6 }}>
                     <input
                       value={chatInput}
                       onChange={(e) => setChatInput(e.target.value)}
