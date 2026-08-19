@@ -1448,7 +1448,7 @@ function IdlePage() {
               to="/community"
               className="flex flex-col items-center gap-1 p-2 rounded-xl transition-all text-white/40 hover:text-white/60"
             >
-              <img src={assetUrlFromJson(tab.icon)} className="w-6 h-6 object-contain grayscale opacity-50" alt={tab.label} />
+              <Users className="w-6 h-6 text-white/40" />
               <span className="text-[10px] font-bold uppercase">{tab.label}</span>
             </Link>
           ) : (
