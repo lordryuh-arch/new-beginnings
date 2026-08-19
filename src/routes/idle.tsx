@@ -12126,7 +12126,7 @@ function IdlePage() {
 </>);
 }
 // ============ Componentes visuais ============
-function Panel({ title, accent, children }: any) {
+function Panel({ title, accent, children }: { title: string, accent: string, children: React.ReactNode }) {
   return (
     <div style={{
       background: "#1a0f26",
