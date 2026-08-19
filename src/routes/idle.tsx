@@ -148,6 +148,7 @@ import eventPenguinAsset from "@/assets/event-penguin-badge.png.asset.json";
 import { currentGeliusInfo, isGeliusActive, getGeliusEntries, canEnterGelius, consumeGeliusEntry, GELIUS_CAPTURABLE, GELIUS_PHASE1_POOL, GELIUS_PHASE2_POOL } from "@/game/geliusEvent";
 import hornetCocoonAsset from "@/assets/hornet-cocoon.png.asset.json";
 import fireLakeAsset from "@/assets/fire-lake.png.asset.json";
+import { WORLD_REGIONS, OBSIDIAN_POINTS, WORLD_MAP_CONFIG } from "@/game/worldMap";
 import mapVenofogoOrangeAsset from "@/assets/map-lava-valley.jpg.asset.json";
 import mapPantanoFogoAsset from "@/assets/map-pantano-fogo.png.asset.json";
 import worldMapGlobeAsset from "@/assets/world-map-globe.jpg.asset.json";
@@ -9959,8 +9960,35 @@ function IdlePage() {
         {/* ============ COLUNA DIREITA ============ */}
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
-            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center", padding: "4px 0" }}>
+              <div style={{ position: "relative", width: "100%", height: 120, borderRadius: 8, overflow: "hidden", border: "1px solid rgba(245,207,107,0.3)" }}>
+                <img src={WORLD_MAP_CONFIG.bg} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
+                <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)", display: "grid", placeItems: "center" }}>
+                   <div style={{ textAlign: "center" }}>
+                      <div style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 14, textShadow: "0 2px 4px #000" }}>{IDLE_MAPS[idle.currentMap].name.toUpperCase()}</div>
+                      <div style={{ color: "#fff", fontSize: 10, opacity: 0.8 }}>Região Descoberta</div>
+                   </div>
+                </div>
+              </div>
+              <button 
+                onClick={() => setWorldMapOpen(true)}
+                className="premium-map-btn"
+                style={{
+                  width: "100%", padding: "10px", borderRadius: 8,
+                  background: "linear-gradient(135deg, #f5cf6b 0%, #d9a441 100%)",
+                  color: "#1a0f26", fontWeight: 900, fontSize: 12, letterSpacing: 1,
+                  border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                  boxShadow: "0 4px 15px rgba(217,164,65,0.4)"
+                }}
+              >
+                <span style={{ fontSize: 16 }}>🌍</span> ABRIR MAPA MUNDI
+              </button>
+            </div>
           </Panel>
+          <style>{`
+            .premium-map-btn:hover { transform: translateY(-2px); filter: brightness(1.1); transition: all 0.2s; }
+            .premium-map-btn:active { transform: translateY(0); }
+          `}</style>
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
             border: "2px solid #f5cf6b",
@@ -12064,6 +12092,19 @@ function IdlePage() {
           pushChat(`🐺✦ Governante consumiu ${use}× Carta Riolu Suprema e materializou ${use}× RIOLU BLACK MITIC BRILHANT PLUS Lv 1000 na Coleção.`, "cap");
         }}
       />
+      
+      <WorldMapOverlay 
+        isOpen={worldMapOpen}
+        onClose={() => setWorldMapOpen(false)}
+        trainerLevel={idle.trainerLevel}
+        currentMap={idle.currentMap}
+        onTravel={(mapId) => {
+          setIdle(s => ({ ...s, currentMap: mapId as any }));
+          setWorldMapOpen(false);
+          pushChat(`✦ Teletransportado para ${IDLE_MAPS[mapId as any].name}.`, "info");
+        }}
+        activatedObsidian={idle.activatedObsidian ?? []}
+      />
     </div>
 
 
@@ -12072,6 +12113,147 @@ function IdlePage() {
 
 
 // ============ Componentes visuais ============
+function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, activatedObsidian = [] }: { 
+  isOpen: boolean; 
+  onClose: () => void; 
+  trainerLevel: number; 
+  currentMap: string; 
+  onTravel: (mapId: string) => void;
+  activatedObsidian?: string[];
+}) {
+  if (!isOpen) return null;
+
+  return createPortal(
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 10005,
+      background: "rgba(0,0,0,0.9)", display: "grid", placeItems: "center", padding: 20,
+      backdropFilter: "blur(8px)", animation: "fadeIn 0.3s ease-out"
+    }}>
+      <div style={{
+        width: "min(1200px, 95vw)", height: "min(800px, 85vh)",
+        background: "#0b0510", border: "3px solid #f5cf6b", borderRadius: 20,
+        position: "relative", overflow: "hidden", boxShadow: "0 0 50px rgba(0,0,0,0.8)"
+      }}>
+        {/* Header */}
+        <div style={{
+          position: "absolute", top: 0, left: 0, right: 0, height: 60,
+          background: "linear-gradient(180deg, #1a1030 0%, transparent 100%)",
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          padding: "0 24px", zIndex: 10
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <span style={{ fontSize: 24 }}>🌍</span>
+            <h2 style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 20, letterSpacing: 2, margin: 0 }}>MAPA MUNDI</h2>
+          </div>
+          <button onClick={onClose} style={{
+            background: "rgba(255,255,255,0.1)", border: "none", color: "#fff",
+            width: 36, height: 36, borderRadius: "50%", cursor: "pointer", fontSize: 18,
+            display: "grid", placeItems: "center"
+          }}>✕</button>
+        </div>
+
+        {/* Map Container */}
+        <div style={{
+          width: "100%", height: "100%", position: "relative",
+          cursor: "grab", overflow: "hidden", background: "#050208"
+        }}>
+          {/* Background Image */}
+          <img src={WORLD_MAP_CONFIG.bg} alt="World Map" style={{
+            width: "100%", height: "100%", objectFit: "cover", opacity: 0.6
+          }} />
+
+          {/* Regions */}
+          {WORLD_REGIONS.map(reg => {
+            const locked = trainerLevel < reg.minLevel;
+            const isCurrent = currentMap === reg.mapId;
+            return (
+              <div key={reg.id} style={{
+                position: "absolute", left: `${(reg.x / WORLD_MAP_CONFIG.width) * 100}%`,
+                top: `${(reg.y / WORLD_MAP_CONFIG.height) * 100}%`,
+                transform: "translate(-50%, -50%)", zIndex: 5
+              }}>
+                <div 
+                  onClick={() => !locked && onTravel(reg.mapId)}
+                  className={locked ? "" : "map-node-pulse"}
+                  style={{
+                    width: isCurrent ? 40 : 30, height: isCurrent ? 40 : 30,
+                    borderRadius: "50%", background: locked ? "#333" : "radial-gradient(circle, #f5cf6b, #d9a441)",
+                    border: isCurrent ? "3px solid #fff" : "2px solid rgba(255,255,255,0.3)",
+                    cursor: locked ? "not-allowed" : "pointer",
+                    display: "grid", placeItems: "center", transition: "all 0.2s",
+                    boxShadow: locked ? "none" : "0 0 15px rgba(245,207,107,0.5)"
+                  }}
+                  title={`${reg.name} (Lv.${reg.minLevel})`}
+                >
+                  <span style={{ fontSize: isCurrent ? 20 : 14 }}>{locked ? "🔒" : "📍"}</span>
+                </div>
+                <div style={{
+                  position: "absolute", top: "110%", left: "50%", transform: "translateX(-50%)",
+                  whiteSpace: "nowrap", pointerEvents: "none", textAlign: "center"
+                }}>
+                  <div style={{ color: locked ? "#666" : "#fff", fontWeight: 900, fontSize: 11, textShadow: "0 2px 4px #000" }}>
+                    {reg.name.toUpperCase()}
+                  </div>
+                  {!locked && <div style={{ color: "#f5cf6b", fontSize: 9, fontWeight: 700 }}>Lv.{reg.minLevel}</div>}
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Obsidian Points */}
+          {OBSIDIAN_POINTS.map(op => {
+            const activated = activatedObsidian.includes(op.id);
+            const locked = trainerLevel < op.reqLevel;
+            return (
+              <div key={op.id} style={{
+                position: "absolute", left: `${(op.x / WORLD_MAP_CONFIG.width) * 100}%`,
+                top: `${(op.y / WORLD_MAP_CONFIG.height) * 100}%`,
+                transform: "translate(-50%, -50%)", zIndex: 4
+              }}>
+                <div style={{
+                  width: 24, height: 24, borderRadius: 4,
+                  background: activated ? "#a855f7" : (locked ? "#222" : "#4c1d95"),
+                  border: `2px solid ${activated ? "#d8b4fe" : "#333"}`,
+                  cursor: "help", display: "grid", placeItems: "center",
+                  transform: "rotate(45deg)",
+                  boxShadow: activated ? "0 0 20px #a855f7" : "none",
+                  animation: activated ? "pulse 2s infinite" : "none"
+                }} title={`${op.name} (${locked ? `Exige Lv.${op.reqLevel}` : 'Ponto de Obsidian'})`}>
+                  <div style={{ transform: "rotate(-45deg)", fontSize: 10 }}>✨</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Footer Info */}
+        <div style={{
+          position: "absolute", bottom: 0, left: 0, right: 0, padding: 16,
+          background: "linear-gradient(0deg, #1a1030 0%, transparent 100%)",
+          display: "flex", justifyContent: "space-between", alignItems: "center"
+        }}>
+          <div style={{ color: "#d0b8f0", fontSize: 12, fontWeight: 700 }}>
+            Nível de Treinador: <span style={{ color: "#f5cf6b" }}>{trainerLevel}</span>
+          </div>
+          <div style={{ color: "#8a7a9c", fontSize: 11 }}>
+            Clique em uma região desbloqueada para teletransportar.
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        .map-node-pulse { animation: mapNodePulse 2s infinite; }
+        @keyframes mapNodePulse {
+          0% { box-shadow: 0 0 0 0 rgba(245,207,107,0.4); }
+          70% { box-shadow: 0 0 0 15px rgba(245,207,107,0); }
+          100% { box-shadow: 0 0 0 0 rgba(245,207,107,0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      `}</style>
+    </div>,
+    document.body
+  );
+}
 function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
   return (
     <div style={{
