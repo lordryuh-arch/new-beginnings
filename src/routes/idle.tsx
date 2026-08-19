@@ -1309,14 +1309,11 @@ function getMultiplayerSessionId(baseId: string) {
 
 // ============ Route ============
 export const Route = createFileRoute("/idle")({ component: () => <IdlePage /> });
-function IdlePage() { return <div>SKELETON</div>; }
+function IdlePage() {
   return (
-    <div style={{ padding: 20, color: "white" }}>
+    <div style={{ padding: 20, color: "white", background: "#0b0510", minHeight: "100vh" }}>
       <h1>RubyM Idle - Pokémon RPG</h1>
-      <p>O jogo está em manutenção estrutural para otimização.</p>
-      <div style={{ border: "1px solid #333", padding: 10, marginTop: 20 }}>
-        Conteúdo em restauração...
-      </div>
+      <p>O jogo está sendo otimizado. Aguarde um momento enquanto restauramos as funcionalidades...</p>
     </div>
   );
 }
