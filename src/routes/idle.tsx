@@ -9969,13 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                <>
-              type GateDef = {
-                key: string;
-                target: IdleMapId;
-                x: number; y: number;
-                arriveX: number; arriveY: number;
-                color: string;
               };
               // Fluxo: arena → praia → neve → deserto → caverna
               const gatesByMap: Record<IdleMapId, GateDef[]> = {
@@ -10748,7 +10741,6 @@ function IdlePage() {
                             .c4-ring { animation: c4RingRotate 4s linear infinite; }
                             @keyframes c4RingRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
                           `}</style>
-
                 </div>
               );
             })()}
