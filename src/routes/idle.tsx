@@ -5,15 +5,15 @@ import { createPortal } from "react-dom";
 import { FlaskConical, Sparkles } from "lucide-react";
 import { ItemPixelIcon } from "@/components/ItemPixelIcon";
 import type { LucideIcon } from "lucide-react";
-import navInicio from "@/assets/icons/nav-inicio.png";
-import navPokemon from "@/assets/icons/nav-pokemon.png";
-import navMochila from "@/assets/icons/nav-mochila.png";
-import navBatalha from "@/assets/icons/nav-batalha.png";
-import navMelhorias from "@/assets/icons/nav-melhorias.png";
-import navColecao from "@/assets/icons/nav-colecao.png";
-import navLoja from "@/assets/icons/nav-loja.png";
-import navWallet from "@/assets/icons/nav-wallet.png";
-import navMarket from "@/assets/icons/nav-market.png";
+import navInicio from "@/assets/icons/nav-inicio.png.asset.json";
+import navPokemon from "@/assets/icons/nav-pokemon.png.asset.json";
+import navMochila from "@/assets/icons/nav-mochila.png.asset.json";
+import navBatalha from "@/assets/icons/nav-batalha.png.asset.json";
+import navMelhorias from "@/assets/icons/nav-melhorias.png.asset.json";
+import navColecao from "@/assets/icons/nav-colecao.png.asset.json";
+import navLoja from "@/assets/icons/nav-loja.png.asset.json";
+import navWallet from "@/assets/icons/nav-wallet.png.asset.json";
+import navMarket from "@/assets/icons/nav-market.png.asset.json";
 import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
@@ -32,20 +32,20 @@ import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
 import { grantEmeraldFor } from "@/lib/emerald";
 
-import chestClosedImg from "@/assets/icons/chest-closed.png";
-import chestOpenImg from "@/assets/icons/chest-open.png";
-import ballPokeImg from "@/assets/items/icon-pokeball.png";
-import ballGreatImg from "@/assets/items/icon-greatball.png";
-import ballUltraImg from "@/assets/items/icon-ultraball.png";
-import potionNewImg from "@/assets/items/icon-potion.png";
-import premiumBoxImg from "@/assets/items/icon-premium-box.png";
-import chestEmeraldImg from "@/assets/chest-emerald.png";
-import chestAmuletImg from "@/assets/items/icon-chest-amulet.png";
-import bagIconImg from "@/assets/items/icon-bag.png";
-import reviveIconImg from "@/assets/items/icon-revive.png";
-import berryIconImg from "@/assets/items/icon-berry.png";
-import keyIconImg from "@/assets/items/icon-key.png";
-import fxSlashImg from "@/assets/items/fx-slash.png";
+import chestClosedImg from "@/assets/icons/chest-closed.png.asset.json";
+import chestOpenImg from "@/assets/icons/chest-open.png.asset.json";
+import ballPokeImg from "@/assets/items/icon-pokeball.png.asset.json";
+import ballGreatImg from "@/assets/items/icon-greatball.png.asset.json";
+import ballUltraImg from "@/assets/items/icon-ultraball.png.asset.json";
+import potionNewImg from "@/assets/items/icon-potion.png.asset.json";
+import premiumBoxImg from "@/assets/items/icon-premium-box.png.asset.json";
+import chestEmeraldImg from "@/assets/chest-emerald.png.asset.json";
+import chestAmuletImg from "@/assets/items/icon-chest-amulet.png.asset.json";
+import bagIconImg from "@/assets/items/icon-bag.png.asset.json";
+import reviveIconImg from "@/assets/items/icon-revive.png.asset.json";
+import berryIconImg from "@/assets/items/icon-berry.png.asset.json";
+import keyIconImg from "@/assets/items/icon-key.png.asset.json";
+import fxSlashImg from "@/assets/items/fx-slash.png.asset.json";
 import fxGrassImg from "@/assets/fx/fx-grass.png";
 import fxFireImg from "@/assets/fx/fx-fire.png";
 import fxWaterImg from "@/assets/fx/fx-water.png";
@@ -10698,7 +10698,7 @@ function IdlePage() {
                           boxShadow: `0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 ${t.color}33`,
                           opacity: reqOk ? 1 : 0.85,
                         }}>
-                          <img src={t.img} alt={t.label} width={72} height={72}
+                          <img src={assetUrlFromJson(t.img)} alt={t.label} width={72} height={72}
                             style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 12px ${t.color}bb)` }} />
                           <div style={{ fontWeight: 900, color: "#eadfe8", fontSize: 14 }}>{t.label}</div>
                           <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center", lineHeight: 1.4 }}>{t.desc}</div>
