@@ -23,6 +23,8 @@ import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
 const navWallet = assetUrlFromJson(navWalletAsset);
 import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
 const navMarket = assetUrlFromJson(navMarketAsset);
+import navPokeballAsset from "@/assets/nav-pokeball.png.asset.json";
+const navPokeball = assetUrlFromJson(navPokeballAsset);
 import pokemonTabBgAsset from "@/assets/pokemon-tab-bg.jpg.asset.json";
 const pokemonTabBg = assetUrlFromJson(pokemonTabBgAsset);
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
@@ -491,9 +493,9 @@ const orbXpMajorUrl = assetUrlFromJson(orbXpMajorAsset);
 const orbXpSupremeUrl = assetUrlFromJson(orbXpSupremeAsset);
 const orbXpTeamUrl = assetUrlFromJson(orbXpTeamAsset);
 // Ícones "de buff" bonitos (HUD do treinador) — orb XP, incenso e orb de time
-const buffOrbXpUrl = (new URL("../assets/buff-orb-xp.png", import.meta.url)).href;
-const buffIncenseHoneyUrl = (new URL("../assets/buff-incense-honey.png", import.meta.url)).href;
-const buffTeamOrbUrl = (new URL("../assets/buff-team-orb.png", import.meta.url)).href;
+const buffOrbXpUrl = assetUrlFromJson(orbXpMajorAsset);
+const buffIncenseHoneyUrl = assetUrlFromJson(orbXpMinorAsset);
+const buffTeamOrbUrl = assetUrlFromJson(orbXpTeamAsset);
 const npcTraderUrl = assetUrlFromJson(npcTraderAsset);
 const redLakeUrl = assetUrlFromJson(redLakeAsset);
 const volcanoUrl = assetUrlFromJson(volcanoAsset);
@@ -1099,8 +1101,8 @@ const ITEM_IMG: Record<string, string> = {
   premium_box: premiumBoxImg,
   bau_esmeralda: chestEmeraldImg,
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
-  orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
-  incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
+  orb_xp_supreme_24h: assetUrlFromJson(orbXpSupremeAsset),
+  incenso_mel_raro_24h: assetUrlFromJson(orbXpMinorAsset),
   safira_verde: assetUrlFromJson(safiraVerdeAsset),
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
