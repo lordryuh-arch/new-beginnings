@@ -5,28 +5,15 @@ import { createPortal } from "react-dom";
 import { FlaskConical, Sparkles } from "lucide-react";
 import { ItemPixelIcon } from "@/components/ItemPixelIcon";
 import type { LucideIcon } from "lucide-react";
-import navInicioAsset from "@/assets/icons/nav-inicio.png.asset.json";
-import navPokemonAsset from "@/assets/icons/nav-pokemon.png.asset.json";
-import navMochilaAsset from "@/assets/icons/nav-mochila.png.asset.json";
-import navBatalhaAsset from "@/assets/icons/nav-batalha.png.asset.json";
-import navMelhoriasAsset from "@/assets/icons/nav-melhorias.png.asset.json";
-import navColecaoAsset from "@/assets/icons/nav-colecao.png.asset.json";
-import navLojaAsset from "@/assets/icons/nav-loja.png.asset.json";
-import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
-import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
-import navPokedexAsset from "@/assets/icons/nav-colecao.png.asset.json"; // Usando ícone de coleção para pokedex temporariamente se não houver um específico
-
-const navInicio = navInicioAsset.url;
-const navPokemon = navPokemonAsset.url;
-const navMochila = navMochilaAsset.url;
-const navBatalha = navBatalhaAsset.url;
-const navMelhorias = navMelhoriasAsset.url;
-const navColecao = navColecaoAsset.url;
-const navLoja = navLojaAsset.url;
-const navWallet = navWalletAsset.url;
-const navMarket = navMarketAsset.url;
-const navPokedex = navPokedexAsset.url;
-
+import navInicio from "@/assets/icons/nav-inicio.png";
+import navPokemon from "@/assets/icons/nav-pokemon.png";
+import navMochila from "@/assets/icons/nav-mochila.png";
+import navBatalha from "@/assets/icons/nav-batalha.png";
+import navMelhorias from "@/assets/icons/nav-melhorias.png";
+import navColecao from "@/assets/icons/nav-colecao.png";
+import navLoja from "@/assets/icons/nav-loja.png";
+import navWallet from "@/assets/icons/nav-wallet.png";
+import navMarket from "@/assets/icons/nav-market.png";
 import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
@@ -41,15 +28,6 @@ import catPotionsAsset from "@/assets/cat2-potions.png.asset.json";
 import catBooksAsset from "@/assets/cat2-books.png.asset.json";
 import catEggsAsset from "@/assets/cat2-eggs.png.asset.json";
 import catOtherAsset from "@/assets/cat2-other.png.asset.json";
-
-const iconFragmentCrystalUrl = iconFragmentCrystal.url;
-const iconWorldGlobeUrl = iconWorldGlobe.url;
-const iconCrystalBlueUrl = iconCrystalBlue.url;
-const iconCashPackageUrl = iconCashPackage.url;
-const eventBannerImgUrl = eventBannerImg.url;
-const trainerAvatarUrl = trainerAvatarAsset.url;
-
-
 import { CashShopModal } from "@/components/CashShopModal";
 import { BlackMiticEggSprite, BlackMiticEggHud, BlackMiticEggQuickIcon, BLACK_EGG_ITEM_ID, hasReadyEgg } from "@/components/BlackMiticEggPet";
 import { grantEmeraldFor } from "@/lib/emerald";
@@ -111,8 +89,7 @@ import { TraitIcon } from "@/components/TraitIcon";
 import { SynergyPanel } from "@/components/SynergyPanel";
 import { PokemonStatsCard } from "@/components/PokemonStatsCard";
 import { PokemonMarketPanel } from "@/components/PokemonMarketPanel";
-import trainerSheetAsset from "@/assets/trainer.png.asset.json";
-const trainerSheet = trainerSheetAsset.url;
+import trainerSheet from "@/assets/trainer.png";
 import skinPedroAsset from "@/assets/skins/pedro.webp.asset.json";
 import skinPhoneAsset from "@/assets/skins/phone.webp.asset.json";
 import skinGokuAsset from "@/assets/skins/goku.webp.asset.json";
@@ -171,11 +148,10 @@ import eventPenguinAsset from "@/assets/event-penguin-badge.png.asset.json";
 import { currentGeliusInfo, isGeliusActive, getGeliusEntries, canEnterGelius, consumeGeliusEntry, GELIUS_CAPTURABLE, GELIUS_PHASE1_POOL, GELIUS_PHASE2_POOL } from "@/game/geliusEvent";
 import hornetCocoonAsset from "@/assets/hornet-cocoon.png.asset.json";
 import fireLakeAsset from "@/assets/fire-lake.png.asset.json";
-import { WORLD_REGIONS, OBSIDIAN_POINTS, WORLD_MAP_CONFIG } from "@/game/worldMap";
 import mapVenofogoOrangeAsset from "@/assets/map-lava-valley.jpg.asset.json";
 import mapPantanoFogoAsset from "@/assets/map-pantano-fogo.png.asset.json";
 import worldMapGlobeAsset from "@/assets/world-map-globe.jpg.asset.json";
-import worldMapBgAsset from "@/assets/world-map-v4.png.asset.json";
+import worldMapContinent2Asset from "@/assets/world-map-continent2.jpg.asset.json";
 import mapFantasmaAsset from "@/assets/map-fantasma.jpg.asset.json";
 import mapCadeiaAbAsset from "@/assets/map-cadeia-ab.png.asset.json";
 import mapCadeiaAb1Asset from "@/assets/map-cadeia-ab1.png.asset.json";
@@ -418,13 +394,13 @@ const mapEliteRouteUrl = assetUrlFromJson(mapEliteRouteAsset);
 const mapVictoryRoadUrl = assetUrlFromJson(mapVictoryRoadAsset);
 const mapViridianUrl = assetUrlFromJson(mapViridianAsset);
 const mapVenenoUrl = assetUrlFromJson(mapVenenoAsset);
-const bagBgGlowUrl = bagBgGlowAsset.url;
-const catAllUrl = catAllAsset.url;
-const catBallsUrl = catBallsAsset.url;
-const catPotionsUrl = catPotionsAsset.url;
-const catBooksUrl = catBooksAsset.url;
-const catEggsUrl = catEggsAsset.url;
-const catOtherUrl = catOtherAsset.url;
+const bagBgGlowUrl = assetUrlFromJson(bagBgGlowAsset);
+const catAllUrl = assetUrlFromJson(catAllAsset);
+const catBallsUrl = assetUrlFromJson(catBallsAsset);
+const catPotionsUrl = assetUrlFromJson(catPotionsAsset);
+const catBooksUrl = assetUrlFromJson(catBooksAsset);
+const catEggsUrl = assetUrlFromJson(catEggsAsset);
+const catOtherUrl = assetUrlFromJson(catOtherAsset);
 // URLs dos orbs (sprites transparentes)
 const orbXpMinorUrl = assetUrlFromJson(orbXpMinorAsset);
 const orbXpMajorUrl = assetUrlFromJson(orbXpMajorAsset);
@@ -474,7 +450,7 @@ const nidoranFUrl = assetUrlFromJson(nidoranFAsset);
 const snorlaxUrl = assetUrlFromJson(snorlaxAsset);
 const gloomUrl = assetUrlFromJson(gloomAsset);
 const npcGovernanteUrl = assetUrlFromJson(npcGovernanteAsset);
-const worldMapBgUrl = assetUrlFromJson(worldMapBgAsset);
+const worldMapContinent2Url = assetUrlFromJson(worldMapContinent2Asset);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const gameDb = supabase as any;
 
@@ -959,15 +935,14 @@ type IdleState = {
   globalStats?: { attack: number; speed: number; synergy: number; resistance: number; mastery: number };
   autoHeal: { enabled: boolean; threshold: number };
   autoBattle?: { enabled: boolean; useBall: boolean; preferredBall: "auto" | "pokeball" | "greatball" | "ultraball"; captureHpPct: number };
-  trainerLevel: number;
-  trainerXp: number;
+  trainerLevel?: number;
+  trainerXp?: number;
   unlockedSkins?: string[];
   hives?: Record<string, { slots: Array<{ uid: string; startedAt: number } | null> }>;
   redeemedCodes?: Record<string, boolean>;
   blackMiticPlusPending?: number;
   grassOddishCaptured?: number;
   grassOddishReturnMap?: IdleMapId;
-  activatedObsidian?: string[];
 };
 
 export type CollectionEntry = { uid: string; species: Species; level: number; rarity: Rarity; capturedAt: number; xp?: number; traits?: string[]; event?: string };
@@ -1042,7 +1017,7 @@ const ITEM_IMG: Record<string, string> = {
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
   orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
   incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
-  safira_verde: safiraVerdeAsset.url,
+  safira_verde: assetUrlFromJson(safiraVerdeAsset),
 };
 const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = [
   { id: "potion",    name: "Poção",     icon: "🧪", chance: 0.30 },
@@ -3814,7 +3789,7 @@ function IdlePage() {
         // Portais bloqueados por nível do TREINADOR: ignora alvos próximos deles
         // para não travar tentando atravessar. Se estiver liberado, pode alcançar.
         const trLv = idle.trainerLevel ?? 1;
-        const lockedPortals: WorldPortalDef[] = []; // Nenhum portal bloqueado
+        const lockedPortals = WORLD_PORTALS.filter((p) => p.from === idle.currentMap && (p.reqLevel ?? 0) > trLv);
         const nearLockedPortal = (x: number, y: number) =>
           lockedPortals.some((p) => Math.hypot(x - p.x, y - p.y) < 200);
         const aliveAll = enemies.filter((e) => e.hp > 0 && !blacklistRef.current.has(e.id) && !nearLockedPortal(e.x, e.y));
@@ -8724,7 +8699,7 @@ function IdlePage() {
             {(() => {
               const lv = idle.trainerLevel ?? 1;
               return WORLD_PORTALS.filter(p => p.from === idle.currentMap).map((p) => {
-                const locked = false; // Liberado para exploração total
+                const locked = false; // Ignora requisito de nível para portais do mundo
                 return (
                   <div
                     key={p.key}
@@ -9194,16 +9169,11 @@ function IdlePage() {
                 </div>
               )}
               <div style={{
-                position: "absolute",
-                top: 0, left: 0,
                 width: "100%", height: "100%",
-                backgroundImage: `url(${skinUrl && skinUrl.length > 5 ? skinUrl : trainerSheetAsset.url})`,
+                backgroundImage: `url(${skinUrl ?? trainerSheet})`,
                 backgroundSize: "400% 400%",
                 backgroundPosition: `${walkStep * 33.333}% ${DIR_ROW[walkDir] * 33.333}%`,
                 imageRendering: "pixelated",
-                // Debug visual forçado
-                border: "1px solid rgba(255,255,255,0.1)",
-                boxShadow: "0 0 10px rgba(255,255,255,0.2)"
               }} />
             </div>
 
@@ -9989,35 +9959,8 @@ function IdlePage() {
         {/* ============ COLUNA DIREITA ============ */}
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
-            <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center", padding: "4px 0" }}>
-              <div style={{ position: "relative", width: "100%", height: 120, borderRadius: 8, overflow: "hidden", border: "1px solid rgba(245,207,107,0.3)" }}>
-                <img src={assetUrlFromJson(worldMapBgAsset)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
-                <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)", display: "grid", placeItems: "center" }}>
-                   <div style={{ textAlign: "center" }}>
-                      <div style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 14, textShadow: "0 2px 4px #000" }}>{IDLE_MAPS[idle.currentMap].name.toUpperCase()}</div>
-                      <div style={{ color: "#fff", fontSize: 10, opacity: 0.8 }}>Região Descoberta</div>
-                   </div>
-                </div>
-              </div>
-              <button 
-                onClick={() => setWorldMapOpen(true)}
-                className="premium-map-btn"
-                style={{
-                  width: "100%", padding: "10px", borderRadius: 8,
-                  background: "linear-gradient(135deg, #f5cf6b 0%, #d9a441 100%)",
-                  color: "#1a0f26", fontWeight: 900, fontSize: 12, letterSpacing: 1,
-                  border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  boxShadow: "0 4px 15px rgba(217,164,65,0.4)"
-                }}
-              >
-                <span style={{ fontSize: 16 }}>🌍</span> ABRIR MAPA MUNDI
-              </button>
-            </div>
+            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
           </Panel>
-          <style>{`
-            .premium-map-btn:hover { transform: translateY(-2px); filter: brightness(1.1); transition: all 0.2s; }
-            .premium-map-btn:active { transform: translateY(0); }
-          `}</style>
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
             border: "2px solid #f5cf6b",
@@ -10099,7 +10042,7 @@ function IdlePage() {
                 filter: "drop-shadow(0 0 10px rgba(245,207,107,0.6))",
               }}>
                 <img
-                  src={iconCashPackageUrl}
+                  src={assetUrlFromJson(iconCashPackage)}
                   alt=""
                   width={58}
                   height={58}
@@ -10190,7 +10133,7 @@ function IdlePage() {
               position: "relative",
             }}>
               <img
-                src={eventBannerImgUrl}
+                src={assetUrlFromJson(eventBannerImg)}
                 alt="Evento"
                 width={58}
                 height={58}
@@ -10336,104 +10279,115 @@ function IdlePage() {
 
 
 
-        {/* ============ NAV INFERIOR PREMIUM ============ */}
-        <div style={{
-          gridColumn: "1 / -1",
-          display: "flex",
-          justifyContent: "center",
-          gap: "clamp(4px, 1.5vw, 12px)",
-          background: "linear-gradient(180deg, #12071e 0%, #0b0510 100%)",
-          padding: "10px 12px",
-          borderTop: "2px solid rgba(245,207,107,0.25)",
-          boxShadow: "0 -4px 15px rgba(0,0,0,0.6)",
-          zIndex: 100,
-          overflowX: "auto",
-          msOverflowStyle: "none",
-          scrollbarWidth: "none",
-        }}>
+        {/* ============ NAV INFERIOR ============ */}
+        <div style={{ gridColumn: "1 / -1", display: "flex", justifyContent: "center", gap: 4, background: "linear-gradient(180deg,#0b0510 0%,#160a20 100%)", padding: "8px 0", borderTop: "1px solid rgba(245,207,107,0.15)" }}>
           {([
-            { id: "inicio",    label: "Início",     img: navInicio,    color: "#f5cf6b" },
-            { id: "pokemon",   label: "Pokémon",    img: navPokemon,   color: "#ff5252" },
-            { id: "mochila",   label: "Mochila",    img: navMochila,   color: "#ffd66b" },
-            { id: "melhorias", label: "Melhorias",  img: navMelhorias, color: "#7ef27a" },
-            { id: "colecao",   label: "Coleção",    img: navColecao,   color: "#ff5c8a" },
-            { id: "pokedex",   label: "Pokédex",    img: navPokedex,   color: "#e11d48" },
-            { id: "loja",      label: "Loja",       img: navLoja,      color: "#6bd4ff" },
-            { id: "market",    label: "Market",     img: navMarket,    color: "#ff9d3d", disabled: true },
-            { id: "wallet",    label: "Banco",      img: navWallet,    color: "#ffd66b" },
+            { id: "inicio",   label: "Início",   img: navInicio,    color: "#f5cf6b" },
+            { id: "pokemon",  label: "Pokémon",  img: navPokemon,   color: "#ff5252" },
+            { id: "mochila",  label: "Mochila",  img: bagIconImg,   color: "#ffd66b" },
+            
+            { id: "melhorias",label: "Melhorias",img: navMelhorias, color: "#7ef27a" },
+            { id: "colecao",  label: "Coleção",  img: navColecao,   color: "#ff5c8a" },
+            { id: "pokedex",  label: "Pokédex",  img: navColecao,   color: "#e11d48" },
+            { id: "loja",     label: "Loja",     img: navLoja,      color: "#6bd4ff" },
+            { id: "market",   label: "Marketplace", img: navMarket, color: "#ff9d3d", disabled: true },
+            { id: "wallet",   label: "Banco Medieval", img: navWallet, color: "#ffd66b" },
           ] as const).map((t) => {
+
             const active = tab === t.id;
-            const isDisabled = (t as any).disabled === true;
+            const showActive = active;
+            const color = t.color;
+            const isDisabled = (t as { disabled?: boolean }).disabled === true;
             return (
               <button
                 key={t.id}
                 onClick={() => {
                   if (isDisabled) {
                     playClick();
-                    pushChat("🛒 Mercado temporariamente bloqueado.", "info");
+                     pushChat("🛒 Mercado temporariamente bloqueado.", "info");
                     return;
                   }
                   playClick();
-                  setTab(t.id as any);
+                  setTab(t.id as typeof tab);
                 }}
+                title={isDisabled ? `${t.label} (em breve)` : t.label}
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: 4,
-                  minWidth: "min(68px, 12vw)",
-                  padding: "6px 4px",
-                  background: active ? "rgba(245,207,107,0.12)" : "transparent",
-                  border: "none",
-                  borderBottom: `3px solid ${active ? t.color : "transparent"}`,
-                  borderRadius: "8px 8px 0 0",
-                  cursor: isDisabled ? "not-allowed" : "pointer",
-                  transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
-                  filter: active ? "none" : "grayscale(0.3) brightness(0.8)",
-                  transform: active ? "translateY(-2px)" : "none",
-                  opacity: isDisabled ? 0.5 : 1,
+                  flex: 1, maxWidth: 130,
+                  background: showActive ? `linear-gradient(180deg, ${color}33 0%, ${color}11 100%)` : "transparent",
+                  color: isDisabled ? "#6a5a70" : (showActive ? color : "#c8b8d0"),
+                  border: showActive ? `1px solid ${color}88` : "1px solid transparent",
+                  padding: "8px 6px", cursor: isDisabled ? "not-allowed" : "pointer",
+                  borderRadius: 10, display: "flex", flexDirection: "column",
+                  alignItems: "center", gap: 4, fontSize: 11, position: "relative",
+                  transition: "background 150ms, color 150ms, border-color 150ms",
+                  boxShadow: showActive ? `0 0 14px ${color}66, inset 0 1px 0 ${color}44` : "none",
+                  opacity: isDisabled ? 0.55 : 1,
                 }}
               >
-                <div style={{
-                  width: 38,
-                  height: 38,
-                  background: active ? `radial-gradient(circle, ${t.color}33 0%, transparent 70%)` : "rgba(255,255,255,0.03)",
-                  borderRadius: "12px",
-                  display: "grid",
-                  placeItems: "center",
-                  boxShadow: active ? `0 0 12px ${t.color}44` : "none",
-                  position: "relative",
-                  border: `1px solid ${active ? t.color + "66" : "rgba(255,255,255,0.08)"}`,
-                }}>
-                  <img
-                    src={t.img}
-                    alt={t.label}
-                    style={{
-                      width: 28,
-                      height: 28,
-                      imageRendering: "pixelated",
-                      filter: active ? `drop-shadow(0 0 4px ${t.color}aa)` : "none",
-                      transition: "transform 0.2s ease",
-                      transform: active ? "scale(1.1)" : "scale(1)",
-                    }}
-                  />
-                </div>
-                <span style={{
-                  fontSize: "10px",
-                  fontWeight: 900,
-                  color: active ? t.color : "#8a7a9c",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                  textShadow: active ? `0 0 8px ${t.color}44` : "none",
-                }}>
+                <img
+                  src={t.img}
+                  alt=""
+                  width={34}
+                  height={34}
+                  style={{
+                    width: 34, height: 34, imageRendering: "pixelated",
+                    filter: isDisabled
+                      ? "grayscale(1) brightness(0.7) drop-shadow(0 2px 2px rgba(0,0,0,0.6))"
+                      : (showActive
+                        ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 2px 2px rgba(0,0,0,0.5))`
+                        : "drop-shadow(0 2px 2px rgba(0,0,0,0.6)) saturate(0.85) brightness(0.9)"),
+                    transform: active ? "translateY(-2px) scale(1.08)" : "none",
+                    transition: "transform 150ms, filter 150ms",
+                  }}
+                />
+                <span style={{ fontWeight: showActive ? 700 : 500, letterSpacing: 0.3 }}>
                   {t.label}
                 </span>
+                {isDisabled && (
+                  <span style={{
+                    position: "absolute", top: 2, right: 4,
+                    fontSize: 8, fontWeight: 700, letterSpacing: 0.5,
+                    color: "#ffd66b", background: "rgba(0,0,0,0.55)",
+                    padding: "1px 4px", borderRadius: 4, border: "1px solid #ffd66b55",
+                  }}>EM BREVE</span>
+                )}
               </button>
             );
           })}
+          {/* ===== BOTÃO SALVAR NA NUVEM ===== */}
+          <button
+            onClick={async () => {
+              playClick();
+              if (!cloudBlobReady) {
+                pushChat("⏳ Aguarde carregar o save da nuvem antes de salvar.", "info");
+                return;
+              }
+              try {
+                const ok = await pushCloudSaveNow(buildFullBlob());
+                await serverSync.pushNow();
+                pushChat(ok ? "☁️ Progresso salvo na nuvem!" : `⚠️ Não salvou na nuvem: ${getCloudSaveLastError() ?? "verifique a tabela game_saves"}.`, "info");
+              } catch (e) {
+                pushChat("⚠️ Falha ao salvar. Tente de novo.", "info");
+              }
+            }}
+            title="Salvar progresso na nuvem"
+            style={{
+              flex: 1, maxWidth: 130,
+              background: "linear-gradient(180deg, #22d3ee33 0%, #22d3ee11 100%)",
+              color: "#22d3ee",
+              border: "1px solid #22d3ee88",
+              padding: "8px 6px", cursor: "pointer",
+              borderRadius: 10, display: "flex", flexDirection: "column",
+              alignItems: "center", gap: 4, fontSize: 11, position: "relative",
+              boxShadow: "0 0 14px #22d3ee55, inset 0 1px 0 #22d3ee44",
+              fontWeight: 700, letterSpacing: 0.3,
+            }}
+          >
+            <span style={{ fontSize: 28, lineHeight: 1, filter: "drop-shadow(0 0 8px #22d3ee)" }}>☁️</span>
+            <span>Salvar</span>
+          </button>
         </div>
       </div>
-
 
       <style>{`
         /* ===== Layout responsivo ===== */
@@ -12121,19 +12075,6 @@ function IdlePage() {
           pushChat(`🐺✦ Governante consumiu ${use}× Carta Riolu Suprema e materializou ${use}× RIOLU BLACK MITIC BRILHANT PLUS Lv 1000 na Coleção.`, "cap");
         }}
       />
-      
-      <WorldMapOverlay 
-        isOpen={worldMapOpen}
-        onClose={() => setWorldMapOpen(false)}
-        trainerLevel={idle.trainerLevel}
-        currentMap={idle.currentMap}
-        onTravel={(mapId) => {
-          setIdle(s => ({ ...s, currentMap: mapId as any }));
-          setWorldMapOpen(false);
-          pushChat(`✦ Teletransportado para ${IDLE_MAPS[mapId as IdleMapId]?.name ?? mapId}.`, "info");
-        }}
-        activatedObsidian={idle.activatedObsidian ?? []}
-      />
     </div>
 
 
@@ -12142,163 +12083,6 @@ function IdlePage() {
 
 
 // ============ Componentes visuais ============
-function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, activatedObsidian = [] }: { 
-  isOpen: boolean; 
-  onClose: () => void; 
-  trainerLevel: number; 
-  currentMap: string; 
-  onTravel: (mapId: string) => void;
-  activatedObsidian?: string[];
-}) {
-  if (!isOpen) return null;
-
-  return createPortal(
-    <div style={{
-      position: "fixed", inset: 0, zIndex: 10005,
-      background: "rgba(0,0,0,0.9)", display: "grid", placeItems: "center", padding: 20,
-      backdropFilter: "blur(8px)", animation: "fadeIn 0.3s ease-out"
-    }}>
-      <div style={{
-        width: "min(1200px, 95vw)", height: "min(800px, 85vh)",
-        background: "#0b0510", border: "3px solid #f5cf6b", borderRadius: 20,
-        position: "relative", overflow: "hidden", boxShadow: "0 0 50px rgba(0,0,0,0.8)"
-      }}>
-        {/* Header */}
-        <div style={{
-          position: "absolute", top: 0, left: 0, right: 0, height: 60,
-          background: "linear-gradient(180deg, #1a1030 0%, transparent 100%)",
-          display: "flex", justifyContent: "space-between", alignItems: "center",
-          padding: "0 24px", zIndex: 10
-        }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ fontSize: 24 }}>🌍</span>
-            <h2 style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 20, letterSpacing: 2, margin: 0 }}>MAPA MUNDI</h2>
-          </div>
-          <button onClick={onClose} style={{
-            background: "rgba(255,255,255,0.1)", border: "none", color: "#fff",
-            width: 36, height: 36, borderRadius: "50%", cursor: "pointer", fontSize: 18,
-            display: "grid", placeItems: "center"
-          }}>✕</button>
-        </div>
-
-        {/* Map Container */}
-        <div style={{
-          width: "100%", height: "100%", position: "relative",
-          cursor: "grab", overflow: "hidden", background: "#050208"
-        }}>
-          {/* Background Image - FORCED VISIBILITY V5 */}
-          <img 
-            src={worldMapBgAsset.url} 
-            alt="World Map" 
-            style={{
-              width: "100%", height: "100%", objectFit: "contain", opacity: 1,
-              display: "block", position: "relative", zIndex: 1,
-              backgroundColor: "#000"
-            }} 
-            onLoad={(e) => {
-              console.log("MAPA CARREGADO COM SUCESSO:", e.currentTarget.src);
-            }}
-            onError={(e) => {
-              console.error("ERRO CRITICO CARREGAMENTO MAPA:", e);
-              // Fallback para URL absoluta se a relativa falhar
-              if (!e.currentTarget.src.startsWith('http')) {
-                e.currentTarget.src = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83df230b-fd7b-409a-ae69-9f3e05a585a2/world-map-final-v4.png";
-              }
-            }}
-          />
-
-          {/* Regions */}
-          {WORLD_REGIONS.map(reg => {
-            const locked = false; // Liberado para exploração total por pedido do usuário
-            const isCurrent = currentMap === reg.mapId;
-            return (
-              <div key={reg.id} style={{
-                position: "absolute", left: `${(reg.x / WORLD_MAP_CONFIG.width) * 100}%`,
-                top: `${(reg.y / WORLD_MAP_CONFIG.height) * 100}%`,
-                transform: "translate(-50%, -50%)", zIndex: 5
-              }}>
-                <div 
-                  onClick={() => !locked && onTravel(reg.mapId)}
-                  className={locked ? "" : "map-node-pulse"}
-                  style={{
-                    width: isCurrent ? 40 : 30, height: isCurrent ? 40 : 30,
-                    borderRadius: "50%", background: locked ? "#333" : "radial-gradient(circle, #f5cf6b, #d9a441)",
-                    border: isCurrent ? "3px solid #fff" : "2px solid rgba(255,255,255,0.3)",
-                    cursor: locked ? "not-allowed" : "pointer",
-                    display: "grid", placeItems: "center", transition: "all 0.2s",
-                    boxShadow: locked ? "none" : "0 0 15px rgba(245,207,107,0.5)"
-                  }}
-                  title={`${reg.name} (Lv.${reg.minLevel})`}
-                >
-                  <span style={{ fontSize: isCurrent ? 20 : 14 }}>{locked ? "🔒" : "📍"}</span>
-                </div>
-                <div style={{
-                  position: "absolute", top: "110%", left: "50%", transform: "translateX(-50%)",
-                  whiteSpace: "nowrap", pointerEvents: "none", textAlign: "center"
-                }}>
-                  <div style={{ color: locked ? "#666" : "#fff", fontWeight: 900, fontSize: 11, textShadow: "0 2px 4px #000" }}>
-                    {reg.name.toUpperCase()}
-                  </div>
-                  {!locked && <div style={{ color: "#f5cf6b", fontSize: 9, fontWeight: 700 }}>Lv.{reg.minLevel}</div>}
-                </div>
-              </div>
-            );
-          })}
-
-          {/* Obsidian Points */}
-          {OBSIDIAN_POINTS.map(op => {
-            const activated = activatedObsidian.includes(op.id);
-            const locked = false; // Obsidian nodes liberados
-            return (
-              <div key={op.id} style={{
-                position: "absolute", left: `${(op.x / WORLD_MAP_CONFIG.width) * 100}%`,
-                top: `${(op.y / WORLD_MAP_CONFIG.height) * 100}%`,
-                transform: "translate(-50%, -50%)", zIndex: 4
-              }}>
-                <div style={{
-                  width: 24, height: 24, borderRadius: 4,
-                  background: activated ? "#a855f7" : (locked ? "#222" : "#4c1d95"),
-                  border: `2px solid ${activated ? "#d8b4fe" : "#333"}`,
-                  cursor: "help", display: "grid", placeItems: "center",
-                  transform: "rotate(45deg)",
-                  boxShadow: activated ? "0 0 20px #a855f7" : "none",
-                  animation: activated ? "pulse 2s infinite" : "none"
-                }} title={`${op.name} (${locked ? `Exige Lv.${op.reqLevel}` : 'Ponto de Obsidian'})`}>
-                  <div style={{ transform: "rotate(-45deg)", fontSize: 10 }}>✨</div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Footer Info */}
-        <div style={{
-          position: "absolute", bottom: 0, left: 0, right: 0, padding: 16,
-          background: "linear-gradient(0deg, #1a1030 0%, transparent 100%)",
-          display: "flex", justifyContent: "space-between", alignItems: "center"
-        }}>
-          <div style={{ color: "#d0b8f0", fontSize: 12, fontWeight: 700 }}>
-            Nível de Treinador: <span style={{ color: "#f5cf6b" }}>{trainerLevel}</span>
-          </div>
-          <div style={{ color: "#8a7a9c", fontSize: 11 }}>
-            Clique em uma região desbloqueada para teletransportar.
-          </div>
-        </div>
-      </div>
-
-      <style>{`
-        .map-node-pulse { animation: mapNodePulse 2s infinite; }
-        @keyframes mapNodePulse {
-          0% { box-shadow: 0 0 0 0 rgba(245,207,107,0.4); }
-          70% { box-shadow: 0 0 0 15px rgba(245,207,107,0); }
-          100% { box-shadow: 0 0 0 0 rgba(245,207,107,0); }
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      `}</style>
-    </div>,
-    document.body
-  );
-}
 function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
   return (
     <div style={{
