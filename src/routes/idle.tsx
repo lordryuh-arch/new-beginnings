@@ -12630,8 +12630,8 @@ function TabOverlay({
   onBuyTeleportScroll: (qty?: number) => void;
   onBuyBook: (bk: ShopBook, qty?: number) => void;
   onBuyPotion: (qty?: number) => void;
-  onBuyEgg: (e: { id: string; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }) => void;
-  shopEggs: { id: string; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[];
+  onBuyEgg: (e: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }) => void;
+  shopEggs: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[];
 
   onBuyChestAmulet: () => void;
 
