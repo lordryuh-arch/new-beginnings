@@ -10266,7 +10266,7 @@ function IdlePage() {
                     boxShadow: "0 0 8px #6bd4ff",
                   }} />
 
-                </div>
+                );
               );
 
               return (
@@ -10748,14 +10748,14 @@ function IdlePage() {
 
                         </div>
                       </div>
-                    );
-                  })()}
-
-
-                  {pendingGate && (() => {
+                </div>
+              </div>
+            );
+          })()}
+        </Panel>
                     const tm = IDLE_MAPS[pendingGate.target as keyof typeof IDLE_MAPS];
                     const trainerLv = idle.trainerLevel ?? 1;
-                    const lvOk = true; // Ignora requisito de nível conforme pedido do usuário
+                      const lvOk = true;
                     const cost = tm.entryCrystals ?? 0;
                     const gold = 1000;
                     const crystalOk = cost === 0 || idle.bank.crystals >= cost;
