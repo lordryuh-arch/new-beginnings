@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { WORLD_REGIONS, WorldRegion } from './worldMap';
 import { assetUrlFromJson } from '@/lib/assetUrl';
-import overworldAsset from '@/assets/overworld.png.asset.json';
+import overworldAsset from '@/assets/world/overworld.png.asset.json';
 import iconWorldGlobe from '@/assets/icon-world-globe-v2.png.asset.json';
 
 type WorldMapOverlayProps = {
