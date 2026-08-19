@@ -12095,16 +12095,16 @@ function IdlePage() {
           currentTrainerLevel={idle.trainerLevel ?? 1}
           currentMapId={idle.currentMap}
           onClose={() => setWorldMapOpen(false)}
-            onEnterRegion={(mapId) => {
-              const target = mapId as IdleMapId;
-              setIdle(s => ({ ...s, currentMap: target }));
-              setWorldMapOpen(false);
-              const mapName = IDLE_MAPS[target]?.name || "Nova Região";
-              pushChat(`🚀 Viajando para ${mapName}...`, "cap");
-            }}
-
+          onEnterRegion={(mapId) => {
+            const target = mapId as IdleMapId;
+            setIdle(s => ({ ...s, currentMap: target }));
+            setWorldMapOpen(false);
+            const mapName = IDLE_MAPS[target]?.name || "Nova Região";
+            pushChat(`🚀 Viajando para ${mapName}...`, "cap");
+          }}
         />
       )}
+
     </div>
 
 
