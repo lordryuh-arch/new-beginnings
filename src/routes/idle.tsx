@@ -9562,9 +9562,9 @@ function IdlePage() {
               borderRadius: "4px 11px 11px 4px",
               borderLeft: "1px solid rgba(245,207,107,0.25)",
             }}>
-              <BallSlot img={ballPokeImg}  count={idle.items.pokeball ?? 0}  tint="#ff8080" />
-              <BallSlot img={ballGreatImg} count={idle.items.greatball ?? 0} tint="#7ec4ff" />
-              <BallSlot img={ballUltraImg} count={idle.items.ultraball ?? 0} tint="#ffd66b" />
+              <BallSlot img={assetUrlFromJson(ballPokeImg)}  count={idle.items.pokeball ?? 0}  tint="#ff8080" />
+              <BallSlot img={assetUrlFromJson(ballGreatImg)} count={idle.items.greatball ?? 0} tint="#7ec4ff" />
+              <BallSlot img={assetUrlFromJson(ballUltraImg)} count={idle.items.ultraball ?? 0} tint="#ffd66b" />
             </div>
           </div>
 
@@ -14008,7 +14008,7 @@ function TabOverlay({
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
                   boxShadow: `0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 ${color}22`,
                 }}>
-                  <img src={b.img} alt="" width={64} height={64}
+                  <img src={assetUrlFromJson(b.img)} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 8px ${color}88)` }} />
                   <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>{b.name}</div>
                   <div style={{ fontSize: 11, color: "#b8a8c8" }}>Chance de captura x{b.captureMult}</div>
