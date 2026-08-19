@@ -10702,6 +10702,22 @@ function IdlePage() {
           100% { transform: translate3d(calc(var(--drift, 0px) * -0.5), 110vh, 0); }
         }
 
+        @keyframes leaf-fall {
+          0%   { transform: translate(0, -10px) rotate(0deg); opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { transform: translate(var(--leaf-x, 20px), 110vh) rotate(var(--leaf-r, 360deg)); opacity: 0; }
+        }
+        .wx-leaf {
+          position: absolute;
+          width: 8px; height: 8px;
+          background: #4ade80;
+          box-shadow: inset -2px -2px 0 rgba(0,0,0,0.2);
+          animation: leaf-fall var(--leaf-d, 4s) linear infinite;
+          pointer-events: none;
+        }
+
+
 
         /* ===== Baús ===== */
         @keyframes chest-bob {
