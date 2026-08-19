@@ -12182,9 +12182,14 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           cursor: "grab", overflow: "hidden", background: "#050208"
         }}>
           {/* Background Image */}
-          <img src={assetUrlFromJson(worldMapBgAsset)} alt="World Map" style={{
-            width: "100%", height: "100%", objectFit: "cover", opacity: 1
-          }} />
+          <img 
+            src={WORLD_MAP_CONFIG.bg} 
+            alt="World Map" 
+            style={{
+              width: "100%", height: "100%", objectFit: "cover", opacity: 1,
+              display: "block"
+            }} 
+          />
 
           {/* Regions */}
           {WORLD_REGIONS.map(reg => {
