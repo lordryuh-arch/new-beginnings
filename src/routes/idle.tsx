@@ -7012,7 +7012,7 @@ function IdlePage() {
   );
 
   return (
-    <>
+    <div className="fragment-replacement">
 
       {showWorldMap && (
         <WorldMapOverlay
@@ -7573,7 +7573,7 @@ function IdlePage() {
             const vip = isVip();
             const accent = vip ? "#ffd66b" : "#c9b8ff";
             return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -7834,7 +7834,7 @@ function IdlePage() {
                   setChatCooldownUntil(Date.now() + 10 * 60 * 1000);
                 };
                 return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9266,7 +9266,7 @@ function IdlePage() {
               const x = captureAnim.fromX + (captureAnim.toX - captureAnim.fromX) * dt;
               const y = captureAnim.fromY + (captureAnim.toY - captureAnim.fromY) * dt - arcY;
               return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9409,7 +9409,7 @@ function IdlePage() {
               const leaderX = renderFollowerX + lungeX;
               const leaderY = renderFollowerY + lungeY;
               return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9735,7 +9735,7 @@ function IdlePage() {
                 : "Descansar (leva 1 hora)";
             const bAction = nearBuilding === "lab" ? "RESETAR" : "DESCANSAR";
             return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -9813,7 +9813,7 @@ function IdlePage() {
             const setAB = (patch: Partial<typeof ab>) => setIdle((s) => ({ ...s, autoBattle: { ...(s.autoBattle ?? ab), ...patch } }));
             const on = ab.enabled;
             return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13136,7 +13136,7 @@ function IdlePage() {
 // ============ Componentes visuais ============
 function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13170,7 +13170,7 @@ function Panel({ title, accent, children }: { title: string; accent: string; chi
       }}>{title}</div>
       <div style={{ padding: 10 }}>{children}</div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -13319,7 +13319,7 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -13327,7 +13327,7 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
 function ProgressRow({ icon, label, value, target }: { icon: string; label: string; value: number; target: number }) {
   const pct = Math.min(100, (value / target) * 100);
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13358,7 +13358,7 @@ function ProgressRow({ icon, label, value, target }: { icon: string; label: stri
         <div style={{ width: `${pct}%`, height: "100%", background: "#5ec26a", borderRadius: 2 }} />
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -13421,7 +13421,7 @@ function ResourceNiche({ tint, icon, value, title }: { tint: string; icon: React
         fontFamily: "'Cinzel', Georgia, serif", letterSpacing: 0.4,
       }}>{value}</span>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -13429,7 +13429,7 @@ function ResourceNiche({ tint, icon, value, title }: { tint: string; icon: React
 function BallSlot({ img, count, tint }: { img: string; count: number; tint: string }) {
   const empty = count <= 0;
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13515,7 +13515,7 @@ function BallSlot({ img, count, tint }: { img: string; count: number; tint: stri
         lineHeight: 1,
       }}>{count}</span>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -13552,7 +13552,7 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
   const q = clamp(qty);
   const ok = canBuyFn(q);
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13602,7 +13602,7 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
         border: "none", borderRadius: 6, cursor: ok ? "pointer" : "not-allowed",
       }}>{ok ? `COMPRAR ×${q} ${unitLabel}` : disabledLabel}</button>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -13751,7 +13751,7 @@ function TabOverlay({
     setFragConfirm(null);
   };
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -13823,7 +13823,7 @@ function TabOverlay({
               mythic_shiny: { c: "#ff97e1", label: "MÍTICO ✦" },
             };
             return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -14293,7 +14293,7 @@ function TabOverlay({
         };
 
         return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -14846,7 +14846,7 @@ function TabOverlay({
               return <div style={{ color: "#8b6a30", fontSize: 13, padding: 30, textAlign: "center", fontStyle: "italic" }}>Nenhum Pokémon corresponde aos filtros.</div>;
             }
             return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15156,7 +15156,7 @@ function TabOverlay({
             const isActive = activeUntil > Date.now();
             const color = ITEM_COLORS[bk.id] ?? "#ff97e1";
             return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15291,7 +15291,7 @@ function TabOverlay({
               const canBuy = bank.crystals >= COST;
               const color = "#c084fc";
               return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15343,7 +15343,7 @@ function TabOverlay({
               const canBuy = bank.crystals >= COST;
               const color = "#8ec5ff";
               return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15740,7 +15740,7 @@ function TabOverlay({
         };
 
         return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16180,13 +16180,13 @@ function TabOverlay({
         );
       })()}
     </div>
-    </>
+    </div>
   );
 }
 
 function BuffCell({ img, label, value, color }: { img: string; label: string; value: string; color: string }) {
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16216,7 +16216,7 @@ function BuffCell({ img, label, value, color }: { img: string; label: string; va
       <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}</div>
       <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}</div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -16252,7 +16252,7 @@ function WalletScreen({
   };
 
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16391,7 +16391,7 @@ function WalletScreen({
         >RESGATAR TUDO</button>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -16477,7 +16477,7 @@ function MarketScreen({
 
 
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16729,7 +16729,7 @@ function MarketScreen({
         </div>
       )}
     </div>
-    </>
+    </div>
   );
 }
 
@@ -16755,7 +16755,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
   const rColor = rarityColor[pet.rarity] ?? "#f5cf6b";
 
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16877,7 +16877,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
         )}
       </div>
     </div>
-    </>
+    </div>
   );
 }
 function StatBar({ label, value, max, pct, color }: { label: string; value: number; max: number; pct: number; color: string }) {
@@ -16896,12 +16896,12 @@ function StatBar({ label, value, max, pct, color }: { label: string; value: numb
         }} />
       </div>
     </div>
-    </>
+    </div>
   );
 }
 function StatCell({ label, value }: { label: string; value: number }) {
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16931,7 +16931,7 @@ function StatCell({ label, value }: { label: string; value: number }) {
       <div style={{ fontSize: 8, color: "#8a7a9c", letterSpacing: 1, fontWeight: 700 }}>{label}</div>
       <div style={{ fontSize: 12, fontWeight: 900, color: "#f3e5c5", textShadow: "1px 1px 0 #000" }}>{value}</div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -16964,7 +16964,7 @@ const RARITY_LORE: Partial<Record<Rarity, string>> = {
 function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) {
   const lore = SPECIES_LORE[species] ?? RARITY_LORE[rarity] ?? "Um Pokémon único, com história ainda por contar.";
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -16999,7 +16999,7 @@ function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) 
       </div>
       <div style={{ fontSize: 13, color: "#e8dbe5", lineHeight: 1.55, fontStyle: "italic" }}>&ldquo;{lore}&rdquo;</div>
     </div>
-    </>
+    </div>
   );
 }
 function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
@@ -17049,7 +17049,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
     active: synergyRarity === r,
   }));
   return (
-    <>
+    <div className="fragment-replacement">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -17110,7 +17110,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
@@ -17283,17 +17283,17 @@ function GovernanteDialog(props: {
     </div>
     </div>
 
-      </>
-    </>
-    </>
-    </>
-    </>
-    </>
-    </>
-    </>
-    </>
-    </>
-    </>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
     </div>
