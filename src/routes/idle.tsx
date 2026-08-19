@@ -10343,7 +10343,7 @@ function IdlePage() {
             { id: "mochila",   label: "Mochila",    img: navMochila,   color: "#ffd66b" },
             { id: "melhorias", label: "Melhorias",  img: navMelhorias, color: "#7ef27a" },
             { id: "colecao",   label: "Coleção",    img: navColecao,   color: "#ff5c8a" },
-            { id: "pokedex",   label: "Pokédex",    img: navColecao,   color: "#e11d48" },
+            { id: "pokedex",   label: "Pokédex",    img: navPokedex,   color: "#e11d48" },
             { id: "loja",      label: "Loja",       img: navLoja,      color: "#6bd4ff" },
             { id: "market",    label: "Market",     img: navMarket,    color: "#ff9d3d", disabled: true },
             { id: "wallet",    label: "Banco",      img: navWallet,    color: "#ffd66b" },
