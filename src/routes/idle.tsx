@@ -10846,9 +10846,9 @@ function IdlePage() {
                     );
                   })()}
                 </div>
-              </div>
-            );
-          })()}
+              );
+            })()}
+          </Panel>
         </Panel>
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
