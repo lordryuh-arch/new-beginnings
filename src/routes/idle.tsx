@@ -7589,7 +7589,7 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -7850,7 +7850,7 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -9282,7 +9282,7 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -9425,7 +9425,7 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -9751,7 +9751,7 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -9829,7 +9829,7 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -13152,7 +13152,7 @@ function Panel({ title, accent, children }: { title: string; accent: string; chi
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -13343,7 +13343,7 @@ function ProgressRow({ icon, label, value, target }: { icon: string; label: stri
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -13445,7 +13445,7 @@ function BallSlot({ img, count, tint }: { img: string; count: number; tint: stri
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -13568,7 +13568,7 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -13767,7 +13767,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -13839,7 +13839,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -14309,7 +14309,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -14862,7 +14862,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -15172,7 +15172,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -15307,7 +15307,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -15359,7 +15359,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -15756,7 +15756,7 @@ function TabOverlay({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -16202,7 +16202,7 @@ function BuffCell({ img, label, value, color }: { img: string; label: string; va
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -16268,7 +16268,7 @@ function WalletScreen({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -16493,7 +16493,7 @@ function MarketScreen({
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -16771,7 +16771,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -16917,7 +16917,7 @@ function StatCell({ label, value }: { label: string; value: number }) {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -16980,7 +16980,7 @@ function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) 
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
@@ -17065,7 +17065,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada!", "cap");
           }}
         />
       )}
