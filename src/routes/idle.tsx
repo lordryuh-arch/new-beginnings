@@ -1004,6 +1004,7 @@ function buildObstacles(worldW: number, worldH: number, mapId: IdleMapId = "aren
   return list;
 }
 
+type EggId = "egg_common" | "egg_rare" | "egg_epic" | "egg_mystic" | "egg_aura" | "egg_charizard" | "egg_lugia" | "egg_dragonite";
 type Task = { id: string; title: string; reward: number; progress: number; target: number; done: boolean };
 type IdleState = {
   startedAt: number;
