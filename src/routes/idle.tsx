@@ -7012,7 +7012,7 @@ function IdlePage() {
   );
 
   return (
-    <div id=\"idle-root-container\">
+    <>
 
       {showWorldMap && (
         <WorldMapOverlay
