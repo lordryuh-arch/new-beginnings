@@ -13160,6 +13160,7 @@ function TabOverlay({
           pokeball: "Pokébola padrão. Chance base de captura.",
           greatball: "Great Ball. Melhor chance de captura contra pokémon fortes.",
           ultraball: "Ultra Ball. Alta chance de captura, essencial contra míticos.",
+          masterball: "Master Ball. Captura infalível (100% de chance).",
           book_atk: "Aumenta o Ataque do time em batalha (permanente ao usar).",
           book_def: "Aumenta a Defesa do time em batalha (permanente ao usar).",
           book_exp: "Livro de EXP · +10% EXP por 1 hora.",
