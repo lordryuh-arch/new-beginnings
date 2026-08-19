@@ -10845,10 +10845,11 @@ function IdlePage() {
                       </div>
                     );
                   })()}
-              </div>
-            );
-          })()}
-        </Panel>
+                  </div>
+                </div>
+              );
+            })()}
+          </Panel>
           })()}
         </Panel>
           </Panel>
