@@ -1,9 +1,5 @@
-import { createFileRoute, Navigate } from "@tanstack/react-router";
+import { Navigate } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
+export default function Index() {
   return <Navigate to="/idle" replace />;
 }
