@@ -10845,9 +10845,8 @@ function IdlePage() {
                     })()}
                   </div>
                 );
-            })()}
-          </Panel>
-
+              })()}
+            </Panel>
 
           {/* COLETA — logo abaixo do mapa, destaque */}
           <div style={{
