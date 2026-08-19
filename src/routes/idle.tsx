@@ -17278,10 +17278,11 @@ function GovernanteDialog(props: {
           </div>
         </div>
       </div>
-    </div>,
-    document.body
+    </div>
+    </>
   );
 }
+
 
 
 
