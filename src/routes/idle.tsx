@@ -1329,6 +1329,8 @@ export const Route = createFileRoute("/idle")({
     <AuthGate>
       <IdlePage />
     </AuthGate>
+  </>
+
   ),
 });
 
