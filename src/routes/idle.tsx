@@ -7012,7 +7012,7 @@ function IdlePage() {
   );
 
   return (
-    <>
+    <div id="ROOT_FRAGMENT">
       {showWorldMap && (
         <WorldMapOverlay
           onClose={() => setShowWorldMap(false)}
@@ -15840,7 +15840,7 @@ function GovernanteDialog(props: {
       </div>
     </div>,
     document.body
-      </>
+      </div><!-- ROOT_FRAGMENT_END -->
 </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>);
 }
 
