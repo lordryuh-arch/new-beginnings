@@ -1,16 +1,21 @@
 
+export type RegionState = "LOCKED" | "DISCOVERED" | "UNLOCKED" | "COMPLETED";
+
 export type WorldRegion = {
   id: string;
   name: string;
+  description: string;
   element: "Fire" | "Water" | "Ice" | "Forest" | "Shadow" | "Earth" | "Wind";
   requiredLevel: number;
   mapIds: string[];
-  x: number; // Percentual 0-100
-  y: number; // Percentual 0-100
+  x: number; 
+  y: number;
+  color: string;
   obsidianPoint?: {
     x: number;
     y: number;
     id: string;
+    power: number;
   };
 };
 
