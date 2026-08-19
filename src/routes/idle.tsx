@@ -9959,7 +9959,7 @@ function IdlePage() {
         {/* ============ COLUNA DIREITA ============ */}
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
-            <div>{(() => {
+            {(() => {
               const leaderLv = team[0]?.level ?? 1;
               const goTo = (label: string, x: number, y: number, onArrive?: () => void) => {
                 walkTargetRef.current = { x, y, label, onArrive, resumeAuto: autoRef.current };
@@ -10848,7 +10848,7 @@ function IdlePage() {
                 </div>
               );
             })()}
-</div></div></div></div></div></div></div></div></div></div></div></div></div> ); }))() } </div>
+
           </Panel>
 
 
