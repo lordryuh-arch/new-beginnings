@@ -10325,7 +10325,7 @@ function IdlePage() {
                 }}
               >
                 <img
-                  src={t.img}
+                  src={assetUrlFromJson(t.img)}
                   alt=""
                   width={34}
                   height={34}
