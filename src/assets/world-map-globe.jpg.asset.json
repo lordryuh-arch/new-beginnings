@@ -4,5 +4,5 @@
   "type": "image/jpeg",
   "width": 1024,
   "height": 1024,
-  "size": $(stat -c%s src/assets/world-map-globe.jpg)
+  "size": 0
 }
