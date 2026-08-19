@@ -15191,7 +15191,7 @@ function MarketScreen({
   npcPrices: Record<string, number>;
 }) {
   const LABELS: Record<string, string> = {
-    pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
+    pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
     chest_amulet: "Amuleto do Baú",
     potion: "Poção",
     stone_grass: "Stone Verdejante 🌿", stone_fire: "Stone Ígnea 🔥",
