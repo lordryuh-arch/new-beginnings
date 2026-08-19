@@ -1309,7 +1309,6 @@ function getMultiplayerSessionId(baseId: string) {
 
 // ============ Route ============
 
-
 export const Route = createFileRoute("/idle")({ 
   component: () => <AuthGate><IdlePage /></AuthGate> 
 });
@@ -1319,8 +1318,10 @@ function IdlePage() {
   const [gold, setGold] = useState(0);
   const [goldAnimations, setGoldAnimations] = useState<{id: number, x: number, y: number, amount: number}[]>([]);
   const [worldMapOpen, setWorldMapOpen] = useState(false);
+  const [currentMap, setCurrentMap] = useState("arena");
   
-  // Simulated Gold Drop Logic
+  const map = IDLE_MAPS[currentMap as IdleMapId] || IDLE_MAPS.arena;
+
   const dropGold = (amount: number, x: number, y: number) => {
     const id = Date.now();
     setGold(prev => prev + amount);
@@ -1355,11 +1356,11 @@ function IdlePage() {
       {/* Área Principal do Jogo */}
       <div className="pt-20 pb-24 px-4 max-w-7xl mx-auto h-screen flex flex-col">
         <div className="flex-1 bg-black/40 rounded-3xl border border-white/5 relative overflow-hidden group">
-            {/* Mapa Placeholder */}
+            {/* Mapa Ativo */}
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
               style={{ 
-                backgroundImage: `url(${assetUrlFromJson(overworldPixelAsset)})`,
+                backgroundImage: `url(${assetUrlFromJson(map.bg)})`,
                 imageRendering: 'pixelated'
               }}
               onClick={(e) => {
@@ -1382,9 +1383,10 @@ function IdlePage() {
             
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="bg-black/60 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center max-w-xs">
-                    <p className="text-purple-300 text-sm mb-2">MODO EXPLORAÇÃO</p>
-                    <h3 className="text-xl font-bold mb-1">Rota 01</h3>
-                    <p className="text-xs text-white/50">Clique no mapa para testar o sistema de drops</p>
+                    <p className="text-purple-300 text-sm mb-2">MAPA ATUAL</p>
+                    <h3 className="text-xl font-bold mb-1">{map.name}</h3>
+                    <p className="text-xs text-white/50">Nível {map.minLevel}-{map.maxLevel || "???"}</p>
+                    <button className="mt-4 pointer-events-auto bg-white/10 px-4 py-2 rounded-lg text-xs hover:bg-white/20">DETALHES</button>
                 </div>
             </div>
         </div>
@@ -1414,24 +1416,16 @@ function IdlePage() {
               />
               
               {/* Region Markers */}
-              <div className="absolute inset-0 p-20 grid grid-cols-3 grid-rows-2 gap-8">
-                 {[
-                   { name: "Floresta", color: "text-green-400", bg: "bg-green-500/20", border: "border-green-500/40" },
-                   { name: "Vulcão", color: "text-red-400", bg: "bg-red-500/20", border: "border-red-500/40" },
-                   { name: "Oceano", color: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500/40" },
-                   { name: "Deserto", color: "text-yellow-400", bg: "bg-yellow-500/20", border: "border-yellow-500/40" },
-                   { name: "Gelo", color: "text-cyan-400", bg: "bg-cyan-500/20", border: "border-cyan-500/40" },
-                   { name: "Abismo", color: "text-purple-400", bg: "bg-purple-500/20", border: "border-purple-500/40" },
-                 ].map((reg, idx) => (
+              <div className="absolute inset-0 p-10 overflow-y-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+                 {Object.entries(IDLE_MAPS).map(([id, def]) => (
                    <button 
-                     key={idx}
-                     className={`${reg.bg} ${reg.border} border-2 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all hover:scale-105 hover:bg-white/10 group active:scale-95`}
+                     key={id}
+                     onClick={() => { setCurrentMap(id); setWorldMapOpen(false); }}
+                     className="bg-black/40 border border-purple-500/30 rounded-xl p-4 flex flex-col items-center gap-2 hover:bg-purple-500/20 transition-all"
                    >
-                     <div className="w-16 h-16 bg-black/40 rounded-full flex items-center justify-center border border-white/10 group-hover:border-white/30">
-                        <img src={assetUrlFromJson(iconWorldGlobe)} className="w-8 h-8 opacity-60 group-hover:opacity-100 transition-opacity" alt={reg.name} />
-                     </div>
-                     <span className={`font-bold text-lg ${reg.color}`}>{reg.name}</span>
-                     <span className="text-[10px] text-white/30 uppercase tracking-widest">Nível 1-50</span>
+                     <img src={assetUrlFromJson(def.bg)} className="w-full h-20 object-cover rounded-lg" alt={def.name} />
+                     <span className="font-bold text-sm text-purple-200">{def.name}</span>
+                     <span className="text-[10px] text-white/40">Lv {def.minLevel}-{def.maxLevel || "???"}</span>
                    </button>
                  ))}
               </div>
@@ -1462,3 +1456,44 @@ function IdlePage() {
     </div>
   );
 }
+
+// ============ Componentes visuais auxiliares ============
+function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
+  return (
+    <div style={{
+      background: "#1a0f26",
+      border: `2px solid ${accent}66`,
+      borderRadius: 12,
+      padding: 14,
+      boxShadow: "0 6px 20px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.2)",
+      marginBottom: 8,
+    }}>
+      <div style={{
+        fontSize: 12, fontWeight: 900, color: "#eadfe8",
+        marginBottom: 10, letterSpacing: 2, display: "flex",
+        alignItems: "center", gap: 8
+      }}>
+        <div style={{ width: 4, height: 14, background: accent, borderRadius: 2 }} />
+        {title.toUpperCase()}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function TabOverlay({ tab, onClose, ...props }: any) {
+    return (
+        <div className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-md p-6 flex flex-col">
+            <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-black uppercase text-purple-400">{tab}</h2>
+                <button onClick={onClose} className="p-2 bg-white/10 rounded-full hover:bg-red-500 transition-colors">✕</button>
+            </div>
+            <div className="flex-1 overflow-y-auto">
+                <div className="p-8 text-center text-white/50 italic">
+                    Sistema de {tab} em manutenção estrutural...
+                </div>
+            </div>
+        </div>
+    );
+}
+
