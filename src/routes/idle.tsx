@@ -9969,14 +9969,6 @@ function IdlePage() {
               };
               return (
                 <div>
-                ],
-                evento_myth: [],
-                oddish_o1: [
-                  { key: "o1-o3", target: "oddish_o3", x: WORLD_W - 80, y: 80, arriveX: WORLD_W / 2, arriveY: WORLD_H - 120, color: "#c084fc" },
-                ],
-                oddish_o2: [
-                  { key: "o2-o3", target: "oddish_o3", x: WORLD_W - 80, y: 80, arriveX: WORLD_W / 2, arriveY: WORLD_H - 120, color: "#c084fc" },
-                ],
                 oddish_o3: [
                   { key: "o3-o1", target: "oddish_o1", x: 80, y: WORLD_H - 100, arriveX: WORLD_W - 120, arriveY: 120, color: "#7ef27a" },
                   { key: "o3-o2", target: "oddish_o2", x: WORLD_W - 80, y: WORLD_H - 100, arriveX: 120, arriveY: 120, color: "#7ef27a" },
@@ -10748,11 +10740,10 @@ function IdlePage() {
                               onClick={() => {
                                 const g = pendingGate.gate;
                                 const wasBig = pendingGate.fromBig;
-                                setPendingGate(null);
-                                travelToGate(g);
-                                if (wasBig) setBigMapOpen(false);
-                              }}
-                              style={{
+                </div>
+              );
+            })()}
+          </Panel>
                                 flex: 2,
                                 background: canGo ? "linear-gradient(135deg, #f5cf6b, #d9a441)" : "#3a2a2a",
                                 border: `2px solid ${canGo ? "#fff2b8" : "#5a3a3a"}`,
