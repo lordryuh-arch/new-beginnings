@@ -9963,7 +9963,7 @@ function IdlePage() {
           <Panel title="MAPA ATUAL" accent="#3d2b52">
             <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center", padding: "4px 0" }}>
               <div style={{ position: "relative", width: "100%", height: 120, borderRadius: 8, overflow: "hidden", border: "1px solid rgba(245,207,107,0.3)" }}>
-                <img src={WORLD_MAP_CONFIG.bg} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
+                <img src={assetUrlFromJson(worldMapContinent2Asset)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
                 <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)", display: "grid", placeItems: "center" }}>
                    <div style={{ textAlign: "center" }}>
                       <div style={{ color: "#f5cf6b", fontWeight: 900, fontSize: 14, textShadow: "0 2px 4px #000" }}>{IDLE_MAPS[idle.currentMap].name.toUpperCase()}</div>
@@ -12159,8 +12159,8 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           cursor: "grab", overflow: "hidden", background: "#050208"
         }}>
           {/* Background Image */}
-          <img src={WORLD_MAP_CONFIG.bg} alt="World Map" style={{
-            width: "100%", height: "100%", objectFit: "cover", opacity: 0.6
+          <img src={assetUrlFromJson(worldMapContinent2Asset)} alt="World Map" style={{
+            width: "100%", height: "100%", objectFit: "cover", opacity: 1
           }} />
 
           {/* Regions */}
