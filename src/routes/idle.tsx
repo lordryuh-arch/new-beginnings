@@ -14,16 +14,19 @@ import navColecaoAsset from "@/assets/icons/nav-colecao.png.asset.json";
 import navLojaAsset from "@/assets/icons/nav-loja.png.asset.json";
 import navWalletAsset from "@/assets/icons/nav-wallet.png.asset.json";
 import navMarketAsset from "@/assets/icons/nav-market.png.asset.json";
+import navPokedexAsset from "@/assets/icons/nav-colecao.png.asset.json"; // Usando ícone de coleção para pokedex temporariamente se não houver um específico
 
-const navInicio = assetUrlFromJson(navInicioAsset);
-const navPokemon = assetUrlFromJson(navPokemonAsset);
-const navMochila = assetUrlFromJson(navMochilaAsset);
-const navBatalha = assetUrlFromJson(navBatalhaAsset);
-const navMelhorias = assetUrlFromJson(navMelhoriasAsset);
-const navColecao = assetUrlFromJson(navColecaoAsset);
-const navLoja = assetUrlFromJson(navLojaAsset);
-const navWallet = assetUrlFromJson(navWalletAsset);
-const navMarket = assetUrlFromJson(navMarketAsset);
+const navInicio = navInicioAsset.url;
+const navPokemon = navPokemonAsset.url;
+const navMochila = navMochilaAsset.url;
+const navBatalha = navBatalhaAsset.url;
+const navMelhorias = navMelhoriasAsset.url;
+const navColecao = navColecaoAsset.url;
+const navLoja = navLojaAsset.url;
+const navWallet = navWalletAsset.url;
+const navMarket = navMarketAsset.url;
+const navPokedex = navPokedexAsset.url;
+
 import pokemonTabBg from "@/assets/pokemon-tab-bg.jpg";
 import iconFragmentCrystal from "@/assets/icon-fragment-crystal.png.asset.json";
 import iconWorldGlobe from "@/assets/icon-world-globe-v2.png.asset.json";
