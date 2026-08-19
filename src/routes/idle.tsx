@@ -10279,37 +10279,102 @@ function IdlePage() {
 
 
 
-        {/* ============ NAV INFERIOR ============ */}
-        <div style={{ gridColumn: "1 / -1", display: "flex", justifyContent: "center", gap: 4, background: "linear-gradient(180deg,#0b0510 0%,#160a20 100%)", padding: "8px 0", borderTop: "1px solid rgba(245,207,107,0.15)" }}>
+        {/* ============ NAV INFERIOR PREMIUM ============ */}
+        <div style={{
+          gridColumn: "1 / -1",
+          display: "flex",
+          justifyContent: "center",
+          gap: "clamp(4px, 1.5vw, 12px)",
+          background: "linear-gradient(180deg, #12071e 0%, #0b0510 100%)",
+          padding: "10px 12px",
+          borderTop: "2px solid rgba(245,207,107,0.25)",
+          boxShadow: "0 -4px 15px rgba(0,0,0,0.6)",
+          zIndex: 100,
+          overflowX: "auto",
+          msOverflowStyle: "none",
+          scrollbarWidth: "none",
+        }}>
           {([
-            { id: "inicio",   label: "Início",   img: navInicio,    color: "#f5cf6b" },
-            { id: "pokemon",  label: "Pokémon",  img: navPokemon,   color: "#ff5252" },
-            { id: "mochila",  label: "Mochila",  img: bagIconImg,   color: "#ffd66b" },
-            
-            { id: "melhorias",label: "Melhorias",img: navMelhorias, color: "#7ef27a" },
-            { id: "colecao",  label: "Coleção",  img: navColecao,   color: "#ff5c8a" },
-            { id: "pokedex",  label: "Pokédex",  img: navColecao,   color: "#e11d48" },
-            { id: "loja",     label: "Loja",     img: navLoja,      color: "#6bd4ff" },
-            { id: "market",   label: "Marketplace", img: navMarket, color: "#ff9d3d", disabled: true },
-            { id: "wallet",   label: "Banco Medieval", img: navWallet, color: "#ffd66b" },
+            { id: "inicio",    label: "Início",     img: navInicio,    color: "#f5cf6b" },
+            { id: "pokemon",   label: "Pokémon",    img: navPokemon,   color: "#ff5252" },
+            { id: "mochila",   label: "Mochila",    img: bagIconImg,   color: "#ffd66b" },
+            { id: "melhorias", label: "Melhorias",  img: navMelhorias, color: "#7ef27a" },
+            { id: "colecao",   label: "Coleção",    img: navColecao,   color: "#ff5c8a" },
+            { id: "pokedex",   label: "Pokédex",    img: navColecao,   color: "#e11d48" },
+            { id: "loja",      label: "Loja",       img: navLoja,      color: "#6bd4ff" },
+            { id: "market",    label: "Market",     img: navMarket,    color: "#ff9d3d", disabled: true },
+            { id: "wallet",    label: "Banco",      img: navWallet,    color: "#ffd66b" },
           ] as const).map((t) => {
-
             const active = tab === t.id;
-            const showActive = active;
-            const color = t.color;
-            const isDisabled = (t as { disabled?: boolean }).disabled === true;
+            const isDisabled = (t as any).disabled === true;
             return (
               <button
                 key={t.id}
                 onClick={() => {
                   if (isDisabled) {
                     playClick();
-                     pushChat("🛒 Mercado temporariamente bloqueado.", "info");
+                    pushChat("🛒 Mercado temporariamente bloqueado.", "info");
                     return;
                   }
                   playClick();
-                  setTab(t.id as typeof tab);
+                  setTab(t.id as any);
                 }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: 4,
+                  minWidth: "min(68px, 12vw)",
+                  padding: "6px 4px",
+                  background: active ? "rgba(245,207,107,0.12)" : "transparent",
+                  border: "none",
+                  borderBottom: `3px solid ${active ? t.color : "transparent"}`,
+                  borderRadius: "8px 8px 0 0",
+                  cursor: isDisabled ? "not-allowed" : "pointer",
+                  transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+                  filter: active ? "none" : "grayscale(0.3) brightness(0.8)",
+                  transform: active ? "translateY(-2px)" : "none",
+                  opacity: isDisabled ? 0.5 : 1,
+                }}
+              >
+                <div style={{
+                  width: 38,
+                  height: 38,
+                  background: active ? `radial-gradient(circle, ${t.color}33 0%, transparent 70%)` : "rgba(255,255,255,0.03)",
+                  borderRadius: "12px",
+                  display: "grid",
+                  placeItems: "center",
+                  boxShadow: active ? `0 0 12px ${t.color}44` : "none",
+                  position: "relative",
+                  border: `1px solid ${active ? t.color + "66" : "rgba(255,255,255,0.08)"}`,
+                }}>
+                  <img
+                    src={t.img}
+                    alt={t.label}
+                    style={{
+                      width: 28,
+                      height: 28,
+                      imageRendering: "pixelated",
+                      filter: active ? `drop-shadow(0 0 4px ${t.color}aa)` : "none",
+                      transition: "transform 0.2s ease",
+                      transform: active ? "scale(1.1)" : "scale(1)",
+                    }}
+                  />
+                </div>
+                <span style={{
+                  fontSize: "10px",
+                  fontWeight: 900,
+                  color: active ? t.color : "#8a7a9c",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                  textShadow: active ? `0 0 8px ${t.color}44` : "none",
+                }}>
+                  {t.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
                 title={isDisabled ? `${t.label} (em breve)` : t.label}
                 style={{
                   flex: 1, maxWidth: 130,
