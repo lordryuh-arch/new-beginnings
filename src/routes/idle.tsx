@@ -12182,18 +12182,24 @@ function WorldMapOverlay({ isOpen, onClose, trainerLevel, currentMap, onTravel, 
           width: "100%", height: "100%", position: "relative",
           cursor: "grab", overflow: "hidden", background: "#050208"
         }}>
-          {/* Background Image - FORCED VISIBILITY */}
+          {/* Background Image - FORCED VISIBILITY V5 */}
           <img 
-            src={WORLD_MAP_CONFIG.bg} 
+            src={worldMapBgAsset.url} 
             alt="World Map" 
             style={{
               width: "100%", height: "100%", objectFit: "contain", opacity: 1,
               display: "block", position: "relative", zIndex: 1,
               backgroundColor: "#000"
             }} 
+            onLoad={(e) => {
+              console.log("MAPA CARREGADO COM SUCESSO:", e.currentTarget.src);
+            }}
             onError={(e) => {
-              console.error("ERRO CARREGAMENTO MAPA:", e);
-              e.currentTarget.style.border = "5px solid red";
+              console.error("ERRO CRITICO CARREGAMENTO MAPA:", e);
+              // Fallback para URL absoluta se a relativa falhar
+              if (!e.currentTarget.src.startsWith('http')) {
+                e.currentTarget.src = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83df230b-fd7b-409a-ae69-9f3e05a585a2/world-map-final-v4.png";
+              }
             }}
           />
 
