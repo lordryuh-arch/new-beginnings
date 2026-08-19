@@ -1344,7 +1344,28 @@ function IdlePage() {
   useEffect(() => {
     if (!levelToast) return;
     const t = setTimeout(() => setLevelToast(null), 5000);
-    return () => clearTimeout(t);
+    return (
+            {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat("✦ Energia Obsidian despertada! A região pulsa com novo vigor.", "cap");
+          }}
+        />
+      )}) => clearTimeout(t);
   }, [levelToast]);
 
   // ⚡ ZAPDOS EVENT — anúncio no topo, aparece só nos mapas da Odisséia + Caverna Sombria
