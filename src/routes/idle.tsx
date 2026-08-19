@@ -11789,84 +11789,48 @@ function IdlePage() {
         const rColor = rarityColorMap[tgt.rarity] ?? "#c8c8c8";
         const gif = GIF[tgt.sp];
         return (
-          <div key={tgt.id} style={{
-            position: "fixed", top: 72, left: "50%", transform: "translateX(-50%)",
-            zIndex: 9997, pointerEvents: "none",
-            display: "flex", alignItems: "center", gap: 10,
-            background: "linear-gradient(180deg, rgba(38,14,14,0.94) 0%, rgba(20,6,6,0.94) 100%)",
-            border: `2px solid ${rColor}`,
-            borderRadius: 14,
-            padding: "8px 14px 8px 8px",
-            boxShadow: `0 8px 22px rgba(0,0,0,0.6), 0 0 0 1px ${rColor}44 inset, 0 0 16px ${rColor}66`,
-            minWidth: 260,
-            animation: "evt-slide 220ms cubic-bezier(.2,.9,.3,1.2)",
-          }}>
-
-            <div style={{
-              width: 54, height: 54, flexShrink: 0, borderRadius: "50%",
-              background: `radial-gradient(circle at 40% 35%, ${rColor}66 0%, #2a0a0a 75%)`,
-              border: `2px solid ${rColor}`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              overflow: "hidden",
-              boxShadow: `inset 0 0 6px rgba(0,0,0,0.6), 0 0 10px ${rColor}88`,
-            }}>
-              {gif ? (
-                <img src={gif} alt={tgt.sp} style={{
-                  width: "120%", height: "120%", objectFit: "contain",
-                  imageRendering: "pixelated",
-                  transform: tgt.face === "right" ? "scaleX(-1)" : "none",
-                }} />
-              ) : <span style={{ fontSize: 26 }}>❓</span>}
-            </div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 2 }}>
-                <span style={{
-                  fontSize: 9, fontWeight: 900, color: "#1a0f26",
-                  background: `linear-gradient(180deg,${rColor},${rColor}aa)`,
-                  padding: "2px 6px", borderRadius: 4, letterSpacing: 1,
-                }}>Lv {tgt.level}</span>
-                {tgt.elite && (
-                  <span style={{
-                    fontSize: 8, fontWeight: 900, color: "#fff",
-                    background: "linear-gradient(180deg,#c72525,#7a1010)",
-                    padding: "2px 5px", borderRadius: 4, letterSpacing: 1,
-                    border: "1px solid #f5cf6b",
-                  }}>★ ELITE</span>
-                )}
-                <span style={{
-                  fontSize: 13, fontWeight: 900, color: "#ffe5c5",
-                  textShadow: "1px 1px 0 #000", letterSpacing: 0.5,
-                  textTransform: "uppercase",
-                  overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                }}>{tgt.sp.replace(/_/g, " ")}</span>
-              </div>
-              <div style={{
-                position: "relative", height: 12, background: "#0a0410",
-                border: "1px solid #4a1a1a", borderRadius: 6, overflow: "hidden",
-                boxShadow: "inset 0 1px 3px rgba(0,0,0,0.6)",
-              }}>
-                <div style={{
-                  position: "absolute", inset: 0, width: `${hpPct * 100}%`,
-                  background: `linear-gradient(180deg, ${hpColor}, ${hpColor}aa)`,
-                  transition: "width 260ms ease, background 260ms ease",
-                  boxShadow: `0 0 8px ${hpColor}99`,
-                }} />
-                <div style={{
-                  position: "absolute", inset: 0, display: "flex",
-                  alignItems: "center", justifyContent: "center",
-                  fontSize: 9, fontWeight: 900, color: "#fff",
-                  textShadow: "1px 1px 0 #000, -1px -1px 0 #000",
-                  letterSpacing: 0.5,
-                }}>{Math.max(0, Math.round(tgt.hp))} / {tgt.maxHp}
-              </div>
-              <div style={{
-                fontSize: 8, color: rColor, marginTop: 2, letterSpacing: 1.5,
-                textTransform: "uppercase", fontWeight: 800,
-                textShadow: "1px 1px 0 #000",
-              }}>◆ {tgt.rarity} ◆ ALVO</div>
-            </div>
-          </div>
-        );
+    <div style={{ height: '100vh', background: '#0a0a0a', color: '#fff', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ padding: 20, borderBottom: '1px solid #333', display: 'flex', justifyContent: 'space-between' }}>
+        <h1 style={{ color: '#f5cf6b' }}>RubyM Idle</h1>
+        <button 
+          onClick={() => setShowWorldMap(true)}
+          style={{ padding: '8px 16px', background: '#f5cf6b', color: '#000', borderRadius: 4, fontWeight: 'bold' }}
+        >
+          🗺️ MUNDO
+        </button>
+      </div>
+      
+      <div style={{ flex: 1, display: 'flex', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ padding: 20 }}>
+           <p>Bem-vindo ao RubyM Idle!</p>
+           <p>Trainer Level: {idle.trainerLevel}</p>
+           <p>Map: {idle.currentMap}</p>
+        </div>
+        
+        {showWorldMap && (
+          <WorldMapOverlay
+            onClose={() => setShowWorldMap(false)}
+            trainerLevel={idle.trainerLevel ?? 1}
+            discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+            activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+            currentMapId={idle.currentMap}
+            onEnterMap={(target) => {
+              setIdle((s) => ({ ...s, currentMap: target }));
+              setShowWorldMap(false);
+            }}
+            onActivateObsidian={(pointId) => {
+              setIdle((s) => {
+                const current = s.activatedObsidianPoints ?? [];
+                if (current.includes(pointId)) return s;
+                return { ...s, activatedObsidianPoints: [...current, pointId] };
+              });
+              pushChat("✦ Energia Obsidian despertada!", "cap");
+            }}
+          />
+        )}
+      </div>
+    </div>
+  );
       })()}
 
       {/* ===== Guia Inteligente — HUD estilo Prof. Carvalho ===== */}
