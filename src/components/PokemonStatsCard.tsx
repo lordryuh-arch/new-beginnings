@@ -5,7 +5,7 @@ import { SPECIES_BASE, RARITY_NAME } from "@/game/systems";
 import { computePower, elementsOf, ELEMENT_META, computeTeamSynergies } from "@/game/synergies";
 import { TRAITS, TIER_COLOR } from "@/game/traits";
 import { TraitIcon } from "@/components/TraitIcon";
-import blackMiticBgAsset from "@/assets/black-mitic-card-bg.jpg.asset.json";
+import blackMiticBgAsset from "@/assets/dashboard-bg.png.asset.json";
 const blackMiticBg = assetUrlFromJson(blackMiticBgAsset);
 
 interface Props {
