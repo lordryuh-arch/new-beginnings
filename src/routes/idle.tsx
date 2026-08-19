@@ -17283,7 +17283,17 @@ function GovernanteDialog(props: {
     </div>
     </div>
 
-  );
+      </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+    </>
+);
 }
 
 
