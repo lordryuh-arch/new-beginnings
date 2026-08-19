@@ -4,5 +4,5 @@
   "type": "image/png",
   "width": 256,
   "height": 256,
-  "size": $(stat -c%s src/assets/icon-world-globe-v2.png)
+  "size": 1203531
 }
