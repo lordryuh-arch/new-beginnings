@@ -1,16 +1,26 @@
+import { assetUrlFromJson } from "@/lib/assetUrl";
 // Sistemas adicionais do Ruby M: economia, captura por tipos de ball, status detalhado, loja e market.
 import * as React from "react";
 import { useMemo, useState } from "react";
 import { getDex, TYPE_COLOR, TYPE_ICON, MOVE_UNLOCK_LEVEL, isMoveUnlocked } from "./movesets";
-import iconPokeball from "@/assets/icon-pokeball.png";
-import iconGreatball from "@/assets/icon-greatball.png";
-import iconFastball from "@/assets/icon-fastball.png";
-import iconUltraball from "@/assets/icon-ultraball.png";
-import iconSafariball from "@/assets/icon-safariball.png";
-import iconMasterball from "@/assets/ball-master.png";
-import iconRevive from "@/assets/item-revive.png";
-import iconIncense from "@/assets/item-incense.png";
-import iconVip from "@/assets/item-vip.png";
+import iconPokeballAsset from "@/assets/icon-pokeball.png.asset.json";
+const iconPokeball = assetUrlFromJson(iconPokeballAsset);
+import iconGreatballAsset from "@/assets/icon-greatball.png.asset.json";
+const iconGreatball = assetUrlFromJson(iconGreatballAsset);
+import iconFastballAsset from "@/assets/icon-fastball.png.asset.json";
+const iconFastball = assetUrlFromJson(iconFastballAsset);
+import iconUltraballAsset from "@/assets/icon-ultraball.png.asset.json";
+const iconUltraball = assetUrlFromJson(iconUltraballAsset);
+import iconSafariballAsset from "@/assets/icon-safariball.png.asset.json";
+const iconSafariball = assetUrlFromJson(iconSafariballAsset);
+import iconMasterballAsset from "@/assets/ball-master.png.asset.json";
+const iconMasterball = assetUrlFromJson(iconMasterballAsset);
+import iconReviveAsset from "@/assets/item-revive.png.asset.json";
+const iconRevive = assetUrlFromJson(iconReviveAsset);
+import iconIncenseAsset from "@/assets/item-incense.png.asset.json";
+const iconIncense = assetUrlFromJson(iconIncenseAsset);
+import iconVipAsset from "@/assets/item-vip.png.asset.json";
+const iconVip = assetUrlFromJson(iconVipAsset);
 
 const SHOP_BALL_ICONS: Record<string, string> = {
   pokeball: iconPokeball,

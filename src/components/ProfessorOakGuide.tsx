@@ -1,5 +1,7 @@
+import { assetUrlFromJson } from "@/lib/assetUrl";
 import { useState, useEffect } from "react";
-import npcOakSprite from "@/assets/npc-oak.png";
+import npcOakSpriteAsset from "@/assets/npc-oak.png.asset.json";
+const npcOakSprite = assetUrlFromJson(npcOakSpriteAsset);
 
 export type GuideTopic =
   | "welcome"

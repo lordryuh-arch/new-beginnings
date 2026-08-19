@@ -1,10 +1,12 @@
+import { assetUrlFromJson } from "@/lib/assetUrl";
 // Card de status estilo MMO/RPG para exibir um pokémon do time/coleção.
 import type { PetInstance } from "@/game/systems";
 import { SPECIES_BASE, RARITY_NAME } from "@/game/systems";
 import { computePower, elementsOf, ELEMENT_META, computeTeamSynergies } from "@/game/synergies";
 import { TRAITS, TIER_COLOR } from "@/game/traits";
 import { TraitIcon } from "@/components/TraitIcon";
-import blackMiticBg from "@/assets/black-mitic-card-bg.jpg";
+import blackMiticBgAsset from "@/assets/black-mitic-card-bg.jpg.asset.json";
+const blackMiticBg = assetUrlFromJson(blackMiticBgAsset);
 
 interface Props {
   pet: PetInstance;
