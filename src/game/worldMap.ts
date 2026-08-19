@@ -1,5 +1,5 @@
+export type IdleMapId = string;
 
-import { IdleMapId } from "./idle";
 
 export interface WorldRegion {
   id: string;
