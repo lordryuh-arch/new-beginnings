@@ -9959,7 +9959,41 @@ function IdlePage() {
         {/* ============ COLUNA DIREITA ============ */}
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflowY: "auto" }}>
           <Panel title="MAPA ATUAL" accent="#3d2b52">
-            <div><p>Mapa em manutenção temporária para estabilidade.</p></div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <div style={{ position: "relative", width: "100%", height: 160, background: viewportBg, borderRadius: 8, overflow: "hidden", border: "1px solid rgba(245,207,107,0.3)", boxShadow: "inset 0 0 20px rgba(0,0,0,0.5)" }}>
+                {/* Mini-Viewport representativo do mapa */}
+                <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", textAlign: "center" }}>
+                  <img src={assetUrlFromJson(map.bg)} alt="" style={{ width: 120, height: 120, borderRadius: "50%", border: "2px solid #f5cf6b", objectFit: "cover", opacity: 0.6 }} />
+                  <div style={{ marginTop: 8, fontSize: 13, fontWeight: 900, color: "#f5cf6b", textShadow: "0 2px 4px rgba(0,0,0,0.8)" }}>{map.name.toUpperCase()}</div>
+                  <div style={{ fontSize: 10, color: "#fff", opacity: 0.8 }}>LVL: {map.minLevel}-{map.maxLevel || "???"}</div>
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
+                <div style={{ background: "rgba(0,0,0,0.3)", padding: 8, borderRadius: 6, border: "1px solid rgba(245,207,107,0.15)" }}>
+                  <div style={{ fontSize: 9, color: "#b8a8c8", fontWeight: 700 }}>COORDENADAS</div>
+                  <div style={{ fontSize: 12, fontWeight: 900, color: "#fff" }}>X: {Math.round(trainerPos.x)} Y: {Math.round(trainerPos.y)}</div>
+                </div>
+                <div style={{ background: "rgba(0,0,0,0.3)", padding: 8, borderRadius: 6, border: "1px solid rgba(245,207,107,0.15)" }}>
+                  <div style={{ fontSize: 9, color: "#b8a8c8", fontWeight: 700 }}>BÔNUS EXP</div>
+                  <div style={{ fontSize: 12, fontWeight: 900, color: "#7ef27a" }}>x{map.rate}</div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setWorldMapOpen(true)}
+                className="lojinha-btn-glow"
+                style={{
+                  width: "100%", padding: "10px", borderRadius: 8,
+                  background: "linear-gradient(135deg, #f5cf6b, #d9a441)",
+                  border: "1px solid #fff", color: "#1a0f26",
+                  fontWeight: 900, fontSize: 11, letterSpacing: 1.5,
+                  cursor: "pointer", boxShadow: "0 4px 12px rgba(245,207,107,0.4)"
+                }}
+              >
+                🌍 ABRIR MAPA MUNDI
+              </button>
+            </div>
           </Panel>
           <div style={{
             background: "linear-gradient(135deg, #2a1a3e, #3d2b52)",
