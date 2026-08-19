@@ -1309,15 +1309,155 @@ function getMultiplayerSessionId(baseId: string) {
 
 // ============ Route ============
 
-export const Route = createFileRoute("/idle")({ component: () => <IdlePage /> });
+
+export const Route = createFileRoute("/idle")({ 
+  component: () => <AuthGate><IdlePage /></AuthGate> 
+});
 
 function IdlePage() {
+  const [activeTab, setActiveTab] = useState("inicio");
+  const [gold, setGold] = useState(0);
+  const [goldAnimations, setGoldAnimations] = useState<{id: number, x: number, y: number, amount: number}[]>([]);
+  const [worldMapOpen, setWorldMapOpen] = useState(false);
+  
+  // Simulated Gold Drop Logic
+  const dropGold = (amount: number, x: number, y: number) => {
+    const id = Date.now();
+    setGold(prev => prev + amount);
+    setGoldAnimations(prev => [...prev, { id, x, y, amount }]);
+    setTimeout(() => {
+      setGoldAnimations(prev => prev.filter(a => a.id !== id));
+    }, 1000);
+  };
+
   return (
-    <div style={{ padding: 40, color: "white", background: "#0b0510", minHeight: "100vh", textAlign: "center", fontFamily: "sans-serif" }}>
-      <h1 style={{ color: "#a855f7" }}>RubyM Idle - Pokémon RPG</h1>
-      <div style={{ margin: "40px auto", padding: 20, border: "2px solid #5b21b6", borderRadius: 12, maxWidth: 600, background: "#1a0d2a" }}>
-        <h2 style={{ color: "#d4a2ff" }}>Sistema Restaurado</h2>
-        <p style={{ color: "#b39dd8", lineHeight: 1.6 }}>O jogo está pronto para receber as novas funcionalidades de Mapa Mundi 2D e animações de ouro.</p>
+    <div className="min-h-screen bg-[#0b0510] text-white font-sans overflow-hidden selection:bg-purple-500/30">
+      {/* HUD Superior */}
+      <div className="fixed top-0 left-0 right-0 h-16 bg-black/60 backdrop-blur-md border-b border-purple-500/20 z-50 flex items-center justify-between px-6">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">
+            <img src={assetUrlFromJson(navWallet)} className="w-5 h-5 object-contain" alt="Gold" />
+            <span className="text-yellow-400 font-bold tabular-nums">{gold.toLocaleString()}</span>
+          </div>
+        </div>
+        
+        <div className="flex gap-2">
+           <button 
+             onClick={() => setWorldMapOpen(true)}
+             className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-lg transition-all active:scale-95 shadow-lg shadow-purple-900/20"
+           >
+             <img src={assetUrlFromJson(iconWorldGlobe)} className="w-5 h-5 object-contain" alt="Map" />
+             <span className="font-bold text-sm">MAPA MUNDI</span>
+           </button>
+        </div>
+      </div>
+
+      {/* Área Principal do Jogo */}
+      <div className="pt-20 pb-24 px-4 max-w-7xl mx-auto h-screen flex flex-col">
+        <div className="flex-1 bg-black/40 rounded-3xl border border-white/5 relative overflow-hidden group">
+            {/* Mapa Placeholder */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              style={{ 
+                backgroundImage: `url(${assetUrlFromJson(overworldPixelAsset)})`,
+                imageRendering: 'pixelated'
+              }}
+              onClick={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                dropGold(10, e.clientX - rect.left, e.clientY - rect.top);
+              }}
+            />
+            
+            {/* Animações de Gold */}
+            {goldAnimations.map(anim => (
+              <div 
+                key={anim.id}
+                className="absolute pointer-events-none flex flex-col items-center animate-bounce"
+                style={{ left: anim.x - 20, top: anim.y - 40 }}
+              >
+                <img src={assetUrlFromJson(chestClosedImg)} className="w-8 h-8 object-contain" alt="Chest" />
+                <span className="text-yellow-400 font-bold text-sm shadow-black drop-shadow-md">+{anim.amount}</span>
+              </div>
+            ))}
+            
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="bg-black/60 backdrop-blur-sm p-6 rounded-2xl border border-white/10 text-center max-w-xs">
+                    <p className="text-purple-300 text-sm mb-2">MODO EXPLORAÇÃO</p>
+                    <h3 className="text-xl font-bold mb-1">Rota 01</h3>
+                    <p className="text-xs text-white/50">Clique no mapa para testar o sistema de drops</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      {/* World Map Overlay */}
+      {worldMapOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl flex items-center justify-center p-8 animate-in fade-in duration-300">
+           <div className="relative w-full max-w-5xl aspect-video bg-[#1a0d2a] rounded-3xl border-4 border-purple-500/30 overflow-hidden shadow-2xl shadow-purple-500/20">
+              <div className="absolute top-6 left-6 z-10">
+                <h2 className="text-3xl font-black text-white tracking-tighter drop-shadow-lg">MAPA MUNDI 2D</h2>
+                <p className="text-purple-400 font-medium">Selecione uma região para viajar</p>
+              </div>
+              
+              <button 
+                onClick={() => setWorldMapOpen(false)}
+                className="absolute top-6 right-6 z-10 bg-white/10 hover:bg-red-500/80 p-2 rounded-full transition-colors group"
+              >
+                <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div 
+                className="w-full h-full bg-cover bg-center opacity-40 mix-blend-overlay"
+                style={{ backgroundImage: `url(${assetUrlFromJson(worldMapGlobeAsset)})` }}
+              />
+              
+              {/* Region Markers */}
+              <div className="absolute inset-0 p-20 grid grid-cols-3 grid-rows-2 gap-8">
+                 {[
+                   { name: "Floresta", color: "text-green-400", bg: "bg-green-500/20", border: "border-green-500/40" },
+                   { name: "Vulcão", color: "text-red-400", bg: "bg-red-500/20", border: "border-red-500/40" },
+                   { name: "Oceano", color: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500/40" },
+                   { name: "Deserto", color: "text-yellow-400", bg: "bg-yellow-500/20", border: "border-yellow-500/40" },
+                   { name: "Gelo", color: "text-cyan-400", bg: "bg-cyan-500/20", border: "border-cyan-500/40" },
+                   { name: "Abismo", color: "text-purple-400", bg: "bg-purple-500/20", border: "border-purple-500/40" },
+                 ].map((reg, idx) => (
+                   <button 
+                     key={idx}
+                     className={`${reg.bg} ${reg.border} border-2 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all hover:scale-105 hover:bg-white/10 group active:scale-95`}
+                   >
+                     <div className="w-16 h-16 bg-black/40 rounded-full flex items-center justify-center border border-white/10 group-hover:border-white/30">
+                        <img src={assetUrlFromJson(iconWorldGlobe)} className="w-8 h-8 opacity-60 group-hover:opacity-100 transition-opacity" alt={reg.name} />
+                     </div>
+                     <span className={`font-bold text-lg ${reg.color}`}>{reg.name}</span>
+                     <span className="text-[10px] text-white/30 uppercase tracking-widest">Nível 1-50</span>
+                   </button>
+                 ))}
+              </div>
+           </div>
+        </div>
+      )}
+
+      {/* Nav Inferior */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 z-50 pointer-events-none">
+        <div className="max-w-md mx-auto bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 flex justify-between pointer-events-auto shadow-2xl">
+          {[
+            { id: "inicio", icon: navInicio, label: "Início" },
+            { id: "pokemon", icon: navPokemon, label: "Pets" },
+            { id: "mochila", icon: navMochila, label: "Bag" },
+            { id: "market", icon: navMarket, label: "Market" },
+          ].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all ${activeTab === tab.id ? 'bg-purple-600/20 text-purple-400' : 'text-white/40 hover:text-white/60'}`}
+            >
+              <img src={assetUrlFromJson(tab.icon)} className={`w-6 h-6 object-contain ${activeTab === tab.id ? '' : 'grayscale opacity-50'}`} alt={tab.label} />
+              <span className="text-[10px] font-bold uppercase">{tab.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
