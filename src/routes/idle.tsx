@@ -7029,7 +7029,8 @@ function IdlePage() {
               if (current.includes(pointId)) return s;
               return { ...s, activatedObsidianPoints: [...current, pointId] };
             });
-            pushChat(, "cap");
+            pushChat("✦ Energia Obsidian despertada! A região pulsa com novo vigor.", "cap");
+
           }}
         />
       )}
