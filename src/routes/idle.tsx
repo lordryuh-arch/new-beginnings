@@ -1439,9 +1439,19 @@ function IdlePage() {
           {[
             { id: "inicio", icon: navInicio, label: "Início" },
             { id: "pokemon", icon: navPokemon, label: "Pets" },
+            { id: "community_link", icon: navColecao, label: "Social", isLink: true },
             { id: "mochila", icon: navMochila, label: "Bag" },
             { id: "market", icon: navMarket, label: "Market" },
-          ].map(tab => (
+          ].map(tab => tab.isLink ? (
+            <Link
+              key={tab.id}
+              to="/community"
+              className="flex flex-col items-center gap-1 p-2 rounded-xl transition-all text-white/40 hover:text-white/60"
+            >
+              <img src={assetUrlFromJson(tab.icon)} className="w-6 h-6 object-contain grayscale opacity-50" alt={tab.label} />
+              <span className="text-[10px] font-bold uppercase">{tab.label}</span>
+            </Link>
+          ) : (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
