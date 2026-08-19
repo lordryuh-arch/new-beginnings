@@ -51,7 +51,7 @@ import fxGrassImg from "@/assets/fx/fx-grass.png";
 import fxFireImg from "@/assets/fx/fx-fire.png";
 import fxWaterImg from "@/assets/fx/fx-water.png";
 import fxElectricImg from "@/assets/fx/fx-electric.png";
-import fxPoisonImg from "@/assets/fx/fx-poison.png";
+import fxPoisonImg from "@/assets/fx/fx-poison.png.asset.json";
 import fxPsychicImg from "@/assets/fx/fx-psychic.png";
 import fxIceImg from "@/assets/fx/fx-ice.png";
 import fxRockImg from "@/assets/fx/fx-rock.png";
