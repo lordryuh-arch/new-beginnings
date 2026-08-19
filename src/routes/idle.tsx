@@ -15036,7 +15036,7 @@ function WalletScreen({
   const sellGain = sellAmt * 800;
 
   const ITEM_NAMES: Record<string, string> = {
-    potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball",
+    potion: "Poção", pokeball: "Pokébola", greatball: "Great Ball", ultraball: "Ultra Ball", masterball: "Master Ball",
     stone_grass: "Stone Verdejante 🌿", stone_fire: "Stone Ígnea 🔥", stone_water: "Stone Aquática 💧",
     stone_electric: "Stone Elétrica ⚡", stone_dark: "Stone Sombria 🌑", stone_dragon: "Stone Dragão 🐉",
     egg_common: "Ovo Comum", egg_rare: "Ovo Raro", egg_epic: "Ovo Épico", egg_mystic: "Ovo Místico",
