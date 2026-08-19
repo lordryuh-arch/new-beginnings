@@ -157,9 +157,10 @@ export const WorldMapOverlay: React.FC<WorldMapOverlayProps> = ({
               backgroundImage: `url(${mapUrl})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              opacity: 0.7,
+              opacity: 0.85,
+              filter: 'contrast(1.1) brightness(1.1)',
               transition: 'transform 0.5s ease-out',
-              transform: selectedRegion ? 'scale(1.1)' : 'scale(1)'
+              transform: selectedRegion ? 'scale(1.15)' : 'scale(1)'
             }} />
 
             {/* Region Markers */}
