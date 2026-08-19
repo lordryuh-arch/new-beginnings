@@ -8309,10 +8309,27 @@ function IdlePage() {
                 {weather === "rain" ? "CHUVA" : "NEVE"}
               </div>
             </div>
+          {idle.currentMap === "floresta" && (
+            <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 9999 }}>
+              {[...Array(15)].map((_, i) => (
+                <div
+                  key={i}
+                  className="wx-leaf"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    "--leaf-x": `${(Math.random() - 0.5) * 300}px`,
+                    "--leaf-d": `${3 + Math.random() * 4}s`,
+                    "--leaf-r": `${180 + Math.random() * 360}deg`,
+                    animationDelay: `${Math.random() * 5}s`,
+                  } as React.CSSProperties}
+                />
+              ))}
+            </div>
           )}
 
 
             {/* Contador de jogadores online removido a pedido do usuário */}
+
 
 
 
