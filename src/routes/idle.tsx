@@ -2,7 +2,9 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import rayquazaShinyBg from "@/assets/rayquaza_shiny_bg.png.asset.json";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { FlaskConical, Sparkles } from "lucide-react";
+import { FlaskConical, Sparkles, Compass } from "lucide-react";
+import { WorldMapOverlay } from "@/components/WorldMapOverlay";
+import { WORLD_REGIONS } from "@/game/worldMap";
 import { ItemPixelIcon } from "@/components/ItemPixelIcon";
 import type { LucideIcon } from "lucide-react";
 import navInicio from "@/assets/icons/nav-inicio.png";
@@ -1769,6 +1771,7 @@ function IdlePage() {
   const [statsCardPet, setStatsCardPet] = useState<PetInstance | null>(null);
   const [eventToast, setEventToast] = useState<{ id: number; icon: string; title: string; sub?: string; color: string } | null>(null);
   const [showAutoSettings, setShowAutoSettings] = useState(false);
+  const [showWorldMap, setShowWorldMap] = useState(false);
   const [attackAnim, setAttackAnim] = useState<{ id: number; fromX: number; fromY: number; toX: number; toY: number; ts: number; crit: boolean; element: ElementFx } | null>(null);
   const [enemyAttackAnim, setEnemyAttackAnim] = useState<{ id: number; fromX: number; fromY: number; toX: number; toY: number; ts: number; element: ElementFx } | null>(null);
   const [captureAnim, setCaptureAnim] = useState<{ id: number; fromX: number; fromY: number; toX: number; toY: number; ts: number; ballImg: string; success: boolean } | null>(null);
@@ -7008,7 +7011,29 @@ function IdlePage() {
   );
 
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       height: "100vh",
       background: "#0b0510",
       color: "#f3e5c5",
@@ -7545,7 +7570,29 @@ function IdlePage() {
             const vip = isVip();
             const accent = vip ? "#ffd66b" : "#c9b8ff";
             return (
-              <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                 position: "relative",
                 padding: "7px 9px 7px 7px",
                 background:
@@ -7784,7 +7831,29 @@ function IdlePage() {
                   setChatCooldownUntil(Date.now() + 10 * 60 * 1000);
                 };
                 return (
-                  <div style={{ display: "flex", gap: 4, marginTop: 6 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ display: "flex", gap: 4, marginTop: 6 }}>
                     <input
                       value={chatInput}
                       onChange={(e) => setChatInput(e.target.value)}
@@ -9194,7 +9263,29 @@ function IdlePage() {
               const x = captureAnim.fromX + (captureAnim.toX - captureAnim.fromX) * dt;
               const y = captureAnim.fromY + (captureAnim.toY - captureAnim.fromY) * dt - arcY;
               return (
-                <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                   position: "absolute", left: x, top: y,
                   width: 26, height: 26,
                   transform: `translate(-50%, -50%) rotate(${dt * 720}deg)`,
@@ -9315,7 +9406,29 @@ function IdlePage() {
               const leaderX = renderFollowerX + lungeX;
               const leaderY = renderFollowerY + lungeY;
               return (
-                <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                   position: "absolute",
                   left: leaderX, top: leaderY,
                   width: 54, height: 54,
@@ -9619,7 +9732,29 @@ function IdlePage() {
                 : "Descansar (leva 1 hora)";
             const bAction = nearBuilding === "lab" ? "RESETAR" : "DESCANSAR";
             return (
-              <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                 position: "absolute", bottom: 78, left: "50%", transform: "translateX(-50%)",
                 background: "rgba(11,5,16,0.95)",
                 border: `2px solid ${bColor}`,
@@ -9675,7 +9810,29 @@ function IdlePage() {
             const setAB = (patch: Partial<typeof ab>) => setIdle((s) => ({ ...s, autoBattle: { ...(s.autoBattle ?? ab), ...patch } }));
             const on = ab.enabled;
             return (
-            <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
               position: "absolute", bottom: 10, left: "50%", transform: "translateX(-50%)",
               display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
             }}>
@@ -12976,7 +13133,29 @@ function IdlePage() {
 // ============ Componentes visuais ============
 function Panel({ title, accent, children }: { title: string; accent: string; children: React.ReactNode }) {
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       background: "#1a0f26",
       border: "1px solid rgba(245,207,107,0.2)",
       borderRadius: 10, overflow: "hidden",
@@ -12988,6 +13167,7 @@ function Panel({ title, accent, children }: { title: string; accent: string; chi
       }}>{title}</div>
       <div style={{ padding: 10 }}>{children}</div>
     </div>
+    </>
   );
 }
 
@@ -13136,6 +13316,7 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
         </div>
       </div>
     </div>
+    </>
   );
 }
 
@@ -13143,7 +13324,29 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
 function ProgressRow({ icon, label, value, target }: { icon: string; label: string; value: number; target: number }) {
   const pct = Math.min(100, (value / target) * 100);
   return (
-    <div style={{ marginBottom: 8 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ marginBottom: 8 }}>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, marginBottom: 3 }}>
         <span>{icon} {label}</span>
         <span style={{ color: "#f5cf6b" }}>{value}/{target}</span>
@@ -13152,6 +13355,7 @@ function ProgressRow({ icon, label, value, target }: { icon: string; label: stri
         <div style={{ width: `${pct}%`, height: "100%", background: "#5ec26a", borderRadius: 2 }} />
       </div>
     </div>
+    </>
   );
 }
 
@@ -13214,6 +13418,7 @@ function ResourceNiche({ tint, icon, value, title }: { tint: string; icon: React
         fontFamily: "'Cinzel', Georgia, serif", letterSpacing: 0.4,
       }}>{value}</span>
     </div>
+    </>
   );
 }
 
@@ -13221,7 +13426,29 @@ function ResourceNiche({ tint, icon, value, title }: { tint: string; icon: React
 function BallSlot({ img, count, tint }: { img: string; count: number; tint: string }) {
   const empty = count <= 0;
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       position: "relative",
       width: 34, height: 34,
       margin: "0 6px",
@@ -13285,6 +13512,7 @@ function BallSlot({ img, count, tint }: { img: string; count: number; tint: stri
         lineHeight: 1,
       }}>{count}</span>
     </div>
+    </>
   );
 }
 
@@ -13321,7 +13549,29 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
   const q = clamp(qty);
   const ok = canBuyFn(q);
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 6, width: "100%" }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: 6, width: "100%" }}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center" }}>
         {presets.map((p) => (
           <button key={p} onClick={() => setQty(p)} style={{
@@ -13349,6 +13599,7 @@ function QtyBuy({ presets, max, unitLabel, buttonColor, canBuyFn, onBuy, disable
         border: "none", borderRadius: 6, cursor: ok ? "pointer" : "not-allowed",
       }}>{ok ? `COMPRAR ×${q} ${unitLabel}` : disabledLabel}</button>
     </div>
+    </>
   );
 }
 
@@ -13497,7 +13748,29 @@ function TabOverlay({
     setFragConfirm(null);
   };
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       position: "absolute", inset: 12, background: "rgba(11,5,16,0.96)",
       border: "1px solid rgba(245,207,107,0.3)", borderRadius: 12,
       zIndex: 20, padding: 16, overflowY: "auto",
@@ -13547,7 +13820,29 @@ function TabOverlay({
               mythic_shiny: { c: "#ff97e1", label: "MÍTICO ✦" },
             };
             return (
-              <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                 marginTop: 18,
                 padding: "14px 16px",
                 background: "linear-gradient(135deg, #2a1638 0%, #1a0f26 50%, #251638 100%)",
@@ -13995,7 +14290,29 @@ function TabOverlay({
         };
 
         return (
-          <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
             background: `
               radial-gradient(circle at 50% 30%, rgba(168,85,247,0.28), transparent 55%),
               url(${bagBgGlowUrl}) center/cover no-repeat,
@@ -14526,7 +14843,29 @@ function TabOverlay({
               return <div style={{ color: "#8b6a30", fontSize: 13, padding: 30, textAlign: "center", fontStyle: "italic" }}>Nenhum Pokémon corresponde aos filtros.</div>;
             }
             return (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))", gap: 12 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))", gap: 12 }}>
               {filtered.map((entry, i) => {
                 const sp = entry.species;
                 const isCurrent = leader?.species === sp && leader?.uid === entry.uid;
@@ -14814,7 +15153,29 @@ function TabOverlay({
             const isActive = activeUntil > Date.now();
             const color = ITEM_COLORS[bk.id] ?? "#ff97e1";
             return (
-              <div style={{ marginBottom: 20 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ marginBottom: 20 }}>
                 <h3 style={{ color: "#ff97e1", fontSize: 15, margin: "6px 0 10px" }}>✦ Destaque da Loja — Orb de Time</h3>
                 <div style={{
                   display: "grid", gridTemplateColumns: "minmax(92px, 120px) 1fr minmax(180px, 220px)", gap: 14,
@@ -14927,7 +15288,29 @@ function TabOverlay({
               const canBuy = bank.crystals >= COST;
               const color = "#c084fc";
               return (
-                <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                   background: "linear-gradient(160deg, #1a0f26 0%, #251638 100%)",
                   border: `1px solid ${color}77`, borderRadius: 12, padding: 14,
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
@@ -14957,7 +15340,29 @@ function TabOverlay({
               const canBuy = bank.crystals >= COST;
               const color = "#8ec5ff";
               return (
-                <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
                   background: "linear-gradient(160deg, #0f1a2e 0%, #142238 100%)",
                   border: `1px solid ${color}77`, borderRadius: 12, padding: 14,
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
@@ -15332,7 +15737,29 @@ function TabOverlay({
         };
 
         return (
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center", background: "rgba(20,15,35,0.8)", padding: 20, borderRadius: 16, border: "2px solid #f5cf6b33" }}>
               <div style={{ flex: "0 0 200px", position: "relative" }}>
                 <svg width="200" height="200" viewBox="0 0 200 200" style={{ filter: "drop-shadow(0 0 10px rgba(245,207,107,0.2))" }}>
@@ -15750,12 +16177,35 @@ function TabOverlay({
         );
       })()}
     </div>
+    </>
   );
 }
 
 function BuffCell({ img, label, value, color }: { img: string; label: string; value: string; color: string }) {
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       background: "#1a0f26", border: `1px solid ${color}55`, borderRadius: 10,
       padding: 12, textAlign: "center",
     }}>
@@ -15763,6 +16213,7 @@ function BuffCell({ img, label, value, color }: { img: string; label: string; va
       <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}</div>
       <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}</div>
     </div>
+    </>
   );
 }
 
@@ -15798,7 +16249,29 @@ function WalletScreen({
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 780 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 780 }}>
       {/* Header do Banco */}
       <div style={{
         position: "relative",
@@ -15915,6 +16388,7 @@ function WalletScreen({
         >RESGATAR TUDO</button>
       </div>
     </div>
+    </>
   );
 }
 
@@ -16000,7 +16474,29 @@ function MarketScreen({
 
 
   return (
-    <div style={{ maxWidth: 900 }}>
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{ maxWidth: 900 }}>
       <div style={{ background: "linear-gradient(180deg,#3d2b0f,#241503)", border: "2px solid #ff9d3d66", borderRadius: 12, padding: 16, marginBottom: 14, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ color: "#ff9d3d", fontWeight: 900, fontSize: 18, letterSpacing: 2 }}>🏷 MERCADO ENTRE TREINADORES</div>
@@ -16230,6 +16726,7 @@ function MarketScreen({
         </div>
       )}
     </div>
+    </>
   );
 }
 
@@ -16255,7 +16752,29 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
   const rColor = rarityColor[pet.rarity] ?? "#f5cf6b";
 
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       position: "relative",
       background: "linear-gradient(160deg, #1a0f2e 0%, #0b0716 100%)",
       border: `1px solid ${rColor}55`,
@@ -16355,6 +16874,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
         )}
       </div>
     </div>
+    </>
   );
 }
 function StatBar({ label, value, max, pct, color }: { label: string; value: number; max: number; pct: number; color: string }) {
@@ -16373,11 +16893,34 @@ function StatBar({ label, value, max, pct, color }: { label: string; value: numb
         }} />
       </div>
     </div>
+    </>
   );
 }
 function StatCell({ label, value }: { label: string; value: number }) {
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       background: "linear-gradient(180deg, #1a0f26, #0b0510)",
       border: "1px solid rgba(245,207,107,0.22)",
       borderRadius: 4, padding: "3px 4px", textAlign: "center",
@@ -16385,6 +16928,7 @@ function StatCell({ label, value }: { label: string; value: number }) {
       <div style={{ fontSize: 8, color: "#8a7a9c", letterSpacing: 1, fontWeight: 700 }}>{label}</div>
       <div style={{ fontSize: 12, fontWeight: 900, color: "#f3e5c5", textShadow: "1px 1px 0 #000" }}>{value}</div>
     </div>
+    </>
   );
 }
 
@@ -16417,7 +16961,29 @@ const RARITY_LORE: Partial<Record<Rarity, string>> = {
 function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) {
   const lore = SPECIES_LORE[species] ?? RARITY_LORE[rarity] ?? "Um Pokémon único, com história ainda por contar.";
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       marginTop: 14,
       background: "linear-gradient(135deg, #2a1a3e 0%, #1a0f26 100%)",
       border: "1px solid rgba(245,207,107,0.35)",
@@ -16430,6 +16996,7 @@ function SpeciesLore({ species, rarity }: { species: Species; rarity: Rarity }) 
       </div>
       <div style={{ fontSize: 13, color: "#e8dbe5", lineHeight: 1.55, fontStyle: "italic" }}>&ldquo;{lore}&rdquo;</div>
     </div>
+    </>
   );
 }
 function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
@@ -16479,7 +17046,29 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
     active: synergyRarity === r,
   }));
   return (
-    <div style={{
+    <>
+      {showWorldMap && (
+        <WorldMapOverlay
+          onClose={() => setShowWorldMap(false)}
+          trainerLevel={idle.trainerLevel ?? 1}
+          discoveredRegions={idle.discoveredRegions ?? ["grasslands"]}
+          activatedObsidianPoints={idle.activatedObsidianPoints ?? []}
+          currentMapId={idle.currentMap}
+          onEnterMap={(target) => {
+            setIdle((s) => ({ ...s, currentMap: target }));
+            setShowWorldMap(false);
+          }}
+          onActivateObsidian={(pointId) => {
+            setIdle((s) => {
+              const current = s.activatedObsidianPoints ?? [];
+              if (current.includes(pointId)) return s;
+              return { ...s, activatedObsidianPoints: [...current, pointId] };
+            });
+            pushChat(, "cap");
+          }}
+        />
+      )}
+      <div style={{
       marginTop: 14,
       background: "#1a0f26", border: "1px solid rgba(245,207,107,0.15)",
       borderRadius: 10, padding: 12,
@@ -16518,6 +17107,7 @@ function ActiveBonuses({ leaderRarity, team, buffs, idle }: {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
