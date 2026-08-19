@@ -12,18 +12,25 @@ export function assetUrl(url: string) {
 }
 
 // Preferred: pass the imported asset json directly so we can route by project_id.
-export function assetUrlFromJson(asset: { url: string; project_id?: string }) {
-  if (!asset || !asset.url) return "";
+export function assetUrlFromJson(asset: any) {
+  if (!asset) return "";
   
-  // Se a URL não começa com o prefixo de asset gerenciado, retorna a URL bruta
-  if (!asset.url.startsWith("/__l5e/assets-v1/")) {
-    return asset.url;
+  // Se for uma string direta, retornamos
+  if (typeof asset === "string") return asset;
+  
+  // Se for o objeto de asset padrão do Lovable
+  if (asset.url) {
+    if (!asset.url.startsWith("/__l5e/assets-v1/")) {
+      return asset.url;
+    }
+    
+    // Se o project_id for do projeto legado, usamos o origin legado.
+    const isLegacy = asset.project_id === LEGACY_PROJECT_ID;
+    const origin = isLegacy ? LEGACY_ORIGIN : ""; 
+    
+    return `${origin}${asset.url}`;
   }
   
-  // Se o project_id for do projeto legado, usamos o origin legado.
-  // Caso contrário, usamos uma string vazia para que seja relativo ao host atual.
-  const isLegacy = asset.project_id === LEGACY_PROJECT_ID;
-  const origin = isLegacy ? LEGACY_ORIGIN : ""; 
-  
-  return `${origin}${asset.url}`;
+  // Fallback para objetos importados de JSON que podem estar em formatos variados
+  return asset.default || asset;
 }
