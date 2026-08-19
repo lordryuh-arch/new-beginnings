@@ -17,6 +17,8 @@ import {
   Bookmark,
   Sparkles
 } from 'lucide-react';
+import { TrainerBook } from '@/components/community/TrainerBook';
+import { CollectibleCard } from '@/components/community/CollectibleCard';
 
 export const Route = createFileRoute('/community')({
   component: CommunityLayout,
