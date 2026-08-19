@@ -10846,7 +10846,9 @@ function IdlePage() {
                       </div>
                     );
                   })()}
+                  </div>
                 </div>
+              </div>
               );
             })()}
           </Panel>
