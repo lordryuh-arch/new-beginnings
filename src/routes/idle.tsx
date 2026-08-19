@@ -705,9 +705,9 @@ function elementOf(sp: Species): ElementFx {
   return SPECIES_ELEMENT[sp] ?? "normal";
 }
 const ELEMENT_FX_IMG: Record<ElementFx, string> = {
-  grass: fxGrassImg, fire: fxFireImg, water: fxWaterImg, electric: fxElectricImg,
-  poison: fxPoisonImg, psychic: fxPsychicImg, ice: fxIceImg, rock: fxRockImg,
-  fighting: fxFightingImg, flying: fxFlyingImg, normal: fxSlashImg,
+  grass: assetUrlFromJson(fxGrassImg), fire: assetUrlFromJson(fxFireImg), water: assetUrlFromJson(fxWaterImg), electric: assetUrlFromJson(fxElectricImg),
+  poison: assetUrlFromJson(fxPoisonImg), psychic: assetUrlFromJson(fxPsychicImg), ice: assetUrlFromJson(fxIceImg), rock: assetUrlFromJson(fxRockImg),
+  fighting: assetUrlFromJson(fxFightingImg), flying: assetUrlFromJson(fxFlyingImg), normal: assetUrlFromJson(fxSlashImg),
 };
 const ELEMENT_FX_GLOW: Record<ElementFx, string> = {
   grass: "#66e07a", fire: "#ff8a3d", water: "#4dc4ff", electric: "#ffe14d",
@@ -1006,14 +1006,14 @@ const ITEM_COLORS: Record<string, string> = {
   book_exp_big: "#8bffb0", book_exp_max: "#ffd94d", book_vip: "#ffb347",
 };
 const ITEM_IMG: Record<string, string> = {
-  potion: potionNewImg,
-  pokeball: ballPokeImg, greatball: ballGreatImg, ultraball: ballUltraImg,
-  chest_amulet: chestAmuletImg,
-  revive: reviveIconImg, berry: berryIconImg, key: keyIconImg,
-  book_atk: bookAtkImg, book_def: bookDefImg, book_exp: bookExpImg,
+  potion: assetUrlFromJson(potionNewImg),
+  pokeball: assetUrlFromJson(ballPokeImg), greatball: assetUrlFromJson(ballGreatImg), ultraball: assetUrlFromJson(ballUltraImg),
+  chest_amulet: assetUrlFromJson(chestAmuletImg),
+  revive: assetUrlFromJson(reviveIconImg), berry: assetUrlFromJson(berryIconImg), key: assetUrlFromJson(keyIconImg),
+  book_atk: assetUrlFromJson(bookAtkImg), book_def: assetUrlFromJson(bookDefImg), book_exp: assetUrlFromJson(bookExpImg),
   book_exp_big: bookExpImg, book_exp_max: bookExpImg, book_vip: bookExpImg,
-  premium_box: premiumBoxImg,
-  bau_esmeralda: chestEmeraldImg,
+  premium_box: assetUrlFromJson(premiumBoxImg),
+  bau_esmeralda: assetUrlFromJson(chestEmeraldImg),
   orb_xp_minor: orbXpMinorUrl, orb_xp_major: orbXpMajorUrl, orb_xp_supreme: orbXpSupremeUrl, orb_team: orbXpTeamUrl,
   orb_xp_supreme_24h: (new URL("../assets/orb-24h.png", import.meta.url)).href,
   incenso_mel_raro_24h: (new URL("../assets/incense-24h.png", import.meta.url)).href,
@@ -1030,26 +1030,26 @@ const ITEM_POOL: { id: string; name: string; icon: string; chance: number }[] = 
 // Loja — Pokébolas por gold, livros por cristal
 type ShopBall = { id: "pokeball" | "greatball" | "ultraball" | "masterball"; name: string; price: number; img: string; captureMult: number };
 const SHOP_BALLS: ShopBall[] = [
-  { id: "pokeball",   name: "Pokébola",   price: 500,    img: ballPokeImg,  captureMult: 1 },
-  { id: "greatball",  name: "Great Ball", price: 5000,   img: ballGreatImg, captureMult: 2 },
+  { id: "pokeball",   name: "Pokébola",   price: 500,    img: assetUrlFromJson(ballPokeImg),  captureMult: 1 },
+  { id: "greatball",  name: "Great Ball", price: 5000,   img: assetUrlFromJson(ballGreatImg), captureMult: 2 },
 ];
 // Catálogo COMPLETO usado no cálculo de captura (inclui bolas que não são
 // vendidas na loja mas o jogador pode ter dropado / recebido de eventos).
 const ALL_BALLS: ShopBall[] = [
-  { id: "pokeball",   name: "Pokébola",   price: 500,    img: ballPokeImg,  captureMult: 1 },
-  { id: "greatball",  name: "Great Ball", price: 5000,   img: ballGreatImg, captureMult: 2 },
-  { id: "ultraball",  name: "Ultra Ball", price: 15000,  img: ballUltraImg, captureMult: 3.5 },
-  { id: "masterball", name: "Master Ball", price: 999999, img: ballUltraImg, captureMult: 999 },
+  { id: "pokeball",   name: "Pokébola",   price: 500,    img: assetUrlFromJson(ballPokeImg),  captureMult: 1 },
+  { id: "greatball",  name: "Great Ball", price: 5000,   img: assetUrlFromJson(ballGreatImg), captureMult: 2 },
+  { id: "ultraball",  name: "Ultra Ball", price: 15000,  img: assetUrlFromJson(ballUltraImg), captureMult: 3.5 },
+  { id: "masterball", name: "Master Ball", price: 999999, img: assetUrlFromJson(ballUltraImg), captureMult: 999 },
 ];
 
 type ShopBook = { id: "book_atk" | "book_def" | "book_exp" | "book_exp_big" | "book_exp_max" | "book_vip" | "book_vip_30" | "book_vip_60" | "orb_xp_minor" | "orb_xp_major" | "orb_xp_supreme" | "orb_team"; name: string; desc: string; price: number; img: string; currency?: "crystals" | "gold"; priceGold?: number };
 const SHOP_BOOKS: ShopBook[] = [
-  { id: "book_atk", name: "Livro de Ataque", desc: "+10% de dano permanente por uso", price: 100, img: bookAtkImg },
-  { id: "book_def", name: "Livro de Defesa", desc: "-10% de dano recebido por uso",  price: 100, img: bookDefImg },
-  { id: "book_exp", name: "Livro de EXP",    desc: "+30% EXP em batalhas por 1 hora",   price: 30, img: bookExpImg },
+  { id: "book_atk", name: "Livro de Ataque", desc: "+10% de dano permanente por uso", price: 100, img: assetUrlFromJson(bookAtkImg) },
+  { id: "book_def", name: "Livro de Defesa", desc: "-10% de dano recebido por uso",  price: 100, img: assetUrlFromJson(bookDefImg) },
+  { id: "book_exp", name: "Livro de EXP",    desc: "+30% EXP em batalhas por 1 hora",   price: 30, img: assetUrlFromJson(bookExpImg) },
 
-  { id: "book_vip_30", name: "Livro VIP 30d ✦✦", desc: "+30% ouro e +30% EXP por 30 DIAS", price: 500, img: bookExpImg },
-  { id: "book_vip_60", name: "Livro VIP 60d ✦✦✦", desc: "+40% ouro e +40% EXP por 60 DIAS", price: 1000, img: bookExpImg },
+  { id: "book_vip_30", name: "Livro VIP 30d ✦✦", desc: "+30% ouro e +30% EXP por 30 DIAS", price: 500, img: assetUrlFromJson(bookExpImg) },
+  { id: "book_vip_60", name: "Livro VIP 60d ✦✦✦", desc: "+40% ouro e +40% EXP por 60 DIAS", price: 1000, img: assetUrlFromJson(bookExpImg) },
   // ═══ ORB DE XP FRACO — único vendido; os fortes vêm da troca com NPC ═══
   { id: "orb_xp_minor",   name: "Orb de XP Menor ✦",   desc: "+10% EXP por 1 hora (apenas 1 orb ativo, stack com livro)", price: 100,  img: orbXpMinorUrl,   currency: "crystals", priceGold: 50000 },
   // ═══ ORB DE TIME — distribui EXP para todos os pokémons do time por 1 hora ═══
@@ -9750,9 +9750,9 @@ function IdlePage() {
               }}>
                 {([
                   { id: "auto" as const, img: null, label: "A", count: null as number | null, tint: "#f5cf6b" },
-                  { id: "pokeball" as const, img: ballPokeImg, label: "Poké", count: idle.items.pokeball ?? 0, tint: "#ff8080" },
-                  { id: "greatball" as const, img: ballGreatImg, label: "Great", count: idle.items.greatball ?? 0, tint: "#7ec4ff" },
-                  { id: "ultraball" as const, img: ballUltraImg, label: "Ultra", count: idle.items.ultraball ?? 0, tint: "#ffd66b" },
+                  { id: "pokeball" as const, img: assetUrlFromJson(ballPokeImg), label: "Poké", count: idle.items.pokeball ?? 0, tint: "#ff8080" },
+                  { id: "greatball" as const, img: assetUrlFromJson(ballGreatImg), label: "Great", count: idle.items.greatball ?? 0, tint: "#7ec4ff" },
+                  { id: "ultraball" as const, img: assetUrlFromJson(ballUltraImg), label: "Ultra", count: idle.items.ultraball ?? 0, tint: "#ffd66b" },
                 ]).map((b) => {
                   const sel = ab.preferredBall === b.id;
                   return (
