@@ -5624,7 +5624,12 @@ function IdlePage() {
 
   // Loja — apenas 1 ovo místico (500 cristais), raridade totalmente aleatória
   // Loja — ovos temporariamente removidos da venda
-  const SHOP_EGGS: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[] = [];
+  const SHOP_EGGS: { id: EggId; name: string; price: number; currency: "gold" | "crystals"; desc: string; color: string }[] = [
+    { id: "egg_common", name: "Ovo Comum", price: 1000, currency: "gold", desc: "Um ovo básico que pode chocar espécies comuns.", color: "#c8b8d0" },
+    { id: "egg_rare", name: "Ovo Raro", price: 50, currency: "crystals", desc: "Aumenta a chance de Pokémon raros.", color: "#6bd4ff" },
+    { id: "egg_epic", name: "Ovo Épico", price: 150, currency: "crystals", desc: "Alta chance de Pokémon épicos.", color: "#c084fc" },
+    { id: "egg_mystic", name: "Ovo Místico", price: 500, currency: "crystals", desc: "Ovo lendário com chance de Míticos.", color: "#ff97e1" },
+  ];
 
   const buyEgg = (e: typeof SHOP_EGGS[number]) => {
     setIdle((s) => {
