@@ -7049,9 +7049,9 @@ function IdlePage() {
             </div>
 
             <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 6, marginBottom: 10, position: "relative" }}>
-              <img src={oddishUrl} alt="Oddish" className="cash-pack-float" style={{ width: 62, height: 62, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))" }} />
-              <img src={oddishUrl} alt="Oddish" className="cash-pack-float" style={{ width: 78, height: 78, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))", animationDelay: "0.4s" }} />
-              <img src={oddishUrl} alt="Oddish" className="cash-pack-float" style={{ width: 62, height: 62, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))", animationDelay: "0.8s" }} />
+              <img src={assetUrlFromJson(oddishUrl)} alt="Oddish" className="cash-pack-float" style={{ width: 62, height: 62, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))" }} />
+              <img src={assetUrlFromJson(oddishUrl)} alt="Oddish" className="cash-pack-float" style={{ width: 78, height: 78, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))", animationDelay: "0.4s" }} />
+              <img src={assetUrlFromJson(oddishUrl)} alt="Oddish" className="cash-pack-float" style={{ width: 62, height: 62, objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))", animationDelay: "0.8s" }} />
             </div>
 
             <div style={{ fontSize: 20, fontWeight: 900, color: "#fff", letterSpacing: 1, textShadow: "0 0 12px rgba(141,250,141,0.7)", position: "relative" }}>
@@ -7155,7 +7155,7 @@ function IdlePage() {
 
             <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 6, marginBottom: 10, position: "relative" }}>
               <div style={{ width: 74, height: 74, borderRadius: "50%", overflow: "hidden", border: "2px solid #d6ffd6", boxShadow: "0 0 18px rgba(141,250,141,0.7)", background: "radial-gradient(circle at 50% 40%, #1a3d1c 0%, #0a1a0a 80%)", display: "grid", placeItems: "center" }}>
-                <img src={oddishUrl} alt="Oddish" style={{ width: "94%", height: "94%", objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6)) grayscale(0.3)" }} />
+                <img src={assetUrlFromJson(oddishUrl)} alt="Oddish" style={{ width: "94%", height: "94%", objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6)) grayscale(0.3)" }} />
               </div>
             </div>
 
@@ -7350,7 +7350,7 @@ function IdlePage() {
             <div style={{ position: "absolute", top: -30, left: "50%", transform: "translateX(-50%)", fontSize: 11, letterSpacing: 6, color: "#8affb0", fontWeight: 900, textShadow: "0 0 12px #8affb0" }}>✦ EVENTO ATIVO ✦</div>
             <div style={{ display: "flex", justifyContent: "center", gap: 10, marginBottom: 10 }}>
               {[0,1,2].map((i) => (
-                <img key={i} src={oddishUrl} alt="Oddish" width={72} height={72}
+                <img key={i} src={assetUrlFromJson(oddishUrl)} alt="Oddish" width={72} height={72}
                   style={{ width: 72, height: 72, objectFit: "contain", imageRendering: "pixelated" as any,
                     filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.7)) drop-shadow(0 0 12px rgba(141,250,141,0.9))",
                     animation: `cash-pack-float 1.4s ease-in-out ${i * 0.15}s infinite` }} />
@@ -7992,7 +7992,7 @@ function IdlePage() {
                   }}
                 >
                   <img
-                    src={iceBallIconUrl}
+                    src={assetUrlFromJson(iceBallIconUrl)}
                     alt="Evento Mítico Shiny"
                     width={34}
                     height={34}
@@ -8108,7 +8108,7 @@ function IdlePage() {
                         filter: `drop-shadow(0 0 6px ${b.glow})`,
                       }}>
                         <img
-                          src={b.img}
+                          src={assetUrlFromJson(b.img)}
                           alt={b.label}
                           width={34}
                           height={34}
@@ -8219,7 +8219,7 @@ function IdlePage() {
 
             {/* Fundo do mapa em <img> e com renderização suave: evita artefatos verdes/quadrados no zoom baixo. */}
             <img
-              src={map.bg}
+              src={assetUrlFromJson(map.bg)}
               alt=""
               aria-hidden="true"
               draggable={false}
@@ -8240,7 +8240,7 @@ function IdlePage() {
 
             {/* Obstáculos (árvores, pedras) — z-index pela BASE (y) para o treinador passar por trás */}
             {obstacles.map((o) => (
-              <img key={`obs-${o.id}`} src={o.src} alt="" style={{
+              <img key={`obs-${o.id}`} src={assetUrlFromJson(o.src)} alt="" style={{
                 position: "absolute",
                 left: o.x - o.w / 2,
                 top: o.y - o.h + 8, // âncora na base
@@ -8598,7 +8598,7 @@ function IdlePage() {
                       return (
                         <div key={`hslot-${i}`} style={{ border: `1px solid ${rare ? "#ff97e1" : "rgba(255,214,80,0.6)"}`, borderRadius: 8, padding: 8, background: "rgba(0,0,0,0.35)" }}>
                           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                            <img src={beedrillGif} alt="Beedrill" style={{ width: 34, height: 34, imageRendering: "pixelated" }} />
+                            <img src={assetUrlFromJson(beedrillGif)} alt="Beedrill" style={{ width: 34, height: 34, imageRendering: "pixelated" }} />
                             <div style={{ flex: 1, fontSize: 12 }}>
                               <div style={{ fontWeight: 700 }}>Beedrill Lv.{entry?.level ?? "?"}</div>
                               <div style={{ fontSize: 10, opacity: 0.8, color: rare ? "#ff97e1" : "#ffe9a8" }}>
@@ -8661,7 +8661,7 @@ function IdlePage() {
                   }}
                 >
                   <img
-                    src={b.key === "lab" ? houseLabImg : houseLarImg}
+                    src={assetUrlFromJson(b.key === "lab" ? houseLabImg : houseLarImg)}
                     alt={b.label}
                     width={b.w}
                     height={b.h}
@@ -8804,7 +8804,7 @@ function IdlePage() {
                     animation: "pulse 1.6s ease-in-out infinite",
                   }}>✦ TROCADOR</div>
                   <img
-                    src={npcTraderUrl}
+                    src={assetUrlFromJson(npcTraderUrl)}
                     alt="NPC Trocador"
                     width={80} height={100}
                     style={{ width: 80, height: 100, imageRendering: "pixelated", objectFit: "contain" }}
@@ -8845,7 +8845,7 @@ function IdlePage() {
                     animation: "pulse 1.6s ease-in-out infinite",
                   }}>👑 GOVERNANTE</div>
                   <img
-                    src={npcGovernanteUrl}
+                    src={assetUrlFromJson(npcGovernanteUrl)}
                     alt="Governante"
                     width={120} height={160}
                     style={{ width: 120, height: 160, imageRendering: "pixelated", objectFit: "contain" }}
@@ -8972,7 +8972,7 @@ function IdlePage() {
                       ))}
                     </div>
                   )}
-                  <img src={src} alt="" style={{ width: "100%", imageRendering: "pixelated" }} />
+                  <img src={assetUrlFromJson(src)} alt="" style={{ width: "100%", imageRendering: "pixelated" }} />
                   {e.sp === "raichu" && !camouflaged && (
                     <div style={{
                       position: "absolute", top: -46, left: "50%",
@@ -9126,7 +9126,7 @@ function IdlePage() {
                   }} />
                 )}
                 <img
-                  src={c.opened ? chestOpenImg : chestClosedImg}
+                  src={assetUrlFromJson(c.opened ? chestOpenImg : chestClosedImg)}
                   alt=""
                   className={c.opened ? "chest-pop" : ""}
                   style={{
@@ -9202,7 +9202,7 @@ function IdlePage() {
                   pointerEvents: "none",
                   filter: "drop-shadow(0 2px 3px rgba(0,0,0,0.7))",
                 }}>
-                  <img src={captureAnim.ballImg} alt="" style={{ width: "100%", height: "100%", imageRendering: "pixelated" }} />
+                  <img src={assetUrlFromJson(captureAnim.ballImg)} alt="" style={{ width: "100%", height: "100%", imageRendering: "pixelated" }} />
                 </div>
               );
             })()}
@@ -9255,7 +9255,7 @@ function IdlePage() {
                         pointerEvents: "none",
                       }} />
                     ) : (
-                      <img src={rpLeaderSrc} alt="" style={{
+                      <img src={assetUrlFromJson(rpLeaderSrc)} alt="" style={{
                         position: "absolute", left: 34, top: 20,
                         width: 36, height: 36,
                         imageRendering: "pixelated",
@@ -9376,7 +9376,7 @@ function IdlePage() {
                       filter: fainted ? "grayscale(1) brightness(0.6)" : undefined,
                     }} />
                   ) : (
-                    <img src={leaderSrc} alt="" className={!moving && !fainted ? "attackbob" : ""}
+                    <img src={assetUrlFromJson(leaderSrc)} alt="" className={!moving && !fainted ? "attackbob" : ""}
                       style={{
                         width: "100%", imageRendering: "pixelated",
                         "--face-scale": faceScale,
@@ -9542,7 +9542,7 @@ function IdlePage() {
             />
             <ResourceNiche
               tint="#8fd0ff"
-              icon={<img src={crystalGreenImg} alt="" width={16} height={16} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 4px #8fd0ffaa)" }} />}
+              icon={<img src={assetUrlFromJson(crystalGreenImg)} alt="" width={16} height={16} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 4px #8fd0ffaa)" }} />}
               value={String(Math.floor(idle.bank.crystals))}
               title="Cristais"
             />
@@ -9769,7 +9769,7 @@ function IdlePage() {
                       }}
                     >
                       {b.img ? (
-                        <img src={b.img} alt={b.label} width={24} height={24} style={{ imageRendering: "pixelated", filter: sel ? "none" : "grayscale(0.4)" }} />
+                        <img src={assetUrlFromJson(b.img)} alt={b.label} width={24} height={24} style={{ imageRendering: "pixelated", filter: sel ? "none" : "grayscale(0.4)" }} />
                       ) : (
                         <span style={{ fontSize: 14, fontWeight: 900, color: sel ? "#f5cf6b" : "#c8b8d0" }}>A</span>
                       )}
@@ -9798,7 +9798,7 @@ function IdlePage() {
                   }}
                 >
                   <img
-                    src={autoIconImg}
+                    src={assetUrlFromJson(autoIconImg)}
                     alt="Auto"
                     width={40}
                     height={40}
@@ -9994,7 +9994,7 @@ function IdlePage() {
                 display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
               }}
             >
-              <img src={collectIconImg} alt="" width={26} height={26} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }} />
+              <img src={assetUrlFromJson(collectIconImg)} alt="" width={26} height={26} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }} />
               COLETAR
             </button>
           </div>
@@ -10232,7 +10232,7 @@ function IdlePage() {
           >
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(circle at 85% 30%, rgba(180,255,180,0.22), transparent 55%), radial-gradient(circle at 10% 80%, rgba(80,200,120,0.22), transparent 60%)" }} />
             <div style={{ width: 58, height: 58, flexShrink: 0, borderRadius: "50%", overflow: "hidden", border: "2px solid #d6ffd6", boxShadow: "0 0 14px rgba(141,250,141,0.75), inset 0 0 8px rgba(0,0,0,0.4)", background: "radial-gradient(circle at 50% 40%, #1a3d1c 0%, #0a1a0a 80%)", display: "grid", placeItems: "center", position: "relative" }}>
-              <img src={oddishUrl} alt="Oddish" width={54} height={54} className="cash-pack-float" style={{ width: "94%", height: "94%", objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))" }} />
+              <img src={assetUrlFromJson(oddishUrl)} alt="Oddish" width={54} height={54} className="cash-pack-float" style={{ width: "94%", height: "94%", objectFit: "contain", imageRendering: "pixelated" as any, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))" }} />
               <span style={{ position: "absolute", inset: 0, borderRadius: "50%", pointerEvents: "none", boxShadow: "inset 0 0 12px rgba(141,250,141,0.55)", animation: "pulse 1.6s ease-in-out infinite" }} />
             </div>
             <div style={{ flex: 1, minWidth: 0, position: "relative" }}>
@@ -10662,7 +10662,7 @@ function IdlePage() {
             >
               {/* Cabeçalho do NPC */}
               <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
-                <img src={npcTraderUrl} alt="" width={72} height={90}
+                <img src={assetUrlFromJson(npcTraderUrl)} alt="" width={72} height={90}
                   style={{ imageRendering: "pixelated", filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.6))" }} />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 16, fontWeight: 900, color: "#ffd94d" }}>🧙 Elyra, a Trocadora</div>
@@ -10830,7 +10830,7 @@ function IdlePage() {
                               }}
                             >
                               {GIF[c.species] ? (
-                                <img src={GIF[c.species]} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />
+                                <img src={assetUrlFromJson(GIF[c.species])} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />
                               ) : (
                                 <div style={{ width: 48, height: 48, background: "#2a1638", borderRadius: 8 }} />
                               )}
@@ -10899,7 +10899,7 @@ function IdlePage() {
                                 }}
                               >
                                 {GIF[c.species] ? (
-                                  <img src={GIF[c.species]} alt="" style={{ width: 38, height: 38, imageRendering: "pixelated" }} />
+                                  <img src={assetUrlFromJson(GIF[c.species])} alt="" style={{ width: 38, height: 38, imageRendering: "pixelated" }} />
                                 ) : <div style={{ width: 38, height: 38, background: "#2a1638", borderRadius: 6 }} />}
                                 <div style={{ fontSize: 8, color: "#c8b8d0" }}>Lv.{c.level}</div>
                               </button>
@@ -10971,7 +10971,7 @@ function IdlePage() {
             <div style={{ position: "relative", height: 240, display: "grid", placeItems: "center" }}>
               {/* base incubadora */}
               <img
-                src={orbIncubatorImg}
+                src={assetUrlFromJson(orbIncubatorImg)}
                 alt=""
                 width={200}
                 height={200}
@@ -10998,7 +10998,7 @@ function IdlePage() {
               {/* orb resultante */}
               {orbAnim.phase === "success" && orbAnim.img && (
                 <img
-                  src={orbAnim.img}
+                  src={assetUrlFromJson(orbAnim.img)}
                   alt=""
                   width={72}
                   height={72}
@@ -11267,7 +11267,7 @@ function IdlePage() {
                           }}
                         >
                           {src ? (
-                            <img src={src} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />
+                            <img src={assetUrlFromJson(src)} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />
                           ) : (
                             <div style={{ width: 48, height: 48, display: "grid", placeItems: "center", fontSize: 22 }}>✦</div>
                           )}
@@ -11306,7 +11306,7 @@ function IdlePage() {
                         title={sp}
                       >
                         {src ? (
-                          <img src={src} alt="" style={{ width: 40, height: 40, imageRendering: "pixelated" }} />
+                          <img src={assetUrlFromJson(src)} alt="" style={{ width: 40, height: 40, imageRendering: "pixelated" }} />
                         ) : (
                           <div style={{ width: 40, height: 40, display: "grid", placeItems: "center", fontSize: 18 }}>✦</div>
                         )}
@@ -11458,7 +11458,7 @@ function IdlePage() {
                   onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
                 >
-                  <img src={c.img} alt={c.name} width={96} height={96}
+                  <img src={assetUrlFromJson(c.img)} alt={c.name} width={96} height={96}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${c.color}88)` }} />
                   <div style={{ color: c.color, fontWeight: 900, fontSize: 16 }}>{c.name}</div>
                   <div style={{ color: "#b8a8c8", fontSize: 11, textAlign: "center" }}>{c.desc}</div>
@@ -11494,7 +11494,7 @@ function IdlePage() {
             <div onClick={(e) => e.stopPropagation()} style={{ background: "linear-gradient(180deg,#1a1030,#0e0818)", border: "2px solid #f5cf6b", borderRadius: 12, padding: 18, minWidth: 300, maxWidth: 380, color: "#eadfe8" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ width: 72, height: 72, background: "#0b0510", borderRadius: 8, display: "grid", placeItems: "center", overflow: "hidden", border: "1px solid #f5cf6b55" }}>
-                  {src && <img src={src} alt="" style={{ width: "90%", imageRendering: "pixelated" }} />}
+                  {src && <img src={assetUrlFromJson(src)} alt="" style={{ width: "90%", imageRendering: "pixelated" }} />}
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 900, fontSize: 16 }}>{pet.species.replace(/_/g, " ").toUpperCase()}</div>
@@ -11577,7 +11577,7 @@ function IdlePage() {
                   return (
                     <div key={p.uid} style={{ display: "flex", gap: 8, alignItems: "center", background: p.uid === azulPreselectUid ? "#12305a" : "#0a1830", border: `1px solid ${p.uid === azulPreselectUid ? "#7fc4ff" : "#4a9eff33"}`, padding: 8, borderRadius: 8, boxShadow: p.uid === azulPreselectUid ? "0 0 12px #4a9eff55" : undefined }}>
                       <div style={{ width: 44, height: 44, background: "#0b0510", borderRadius: 6, display: "grid", placeItems: "center", overflow: "hidden" }}>
-                        {src ? <img src={src} alt="" style={{ width: "90%", imageRendering: "pixelated" }} /> : <span>❓</span>}
+                        {src ? <img src={assetUrlFromJson(src)} alt="" style={{ width: "90%", imageRendering: "pixelated" }} /> : <span>❓</span>}
                       </div>
                       <div style={{ flex: 1 }}>
                         <div style={{ fontSize: 12, fontWeight: 700 }}>{p.species.replace(/_/g, " ").toUpperCase()}</div>
@@ -11654,7 +11654,7 @@ function IdlePage() {
                   border: `2px solid ${rColor}`, borderRadius: 10, display: "grid", placeItems: "center",
                   boxShadow: `inset 0 0 20px ${rColor}55`,
                 }}>
-                  {src && <img src={src} alt="" style={{ width: 96, height: 96, imageRendering: "pixelated" }} />}
+                  {src && <img src={assetUrlFromJson(src)} alt="" style={{ width: 96, height: 96, imageRendering: "pixelated" }} />}
                 </div>
                 <div style={{ fontSize: 13, fontStyle: "italic", color: "#5a4020", lineHeight: 1.5 }}>&ldquo;{lore}&rdquo;</div>
               </div>
@@ -11767,7 +11767,7 @@ function IdlePage() {
               boxShadow: `inset 0 0 6px rgba(0,0,0,0.6), 0 0 10px ${rColor}88`,
             }}>
               {gif ? (
-                <img src={gif} alt={tgt.sp} style={{
+                <img src={assetUrlFromJson(gif)} alt={tgt.sp} style={{
                   width: "120%", height: "120%", objectFit: "contain",
                   imageRendering: "pixelated",
                   transform: tgt.face === "right" ? "scaleX(-1)" : "none",
@@ -12188,7 +12188,7 @@ function TeamRow({ pet, onClick, energyTick }: { pet: PetInstance; onClick?: () 
           boxShadow: "inset 0 0 5px rgba(0,0,0,0.75)",
           display: "grid", placeItems: "center", overflow: "hidden",
         }}>
-          <img src={src} alt="" style={{ width: "82%", imageRendering: "pixelated", filter: exhausted ? "grayscale(1) brightness(0.55)" : "drop-shadow(0 1px 2px rgba(0,0,0,0.8))" }} />
+          <img src={assetUrlFromJson(src)} alt="" style={{ width: "82%", imageRendering: "pixelated", filter: exhausted ? "grayscale(1) brightness(0.55)" : "drop-shadow(0 1px 2px rgba(0,0,0,0.8))" }} />
           {resting && <span style={{ position: "absolute", top: -2, right: -2, fontSize: 11, filter: "drop-shadow(0 0 3px #4a9eff)" }}>🏡</span>}
           {exhausted && <span style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", fontSize: 15, textShadow: "0 0 4px #000" }}>🔒</span>}
         </div>
@@ -12284,7 +12284,7 @@ function HudBall({ img, count, color }: { img: string; count: number; color: str
       display: "inline-flex", alignItems: "center", gap: 3,
       opacity: count > 0 ? 1 : 0.5,
     }} title={`${count}`}>
-      <img src={img} alt="" width={20} height={20}
+      <img src={assetUrlFromJson(img)} alt="" width={20} height={20}
         style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 4px ${color}88)` }} />
       <span style={{ color: "#eadfe8", fontWeight: 800, textShadow: "1px 1px 0 #000" }}>x{count}</span>
     </span>
@@ -12365,7 +12365,7 @@ function BallSlot({ img, count, tint }: { img: string; count: number; tint: stri
       </span>
       {/* pokébola */}
       <img
-        src={img}
+        src={assetUrlFromJson(img)}
         alt=""
         width={24}
         height={24}
@@ -12783,7 +12783,7 @@ function TabOverlay({
                             display: "flex", alignItems: "center", justifyContent: "center",
                             position: "relative", overflow: "hidden",
                           }}>
-                            {src && <img src={src} alt="" width={70} height={70} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.7))" }} />}
+                            {src && <img src={assetUrlFromJson(src)} alt="" width={70} height={70} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.7))" }} />}
                             {/* Slot number top-left */}
                             <div style={{
                               position: "absolute", top: 2, left: 4,
@@ -12948,7 +12948,7 @@ function TabOverlay({
       {tab === "tarefas" && (
         <div>
           <div style={{ color: "#c8b8d0", fontSize: 13, marginBottom: 12 }}>
-            Complete as tarefas para ganhar <img src={crystalGreenImg} alt="" style={{ width: 12, verticalAlign: "middle" }} /> cristais.
+            Complete as tarefas para ganhar <img src={assetUrlFromJson(crystalGreenImg)} alt="" style={{ width: 12, verticalAlign: "middle" }} /> cristais.
           </div>
           {tasks.length === 0 ? (
             <div style={{ color: "#8a7a9c", fontSize: 13, padding: 20, textAlign: "center" }}>
@@ -12965,7 +12965,7 @@ function TabOverlay({
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 6 }}>
                     <span style={{ color: "#eadfe8", fontWeight: 700, fontSize: 13 }}>{t.title}</span>
                     <span style={{ display: "flex", alignItems: "center", gap: 4, color: "#f5cf6b", fontWeight: 800 }}>
-                      <img src={crystalGreenImg} alt="" style={{ width: 14, imageRendering: "pixelated" }} />
+                      <img src={assetUrlFromJson(crystalGreenImg)} alt="" style={{ width: 14, imageRendering: "pixelated" }} />
                       {t.reward}
                     </span>
                   </div>
@@ -13133,7 +13133,7 @@ function TabOverlay({
                 border: `2px solid ${P.goldDark}`,
                 boxShadow: `inset 0 2px 4px rgba(255,255,255,0.6), 0 3px 8px rgba(0,0,0,0.35)`,
               }}>
-                <img src={bagIconImg} alt="" width={40} height={40} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 2px 2px rgba(0,0,0,0.4))" }} />
+                <img src={assetUrlFromJson(bagIconImg)} alt="" width={40} height={40} style={{ imageRendering: "pixelated", filter: "drop-shadow(0 2px 2px rgba(0,0,0,0.4))" }} />
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{
@@ -13206,7 +13206,7 @@ function TabOverlay({
                       }}
                     >
                       <img
-                        src={c.icon}
+                        src={assetUrlFromJson(c.icon)}
                         alt=""
                         width={44}
                         height={44}
@@ -13294,7 +13294,7 @@ function TabOverlay({
                           }}>
                             {img ? (
                               <img
-                                src={img}
+                                src={assetUrlFromJson(img)}
                                 alt=""
                                 width={52}
                                 height={52}
@@ -13459,7 +13459,7 @@ function TabOverlay({
                         boxShadow: `inset 0 2px 6px rgba(0,0,0,0.25), 0 0 14px ${color}66`,
                       }}>
                         {img ? (
-                          <img src={img} alt="" width={68} height={68} style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 6px ${color}aa)` }} />
+                          <img src={assetUrlFromJson(img)} alt="" width={68} height={68} style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 6px ${color}aa)` }} />
                         ) : (
                           <ItemPixelIcon id={id} size={68} color={color} />
                         )}
@@ -13733,7 +13733,7 @@ function TabOverlay({
                        style={{ background: "transparent", border: "none", cursor: "pointer", padding: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", justifySelf: "center", width: "100%", position: "relative", zIndex: 1 }}
                        title={bulkMode ? "Selecionar/deselecionar" : "Ver detalhes"}
                      >
-                       {gifMap[sp] && <img src={gifMap[sp]} alt="" style={{ width: 64, height: 64, imageRendering: "pixelated", marginTop: 6, display: "block", filter: isBMP ? `drop-shadow(0 0 8px ${bmpAccent})` : undefined }} />}
+                       {gifMap[sp] && <img src={assetUrlFromJson(gifMap[sp])} alt="" style={{ width: 64, height: 64, imageRendering: "pixelated", marginTop: 6, display: "block", filter: isBMP ? `drop-shadow(0 0 8px ${bmpAccent})` : undefined }} />}
                        <div style={{ fontSize: 11, marginTop: 2, color: isBMP ? "#f7ecff" : "#4a3010", fontWeight: 800, textAlign: "center", textShadow: isBMP ? "0 1px 3px #000" : undefined }}>{sp.replace(/_/g, " ").toUpperCase()}</div>
                      </button>
 
@@ -13884,7 +13884,7 @@ function TabOverlay({
                     <div style={{ fontSize: 9, color: "#ff6b8a", fontWeight: 800, letterSpacing: 1 }}>
                       Nº {String(i + 1).padStart(3, "0")}
                     </div>
-                    {gifMap[sp] && <img src={gifMap[sp]} alt="" style={{ width: 56, height: 56, imageRendering: "pixelated" }} />}
+                    {gifMap[sp] && <img src={assetUrlFromJson(gifMap[sp])} alt="" style={{ width: 56, height: 56, imageRendering: "pixelated" }} />}
                     <div style={{ fontSize: 11, marginTop: 2, color: "#fff", fontWeight: 700 }}>
                       {sp.replace(/_/g, " ").toUpperCase()}
                     </div>
@@ -13939,7 +13939,7 @@ function TabOverlay({
                     border: `1px solid ${color}99`, display: "flex", alignItems: "center", justifyContent: "center",
                     boxShadow: `0 0 18px ${color}55, inset 0 0 18px rgba(255,255,255,0.08)`,
                   }}>
-                    <img src={bk.img} alt="Orb de Time" width={72} height={72} style={{ filter: `drop-shadow(0 0 10px ${color})` }} />
+                    <img src={assetUrlFromJson(bk.img)} alt="Orb de Time" width={72} height={72} style={{ filter: `drop-shadow(0 0 10px ${color})` }} />
                   </div>
                   <div style={{ minWidth: 0 }}>
                     <div style={{ color: "#fff0fb", fontSize: 18, fontWeight: 900, letterSpacing: 1 }}>{bk.name}</div>
@@ -14042,7 +14042,7 @@ function TabOverlay({
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
                   boxShadow: `0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 ${color}22`,
                 }}>
-                  <img src={ballUltraImg} alt="" width={64} height={64}
+                  <img src={assetUrlFromJson(ballUltraImg)} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${color}bb)` }} />
                   <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pacote Ultra Ball ×{QTY}</div>
                   <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>20 Ultra Ball — captura x3.5</div>
@@ -14072,7 +14072,7 @@ function TabOverlay({
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
                   boxShadow: `0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 ${color}22`,
                 }}>
-                  <img src={scrollTeleportUrl} alt="" width={64} height={64}
+                  <img src={assetUrlFromJson(scrollTeleportUrl)} alt="" width={64} height={64}
                     style={{ filter: `drop-shadow(0 0 10px ${color}bb)` }} />
                   <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 14 }}>Pergaminho de Teleporte</div>
                   <div style={{ fontSize: 11, color: "#b8c8dc", textAlign: "center" }}>Teleporte instantâneo no Mapa Mundi — sem taxa de ouro, sem custo de cristais</div>
@@ -14148,7 +14148,7 @@ function TabOverlay({
             border: "1px solid #6bd4ff55", borderRadius: 12, padding: 14, marginBottom: 20,
             display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap",
           }}>
-            <img src={chestAmuletImg} alt="" width={64} height={64} style={{ imageRendering: "pixelated" }} />
+            <img src={assetUrlFromJson(chestAmuletImg)} alt="" width={64} height={64} style={{ imageRendering: "pixelated" }} />
             <div style={{ flex: 1, minWidth: 160 }}>
               <div style={{ fontWeight: 800, color: "#eadfe8" }}>Amuleto do Caçador de Tesouros</div>
               <div style={{ fontSize: 11, color: "#b8a8c8" }}>Dobra as recompensas de ouro e cristais ao abrir baús no mapa.</div>
@@ -14188,7 +14188,7 @@ function TabOverlay({
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
                   boxShadow: `0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 ${color}22`,
                 }}>
-                  <img src={bk.img} alt="" width={64} height={64}
+                  <img src={assetUrlFromJson(bk.img)} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 8px ${color}88)` }} />
                   <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{bk.name}</div>
                   <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{bk.desc}</div>
@@ -14236,7 +14236,7 @@ function TabOverlay({
                   display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
                   boxShadow: `0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 ${t.color}22`,
                 }}>
-                  <img src={t.img} alt="" width={64} height={64}
+                  <img src={assetUrlFromJson(t.img)} alt="" width={64} height={64}
                     style={{ imageRendering: "pixelated", filter: `drop-shadow(0 0 10px ${t.color}aa)` }} />
                   <div style={{ fontWeight: 800, color: "#eadfe8", fontSize: 13 }}>{t.label}</div>
                   <div style={{ fontSize: 11, color: "#b8a8c8", textAlign: "center" }}>{t.desc}</div>
@@ -14329,7 +14329,7 @@ function TabOverlay({
                             }}
                           >
                             {gifMap[c.species] ? (
-                              <img src={gifMap[c.species]} alt="" style={{ width: 54, height: 54, imageRendering: "pixelated" }} />
+                              <img src={assetUrlFromJson(gifMap[c.species])} alt="" style={{ width: 54, height: 54, imageRendering: "pixelated" }} />
                             ) : (
                               <div style={{ width: 54, height: 54, background: "#2a1638", borderRadius: 8 }} />
                             )}
@@ -14481,7 +14481,7 @@ function TabOverlay({
                     return (
                       <div key={p.key} style={{ background: "#1a0f26", border: "1px solid #3a2e58", borderRadius: 10, padding: "8px 12px", display: "flex", gap: 10, alignItems: "center" }}>
                         <div style={{ width: 36, height: 36, background: "#000", borderRadius: 8, display: "grid", placeItems: "center", border: `1px solid ${cfg.color}44` }}>
-                          <img src={STONE_CHEST[cfg.stone]} alt="" style={{ width: 28, height: 28, imageRendering: "pixelated" }} />
+                          <img src={assetUrlFromJson(STONE_CHEST[cfg.stone])} alt="" style={{ width: 28, height: 28, imageRendering: "pixelated" }} />
                         </div>
                         <div style={{ flex: 1 }}>
                           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 2 }}>
@@ -14594,7 +14594,7 @@ function TabOverlay({
                     filter: unlocked ? "none" : "grayscale(1) brightness(0.55)",
                   }}>
                     {s.url ? (
-                      <img src={s.url} alt={s.label} style={{ maxWidth: "100%", maxHeight: "100%", imageRendering: "pixelated" }} />
+                      <img src={assetUrlFromJson(s.url)} alt={s.label} style={{ maxWidth: "100%", maxHeight: "100%", imageRendering: "pixelated" }} />
                     ) : (
                       <div style={{ fontSize: 32 }}>🧢</div>
                     )}
@@ -14789,7 +14789,7 @@ function TabOverlay({
                         boxShadow: `inset 0 0 12px ${rc}33, 0 2px 8px rgba(0,0,0,0.4)`,
                       }}>
                         {gifMap[e.species] && (
-                          <img src={gifMap[e.species]} alt="" style={{ width: 56, height: 56, imageRendering: "pixelated" }} />
+                          <img src={assetUrlFromJson(gifMap[e.species])} alt="" style={{ width: 56, height: 56, imageRendering: "pixelated" }} />
                         )}
                         <div style={{ fontSize: 10, fontWeight: 900, color: "#f7ecf7", letterSpacing: 1, marginTop: 2 }}>
                           {e.species.replace(/_/g, " ").toUpperCase()}
@@ -14868,7 +14868,7 @@ function BuffCell({ img, label, value, color }: { img: string; label: string; va
       background: "#1a0f26", border: `1px solid ${color}55`, borderRadius: 10,
       padding: 12, textAlign: "center",
     }}>
-      <img src={img} alt="" width={40} height={40} style={{ imageRendering: "pixelated" }} />
+      <img src={assetUrlFromJson(img)} alt="" width={40} height={40} style={{ imageRendering: "pixelated" }} />
       <div style={{ fontSize: 12, color: "#c8b8d0", marginTop: 4 }}>{label}</div>
       <div style={{ fontSize: 18, fontWeight: 800, color }}>{value}</div>
     </div>
@@ -15000,7 +15000,7 @@ function WalletScreen({
                 onClick={() => onOpenColecaoDetail(entry.uid)}
                 style={{ background: "#1a0f26", border: "1px solid #8fd0ff33", borderRadius: 8, padding: 8, textAlign: "center", cursor: "pointer" }}
               >
-                {gifMap[entry.species] && <img src={gifMap[entry.species]} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />}
+                {gifMap[entry.species] && <img src={assetUrlFromJson(gifMap[entry.species])} alt="" style={{ width: 48, height: 48, imageRendering: "pixelated" }} />}
                 <div style={{ fontSize: 9, color: "#8fd0ff", fontWeight: 800 }}>{entry.species.replace(/_/g, " ").toUpperCase()}</div>
                 <div style={{ fontSize: 10, color: "#fff" }}>Nv. {entry.level}</div>
               </div>
@@ -15150,7 +15150,7 @@ function MarketScreen({
                     <div key={l.id} style={{ background: "linear-gradient(180deg,#2a1f08,#150e02)", border: "1px solid #ffd94d88", borderRadius: 10, padding: 12 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                         {STONE_CHEST[l.item_id] ? (
-                          <img src={STONE_CHEST[l.item_id]} alt="" width={44} height={44} />
+                          <img src={assetUrlFromJson(STONE_CHEST[l.item_id])} alt="" width={44} height={44} />
                         ) : (
                           <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
                         )}
@@ -15179,7 +15179,7 @@ function MarketScreen({
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       {STONE_CHEST[l.item_id] ? (
                         <div style={{ width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", background: "radial-gradient(circle, rgba(255,217,77,0.18), transparent 70%)", borderRadius: 8, filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.6))" }}>
-                          <img src={STONE_CHEST[l.item_id]} alt="" width={52} height={52} style={{ imageRendering: "auto" }} />
+                          <img src={assetUrlFromJson(STONE_CHEST[l.item_id])} alt="" width={52} height={52} style={{ imageRendering: "auto" }} />
                         </div>
                       ) : (
                         <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
@@ -15214,7 +15214,7 @@ function MarketScreen({
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       {STONE_CHEST[l.item_id] ? (
                         <div style={{ width: 64, height: 64, display: "flex", alignItems: "center", justifyContent: "center", background: "radial-gradient(circle, rgba(255,157,61,0.22), transparent 70%)", borderRadius: 10, filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.7))" }}>
-                          <img src={STONE_CHEST[l.item_id]} alt="" width={58} height={58} style={{ imageRendering: "auto" }} />
+                          <img src={assetUrlFromJson(STONE_CHEST[l.item_id])} alt="" width={58} height={58} style={{ imageRendering: "auto" }} />
                         </div>
                       ) : (
                         <div style={{ fontSize: 22 }}>{ICONS[l.item_id] ?? "📦"}</div>
@@ -15261,7 +15261,7 @@ function MarketScreen({
           </select>
           {isStoneId(selItem) && STONE_CHEST[selItem] && (
             <div style={{ display: "flex", alignItems: "center", gap: 12, background: "linear-gradient(180deg,#2a1a3e,#160b24)", border: "1px solid #ffd94d66", borderRadius: 10, padding: 10, marginBottom: 10 }}>
-              <img src={STONE_CHEST[selItem]} alt="" width={64} height={64} style={{ filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.7))" }} />
+              <img src={assetUrlFromJson(STONE_CHEST[selItem])} alt="" width={64} height={64} style={{ filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.7))" }} />
               <div>
                 <div style={{ color: "#ffd94d", fontWeight: 900, fontSize: 13 }}>Baú de {LABELS[selItem]}</div>
                 <div style={{ color: "#c8b8d0", fontSize: 11 }}>Pack mínimo <b style={{ color: "#7dffbe" }}>{STONE_PACK_SIZE}</b> stones — pode anunciar mais.</div>
@@ -15390,7 +15390,7 @@ function PokemonDetail({ pet, currentHp, src }: { pet: PetInstance; currentHp: n
           minHeight: 120,
           boxShadow: `inset 0 0 18px ${rColor}22`,
         }}>
-          {src && <img src={src} alt="" style={{ width: 96, height: 96, imageRendering: "pixelated", filter: `drop-shadow(0 3px 6px ${rColor}66)` }} />}
+          {src && <img src={assetUrlFromJson(src)} alt="" style={{ width: 96, height: 96, imageRendering: "pixelated", filter: `drop-shadow(0 3px 6px ${rColor}66)` }} />}
           <div style={{
             position: "absolute", top: 4, left: 4,
             fontSize: 8, letterSpacing: 1.5, color: "#8a7a9c", fontWeight: 700,
@@ -15701,7 +15701,7 @@ function GovernanteDialog(props: {
           overflow: "hidden", animation: "govGlow 3s ease-in-out infinite",
         }}>
           <img
-            src={npcGovernanteUrl}
+            src={assetUrlFromJson(npcGovernanteUrl)}
             alt="Governante"
             style={{ width: "100%", height: "100%", objectFit: "contain", imageRendering: "pixelated" }}
           />
