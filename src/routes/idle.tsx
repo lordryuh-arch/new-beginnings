@@ -10279,115 +10279,104 @@ function IdlePage() {
 
 
 
-        {/* ============ NAV INFERIOR ============ */}
-        <div style={{ gridColumn: "1 / -1", display: "flex", justifyContent: "center", gap: 4, background: "linear-gradient(180deg,#0b0510 0%,#160a20 100%)", padding: "8px 0", borderTop: "1px solid rgba(245,207,107,0.15)" }}>
+        {/* ============ NAV INFERIOR PREMIUM ============ */}
+        <div style={{
+          gridColumn: "1 / -1",
+          display: "flex",
+          justifyContent: "center",
+          gap: "clamp(4px, 1.5vw, 12px)",
+          background: "linear-gradient(180deg, #12071e 0%, #0b0510 100%)",
+          padding: "10px 12px",
+          borderTop: "2px solid rgba(245,207,107,0.25)",
+          boxShadow: "0 -4px 15px rgba(0,0,0,0.6)",
+          zIndex: 100,
+          overflowX: "auto",
+          msOverflowStyle: "none",
+          scrollbarWidth: "none",
+        }}>
           {([
-            { id: "inicio",   label: "Início",   img: navInicio,    color: "#f5cf6b" },
-            { id: "pokemon",  label: "Pokémon",  img: navPokemon,   color: "#ff5252" },
-            { id: "mochila",  label: "Mochila",  img: bagIconImg,   color: "#ffd66b" },
-            
-            { id: "melhorias",label: "Melhorias",img: navMelhorias, color: "#7ef27a" },
-            { id: "colecao",  label: "Coleção",  img: navColecao,   color: "#ff5c8a" },
-            { id: "pokedex",  label: "Pokédex",  img: navColecao,   color: "#e11d48" },
-            { id: "loja",     label: "Loja",     img: navLoja,      color: "#6bd4ff" },
-            { id: "market",   label: "Marketplace", img: navMarket, color: "#ff9d3d", disabled: true },
-            { id: "wallet",   label: "Banco Medieval", img: navWallet, color: "#ffd66b" },
+            { id: "inicio",    label: "Início",     img: navInicio,    color: "#f5cf6b" },
+            { id: "pokemon",   label: "Pokémon",    img: navPokemon,   color: "#ff5252" },
+            { id: "mochila",   label: "Mochila",    img: bagIconImg,   color: "#ffd66b" },
+            { id: "melhorias", label: "Melhorias",  img: navMelhorias, color: "#7ef27a" },
+            { id: "colecao",   label: "Coleção",    img: navColecao,   color: "#ff5c8a" },
+            { id: "pokedex",   label: "Pokédex",    img: navColecao,   color: "#e11d48" },
+            { id: "loja",      label: "Loja",       img: navLoja,      color: "#6bd4ff" },
+            { id: "market",    label: "Market",     img: navMarket,    color: "#ff9d3d", disabled: true },
+            { id: "wallet",    label: "Banco",      img: navWallet,    color: "#ffd66b" },
           ] as const).map((t) => {
-
             const active = tab === t.id;
-            const showActive = active;
-            const color = t.color;
-            const isDisabled = (t as { disabled?: boolean }).disabled === true;
+            const isDisabled = (t as any).disabled === true;
             return (
               <button
                 key={t.id}
                 onClick={() => {
                   if (isDisabled) {
                     playClick();
-                     pushChat("🛒 Mercado temporariamente bloqueado.", "info");
+                    pushChat("🛒 Mercado temporariamente bloqueado.", "info");
                     return;
                   }
                   playClick();
-                  setTab(t.id as typeof tab);
+                  setTab(t.id as any);
                 }}
-                title={isDisabled ? `${t.label} (em breve)` : t.label}
                 style={{
-                  flex: 1, maxWidth: 130,
-                  background: showActive ? `linear-gradient(180deg, ${color}33 0%, ${color}11 100%)` : "transparent",
-                  color: isDisabled ? "#6a5a70" : (showActive ? color : "#c8b8d0"),
-                  border: showActive ? `1px solid ${color}88` : "1px solid transparent",
-                  padding: "8px 6px", cursor: isDisabled ? "not-allowed" : "pointer",
-                  borderRadius: 10, display: "flex", flexDirection: "column",
-                  alignItems: "center", gap: 4, fontSize: 11, position: "relative",
-                  transition: "background 150ms, color 150ms, border-color 150ms",
-                  boxShadow: showActive ? `0 0 14px ${color}66, inset 0 1px 0 ${color}44` : "none",
-                  opacity: isDisabled ? 0.55 : 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: 4,
+                  minWidth: "min(68px, 12vw)",
+                  padding: "6px 4px",
+                  background: active ? "rgba(245,207,107,0.12)" : "transparent",
+                  border: "none",
+                  borderBottom: `3px solid ${active ? t.color : "transparent"}`,
+                  borderRadius: "8px 8px 0 0",
+                  cursor: isDisabled ? "not-allowed" : "pointer",
+                  transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+                  filter: active ? "none" : "grayscale(0.3) brightness(0.8)",
+                  transform: active ? "translateY(-2px)" : "none",
+                  opacity: isDisabled ? 0.5 : 1,
                 }}
               >
-                <img
-                  src={t.img}
-                  alt=""
-                  width={34}
-                  height={34}
-                  style={{
-                    width: 34, height: 34, imageRendering: "pixelated",
-                    filter: isDisabled
-                      ? "grayscale(1) brightness(0.7) drop-shadow(0 2px 2px rgba(0,0,0,0.6))"
-                      : (showActive
-                        ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 2px 2px rgba(0,0,0,0.5))`
-                        : "drop-shadow(0 2px 2px rgba(0,0,0,0.6)) saturate(0.85) brightness(0.9)"),
-                    transform: active ? "translateY(-2px) scale(1.08)" : "none",
-                    transition: "transform 150ms, filter 150ms",
-                  }}
-                />
-                <span style={{ fontWeight: showActive ? 700 : 500, letterSpacing: 0.3 }}>
+                <div style={{
+                  width: 38,
+                  height: 38,
+                  background: active ? `radial-gradient(circle, ${t.color}33 0%, transparent 70%)` : "rgba(255,255,255,0.03)",
+                  borderRadius: "12px",
+                  display: "grid",
+                  placeItems: "center",
+                  boxShadow: active ? `0 0 12px ${t.color}44` : "none",
+                  position: "relative",
+                  border: `1px solid ${active ? t.color + "66" : "rgba(255,255,255,0.08)"}`,
+                }}>
+                  <img
+                    src={t.img}
+                    alt={t.label}
+                    style={{
+                      width: 28,
+                      height: 28,
+                      imageRendering: "pixelated",
+                      filter: active ? `drop-shadow(0 0 4px ${t.color}aa)` : "none",
+                      transition: "transform 0.2s ease",
+                      transform: active ? "scale(1.1)" : "scale(1)",
+                    }}
+                  />
+                </div>
+                <span style={{
+                  fontSize: "10px",
+                  fontWeight: 900,
+                  color: active ? t.color : "#8a7a9c",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                  textShadow: active ? `0 0 8px ${t.color}44` : "none",
+                }}>
                   {t.label}
                 </span>
-                {isDisabled && (
-                  <span style={{
-                    position: "absolute", top: 2, right: 4,
-                    fontSize: 8, fontWeight: 700, letterSpacing: 0.5,
-                    color: "#ffd66b", background: "rgba(0,0,0,0.55)",
-                    padding: "1px 4px", borderRadius: 4, border: "1px solid #ffd66b55",
-                  }}>EM BREVE</span>
-                )}
               </button>
             );
           })}
-          {/* ===== BOTÃO SALVAR NA NUVEM ===== */}
-          <button
-            onClick={async () => {
-              playClick();
-              if (!cloudBlobReady) {
-                pushChat("⏳ Aguarde carregar o save da nuvem antes de salvar.", "info");
-                return;
-              }
-              try {
-                const ok = await pushCloudSaveNow(buildFullBlob());
-                await serverSync.pushNow();
-                pushChat(ok ? "☁️ Progresso salvo na nuvem!" : `⚠️ Não salvou na nuvem: ${getCloudSaveLastError() ?? "verifique a tabela game_saves"}.`, "info");
-              } catch (e) {
-                pushChat("⚠️ Falha ao salvar. Tente de novo.", "info");
-              }
-            }}
-            title="Salvar progresso na nuvem"
-            style={{
-              flex: 1, maxWidth: 130,
-              background: "linear-gradient(180deg, #22d3ee33 0%, #22d3ee11 100%)",
-              color: "#22d3ee",
-              border: "1px solid #22d3ee88",
-              padding: "8px 6px", cursor: "pointer",
-              borderRadius: 10, display: "flex", flexDirection: "column",
-              alignItems: "center", gap: 4, fontSize: 11, position: "relative",
-              boxShadow: "0 0 14px #22d3ee55, inset 0 1px 0 #22d3ee44",
-              fontWeight: 700, letterSpacing: 0.3,
-            }}
-          >
-            <span style={{ fontSize: 28, lineHeight: 1, filter: "drop-shadow(0 0 8px #22d3ee)" }}>☁️</span>
-            <span>Salvar</span>
-          </button>
         </div>
       </div>
+
 
       <style>{`
         /* ===== Layout responsivo ===== */
