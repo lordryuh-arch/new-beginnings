@@ -1,8 +1,11 @@
 {
-  "path": "src/assets/icon-world-globe-v2.png",
-  "name": "icon-world-globe-v2.png",
-  "type": "image/png",
-  "width": 256,
-  "height": 256,
-  "size": 0
+  "version": 1,
+  "asset_id": "397e6772-2e2b-4d0a-b398-8e51b1328b98",
+  "project_id": "b1ac3029-d58f-4a0f-841e-3954421931d9",
+  "url": "/__l5e/assets-v1/397e6772-2e2b-4d0a-b398-8e51b1328b98/icon-world-globe-v2.png",
+  "r2_key": "a/v1/b1ac3029-d58f-4a0f-841e-3954421931d9/397e6772-2e2b-4d0a-b398-8e51b1328b98/icon-world-globe-v2.png",
+  "original_filename": "icon-world-globe-v2.png",
+  "size": 1203531,
+  "content_type": "image/png",
+  "created_at": "2026-08-19T06:13:21Z"
 }
