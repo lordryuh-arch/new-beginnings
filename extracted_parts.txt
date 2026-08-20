@@ -1,9 +1,0 @@
---- CONSTANTS AND HELPERS ---
---- IDLEPAGE BODY ---
---- RENDER MUNDO ---
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
-  if (n >= 1000) return (n / 1000).toFixed(1) + "K";
-  return String(Math.floor(n));
-}
-
-function getMultiplayerSessionId(baseId: string) {
