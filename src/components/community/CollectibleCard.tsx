@@ -1,73 +1,82 @@
-import React from 'react';
-import { Sparkles, Shield, Zap } from 'lucide-react';
+import { Coins, Lock, Shield, Zap } from "lucide-react";
+import { RARITY_STYLE, type Mon } from "@/lib/safirity/data";
+import { cn } from "@/lib/utils";
 
-export function CollectibleCard({ pokemon, rarity, type }: any) {
-  const getRarityColor = () => {
-    switch(rarity.toLowerCase()) {
-      case 'shiny': return 'from-yellow-400 to-orange-500';
-      case 'lendario': return 'from-purple-500 to-blue-600';
-      default: return 'from-slate-400 to-slate-600';
-    }
-  };
+type Props = {
+  mon: Mon;
+  owned: boolean;
+  canAfford?: boolean;
+  onAdopt?: (monId: string) => void;
+};
+
+export function CollectibleCard({ mon, owned, canAfford = false, onAdopt }: Props) {
+  const rarity = RARITY_STYLE[mon.rarity];
 
   return (
-    <div className="relative group perspective-1000">
-      <div className="relative w-full aspect-[2/3] rounded-2xl bg-[#1e142b] border border-white/10 shadow-2xl overflow-hidden transition-all duration-500 transform-gpu group-hover:rotate-y-12 group-hover:scale-105 group-hover:shadow-purple-500/20">
-        {/* Card Header */}
-        <div className="p-3 flex justify-between items-center bg-white/5 border-b border-white/5">
-          <span className="text-[10px] font-black text-white/50 tracking-tighter uppercase italic italic">TRAINER EDITION</span>
-          <div className="flex gap-1">
-             <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-             <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-          </div>
+    <div className={cn("group relative overflow-hidden rounded-2xl border bg-[#150d21] shadow-xl", rarity.ring)}>
+      <div className="flex items-center justify-between border-b border-white/5 bg-white/5 px-3 py-2">
+        <span className="text-[10px] font-black uppercase italic tracking-tighter text-white/50">Safirity Card</span>
+        <span className={cn("text-[10px] font-black uppercase tracking-widest", rarity.text)}>{rarity.label}</span>
+      </div>
+
+      <div className={cn("relative flex h-36 items-center justify-center bg-gradient-to-b", rarity.glow)}>
+        <img
+          src={mon.sprite}
+          alt={mon.name}
+          className={cn(
+            "h-24 w-24 object-contain transition-transform duration-500 group-hover:scale-110",
+            !owned && "opacity-40 grayscale",
+          )}
+          style={{ imageRendering: "pixelated" }}
+          loading="lazy"
+        />
+        {!owned && <Lock className="absolute right-2 top-2 text-white/40" size={16} />}
+      </div>
+
+      <div className="p-4">
+        <h3 className="mb-1 text-lg font-black uppercase italic tracking-tighter text-white">{mon.name}</h3>
+        <div className="mb-3 flex items-center gap-2">
+          <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-purple-300">
+            {mon.type}
+          </span>
+          <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-amber-300">
+            <Coins size={10} /> {mon.rate}/h
+          </span>
         </div>
 
-        {/* Artwork Area */}
-        <div className="relative h-[60%] bg-gradient-to-b from-white/5 to-transparent overflow-hidden flex items-center justify-center">
-           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-           <div className={`absolute w-40 h-40 rounded-full blur-[60px] opacity-30 bg-gradient-to-tr ${getRarityColor()}`} />
-           
-           <div className="relative z-10 text-center scale-150 transform-gpu group-hover:scale-[1.7] transition-transform duration-700">
-             <Sparkles className="text-white/20 absolute -top-4 -right-4" size={24} />
-             {/* Character placeholder */}
-             <div className="w-24 h-24 flex items-center justify-center">
-               <div className="w-20 h-20 rounded-full bg-purple-500/20 animate-pulse border border-purple-500/30 flex items-center justify-center">
-                 <Sparkles className="text-purple-400/50" size={32} />
-               </div>
-             </div>
-           </div>
+        <div className="grid grid-cols-2 gap-2">
+          <Stat icon={<Shield size={10} className="text-sky-400" />} label="Defesa" pct={Math.min(95, mon.rate)} color="bg-sky-400" />
+          <Stat icon={<Zap size={10} className="text-amber-400" />} label="Ataque" pct={Math.min(95, mon.rate + 15)} color="bg-amber-400" />
         </div>
 
-        {/* Card Content */}
-        <div className="p-4 relative">
-          <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${getRarityColor()}`} />
-          <h3 className="text-xl font-black text-white italic tracking-tighter mb-1 uppercase">{pokemon}</h3>
-          <div className="flex items-center gap-2 mb-4">
-             <span className="text-[10px] font-bold px-2 py-0.5 bg-white/10 rounded-full text-slate-300 uppercase tracking-widest">{rarity}</span>
-             <span className="text-[10px] font-bold px-2 py-0.5 bg-purple-500/20 rounded-full text-purple-400 uppercase tracking-widest">{type}</span>
-          </div>
+        {owned ? (
+          <p className="mt-3 text-center text-[10px] font-black uppercase tracking-widest text-emerald-400">
+            No seu time
+          </p>
+        ) : (
+          <button
+            type="button"
+            onClick={() => onAdopt?.(mon.id)}
+            disabled={!canAfford}
+            className="mt-3 w-full rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 py-2 text-[11px] font-black uppercase tracking-widest text-white transition-opacity disabled:opacity-40"
+          >
+            Adotar · {mon.cost}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
 
-          <div className="grid grid-cols-2 gap-2 mt-4">
-            <div className="bg-white/5 p-2 rounded-lg border border-white/5">
-              <div className="flex items-center gap-1 mb-1">
-                <Shield size={10} className="text-blue-400" />
-                <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Defesa</span>
-              </div>
-              <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                <div className="h-full bg-blue-400 w-[75%]" />
-              </div>
-            </div>
-            <div className="bg-white/5 p-2 rounded-lg border border-white/5">
-              <div className="flex items-center gap-1 mb-1">
-                <Zap size={10} className="text-yellow-400" />
-                <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Ataque</span>
-              </div>
-              <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                <div className="h-full bg-yellow-400 w-[85%]" />
-              </div>
-            </div>
-          </div>
-        </div>
+function Stat({ icon, label, pct, color }: { icon: React.ReactNode; label: string; pct: number; color: string }) {
+  return (
+    <div className="rounded-lg border border-white/5 bg-white/5 p-2">
+      <div className="mb-1 flex items-center gap-1">
+        {icon}
+        <span className="text-[8px] font-bold uppercase tracking-widest text-slate-500">{label}</span>
+      </div>
+      <div className="h-1 w-full overflow-hidden rounded-full bg-white/10">
+        <div className={cn("h-full", color)} style={{ width: `${pct}%` }} />
       </div>
     </div>
   );

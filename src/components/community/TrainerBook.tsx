@@ -1,42 +1,56 @@
-import React from 'react';
-import { BookOpen, Star, Map, Zap, Trophy } from 'lucide-react';
+import { BookOpen, Coins, Sparkles, Sprout, Trophy } from "lucide-react";
+import { MONS } from "@/lib/safirity/data";
+import { xpForLevel, type SafirityState } from "@/lib/safirity/store";
 
-export function TrainerBook({ trainerData }: any) {
+export function TrainerBook({ state, rate }: { state: SafirityState; rate: number }) {
+  const need = xpForLevel(state.level);
+  const pct = Math.min(100, Math.round((state.xp / need) * 100));
+
   return (
-    <div className="bg-[#1a0f26] rounded-3xl p-8 border border-white/10 shadow-2xl relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-8 opacity-10">
-        <BookOpen size={120} className="text-purple-400" />
-      </div>
-      
-      <div className="relative z-10">
-        <h2 className="text-3xl font-black mb-2 tracking-tighter italic italic tracking-tighter">LIVRO DO TREINADOR</h2>
-        <p className="text-slate-400 mb-8 text-sm uppercase tracking-widest">Sua jornada, seu legado.</p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <BookStat icon={<Zap size={18} className="text-yellow-400" />} label="Primeiro Pokémon" value="Bulbasaur" date="15/02/2026" />
-          <BookStat icon={<Star size={18} className="text-purple-400" />} label="Primeiro Shiny" value="Oddish" date="12/03/2026" />
-          <BookStat icon={<Trophy size={18} className="text-blue-400" />} label="Conquista Rara" value="Mestre da Rota 1" date="20/03/2026" />
-          <BookStat icon={<Map size={18} className="text-green-400" />} label="Região Descoberta" value="Floresta Verdejante" date="21/04/2026" />
+    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#170e24] p-6 shadow-2xl">
+      <BookOpen size={120} className="absolute right-4 top-2 text-purple-400 opacity-10" />
+      <div className="relative">
+        <h2 className="text-2xl font-black uppercase italic tracking-tighter">Livro do Treinador</h2>
+        <p className="mb-6 text-xs uppercase tracking-widest text-slate-400">Sua jornada na Safirity</p>
+
+        <div className="mb-6">
+          <div className="mb-1 flex justify-between text-[10px] font-black uppercase tracking-widest text-slate-400">
+            <span>Nível {state.level}</span>
+            <span>
+              {state.xp}/{need} XP
+            </span>
+          </div>
+          <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="h-full bg-gradient-to-r from-purple-500 to-blue-500" style={{ width: `${pct}%` }} />
+          </div>
         </div>
-        
-        <button className="mt-10 w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs">
-          Ver livro completo
-        </button>
+
+        <div className="grid grid-cols-2 gap-3">
+          <Stat icon={<Coins size={16} className="text-amber-300" />} label="Moedas" value={state.coins.toLocaleString("pt-BR")} />
+          <Stat icon={<Sprout size={16} className="text-emerald-300" />} label="Produção" value={`${Math.round(rate)}/h`} />
+          <Stat
+            icon={<Sparkles size={16} className="text-purple-300" />}
+            label="Coleção"
+            value={`${state.owned.length}/${MONS.length}`}
+          />
+          <Stat
+            icon={<Trophy size={16} className="text-sky-300" />}
+            label="Terrenos ativos"
+            value={`${state.plots.filter((p) => p.monId).length}/${state.plots.length}`}
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function BookStat({ icon, label, value, date }: any) {
+function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-      <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center border border-white/10 shadow-inner">
-        {icon}
-      </div>
+    <div className="flex items-center gap-3 rounded-2xl border border-white/5 bg-white/5 p-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-950">{icon}</div>
       <div>
-        <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest">{label}</p>
-        <p className="text-white font-bold">{value}</p>
-        <p className="text-[9px] text-slate-600 mt-0.5">{date}</p>
+        <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p>
+        <p className="font-bold text-white">{value}</p>
       </div>
     </div>
   );
